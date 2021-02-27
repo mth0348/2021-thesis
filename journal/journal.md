@@ -64,6 +64,7 @@ Purchased Udemy course for learning compute shaders: https://www.udemy.com/home/
 ### Formal and technical questions
 * How do I quote my own work?
 * Should I explain things that are already explained in project2?
+* MS Flight Simulator license? Gifting or paying in advance?
 
 ### Meeting discussion
 -

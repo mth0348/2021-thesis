@@ -1,0 +1,76 @@
+\section{Scope of Work}
+
+\subsection{Initial Situation}
+\color{orange}
+TODO: With shaders making up a large part of visual effects in games and in game development generally, they have become more and more important throughout the years. Due to their high flexibility, it is possible to create a wide variation of implementations as well as cheap alternatives to otherwise highly complex and computationally demanding simulations, such as simulating water, fire or clouds.
+\\ This project specifically focuses on clouds. But to achieve a realistic look and feel of the clouds, certain methods and knowledge are required. The motivation for this project is to implement such a shader, based on information gathered during the given period.
+\color{black}
+
+\subsection{Goals}
+\label{section:goals}
+\color{orange}
+TODO: The primary goal of the project is to research and document rendering techniques for real-time procedural cloud shaders. Additionally, one or more prototypes are to be implemented based on the newly discovered knowledge.
+\color{black}
+
+\subsubsection{Mandatory Goals}
+\color{orange}
+TODO: The following tasks must be accomplished during the project:
+\begin{itemize}
+\item Understanding of the basic nature of clouds
+\item Understanding of what makes good clouds in games
+\item Research common methods and algorithms involved in rendering procedural clouds, including...
+    \begin{itemize}
+    \item volumetric rendering
+    \item procedural noise generation algorithms
+    \item the concept of ray marching
+    \end{itemize}
+\end{itemize}
+\color{black}
+
+\subsubsection{Optional Goals}
+\color{orange}
+TODO: For further optional research, these tasks can be looked into:
+\begin{itemize}
+    \item Light scattering illumination and sub-surface scattering
+    \item Performance optimization
+    \item Simulation of gas
+\end{itemize}
+\color{black}
+
+\clearpage
+
+\subsection{Vision}
+\color{orange}
+TODO: This section defines a high-level vision for future work involving the results and prototypes of this project. 
+\\ 
+As described in \sectionref{section:requirements}, several prototypes about different rendering techniques will be created.
+By combining these outcomes and with the backing of all research findings, the implemention of a complete cloud system could be achieved. 
+The desired outcome ideally looks similar to the image depicted in \autoref{img:rendered1}. A rendered version of such a cloud system can look elusively realistic compared to an actual photograph, like in \autoref{img:photo1}.
+\begin{figure}[ht]
+    \centering
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{msfs-ref1.jpg}
+            \captionof{figure}{A rendered image of volumetric clouds \protect\cite{img:rendered:clouds01}.}
+            \label{img:rendered1}
+        \end{minipage}
+    \hfill
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{roundshot2021-01-18-12-50-cropped.png}
+            \captionof{figure}{A photographic reference of clouds \protect\cite{img:photo:clouds01}.}
+            \label{img:photo1}        
+        \end{minipage}  
+\end{figure}
+\\
+The first thought about the practical use of a fully-fledged volumetric cloud system might be a video game, since clouds are often a significant part of outdoor scenery in games.
+However, for this project it is intended that the knowledge and prototypes acquired during the given period will be used to recreate a lifelike weather system instead.
+\\
+To accurately reflect a weather system, conditions like precipitation, wind and cloudiness should be considered.
+\color{black}
+
+\subsection{Educational Objectives}
+Educational objectives include shader programming, rendering techniques, common algorithms used in computer graphics, a general understanding about the role of clouds in games and other topics.
+
+\subsection{Used Software and Tools}
+All documentation will be written in \gls{latex} with Visual Studio Code.
+The shader will be implemented in Unity. The chosen shader language is \gls{hlsl}.
+For the presentation, Microsoft PowerPoint will be used.

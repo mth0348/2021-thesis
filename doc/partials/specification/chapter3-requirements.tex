@@ -1,0 +1,77 @@
+\section{Requirements}
+\label{section:requirements}
+All requirements are grouped by type. This results in two major groups, which are research and development requirements. Each one of the requirements is derived from a goal listed in \sectionref{section:goals}.
+
+\subsection{Research requirements}
+
+\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{Number}     & R.\stepcounter{requirements}\arabic{requirements} \\ \hline
+    \textbf{Name}       & Understanding of the basic nature of clouds \\ \hline
+    \textbf{Description}& In order to be able to recreate a realistically looking cloud shape, one has to examine and understand the way a cloud is formed first. 
+                          This includes the color, density, shape as well other characteristics of clouds. \\ \hline
+\end{tabularx}
+\vspace{0.8cm}
+
+\noindent\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Number}     & R.\stepcounter{requirements}\arabic{requirements} \\ \hline
+    \textbf{Name}       & Understanding of what makes good clouds in games \\ \hline
+    \textbf{Description}& Just as for real world clouds, clouds in games must also be examined. 
+                          This will lead to a clear perception of what is important when rendering clouds in a simulated environment, opposed to the real world example. \\ \hline
+\end{tabularx}
+\vspace{0.8cm}
+
+\noindent\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Number}     & R.\stepcounter{requirements}\arabic{requirements} \\ \hline
+    \textbf{Name}       & Research  common  methods  and  algorithms  involved  in  rendering  procedural  clouds \\ \hline
+    \textbf{Description}& It is required to research and keep records of widely-used and popular approaches for rendering clouds.
+                          Those methods and algorithms are to be compared and evaluated.
+                          \newline
+                          They include at least the following topics: 
+                          \begin{itemize}
+                              \item volumetric rendering
+                              \item procedural noise generation algorithms
+                              \item the concept of ray marching
+                          \end{itemize}
+                          \\ \hline
+\end{tabularx}
+
+\pagebreak
+\subsection{Development requirements}
+\setcounter{requirements}{0}
+\label{section:requirements:dev}
+
+\noindent\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Number}     & D.\stepcounter{requirements}\arabic{requirements} \\ \hline
+    \textbf{Name}       & Implementing a prototype about volumetric rendering \\ \hline
+    \textbf{Description}& To fully comprehend volumetric rendering, it is best to implement a prototype, showcasing how this rendering technique works and how it is built. \\ \hline
+\end{tabularx}
+\vspace{0.8cm}
+
+\noindent\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Number}     & D.\stepcounter{requirements}\arabic{requirements} \\ \hline
+    \textbf{Name}       & Implementing a prototype about noise generation \\ \hline
+    \textbf{Description}& It is necessary to understand procedural noise generation in order to achieve "natural randomness" as it appears in nature. That is why a prototype must be built from commonly used noise algorithms. \\ \hline
+\end{tabularx}
+\vspace{0.8cm}
+
+\noindent\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Number}     & D.\stepcounter{requirements}\arabic{requirements} \\ \hline
+    \textbf{Name}       & Implementing a prototype about ray marching \\ \hline
+    \textbf{Description}& In shader programming, ray marching is a key technique to determine the surface distance of very complex objects, like a cloud. Thus, to see what ray marching is all about, a prototype must be built. \\ \hline
+\end{tabularx}
+\vspace{0.8cm}
+
+\noindent\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Number}     & D.\stepcounter{requirements}\arabic{requirements} \\ \hline
+    \textbf{Name}       & Evaluation of suitable parameters for a cloud shader \\ \hline
+    \textbf{Description}& When creating a shader, some parameters should be made public, so the user can influence the outcome of the shader by only tweaking certain variables. 
+                          The goal is to find out which parameters are the most influential on the output of the shader. \\ \hline
+\end{tabularx}
+\vspace{0.8cm}

@@ -1,0 +1,13 @@
+\section*{Abstract}
+Clouds contribute a great deal to the overall ambience in games and can be the cherry on top by filling the sky with life.
+To get as close as possible to real clouds, this project engages in researching and prototyping a \gls{procedural}, volumetric cloud shader.
+\\
+In order to achieve \gls{volumetricrendering}, the document dives into the concept of \gls{raymarching}, a group of methods used to render a 3D data set inside a container box to make it appear volumetric.
+Several variants of it are expanded on, like constant step, traditional, and sphere-traced \gls{raymarching}. Additionally, to account for perception of depth, the volume can be shaded with the aid of \gls{surfacenormal} estimation.
+\\
+In the second part, 2D and 3D \gls{noise} generation algorithms like Perlin's noise and the Voronoi algorithm are explained in detail. With \gls{fbm}, the different layers of noise are then merged into one highly detailed noise texture.
+\\
+At last, the goal of the project was to create prototypes in Unity displaying both volumetric rendering and noise algorithms, of which all were created successfully.
+Prepared with the combined knowledge of the research results and prototypes, a final shader was created, able to render a completely \gls{procedural} and volumetric cloudscape.
+\\
+For future work, the shader could be expanded into a fully-fledged weather simulation system with meteorologically accurate formation of clouds, rain, snow and much more.

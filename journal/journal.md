@@ -56,6 +56,7 @@ Next meeting is scheduled for **March 4th, 2021 at 2pm.**
 | Initial draft of specification document | 4h |
 | Compute shader research | 4h |
 | Journal update | 1h |
+| Planning update | 4h |
 
 Purchased Udemy course for learning compute shaders: https://www.udemy.com/home/my-courses/learning/
 

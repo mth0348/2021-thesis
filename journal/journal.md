@@ -42,6 +42,7 @@ There should be two meetings with expert (may or may not include tutor):
     * Lay out all topics, sum up, categorize, prioritize
     * Focus only on what makes sense for thesis
 * Check out NVIDIA NSight debugger
+* Setup meeting with meteoblue - How to extract cloud genera
 
 
 Next meeting is scheduled for **March 4th, 2021 at 2pm.**
@@ -53,6 +54,8 @@ Next meeting is scheduled for **March 4th, 2021 at 2pm.**
 | Journal update | 2h |
 | Setup of latex work environment | 1h |
 | Initial draft of specification document | 4h |
+| Compute shader research | 4h |
+| Journal update | 1h |
 
 Purchased Udemy course for learning compute shaders: https://www.udemy.com/home/my-courses/learning/
 
@@ -65,6 +68,13 @@ Purchased Udemy course for learning compute shaders: https://www.udemy.com/home/
 * How do I quote my own work?
 * Should I explain things that are already explained in project2?
 * MS Flight Simulator license? Gifting or paying in advance?
+* Cite Udemy course?
+* meteoblue interview idea:
+    * (before interview: decide on types of clouds)
+    * ask about most important types of clouds
+    * talk about API and how data is processed for API
+    * ask about how each property would influence cloud image
+    * ask about "pictocode" property
 
 ### Meeting discussion
 -

@@ -57,6 +57,7 @@ Next meeting is scheduled for **March 4th, 2021 at 2pm.**
 | Compute shader research | 4h |
 | Journal update | 1h |
 | Planning update | 4h |
+| Journal update | 2h |
 
 Purchased Udemy course for learning compute shaders: https://www.udemy.com/home/my-courses/learning/
 
@@ -66,11 +67,11 @@ Purchased Udemy course for learning compute shaders: https://www.udemy.com/home/
 #
 ## \#02: March 04, 2021
 ### Formal and technical questions
-* How do I quote my own work?
-* Should I explain things that are already explained in project2?
-* MS Flight Simulator license? Gifting or paying in advance?
-* Cite Udemy course?
-* meteoblue interview idea:
+1. How do I quote my own work?
+2. Should I explain things that are already explained in project2?
+3. MS Flight Simulator license? Gifting or paying in advance?
+4. Cite Udemy course?
+5. meteoblue interview idea:
     * (before interview: decide on types of clouds)
     * ask about most important types of clouds
     * talk about API and how data is processed for API
@@ -78,7 +79,8 @@ Purchased Udemy course for learning compute shaders: https://www.udemy.com/home/
     * ask about "pictocode" property
 
 ### Meeting discussion
--
+Answers to questions:
+1. --
 
 **Documentation guidelines**
 -
@@ -90,7 +92,7 @@ Purchased Udemy course for learning compute shaders: https://www.udemy.com/home/
 -
 
 
-Next meeting is scheduled for **XXX Yth, 2021 at 2pm.**
+Next meeting is scheduled for **March 11th, 2021 at 2pm.**
 
 **Time log**
 

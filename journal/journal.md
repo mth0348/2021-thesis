@@ -79,8 +79,30 @@ Purchased Udemy course for learning compute shaders: https://www.udemy.com/home/
     * ask about "pictocode" property
 
 ### Meeting discussion
-Answers to questions:
-1. --
+Inputs from tutor:
+* Swiss Landestopographie data has been released, Luftbilddaten, Höhenmodelldaten, Geländedaten
+    * Could be used to generate mesh, from topo grid
+    * Orthographic photos can be used as textures
+* PCs from lab can be used if performance is needed
+* "Previous work" chapter in RS in chapter 2
+* chapter testing: detailed testing for new features: like UI
+* expert meeting
+    * introduction (general overview, why/what is shader, basics)
+    * technical dive ok, but not too deep
+
+* final results:
+    * printed version, including CD with source,
+    * due: at defense
+
+**Answers to questions:**
+1. a basic introduction to those topics is necessary, reference to project2 work, just mention previous work, citing is ok, reference is not necessary, but mention project2.
+2. only if different, or based on previous work.
+3. buy, spesen, herr gasenzer für spesen
+4. cite udemy course, and section
+5. bewölkungsgrad standard skala? 1/8 bewölkung
+    * ask how pictocode is made
+    * rainspot, what distance?
+    * label as "technical meeting", not interview, but still call
 
 **Documentation guidelines**
 -
@@ -93,6 +115,45 @@ Answers to questions:
 
 
 Next meeting is scheduled for **March 11th, 2021 at 2pm.**
+
+**Time log**
+
+| Task | time spent |
+|----|---|
+|||
+
+&nbsp;
+
+&nbsp;
+#
+## \#03: March 11th, 2021
+### Formal and technical questions
+1. Mr. or Mrs. Gasenzer? Direct email address would help.
+2. Sources of Swisstopo data?
+3. swisstopo - I would like to include that, but should I define it as a mandatory or optional goal?
+
+### Meeting discussion
+Inputs from tutor:
+
+
+**Answers to questions:**
+1. -
+2. https://www.swisstopo.admin.ch/en/geodata.html
+
+**Documentation guidelines**
+Mention roundshot locations
+Mention meteoblue locations
+
+**Possible Topics**
+-
+
+**Tasks**
+-
+
+
+Next milestone is to submit draft of project specification on **March 15th, 2021.**
+
+Next meeting is scheduled for **March 18th, 2021 at 2pm.**
 
 **Time log**
 

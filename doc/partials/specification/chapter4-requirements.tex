@@ -47,10 +47,21 @@ All requirements are grouped by type. This results in two major groups, which ar
     \textbf{Number}     & D.\stepcounter{requirements}\arabic{requirements} \\ \hline
     \textbf{Name}       & Incorporation of real-time weather data from \emph{meteoblue} \\ \hline
     \textbf{Description}& In order to achieve a high degree of realism, real-time weather data will be used. \emph{Meteoblue} offers different data package contracts, of which the "basic\textunderscore1h" is to be acquired.
-    \newline \newline The usage of the data package requires a physical location. Since author lives in Switzerland, the chosen location is: 
+    \newline \newline The usage of the data package requires physical locations. the chosen locations are: 
     \begin{itemize}
         \item Bern, Switzerland
+        \item Fribourg, Switzerland
+        \item Solothurn, Switzerland
     \end{itemize} \\ \hline
+\end{tabularx}
+\vspace{0.8cm}
+
+\noindent\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Number}     & D.\stepcounter{requirements}\arabic{requirements} \\ \hline
+    \textbf{Name}       & Incorporation of height model data from \emph{swisstopo} \\ \hline
+    \textbf{Description}& The 3D height model data from \emph{swisstopo} will be downloaded and mapped into a compatible format for Unity. This is then used as a base for the scenery.
+    \newline For texture layers, the satelite image data from \emph{swisstopo} will be used and mapped onto the 3D model. \\ \hline
 \end{tabularx}
 \vspace{0.8cm}
 
@@ -61,8 +72,8 @@ All requirements are grouped by type. This results in two major groups, which ar
     \textbf{Description}& A comparison of real-time weather data and an actual photographic reference from that date and time will prove to be useful. This is why the images from such cameras will be stored on a local file system.
     \newline \newline There are many camera systems that offer 360-degree footage free of charge. The chosen system is that of the company \emph{Seitz} called \emph{Roundshot} \cite{roundshot}, with these locations: 
     \begin{itemize}
-        \item Roundshot camera Bantiger, Switzerland \cite{bantiger}
-        \item Roundshot camera Gurtenpark, Switzerland \cite{gurtenpark}
+        \item Roundshot camera Bantiger, Switzerland
+        \item Roundshot camera Gurtenpark, Switzerland
     \end{itemize} \\ \hline
 \end{tabularx}
 \vspace{0.8cm}
@@ -71,10 +82,7 @@ All requirements are grouped by type. This results in two major groups, which ar
     \hline
     \textbf{Number}     & D.\stepcounter{requirements}\arabic{requirements} \\ \hline
     \textbf{Name}       & Implement a weather rendering system \\ \hline
-    \textbf{Description}& In order to achieve a high degree of realism, real-time weather data will be used. \emph{Meteoblue} offers different data package contracts, of which the "basic\textunderscore1h" is to be acquired \cite{meteoblue}.
-    \newline \newline The usage of the data package requires a physical location. Since author lives in Switzerland, the chosen location is: 
-    \begin{itemize}
-        \item Bern, Switzerland
-    \end{itemize} \\ \hline
+    \textbf{Description}& Finally, the weather system has to implemented, incorporating the external data sources and rendering images of cloudscapes.
+    \newline The system should be controllable via practical parameters, like point in time. \\ \hline
 \end{tabularx}
 \vspace{0.8cm}

@@ -120,7 +120,9 @@ Next meeting is scheduled for **March 11th, 2021 at 2pm.**
 
 | Task | time spent |
 |----|---|
-|||
+|Documentation|8h|
+|Documentation|4h|
+|Documentation|4h|
 
 &nbsp;
 
@@ -134,28 +136,28 @@ Next meeting is scheduled for **March 11th, 2021 at 2pm.**
 
 ### Meeting discussion
 Inputs from tutor:
-* prioritize
-* outlook (what to do after)
-* R.0 general knowledge about clouds / cloud formation
-    * change over time?
-* Mention meteoblue
-* Mention roundshot
-* add another point to meteoblue data, maybe fribourg?
-* add graphic of noise (take from project2.pdf)
-* blockdiagram -> high-level system model -> "weather system overview"
-    * "Vision" topic is its own topic, before "scope of work"
-    * "Weather Rendering System Vision"
-        * diagram
+- ⬜️ prioritize
+- ⬜️ outlook (what to do after)
+- ✅ R.0 general knowledge about clouds / cloud formation
+    - ⬜️ change over time?
+- ⬜️ Mention meteoblue
+- ⬜️ Mention roundshot
+- ✅ add another point to meteoblue data, maybe fribourg?
+- ✅ add graphic of noise (take from project2.pdf)
+- ⬜️ blockdiagram -> high-level system model -> "weather system overview"
+    - ⬜️ "Vision" topic is its own topic, before "scope of work"
+    - ⬜️ "Weather Rendering System Vision"
+        - ⬜️ diagram
             * more visual than UML, use images in diagram
-        * descriptions
+        - ⬜️ descriptions
             * meteoblue
             * roundshot
             * swisstopo
             * shaders 
-    * then "Scope of Work", starting with "Educational Objectives"
-* gesamteindruck wichtiger als perfekte wolken
-* "project maangement" too detailed ToC
-* GRAPHICS ARE IMPORTANT!!!!
+    - ⬜️ then "Scope of Work", starting with "Educational Objectives"
+- ⬜️ gesamteindruck wichtiger als perfekte wolken
+- ✅ "project maangement" too detailed ToC
+- ⬜️ GRAPHICS ARE IMPORTANT!!!!
 
 **Answers to questions:**
 1. Mrs.
@@ -183,7 +185,8 @@ Next meeting is scheduled for **March 18th, 2021 at 2pm.**
 
 | Task | time spent |
 |----|---|
-|||
+|Documentation|4h|
+|Diagrams and graphics|4h|
 
 &nbsp;
 

@@ -134,15 +134,39 @@ Next meeting is scheduled for **March 11th, 2021 at 2pm.**
 
 ### Meeting discussion
 Inputs from tutor:
-
+* prioritize
+* outlook (what to do after)
+* R.0 general knowledge about clouds / cloud formation
+    * change over time?
+* Mention meteoblue
+* Mention roundshot
+* add another point to meteoblue data, maybe fribourg?
+* add graphic of noise (take from project2.pdf)
+* blockdiagram -> high-level system model -> "weather system overview"
+    * "Vision" topic is its own topic, before "scope of work"
+    * "Weather Rendering System Vision"
+        * diagram
+            * more visual than UML, use images in diagram
+        * descriptions
+            * meteoblue
+            * roundshot
+            * swisstopo
+            * shaders 
+    * then "Scope of Work", starting with "Educational Objectives"
+* gesamteindruck wichtiger als perfekte wolken
+* "project maangement" too detailed ToC
+* GRAPHICS ARE IMPORTANT!!!!
 
 **Answers to questions:**
-1. -
+1. Mrs.
 2. https://www.swisstopo.admin.ch/en/geodata.html
+2. format openGIS reader, maybe converter from ESRI to FBX?
+2. GeoTIFF images for swisstopo images: https://www.swisstopo.admin.ch/en/geodata/images/ortho/swissimage10.html
+3. 
 
 **Documentation guidelines**
-Mention roundshot locations
-Mention meteoblue locations
+Mention meteoblue
+Mention roundshot
 
 **Possible Topics**
 -

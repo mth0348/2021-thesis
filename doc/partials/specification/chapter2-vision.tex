@@ -1,95 +1,78 @@
 \section{Vision}
 
-% \subsection{Initial Situation}
-% In computer graphics, especially in games, an astonishingly large group of features are reccurring across all programs and genres.
-% With the most obvious ones being water surfaces, cloudscapes and fire effects, they are present in almost any game. 
-% Naturally, those features grew in complexity, customizability and computational demands over time.
-% \\
-% One of the core mechanics for achieving realistic results is called a \emph{\gls{volumetric} \gls{shader}}.
-% A prototype such a \gls{shader} has been created in a previous project and will be used as base.
+\subsection{Weather Rendering System}
+This section defines a high-level vision for the desired outcome of this thesis and potential future work.
+As listed in the primary goals, the weather rendering system will be based on compute shaders.
+Compared to the prototype from the previous project, this is expected to result in a much better performance.
+That in turn, allows for a more complex and realistic model.
+\\
+With the incorporation of real-time weather data and the use of topological landscape data, any given weather scenario could be simulated and rendered.
+The desired outcome ideally looks similar to the image depicted in \autoref{img:rendered1}.
+A rendered version of such a cloud system can look elusively realistic compared to an actual photograph, like in \autoref{img:photo1}.
+\begin{figure}[ht]
+    \centering
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{msfs-ref1.jpg}
+            \captionof{figure}{A rendered image of volumetric clouds \protect\cite{img:rendered:clouds01}.}
+            \label{img:rendered1}
+        \end{minipage}
+    \hfill
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{roundshot2021-01-18-12-50-cropped.png}
+            \captionof{figure}{A photographic reference of clouds \protect\cite{img:photo:clouds01}.}
+            \label{img:photo1}        
+        \end{minipage}  
+\end{figure}
+\\
+The first thought about the practical use of a fully-fledged volumetric cloud system might be a video game, since clouds are often a significant part of outdoor scenery in games.
+However, for this thesis it is intended that the knowledge and results acquired during the given period will be used to recreate a lifelike weather system instead.
 
-% \subsubsection{Previous Work}
-% In a previous project, the process of creating a \gls{volumetric} \gls{shader} has already been researched and implemented in a prototype. Thanks to its high flexibility, different cloudscapes could be rendered by the same shader.
+\clearpage
 
-% \begin{figure}[ht]
-%     \centering
-%         \begin{minipage}{0.47\linewidth}
-%             \includegraphics[width=\linewidth]{project2/project2-final.PNG}
-%             \captionof{figure}{Result of the previous work's shader (Evening).}
-%         \end{minipage}
-%     \hfill
-%         \begin{minipage}{0.47\linewidth}
-%             \includegraphics[width=\linewidth]{project2/project2-final2.PNG}
-%             \captionof{figure}{Result of the previous work's shader (Day).}
-%         \end{minipage}  
-% \end{figure}
+\subsection{System Overview}
+To get a better understanding of how such a system could be implemented, this diagram shows all the involved components and their function.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{system diagram.png}
+    \captionof{figure}{The system component diagram.}
+    \label{img:systemoverview}
+\end{figure}
 
-% \noindent
-% During that project, some other important topics have been researched. Among those were \gls{volumetric} rendering, Perlin and Voronoi \gls{noisegeneration} algorithms, and a technique called \emph{\gls{raymarching}}.
-% \\
-% The implementations of those algorithms and methods will most likely be reused in this thesis and will be adapted and improved accordingly.
+\subsection{External Data}
+\subsubsection{Meteoblue Weather Data}
+To accurately reflect a weather system, conditions like precipitation, wind and cloudiness will be considered.
+Fortunately, the company \emph{meteoblue} offers this data in form of different data packages \cite{meteoblue}.
+As an additional bonus, the license costs are drastically reduced for student projects and educational work.
+\\
+From all available data packages, the "basic\textunderscore1h" \cite{meteoblue:basic1h} offer seems the most fitting for this thesis.
+It includes the most common weather variables only, but this will clearly suffice for the planned project.
+Some of the crucial variables are wind speed, wind direction, temperature, sea level pressure, and a pictocode.
+\\
+The weather data will be requested for the following locations:
+\begin{itemize}
+    \item Bern, Switzerland
+    \item Fribourg, Switzerland \\(to account for the weather in the background of the photographs)
+    \item Solothurn, Switzerland \\(to account for the weather in the background of the photographs)
+\end{itemize}
 
-%  \subsection{Goals}
-% \label{section:goals}
-% As the title of the thesis suggests, this work will primarily focus on clouds and cloudscapes.
-% The primary goal of the project is to research and implement rendering techniques for a real-time \gls{procedural} weather rendering system.
-% \\
-% The goals will be split into two distinct groups: mandatory and optional. However, this section only defines high-level goals. A detailed specification of all requirements can be found in \sectionref{section:requirements}.
+\noindent
+This data is retrieved on a daily basis and stored on a local file system for the duration of the thesis.
 
-% \subsubsection{Mandatory Goals}
-% The following tasks must be accomplished during the project:
-% \begin{itemize}
-%     \item Understanding of different layers of clouds
-%     \item Understanding of compute shaders
-%     \item Implement a weather rendering system
-%     \item Incorporate real-time weather data from \emph{meteoblue}
-% \end{itemize}
+\subsubsection{Roundshot Photographs}
+The weather data from \emph{meteoblue} gives detailed information about the weather at a specific time and date.
+But to be able to compare the rendered result of the weather system with the actual weather of that period, real photographs of the same time should be used.
+That is why images taken by the \emph{Roundshot} camera system from the company \emph{Seitz} \cite{roundshot} are stored periodically.
+\\
+There are many installations of those systems across the country. For this project, the following two locations are used: 
+\begin{itemize}
+    \item Roundshot camera Bantiger, Switzerland \cite{bantiger}
+    \item Roundshot camera Gurtenpark, Switzerland \cite{gurtenpark}
+\end{itemize}
 
-% \subsubsection{Optional Goals}
-% For further optional work, these tasks can be looked into:
-% \begin{itemize}
-%     \item Incorporate topological landscape models from \emph{swisstopo}
-%     \item Automatic validation of realism of rendered cloudscapes
-%     \item Automatic comparison of rendered cloudscapes and photographs
-%     \item Automatic categorization of rendered cloudscapes
-%     \item Performance optimization
-% \end{itemize}
+\noindent
+This data is retrieved on a weekly basis and stored on a local file system for the duration of the thesis.
 
-% \clearpage
-
-% \subsection{Vision}
-% This section defines a high-level vision for future work involving the results and implementations of this thesis. 
-% As listed in the primary goals, the weather rendering system will be based on compute shaders.
-% Compared to the prototype from the previous project, this is expected to result in a much better performance.
-% That in turn, allows for a more complex and realistic model.
-% \\
-% With the incorporation of real-time weather data and the use of topological landscape data, any given weather scenario could be simulated and rendered.
-% The desired outcome ideally looks similar to the image depicted in \autoref{img:rendered1}.
-% A rendered version of such a cloud system can look elusively realistic compared to an actual photograph, like in \autoref{img:photo1}.
-% \begin{figure}[ht]
-%     \centering
-%         \begin{minipage}{0.47\linewidth}
-%             \includegraphics[width=\linewidth]{msfs-ref1.jpg}
-%             \captionof{figure}{A rendered image of volumetric clouds \protect\cite{img:rendered:clouds01}.}
-%             \label{img:rendered1}
-%         \end{minipage}
-%     \hfill
-%         \begin{minipage}{0.47\linewidth}
-%             \includegraphics[width=\linewidth]{roundshot2021-01-18-12-50-cropped.png}
-%             \captionof{figure}{A photographic reference of clouds \protect\cite{img:photo:clouds01}.}
-%             \label{img:photo1}        
-%         \end{minipage}  
-% \end{figure}
-% \\
-% The first thought about the practical use of a fully-fledged volumetric cloud system might be a video game, since clouds are often a significant part of outdoor scenery in games.
-% However, for this thesis it is intended that the knowledge and results acquired during the given period will be used to recreate a lifelike weather system instead.
-% \\
-% To accurately reflect a weather system, conditions like precipitation, wind and cloudiness will be considered. This data is obtained from the firm \emph{meteoblue}.
-
-% \subsection{Educational Objectives}
-% Educational objectives include \gls{shader} programming, knowledge about \gls{computeshader}s, rendering techniques, common algorithms used in computer graphics like \gls{noisegeneration}, a general understanding of aspects needed to create a complete weather system and finally the incorporation of real-time data from a third party.
-
-% \subsection{Used Software and Tools}
-% All documentation will be written in \gls{latex} with Visual Studio Code.
-% The \gls{shader} will be implemented in Unity. The chosen \gls{shader} language is \gls{hlsl}.
-% For the presentation, Microsoft PowerPoint will be used.
+\subsubsection{Swisstopo Height Models}
+The last part of a convincing weather rendering system is the landscape. For that, the topologically accurate 3D height model data from the company \emph{swisstopo} will be used \cite{swisstopo}.
+As of March 2021, \emph{swisstopo}'s height models and landscape data are available free of charge \cite{swisstopo:free}.
+The goal is to download and convert this data into a Unity-compatible 3D model and use it as a base for the scenery.

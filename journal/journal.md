@@ -139,25 +139,25 @@ Inputs from tutor:
 - ⬜️ prioritize
 - ⬜️ outlook (what to do after)
 - ✅ R.0 general knowledge about clouds / cloud formation
-    - ⬜️ change over time?
-- ⬜️ Mention meteoblue
-- ⬜️ Mention roundshot
+    - ✅ change over time?
+- ✅ Mention meteoblue
+- ✅ Mention roundshot
 - ✅ add another point to meteoblue data, maybe fribourg?
 - ✅ add graphic of noise (take from project2.pdf)
-- ⬜️ blockdiagram -> high-level system model -> "weather system overview"
-    - ⬜️ "Vision" topic is its own topic, before "scope of work"
-    - ⬜️ "Weather Rendering System Vision"
-        - ⬜️ diagram
+- ✅ blockdiagram -> high-level system model -> "weather system overview"
+    - ✅ "Vision" topic is its own topic, before "scope of work"
+    - ✅ "Weather Rendering System Vision"
+        - ✅ diagram
             * more visual than UML, use images in diagram
-        - ⬜️ descriptions
+        - ✅ descriptions
             * meteoblue
             * roundshot
             * swisstopo
             * shaders 
-    - ⬜️ then "Scope of Work", starting with "Educational Objectives"
-- ⬜️ gesamteindruck wichtiger als perfekte wolken
+    - ✅ then "Scope of Work", starting with "Educational Objectives"
+- ✅ gesamteindruck wichtiger als perfekte wolken
 - ✅ "project maangement" too detailed ToC
-- ⬜️ GRAPHICS ARE IMPORTANT!!!!
+- ✅ GRAPHICS ARE IMPORTANT!!!!
 
 **Answers to questions:**
 1. Mrs.

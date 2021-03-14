@@ -45,7 +45,7 @@ There should be two meetings with expert (may or may not include tutor):
 * Setup meeting with meteoblue - How to extract cloud genera
 
 
-Next meeting is scheduled for **March 4th, 2021 at 2pm.**
+Next meeting is scheduled for **March 4, 2021 at 2pm.**
 
 **Time log**
 
@@ -105,16 +105,13 @@ Inputs from tutor:
     * label as "technical meeting", not interview, but still call
 
 **Documentation guidelines**
--
+* (none)
 
 **Possible Topics**
--
+* (none)
 
 **Tasks**
--
-
-
-Next meeting is scheduled for **March 11th, 2021 at 2pm.**
+* Next meeting is scheduled for **March 11, 2021 at 2pm.**
 
 **Time log**
 
@@ -128,7 +125,7 @@ Next meeting is scheduled for **March 11th, 2021 at 2pm.**
 
 &nbsp;
 #
-## \#03: March 11th, 2021
+## \#03: March 11, 2021
 ### Formal and technical questions
 1. Mr. or Mrs. Gasenzer? Direct email address would help.
 2. Sources of Swisstopo data?
@@ -136,8 +133,8 @@ Next meeting is scheduled for **March 11th, 2021 at 2pm.**
 
 ### Meeting discussion
 Inputs from tutor:
-- ⬜️ prioritize
-- ⬜️ outlook (what to do after)
+- ✅ prioritize
+- ✅ outlook (what to do after)
 - ✅ R.0 general knowledge about clouds / cloud formation
     - ✅ change over time?
 - ✅ Mention meteoblue
@@ -158,28 +155,25 @@ Inputs from tutor:
 - ✅ gesamteindruck wichtiger als perfekte wolken
 - ✅ "project maangement" too detailed ToC
 - ✅ GRAPHICS ARE IMPORTANT!!!!
+- ⬜️ (Empty box for later use, ignore this)
 
 **Answers to questions:**
-1. Mrs.
+1. Mrs. Gasenzer
 2. https://www.swisstopo.admin.ch/en/geodata.html
-2. format openGIS reader, maybe converter from ESRI to FBX?
-2. GeoTIFF images for swisstopo images: https://www.swisstopo.admin.ch/en/geodata/images/ortho/swissimage10.html
-3. 
+    * format openGIS reader, maybe converter from ESRI to FBX?
+    * GeoTIFF images for swisstopo images: https://www.swisstopo.admin.ch/en/geodata/images/ortho/swissimage10.html
 
 **Documentation guidelines**
-Mention meteoblue
-Mention roundshot
+* Mention meteoblue
+* Mention roundshot
 
 **Possible Topics**
--
+* (none)
 
 **Tasks**
--
-
-
-Next milestone is to submit draft of project specification on **March 15th, 2021.**
-
-Next meeting is scheduled for **March 18th, 2021 at 2pm.**
+* Submit draft of diagram over weekend of **March 13 + March 14, 2021.**
+* Next milestone is to submit draft of project specification on **March 15, 2021.**
+* Next meeting is scheduled for **March 18, 2021 at 2pm.**
 
 **Time log**
 

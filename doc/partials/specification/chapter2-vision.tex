@@ -56,7 +56,7 @@ The weather data will be requested for the following locations:
 \end{itemize}
 
 \noindent
-This data is retrieved on a daily basis and stored on a local file system for the duration of the thesis.
+This data is retrieved on a daily basis and stored on a local file system for the duration of the thesis. The file format is \gls{json}.
 
 \subsubsection{Roundshot Photographs}
 The weather data from \emph{meteoblue} gives detailed information about the weather at a specific time and date.
@@ -70,12 +70,15 @@ There are many installations of those systems across the country. For this proje
 \end{itemize}
 
 \noindent
-This data is retrieved on a weekly basis and stored on a local file system for the duration of the thesis.
+This data is retrieved on a weekly basis and stored on a local file system for the duration of the thesis. The file format is \gls{png}.
 
 \subsubsection{Swisstopo Height Models}
 The last part of a convincing weather rendering system is the landscape. For that, the topologically accurate 3D height model data from the company \emph{swisstopo} will be used \cite{swisstopo}.
 As of March 2021, \emph{swisstopo}'s height models and landscape data are available free of charge \cite{swisstopo:free}.
 The goal is to download and convert this data into a Unity-compatible 3D model and use it as a base for the scenery.
+
+\noindent
+This data is retrieved once or whenever an update is due and stored on a local file system for the duration of the thesis. The file format is \gls{slpk} or any othersuitable data format by the company ESRI.
 
 \subsection{Future Work}
 In a future project, the weather system could evolve into a complete flight simulation game where the player cruises through the clouds, like in Microsoft's \emph{Flight Simulator}.

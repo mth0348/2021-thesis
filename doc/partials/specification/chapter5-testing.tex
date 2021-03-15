@@ -1,14 +1,24 @@
 \section{Testing}
+The project will be implemented and tested in Unity.
+For testing, the following test cases can be used to verify and evaluate the implementation.
+They are split into two groups, separating the incorporation of external data with the implementation of the system.
 
-\subsection{Testing of Prototypes}
-The project will be implemented and tested in Unity. For testing, the following test cases can be used to verify and evaluate the implementation.
-\vspace{\baselineskip}
+\subsection{External data testing}
 
 \noindent\begin{tabularx}{\textwidth}{|c|l|X|}
     \hline
     \textbf{Case} & \textbf{Test case} & \textbf{Expected result} \\ \hline
-    1 & Working code & The shader code contains a vertex function as well as a fragment function and compiles successfully.  \\ \hline
-    2 & Shaded outcome & The rendered image corresponds with the outcome of the related prototype as described in \sectionref{section:requirements:dev}. \\ \hline
-    3 & Visual comparison & The final rendered output should, to some extend, look similar to a photographic reference image, as seen in \autoref{img:photo1}. For comparison, photographs taken from installed Roundshot systems can be used. \\ \hline
-    3 & Performance & The shader code should run with good performance and should not show visible stutters or frame drops.  \\ \hline
+    T.\stepcounter{testcases}\arabic{testcases} & Weather data & The data from \emph{meteoblue} is incorporated into the weather rendering system. The data directly controls all related variables. \\ \hline
+    T.\stepcounter{testcases}\arabic{testcases} & Terrain data & The data from \emph{swisstopo} is incorporated into the weather rendering system. The height model defines the terrain height map. The satellite images are used for texturing. \\ \hline
+    T.\stepcounter{testcases}\arabic{testcases} & Photographic data & There is a feature that allows to overlay the \emph{Roundshot} photograph of the same time and date as the rendered image was created for. \\ \hline
+\end{tabularx}
+
+\subsection{Functional testing}
+
+\begin{tabularx}{\textwidth}{|c|l|X|}
+    \hline
+    \textbf{Case} & \textbf{Test case} & \textbf{Expected result} \\ \hline
+    T.\stepcounter{testcases}\arabic{testcases} & Code functionality & The code for the weather rendering system compiles and runs without error. \\ \hline
+    T.\stepcounter{testcases}\arabic{testcases} & User interface & The user is able to switch between the two modes, "real-time" and "sandbox". The user is also able to control the weather system over the user interface accordingly. \\ \hline
+    T.\stepcounter{testcases}\arabic{testcases} & Performance & The shader code should run with reasonably good performance and should not show visible stutters or frame drops. \\ \hline
 \end{tabularx}

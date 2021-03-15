@@ -30,13 +30,18 @@ However, for this thesis it is intended that the knowledge and results acquired 
 \clearpage
 
 \subsection{System Overview}
-To get a better understanding of how such a system could be implemented, this diagram shows all the involved components and their function.
+To get a better understanding of how such a system could be implemented, this diagram shows all the involved components and their processes.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{system diagram.png}
-    \captionof{figure}{The system component diagram.}
+    \captionof{figure}{System overview diagram.}
     \label{img:systemoverview}
 \end{figure}
+
+\noindent
+All external data is retrieved regularly and stored on the local file system. Their respective file formats are denoted in the bottom left corner of each data source.
+After aggregation, the data is processed into a readable and compatible format for the Unity Engine. From there, the weather rendering system can make unrestricted use of the data.
+The resulting output of the system can then be compared side-by-side with the collected real-life photographs.
 
 \subsection{External Data}
 \subsubsection{Meteoblue Weather Data}
@@ -79,6 +84,29 @@ The goal is to download and convert this data into a Unity-compatible 3D model a
 
 \noindent
 This data is retrieved once or whenever an update is due and stored on a local file system for the duration of the thesis. The file format is \gls{slpk} or any othersuitable data format by the company ESRI.
+
+\clearpage
+
+\subsection{UI Mockup}
+As for the \gls{ui}, there will be two possible modes to choose from.
+The first one is a "real-life" mode that lets the user choose time and date, for which the weather is then recreated with the \emph{meteoblue} data from that period.
+The other mode will be a sandbox mode, where all influencial weather variables can be controlled manually.
+\\
+The following mockups only serve as a general guideline and are not final.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{ui mockup live.png}
+    \captionof{figure}{UI mockup of the "real-life" mode.}
+    \label{img:ui:mockup:live}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{ui mockup sandbox.png}
+    \captionof{figure}{UI mockup of the "sandbox" mode.}
+    \label{img:ui:mockup:sandbox}
+\end{figure}
 
 \subsection{Future Work}
 In a future project, the weather system could evolve into a complete flight simulation game where the player cruises through the clouds, like in Microsoft's \emph{Flight Simulator}.

@@ -178,7 +178,7 @@ Purchased Udemy course for learning compute shaders: https://www.udemy.com/home/
 
 &nbsp;
 #
-## \#03: March 11, 2021
+## \#04: March 18, 2021
 ### Formal and technical questions
 1. Will tutor be present at meeting tomorrow?
 
@@ -241,4 +241,33 @@ Next steps:
 
 | Task | time spent |
 |----|---|
-|||
+|Updated document|4h|
+|Updated journal|2h|
+|Updated graphics|4h|
+|Updated document|4h|
+|Spellchecked document|2h|
+|Reviewd document|2h|
+|Reworked requirements|3h|
+|Added optional requriements|1h|
+
+&nbsp;
+
+&nbsp;
+#
+## \#05: March 19, 2021 - Expert meeting 1
+### Formal and technical questions
+**Agenda**
+* Personal introduction
+* Topic introduction
+    * Previous Work
+    * Fachbegriffe (noise, shader)
+    * Vision
+    * Goals
+    * Planning
+* Questions
+
+**About me**
+* Software Developer
+* Mehrere Jahre interesse an Computergrafik, besonders in Zusammenhang mit Games
+
+**Notes**

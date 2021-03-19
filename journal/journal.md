@@ -293,7 +293,7 @@ Next steps:
         * doesnt have to be 2 pages long
         * is core result
         * "suitable methods" meaning?
-        * "measure" similarity?
+        * "measure" similarity? meaning?
 
 Bemerkungen:
 * Wie wird Arbeit bewertet? 1/4
@@ -303,5 +303,6 @@ Bemerkungen:
         * scope first
             * what did i do during thesis
             * results
-    * kein freipass: aber: er findet es besser, lieber mit betreuer mit kontakt aufnehemn und features streichen falls nötig, dafär alle teile der arbeit vernünftig abwickeln.
+    * kein freipass: aber: er findet es besser, lieber mit betreuer kontakt aufnehemn und features streichen falls nötig, dafür alle teile der arbeit vernünftig abwickeln.
 * genug früh termin für verteidigung
+* genug früh termin für meeting 2

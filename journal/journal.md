@@ -258,6 +258,8 @@ Next steps:
 ### Formal and technical questions
 **Agenda**
 * Personal introduction
+    * Me
+    * Gelegenheit anbieten: Herr Dr. Dubuis
 * Topic introduction
     * Previous Work
     * Fachbegriffe (noise, shader)
@@ -267,7 +269,39 @@ Next steps:
 * Questions
 
 **About me**
-* Software Developer
+* Software Entwicklung, Web
 * Mehrere Jahre interesse an Computergrafik, besonders in Zusammenhang mit Games
+* Auch Grund für grafische Thesis
+* Freizeit
+    * Game entwickeln seit 3/4 Jahr
+    * spiele selbst gerne Games
 
 **Notes**
+* Experte
+    * Begeistert vom Thema
+    * Simulation von lichtverteilung in geschlossener räume
+    * meteo unterrichtet / wetter
+* Fragte nach: flugwetterinformation: metar und taf
+* Wolkentyp / Flugplatz gibt info raus an flugleitsystem
+* Evtl auch Verifikation brauchen
+* https://www.meteoschweiz.admin.ch/home/service-und-publikationen/beratung-und-service/flugwetter/metar-taf.html
+
+* Aufgabenbeschreibung gilt! FUR IHN SEHR WICHTIG!
+    * was heisst realistic?
+        * define "realistic" in thesis report
+        * what does it mean, how can we measure it?
+        * doesnt have to be 2 pages long
+        * is core result
+        * "suitable methods" meaning?
+        * "measure" similarity?
+
+Bemerkungen:
+* Wie wird Arbeit bewertet? 1/4
+    * Bitte im Hinterkopf halten: implementation ist nur 1/4
+    * rechtschreibung, english, citations, references correct, 
+    * roter faden in der präsentation
+        * scope first
+            * what did i do during thesis
+            * results
+    * kein freipass: aber: er findet es besser, lieber mit betreuer mit kontakt aufnehemn und features streichen falls nötig, dafär alle teile der arbeit vernünftig abwickeln.
+* genug früh termin für verteidigung

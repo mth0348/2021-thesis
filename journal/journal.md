@@ -78,8 +78,19 @@ Purchased Udemy course for learning compute shaders: https://www.udemy.com/home/
     * ask about how each property would influence cloud image
     * ask about "pictocode" property
 
+**Answers to questions:**
+1. a basic introduction to those topics is necessary, reference to project2 work, just mention previous work, citing is ok, reference is not necessary, but mention project2.
+2. only if different, or based on previous work.
+3. buy, spesen, herr gasenzer für spesen
+4. cite udemy course, and section
+5. bewölkungsgrad standard skala? 1/8 bewölkung
+    * ask how pictocode is made
+    * rainspot, what distance?
+    * label as "technical meeting", not interview, but still call
+
+
 ### Meeting discussion
-Inputs from tutor:
+**Inputs from tutor:**
 * Swiss Landestopographie data has been released, Luftbilddaten, Höhenmodelldaten, Geländedaten
     * Could be used to generate mesh, from topo grid
     * Orthographic photos can be used as textures
@@ -93,22 +104,6 @@ Inputs from tutor:
 * final results:
     * printed version, including CD with source,
     * due: at defense
-
-**Answers to questions:**
-1. a basic introduction to those topics is necessary, reference to project2 work, just mention previous work, citing is ok, reference is not necessary, but mention project2.
-2. only if different, or based on previous work.
-3. buy, spesen, herr gasenzer für spesen
-4. cite udemy course, and section
-5. bewölkungsgrad standard skala? 1/8 bewölkung
-    * ask how pictocode is made
-    * rainspot, what distance?
-    * label as "technical meeting", not interview, but still call
-
-**Documentation guidelines**
-* (none)
-
-**Possible Topics**
-* (none)
 
 **Tasks**
 * Next meeting is scheduled for **March 11, 2021 at 2pm.**
@@ -131,8 +126,17 @@ Inputs from tutor:
 2. Sources of Swisstopo data?
 3. swisstopo - I would like to include that, but should I define it as a mandatory or optional goal?
 
+**Answers to questions:**
+1. Mrs. Gasenzer
+2. https://www.swisstopo.admin.ch/en/geodata.html
+    * format openGIS reader, maybe converter from ESRI to FBX?
+    * GeoTIFF images for swisstopo images: https://www.swisstopo.admin.ch/en/geodata/images/ortho/swissimage10.html
+
 ### Meeting discussion
-Inputs from tutor:
+* Mention meteoblue
+* Mention roundshot
+
+**Inputs from tutor:**
 - ✅ prioritize
 - ✅ outlook (what to do after)
 - ✅ R.0 general knowledge about clouds / cloud formation
@@ -157,19 +161,6 @@ Inputs from tutor:
 - ✅ GRAPHICS ARE IMPORTANT!!!!
 - ⬜️ (Empty box for later use, ignore this)
 
-**Answers to questions:**
-1. Mrs. Gasenzer
-2. https://www.swisstopo.admin.ch/en/geodata.html
-    * format openGIS reader, maybe converter from ESRI to FBX?
-    * GeoTIFF images for swisstopo images: https://www.swisstopo.admin.ch/en/geodata/images/ortho/swissimage10.html
-
-**Documentation guidelines**
-* Mention meteoblue
-* Mention roundshot
-
-**Possible Topics**
-* (none)
-
 **Tasks**
 * Submit draft of diagram over weekend of **March 13 + March 14, 2021.**
 * Next milestone is to submit draft of project specification on **March 15, 2021.**
@@ -180,9 +171,73 @@ Inputs from tutor:
 | Task | time spent |
 |----|---|
 |Documentation|4h|
+|Documentation|4h|
 |Diagrams and graphics|4h|
 
 &nbsp;
 
 &nbsp;
 #
+## \#03: March 11, 2021
+### Formal and technical questions
+1. Will tutor be present at meeting tomorrow?
+
+**Answers to questions:**
+1. in the beginning, yes
+
+### Meeting discussion
+Next steps:
+* Clouds + layers research
+* prepare for meteoblue interview
+* learn about compute shaders, continue Udemy course
+
+**Inputs from tutor:**
+* based on = "making use of additional compute shaders" or something
+* "side-by-side view for visual comparison"
+* system is not perfectly real-time, it's more "near real-time"
+* add disclaimer for sentence above (data is downloaded in specific interval, prediction can be as base for interpolated data to get as close as real time)
+    * scope of work - "real-time" abgrenzung
+* real-life = "live weather"
+* explain pictocode in a sentence
+* ... some of the crucial variables "in the JSON file" are ...
+* move sentence "From all avaiable" to the format listing.
+* "elevation model" instead of "height model"
+* "real-life" = "live mode"
+* "sandbox" = "play mode"
+* Remove topic "future work"
+* Visual testing
+    * Comparison with roundshot photographs
+    * Add test: reference MS Flight Simulator use for visual comparison
+* "Performance optimization" = "rendering P O"
+* Add "Available hardware" chapter 3.5
+    * Personal PC 
+    * Bei bedarf, machines in lab can be used
+* R.2: "layers" = "characteristics"
+* Alle requirements in eine tabelle "summary of requirements"
+    * including a column "priority"
+    * 3.2.2: mention that neural network would be necessary, omit in requirements
+    * add "rendering performance optimization" to optional requirements
+* "latency" oder "visual stutters"
+* Progress evaluation milestone
+* split "implementation" into three groups
+    * data aggregation / processing
+    * weather system
+    * UI und roundshot images comparison
+* "examination expert" = "thesis expert"
+* firm = company
+* "possibly arisen" = encountered
+* final presentation: June 18, 2021
+* arranged
+    * Go through document and add glossary entries.
+    * Write something to abbrv.
+* add image to title page
+
+
+**Tasks**
+* Next meeting is scheduled for **March 25, 2021 at 2pm.**
+
+**Time log**
+
+| Task | time spent |
+|----|---|
+|||

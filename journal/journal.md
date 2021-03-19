@@ -234,6 +234,7 @@ Next steps:
 
 
 **Tasks**
+* Expert meeting is scheduled for **March 19, 2021 at 4pm.**
 * Next meeting is scheduled for **March 25, 2021 at 2pm.**
 
 **Time log**

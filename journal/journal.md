@@ -227,10 +227,10 @@ Next steps:
 * ✅ firm = company
 * ✅ "possibly arisen" = encountered
 * ✅ final presentation: June 18, 2021
-* ⬜️ arranged
+* ✅ arranged
     * Go through document and add glossary entries.
     * Write something to abbrv.
-* ⬜️ add image to title page
+* ✅ add image to title page
 
 
 **Tasks**

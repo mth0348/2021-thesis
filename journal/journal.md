@@ -192,45 +192,45 @@ Next steps:
 * learn about compute shaders, continue Udemy course
 
 **Inputs from tutor:**
-* based on = "making use of additional compute shaders" or something
-* "side-by-side view for visual comparison"
-* system is not perfectly real-time, it's more "near real-time"
-* add disclaimer for sentence above (data is downloaded in specific interval, prediction can be as base for interpolated data to get as close as real time)
+* ✅ based on = "making use of additional compute shaders" or something
+* ✅ "side-by-side view for visual comparison"
+* ✅ system is not perfectly real-time, it's more "near real-time"
+* ✅ add disclaimer for sentence above (data is downloaded in specific interval, prediction can be as base for interpolated data to get as close as real time)
     * scope of work - "real-time" abgrenzung
-* real-life = "live weather"
-* explain pictocode in a sentence
-* ... some of the crucial variables "in the JSON file" are ...
-* move sentence "From all avaiable" to the format listing.
-* "elevation model" instead of "height model"
-* "real-life" = "live mode"
-* "sandbox" = "play mode"
-* Remove topic "future work"
-* Visual testing
+* ✅ real-life = "live weather"
+* ✅ explain pictocode in a sentence
+* ✅ ... some of the crucial variables "in the JSON file" are ...
+* ✅ ~~move sentence "From all avaiable" to the format listing.~~
+* ✅ "elevation model" instead of "height model"
+* ✅ "real-life" = "live mode"
+* ✅ "sandbox" = "play mode"
+* ✅ Remove topic "future work"
+* ✅ Visual testing
     * Comparison with roundshot photographs
     * Add test: reference MS Flight Simulator use for visual comparison
-* "Performance optimization" = "rendering P O"
-* Add "Available hardware" chapter 3.5
+* ✅ "Performance optimization" = "rendering P O"
+* ✅ Add "Available hardware" chapter 3.5
     * Personal PC 
     * Bei bedarf, machines in lab can be used
-* R.2: "layers" = "characteristics"
-* Alle requirements in eine tabelle "summary of requirements"
+* ✅ R.2: "layers" = "characteristics"
+* ✅ Alle requirements in eine tabelle "summary of requirements"
     * including a column "priority"
     * 3.2.2: mention that neural network would be necessary, omit in requirements
     * add "rendering performance optimization" to optional requirements
-* "latency" oder "visual stutters"
-* Progress evaluation milestone
-* split "implementation" into three groups
+* ✅ "latency" oder "visual stutters"
+* ✅ Progress evaluation milestone
+* ✅ split "implementation" into three groups
     * data aggregation / processing
     * weather system
     * UI und roundshot images comparison
-* "examination expert" = "thesis expert"
-* firm = company
-* "possibly arisen" = encountered
-* final presentation: June 18, 2021
-* arranged
+* ✅ "examination expert" = "thesis expert"
+* ✅ firm = company
+* ✅ "possibly arisen" = encountered
+* ✅ final presentation: June 18, 2021
+* ⬜️ arranged
     * Go through document and add glossary entries.
     * Write something to abbrv.
-* add image to title page
+* ⬜️ add image to title page
 
 
 **Tasks**

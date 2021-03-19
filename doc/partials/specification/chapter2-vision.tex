@@ -1,12 +1,12 @@
 \section{Vision}
 
 \subsection{Weather Rendering System}
-This section defines a high-level vision for the desired outcome of this thesis and potential future work.
-As listed in the primary goals, the weather rendering system will be based on compute shaders.
+This section defines a high-level vision of the desired outcome of this thesis and potential future work.
+As listed in the primary goals, the weather rendering system will be making use of compute shaders.
 Compared to the prototype from the previous project, this is expected to result in a much better performance.
 That in turn, allows for a more complex and realistic model.
 \\
-With the incorporation of real-time weather data and the use of topological landscape data, any given weather scenario could be simulated and rendered.
+With the incorporation of real-time weather data and the use of topological landscape data, any given weather scenario for any specific location could be simulated and rendered.
 The desired outcome ideally looks similar to the image depicted in \autoref{img:rendered1}.
 A rendered version of such a cloud system can look elusively realistic compared to an actual photograph, like in \autoref{img:photo1}.
 \begin{figure}[ht]
@@ -41,17 +41,21 @@ To get a better understanding of how such a system could be implemented, this di
 \noindent
 All external data is retrieved regularly and stored on the local file system. The file format of each data source is denoted in their respective bottom left corner.
 After aggregation, the data is processed into a readable and compatible format for the Unity Engine. From there, the weather rendering system can make unrestricted use of the data.
-The resulting output of the system can then be compared side-by-side with the collected real-life photographs.
+The resulting output of the system can then be compared side-by-side with the collected live weather photographs.
+
+\clearpage
 
 \subsection{External Data}
+\label{section:externaldata}
+
 \subsubsection{Meteoblue Weather Data}
-To accurately reflect a weather system, conditions like precipitation, wind and cloudiness will be considered.
+To accurately model a weather system, conditions like precipitation, wind and cloudiness will be considered.
 Fortunately, the company \emph{meteoblue} offers this data in form of different data packages \cite{meteoblue}.
 As an additional bonus, the license costs are drastically reduced for student projects and educational work.
 \\
 From all available data packages, the "basic\textunderscore1h" \cite{meteoblue:basic1h} offer seems the most fitting for this thesis.
-It includes the most common weather variables only, but this will clearly suffice for the planned project.
-Some of the crucial variables are wind speed, wind direction, temperature, sea level pressure, and a pictocode.
+It includes the most common weather variables only, but this will be sufficient for the planned project.
+Some of the crucial variables from that package are wind speed, wind direction, temperature, sea level pressure, and a pictocode (numeric value indicating the estimated cloudiness of the sky).
 \\
 The weather data will be requested for the following locations:
 \begin{itemize}
@@ -66,7 +70,7 @@ This data is retrieved on a daily basis and stored on a local file system for th
 \subsubsection{Roundshot Photographs}
 The weather data from \emph{meteoblue} gives detailed information about the weather at a specific time and date.
 But to be able to compare the rendered result of the weather system with the actual weather of that period, real photographs of the same time should be used.
-That is why images taken by the \emph{Roundshot} camera system from the company \emph{Seitz} \cite{roundshot} are stored periodically.
+FOr that purpose, images taken by the \emph{Roundshot} camera system from the company \emph{Seitz} \cite{roundshot} are stored periodically.
 \\
 There are many installations of those systems across the country. For this project, the following two locations are used: 
 \begin{itemize}
@@ -78,8 +82,8 @@ There are many installations of those systems across the country. For this proje
 This data is retrieved on a weekly basis and stored on a local file system for the duration of the thesis. The file format is \gls{png}.
 
 \subsubsection{Swisstopo Height Models}
-The last part of a convincing weather rendering system is the landscape. For that, the topologically accurate 3D height model data from the company \emph{swisstopo} will be used \cite{swisstopo}.
-As of March 2021, \emph{swisstopo}'s height models and landscape data are available free of charge \cite{swisstopo:free}.
+The last part of a convincing weather rendering system is the landscape, for which the topologically accurate 3D elevation model data from the federal office \emph{swisstopo} will be used \cite{swisstopo}.
+As of March 2021, \emph{swisstopo}'s elevation models and landscape data are available free of charge \cite{swisstopo:free}.
 The goal is to download and convert this data into a Unity-compatible 3D model and use it as a base for the scenery.
 
 \noindent
@@ -88,26 +92,23 @@ This data is retrieved once or whenever an update is due and stored on a local f
 \clearpage
 
 \subsection{UI Mockup}
+\label{section:vision:ui}
 As for the \gls{ui}, there will be two possible modes to choose from.
-The first one is a "real-life" mode that lets the user choose time and date, for which the weather is then recreated with the \emph{meteoblue} data from that period.
-The other mode will be a sandbox mode, where all influential weather variables can be controlled manually.
+The first one is a "live" mode that lets the user choose time and date, for which the weather is then recreated with the \emph{meteoblue} data from that period.
+The other mode will be a "play" mode, where all influential weather variables can be controlled manually by the user.
 \\
 The following mockups only serve as a general guideline and are not final.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{ui mockup live.png}
-    \captionof{figure}{UI mockup of the "real-life" mode.}
+    \captionof{figure}{UI mockup of the "live" mode.}
     \label{img:ui:mockup:live}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{ui mockup sandbox.png}
-    \captionof{figure}{UI mockup of the "sandbox" mode.}
+    \captionof{figure}{UI mockup of the "play" mode.}
     \label{img:ui:mockup:sandbox}
 \end{figure}
-
-\subsection{Future Work}
-In a future project, the weather system could evolve into a complete flight simulation game where the player cruises through the clouds, like in Microsoft's \emph{Flight Simulator}.
-Another interesting idea is to expand the system into a whole ecosystem with living creatures and animals. Their behaviour would be weather-dependent, making it one big symbiotic environment.

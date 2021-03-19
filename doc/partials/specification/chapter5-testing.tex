@@ -9,7 +9,7 @@ They are split into two groups, separating the incorporation of external data wi
     \hline
     \textbf{Case} & \textbf{Test case} & \textbf{Expected result} \\ \hline
     T.\stepcounter{testcases}\arabic{testcases} & Weather data & The data from \emph{meteoblue} is incorporated into the weather rendering system. The data directly controls all related variables. \\ \hline
-    T.\stepcounter{testcases}\arabic{testcases} & Terrain data & The data from \emph{swisstopo} is incorporated into the weather rendering system. The height model defines the terrain height map. The satellite images are used for texturing. \\ \hline
+    T.\stepcounter{testcases}\arabic{testcases} & Terrain data & The data from \emph{swisstopo} is incorporated into the weather rendering system. The elevation model defines the terrain height map. The aerial images are used for texturing. \\ \hline
     T.\stepcounter{testcases}\arabic{testcases} & Photographic data & There is a feature that allows to overlay the \emph{Roundshot} photograph of the same time and date as the rendered image was created for. \\ \hline
 \end{tabularx}
 
@@ -20,5 +20,14 @@ They are split into two groups, separating the incorporation of external data wi
     \textbf{Case} & \textbf{Test case} & \textbf{Expected result} \\ \hline
     T.\stepcounter{testcases}\arabic{testcases} & Code functionality & The code for the weather rendering system compiles and runs without error. \\ \hline
     T.\stepcounter{testcases}\arabic{testcases} & User interface & The user is able to switch between the two modes, "real-life" and "sandbox". The user is also able to control the weather system over the user interface accordingly. \\ \hline
-    T.\stepcounter{testcases}\arabic{testcases} & Performance & The shader code should run with reasonably good performance and should not show visible stutters or frame drops. \\ \hline
+    T.\stepcounter{testcases}\arabic{testcases} & Performance & The shader code should run with reasonably good performance and should not show visual stutters or frame drops. \\ \hline
+\end{tabularx}
+
+\subsection{Visual testing}
+
+\begin{tabularx}{\textwidth}{|c|l|X|}
+    \hline
+    \textbf{Case} & \textbf{Test case} & \textbf{Expected result} \\ \hline
+    T.\stepcounter{testcases}\arabic{testcases} & Real photographs & The visual output of the weather rendering system is to be compared with live weather photographs from \emph{Roundshot} cameras. The rendered image should resemble the weather of that time, to a reasonable extent. \\ \hline
+    T.\stepcounter{testcases}\arabic{testcases} & Similiar products & The visual output of the weather rendering system is to be compared with the in-game footage of Microsoft's \emph{Flight Simulator} game. The rendering system should achieve similar results, to a reasonable extent. \\ \hline
 \end{tabularx}

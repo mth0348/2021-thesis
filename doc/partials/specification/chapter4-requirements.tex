@@ -2,8 +2,8 @@
 \label{section:requirements}
 All requirements are grouped by type. This results in two major groups, which are research and development requirements. Each one of the requirements is derived from a goal listed in \sectionref{section:goals}.
 
-\subsection{Research requirements}
-Each research requirement is denoted with the letter "R" followed by its number. They are sorted according to priority, from most important to least important.
+\subsection{Research Requirements}
+Each research requirement is denoted with the letter "R" followed by its number.
 \emptyline
 \noindent\begin{tabularx}{\textwidth}{|l|X|}
     \hline
@@ -16,7 +16,7 @@ Each research requirement is denoted with the letter "R" followed by its number.
 \noindent\begin{tabularx}{\textwidth}{|l|X|}
     \hline
     \textbf{Number}     & R.\stepcounter{requirements}\arabic{requirements} \\ \hline
-    \textbf{Name}       & Understanding of different layers of clouds \\ \hline
+    \textbf{Name}       & Understanding of different characteristics of clouds \\ \hline
     \textbf{Description}& Among other characteristics, altitude, humidity and atmospheric pressure dictate the look and genus of a cloud. The goal is to decide which cloud types are required for a believable weather system. \\ \hline
 \end{tabularx}
 \vspace{0.8cm}
@@ -30,26 +30,19 @@ Each research requirement is denoted with the letter "R" followed by its number.
 \end{tabularx}
 \vspace{0.8cm}
 
-\pagebreak
-\subsection{Development requirements}
+\clearpage
+
+\subsection{Development Requirements}
 \setcounter{requirements}{0}
 \label{section:requirements:dev}
-Each development requirement is denoted with the letter "D" followed by its number. They are sorted according to priority, from most important to least important.
+Each development requirement is denoted with the letter "D" followed by its number.
 \emptyline
 \noindent\begin{tabularx}{\linewidth}{|l|X|}
     \hline
     \textbf{Number}     & D.\stepcounter{requirements}\arabic{requirements} \\ \hline
-    \textbf{Name}       & Noise generation based on compute shaders \\ \hline
-    \textbf{Description}& To make full use of the power of compute shaders, it is best to let them execute computationally demanding tasks. In this case, specifically \gls{noisegeneration}. \\ \hline
-\end{tabularx}
-\vspace{0.8cm}
-
-\noindent\begin{tabularx}{\linewidth}{|l|X|}
-    \hline
-    \textbf{Number}     & D.\stepcounter{requirements}\arabic{requirements} \\ \hline
-    \textbf{Name}       & Incorporation of real-time weather data from \emph{meteoblue} \\ \hline
-    \textbf{Description}& In order to achieve a high degree of realism, real-time weather data will be used. \emph{Meteoblue} offers different data package contracts, of which the "basic\textunderscore1h" is to be acquired.
-    \newline \newline The usage of the data package requires physical locations. the chosen locations are: 
+    \textbf{Name}       & Periodical acquirement of real-time weather data from \emph{meteoblue} \\ \hline
+    \textbf{Description}& In order to achieve a high degree of realism, real-time weather data will be used. \emph{Meteoblue} offers different data package contracts, of which the "basic\textunderscore1h" is to be acquired. The data will be downloaded daily.
+    \newline \newline The usage of the data package requires physical locations. The chosen locations are: 
     \begin{itemize}
         \item Bern, Switzerland
         \item Fribourg, Switzerland
@@ -61,18 +54,9 @@ Each development requirement is denoted with the letter "D" followed by its numb
 \noindent\begin{tabularx}{\linewidth}{|l|X|}
     \hline
     \textbf{Number}     & D.\stepcounter{requirements}\arabic{requirements} \\ \hline
-    \textbf{Name}       & Incorporation of height model data from \emph{swisstopo} \\ \hline
-    \textbf{Description}& The 3D height model data from \emph{swisstopo} will be downloaded and mapped into a compatible format for Unity. This is then used as a base for the scenery.
-    \newline For texture layers, the satellite image data from \emph{swisstopo} will be used and mapped onto the 3D model. \\ \hline
-\end{tabularx}
-\vspace{0.8cm}
-
-\noindent\begin{tabularx}{\linewidth}{|l|X|}
-    \hline
-    \textbf{Number}     & D.\stepcounter{requirements}\arabic{requirements} \\ \hline
-    \textbf{Name}       & Periodically store photographs of 360-degree cameras \\ \hline
-    \textbf{Description}& A comparison of real-time weather data and an actual photographic reference from that date and time will prove to be useful. This is why the images from such cameras will be stored on a local file system.
-    \newline \newline There are many camera systems that offer 360-degree footage free of charge. The chosen system is that of the company \emph{Seitz} called \emph{Roundshot}, with these locations: 
+    \textbf{Name}       & Periodical acquirement of photographs of 360-degree cameras \\ \hline
+    \textbf{Description}& A comparison of real-time weather data with an actual photographic reference from that date and time will prove to be useful. Images from such cameras will be stored periodically on a local file system.
+    \newline \newline The chosen system is that of the company \emph{Seitz} called \emph{Roundshot}, with these locations: 
     \begin{itemize}
         \item Roundshot camera Bantiger, Switzerland
         \item Roundshot camera Gurtenpark, Switzerland
@@ -83,8 +67,77 @@ Each development requirement is denoted with the letter "D" followed by its numb
 \noindent\begin{tabularx}{\linewidth}{|l|X|}
     \hline
     \textbf{Number}     & D.\stepcounter{requirements}\arabic{requirements} \\ \hline
-    \textbf{Name}       & Implement a weather rendering system \\ \hline
-    \textbf{Description}& Finally, the weather system has to implemented, incorporating the external data sources and rendering images of cloudscapes.
-    \newline The system should be controllable via practical parameters, like point in time. \\ \hline
+    \textbf{Name}       & Acquirement of elevation model data from \emph{swisstopo} \\ \hline
+    \textbf{Description}& The 3D elevation model data from \emph{swisstopo} will be downloaded and mapped into a compatible format for Unity. This is then used as a base for the scenery.
+    \newline For texture layers, aerial images from \emph{swisstopo} will be used and mapped onto the 3D model. \\ \hline
 \end{tabularx}
 \vspace{0.8cm}
+
+\noindent\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Number}     & D.\stepcounter{requirements}\arabic{requirements} \\ \hline
+    \textbf{Name}       & Noise generation based on compute shaders \\ \hline
+    \textbf{Description}& To make full use of the power of compute shaders, it is best to let them execute computationally demanding tasks. In this case, specifically \gls{noisegeneration}. \\ \hline
+\end{tabularx}
+\vspace{0.8cm}
+
+\clearpage
+
+\noindent
+The implementation requirement D.\stepcounter{requirements}\arabic{requirements} is split into three sub-requirements, D.\arabic{requirements}.1, D.\arabic{requirements}.2 and D.\arabic{requirements}.3.
+\\
+
+\noindent\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Number}     & D.\arabic{requirements}.1 \\ \hline
+    \textbf{Name}       & Implementation of data aggregation and processing \\ \hline
+    \textbf{Description}& The first part of the weather rendering system is the external data aggregation and processing. \\ \hline
+\end{tabularx}
+\vspace{0.8cm}
+
+\noindent\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Number}     & D.\arabic{requirements}.2 \\ \hline
+    \textbf{Name}       & Implementation of core rendering system \\ \hline
+    \textbf{Description}& The second part of the weather rendering system is the core of the system itself. This includes \gls{noisegeneration}, \gls{volumetric} rendering, terrain generation, and so on. \\ \hline
+\end{tabularx}
+\vspace{0.8cm}
+
+\noindent\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Number}     & D.\arabic{requirements}.3 \\ \hline
+    \textbf{Name}       & Implementation ofq user interface \\ \hline
+    \textbf{Description}& Finally, the user should be able to control the weather system with an intuative \gls{ui}. The user can also switch between "live" and "play" mode, as described in \sectionref{section:vision:ui}.  \\ \hline
+\end{tabularx}
+
+\subsection{Optional Requirements}
+\setcounter{requirements}{0}
+\label{section:requirements:optional}
+Gathered from \sectionref{section:goals:optional}, there is one optional goal.
+\emptyline
+\noindent\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Number}     & O.\stepcounter{requirements}\arabic{requirements} \\ \hline
+    \textbf{Name}       & Rendering performance optimization \\ \hline
+    \textbf{Description}& This includes optimizing shader code, finding early exits for looping algorithms and reducing the overall workload of processing the external data during runtime. \\ \hline
+\end{tabularx}
+
+\subsection{Summary of Requirements}
+\label{section:requirements:summary}
+The requirements are each prioritized with a number from one to three, with one being the highest priority and three being the lowest priority.
+\emptyline
+\noindent\begin{tabularx}{\textwidth}{|l|X|c|}
+    \hline
+    \textbf{Number} & \textbf{Name}                                                         & \textbf{Priority} \\ \hline
+    R.1             & Understanding the basic nature of clouds                              & 1                 \\ \hline
+    R.2             & Understanding of different characteristics of clouds                  & 1                 \\ \hline
+    R.3             & Understanding of compute shaders                                      & 1                 \\ \hline
+    D.1             & Periodical acquirement of real-time weather data from \emph{meteoblue}& 1                 \\ \hline
+    D.2             & Periodical acquirement of photographs of 360-degree cameras           & 1                 \\ \hline
+    D.3             & Acquirement of elevation model data from \emph{swisstopo}             & 1                 \\ \hline
+    D.4             & Noise generation based on compute shaders                             & 1                 \\ \hline
+    D.5.1           & Implementation of data aggregation and processing                     & 2                 \\ \hline
+    D.5.2           & Implementation of core rendering system                               & 1                 \\ \hline
+    D.5.3           & Implementation of user interface                                      & 3                 \\ \hline
+    O.1             & Rendering performance optimization                                    & 3                 \\ \hline
+\end{tabularx}

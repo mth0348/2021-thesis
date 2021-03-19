@@ -42,6 +42,10 @@ The implementations of those algorithms and methods will most likely be reused i
         \end{minipage}  
 \end{figure}
 
+\subsubsection{Near Real-time}
+As mentioned in \sectionref{section:externaldata}, the data will not be retrieved in real-time, but rather polled periodically. However, when weather data is requested, the data for the current day including a seven-day forecast is returned.
+This means that the data, even though not obtained in real-time, can be processed for the real current time with the aid of \gls{interpolation}.
+
 \subsection{Goals}
 \label{section:goals}
 As the title of the thesis suggests, this work will primarily focus on clouds and cloudscapes.
@@ -61,17 +65,18 @@ The following tasks must be accomplished during the project:
 \end{itemize}
 
 \subsubsection{Optional Goals}
+\label{section:goals:optional}
 For further optional work, these tasks can be looked into:
 \begin{itemize}
+    \item Rendering performance optimization
     \item Automatic validation of realism of rendered cloudscapes
     \item Automatic comparison of rendered cloudscapes and photographs
     \item Automatic categorization of rendered cloudscapes
-    \item Performance optimization
 \end{itemize}
 
 \noindent
 Most of the tasks labeled with "automatic" could be solved using a \gls{neuralnetwork}.
-As for performance optimization, it is meant to optimize shader code, find early exits for looping algorithms and reduce the overall workload of importing the external data into the weather rendering system.
+Since diving into the vast world of \gls{neuralnetwork}s would go beyond the scope of this work, those goals are not listed as requirements.
 
 \subsection{Educational Objectives}
 Educational objectives include \gls{shader} programming, knowledge about \gls{computeshader}s, rendering techniques, common algorithms used in computer graphics like \gls{noisegeneration}, a general understanding of aspects needed to create a complete weather system and finally the incorporation of real-time data from a third party.
@@ -80,3 +85,6 @@ Educational objectives include \gls{shader} programming, knowledge about \gls{co
 All documentation will be written in \gls{latex} with Visual Studio Code.
 The \gls{shader} will be implemented in Unity. The chosen \gls{shader} language is \gls{hlsl}.
 For the presentation, Microsoft PowerPoint will be used.
+
+\subsection{Available Hardware}
+For development, the author's personal computer will be used. However, should the need arise, the Berner Fachhochschule can provide a set of powerful computers to use for the thesis.

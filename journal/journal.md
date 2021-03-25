@@ -306,3 +306,30 @@ Bemerkungen:
     * kein freipass: aber: er findet es besser, lieber mit betreuer kontakt aufnehemn und features streichen falls nötig, dafür alle teile der arbeit vernünftig abwickeln.
 * genug früh termin für verteidigung
 * genug früh termin für meeting 2
+
+&nbsp;
+
+&nbsp;
+#
+## \#06: March 25, 2021
+### Formal and technical questions
+1. swisstopo is not part of task description
+
+**Answers to questions:**
+1. .
+
+### Meeting discussion
+Next steps:
+* Clouds + layers research
+* prepare for meteoblue interview
+
+**Inputs from tutor:**
+
+
+**Tasks**
+* Next meeting is scheduled for **April 01, 2021 at 2pm.** or **April 08, 2021 at 2pm.** ?
+
+**Time log**
+
+| Task | time spent |
+|----|---|

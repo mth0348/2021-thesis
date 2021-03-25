@@ -1,0 +1,196 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[absolute]{textpos} % absolute positioned text blocks
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+
+% Images
+\usepackage{graphicx} % used for images
+\graphicspath{ {./img/} }
+\usepackage[labelfont=bf]{caption}
+
+% Formatting
+\usepackage{geometry} % better margins for document
+\usepackage{titlesec} % better control over title spacing 
+\usepackage{tabularx} % better tables
+\usepackage[hidelinks]{hyperref} % hrefs
+\usepackage{totcount}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\pgfplotsset{
+    colormap={cool}{rgb255(0cm)=(237,66,76); rgb255(0.5cm)=(255,255,255); rgb255(1cm)=(57,146,239)}
+}
+\usepgfplotslibrary{colorbrewer}
+
+\usepackage{float} % image placement
+\usepackage{amssymb} % math symbols
+
+% Code listings
+\usepackage{listings}
+\usepackage{commath}
+\usepackage{pifont}
+\usepackage{xcolor}
+\definecolor{codered}{rgb}{0.93,0.26,0.298}
+\definecolor{codegrey}{rgb}{0.7,0.7,0.7}
+\definecolor{codepink}{rgb}{0.737,0.47,0.823}
+\definecolor{codeblue}{rgb}{0.227,0.572,0.937}
+\definecolor{codegreen}{rgb}{0.441,0.664,0.286}
+\definecolor{codestring}{rgb}{0.58,0,0.82}
+\definecolor{backcolor}{rgb}{0.95,0.95,0.95}
+\definecolor{lightgrey}{rgb}{0.8,0.8,0.8}
+
+\lstdefinelanguage{HLSL}{
+	morekeywords=[1]{
+        % variables
+        position,sphere,direction,stepSize,dirMultiplier,dScene,dOrigin,p,dMin,dMax,result,k,d1,d2,d3,i,ao,co,d,seed,cell,pCell,
+        i,j,x,y,z,frequency,amplitude,current,total,maxValue,
+        vpos,ppos,vd,pd,density,projectedSunDistance,sunColor,sunTransmittance,cloudDensity,worldPosition,
+        lightTransmittance,sunDirection,lightStepSize,insideBoxDist,
+	},
+	morekeywords=[2]{
+        % methods and functions
+		distance,normalize,min,max,dot,pow,sin,cos,tan,fract,length,smoothstep,
+        sphereHit,raymarch,sphereDistance,sceneSDF,estimateNormal,hardshadow,softshadow,blend,sphereSDF,boxSDF,
+        difference,union,intersection,ambientOcclusion,voronoi,
+        random2d,random,random3d,randomSeed,floor,fbm,
+        noise,lightmarch,
+        sampleDensity,getColorVoronoi,getColorPerlin,worldToScreenPos
+	},
+	morekeywords=[3]{
+        % CONSTANTS
+        STEP_SIZE,MAX_STEPS,MINIMUM_STEP_SIZE,SURFACE_DISTANCE,MAX_DISTANCE,EPSILON,
+        AO_ITERATIONS,AO_INTENSITY,AO_STEP_SIZE,
+        LACUNARITY,GAIN,OCTAVES,
+    },
+	% morekeywords=[4]{
+    %     % Unity Variables
+    %     _VoronoiScale,_VoronoiOffset,,_VoronoiOctaves,_VoronoiPersistance,_VoronoiDensityThreshold,_VoronoiDensityMultiplier,
+    %     _PerlinScale,_PerlinOffset,_PerlinOctaves,_PerlinPersistance,_PerlinDensityThreshold,_PerlinDensityMultiplier,
+    % },
+    keywordstyle=[1]\color{codeblue},
+    keywordstyle=[2]\color{codered},
+    keywordstyle=[3]\color{codepink},
+    % keywordstyle=[4]\color{codegreen},
+	commentstyle=\color{codegrey},
+	morestring=[b]", % defines that strings are enclosed in double quotes
+	morestring=[b]', % defines that strings are enclosed in single quotes
+    backgroundcolor=\color{backcolor},
+    stringstyle=\color{codered},
+    numberstyle=\tiny,
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+	tabsize=2,
+    sensitive=false, % keywords are not case-sensitive
+    morecomment=[l]{//}, % l is for line comment
+    morecomment=[s]{/*}{*/}, % s is for start and end delimiter
+    belowskip=2.5em,
+    aboveskip=1em,
+}
+
+% Gantt charts
+\usepackage{pgfgantt}
+
+% drawings
+\usepackage{tikz}
+\usepackage{fontawesome}
+\usetikzlibrary{positioning, shapes}
+\usetikzlibrary{arrows.meta}
+\geometry{
+	a4paper,
+	left=28mm,
+	right=28mm,
+    top=30mm,
+    bottom=30mm
+}
+
+% Colors 
+\RequirePackage{color}
+\definecolor{bfhgrey}{rgb}{0.41,0.49,0.57}
+\definecolor{brinkpink}{rgb}{1.0, 0.65, 0.79}
+\definecolor{columbiablue}{rgb}{0.61, 0.87, 1.0}
+
+% Glossary
+\usepackage[toc]{glossaries}
+\input{partials/glossary.tex}
+\makenoidxglossaries
+
+\glsunset{gpu}
+
+% Bibliography
+\usepackage[backend=biber, style=ieee]{biblatex}
+\addbibresource{partials/specification.bib}
+
+% add another lavel of headings
+%\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\begin{document}
+
+\color{black}
+
+\title{\doctitle}
+\author{\docauthor}
+\date{\versiondate}
+
+\newcounter{requirements}
+\newtotcounter{versionnumber}
+\newcommand{\docsubtitle}{Project documentation}
+\newcommand{\docauthor}{Matthias Thomann}
+\newcommand{\doctitle}{Real-time Cloud Rendering System}
+\newcommand{\fieldofstudies}{BSc in Computer Science}
+\newcommand{\specialisation}{Computer perception and virtual reality}
+\newcommand{\prof}{Prof. Urs K\"unzler}
+
+\newcommand{\versiondate}{\today}
+\newcommand{\sectionref}[1]{\autoref{#1}}
+\newcommand{\emptyline}{\vspace{\baselineskip}\\\noindent}
+
+\titlespacing*{\section} {0pt}{7.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\subsection} {0pt}{4.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\pagenumbering{roman}
+\setcounter{page}{3}
+
+\input{partials/title.tex}
+\clearpage
+
+\input{partials/abstract.tex}
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+
+\input{partials/paper/chapter1-general.tex}
+\clearpage
+
+\printnoidxglossary 
+\clearpage
+\printbibliography[heading=bibintoc]
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Listings}
+\phantomsection
+\addcontentsline{toc}{subsection}{Figures}
+\listoffigures
+\clearpage
+\phantomsection
+\addcontentsline{toc}{subsection}{Code Listings}
+\lstlistoflistings
+
+\end{document}

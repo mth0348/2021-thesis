@@ -324,10 +324,45 @@ Next steps:
 * prepare for meteoblue interview
 
 **Inputs from tutor:**
-
+* task description ist nicht verpflichtend
+* statistisches Mass finden für auswertung
+    * pixel-approach?
+    * binarisation? -> pixel distribution -> "noise" image can be compared
 
 **Tasks**
-* Next meeting is scheduled for **April 01, 2021 at 2pm.** or **April 08, 2021 at 2pm.** ?
+* via Email ok
+* Next meeting is scheduled for **April 08, 2021 at 2pm.**
+
+**Time log**
+
+| Task | time spent |
+|----|---|
+
+&nbsp;
+
+&nbsp;
+#
+## \#07: April 08, 2021
+### Formal and technical questions
+1. .
+
+**Answers to questions:**
+1. .
+
+### Meeting discussion
+Other notes: 
+* Book page: https://bfh.easydocmaker.ch/abstract/878/
+* Book Manual: https://bfh.easydocmaker.ch/static/files/booktool_manual_de.69601c25dfa8.pdf
+
+**Inputs from tutor:**
+* task description ist nicht verpflichtend
+* statistisches Mass finden für auswertung
+    * pixel-approach?
+    * binarisation? -> pixel distribution -> "noise" image can be compared
+
+**Tasks**
+* via Email ok
+* Next meeting is scheduled for **April 08, 2021 at 2pm.**
 
 **Time log**
 

@@ -42,71 +42,87 @@ As the \gls{altitude} increases, the thermals cool down. At some point, the warm
     \label{img:tikz:convection}
 \end{figure}
 
-% \noindent
-% A \gls{thermal} does not have to rise naturally. It can also be pushed upwards by a cold front.
+\color{orange}
+\noindent
+A \gls{thermal} does not have to rise naturally. It can also be pushed upwards by a cold front.
 
-% \begin{figure}[H]
-%     \centering
-%     \begin{minipage}{0.47\linewidth}
-%         \begin{tikzpicture}
-%             \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
-%             \tikzset{shortedge/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= -4pt}}
-%             \tikzset{line/.style = {shorten >=-4pt}}
-%             \tikzset{icon/.style = {font=\Large}}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.47\linewidth}
+        \begin{tikzpicture}
+            \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+            \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
+            \tikzset{line/.style = {shorten >=-4pt}}
+            \tikzset{icon/.style = {font=\Large}}
 
-%             % clouds
-%             \node[text width=2cm] (cloud) at (4.0, 3.0) {cloud starts \phantom{x} forming};
-%             \node[cloud, rotate=0, cloud puffs=15.7, cloud, minimum width=3.5cm, minimum height=2.2cm, align=center, draw] (cloud) at (cloud) {};
+            % clouds
+            \node (c1) at (0, 0) {};
+            \node (c2) at (4, 0) {};
+            \node (c3) at (3, 1.5) {};
+            \node (c4) at (0, 2) {};
 
-%             % thermal
-%             \node (t1) at (4, 0.5) {};
-%             \node[red] (t1t) at (5.9, 1.2) {thermals rising upwards};
-%             \node (t2) at (4, 1.8) {};
-%             \draw[red,edge] (t1) -- (t2);
+            \fill[fill=cyan!10] (0, 0) node {}
+                to [] (4,0) node {}
+                to [out=90,in=-10] (3,1.5) node {}
+                to [] (0,2) node {};
+            \draw[cyan,shortedge] (c1) to [] (c2);
+            \draw[cyan,shortedge] (c2) to [out=90,in=-10] (c3);
+            \draw[cyan,shortedge] (c3) to [] (c4);
+            \draw[cyan,shortedge] (c4) to [] (c1);
 
-%             % cold air
-%             \node (l1) at (3, 4.0) {};
-%             \node (l2) at (2, 3.0) {};
-%             \node (r1) at (5, 4.0) {};
-%             \node (r2) at (6, 3.0) {};
-%             \node[cyan] (r2t) at (6.8, 3.8) {sinking air};
-%             \draw[cyan,edge] (l1) to [out=180,in=90] (l2);
-%             \draw[cyan,edge] (r1) to [out=0,in=90] (r2);
-%         \end{tikzpicture}
-%         \captionof{figure}{Convection: Cold front approaching.}
-%         \label{img:tikz:convection:cold1}
-%     \end{minipage}        
-%     \hfill
-%     \begin{minipage}{0.47\linewidth}
-%         \begin{tikzpicture}
-%             \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
-%             \tikzset{shortedge/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= -4pt}}
-%             \tikzset{line/.style = {shorten >=-4pt}}
-%             \tikzset{icon/.style = {font=\Large}}
+        \end{tikzpicture}
+        \captionof{figure}{Convection: Cold front approaching.}
+        \label{img:tikz:convection:cold1}
+    \end{minipage}        
+    \hfill
+    \begin{minipage}{0.47\linewidth}
+        \begin{tikzpicture}
+            \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+            \tikzset{shortedge/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= -4pt}}
+            \tikzset{line/.style = {shorten >=-4pt}}
+            \tikzset{icon/.style = {font=\Large}}
 
-%             % clouds
-%             \node[text width=2cm] (cloud) at (4.0, 3.0) {cloud starts \phantom{x} forming};
-%             \node[cloud, rotate=0, cloud puffs=15.7, cloud, minimum width=3.5cm, minimum height=2.2cm, align=center, draw] (cloud) at (cloud) {};
+            % clouds
+            \node[text width=2cm] (cloud) at (4.0, 3.0) {cloud starts \phantom{x} forming};
+            \node[cloud, rotate=0, cloud puffs=15.7, cloud, minimum width=3.5cm, minimum height=2.2cm, align=center, draw] (cloud) at (cloud) {};
 
-%             % thermal
-%             \node (t1) at (4, 0.5) {};
-%             \node[red] (t1t) at (5.9, 1.2) {thermals rising upwards};
-%             \node (t2) at (4, 1.8) {};
-%             \draw[red,edge] (t1) -- (t2);
+            % thermal
+            \node (t1) at (4, 0.5) {};
+            \node[red] (t1t) at (5.9, 1.2) {thermals rising upwards};
+            \node (t2) at (4, 1.8) {};
+            \draw[red,edge] (t1) -- (t2);
 
-%             % cold air
-%             \node (l1) at (3, 4.0) {};
-%             \node (l2) at (2, 3.0) {};
-%             \node (r1) at (5, 4.0) {};
-%             \node (r2) at (6, 3.0) {};
-%             \node[cyan] (r2t) at (6.8, 3.8) {sinking air};
-%             \draw[cyan,edge] (l1) to [out=180,in=90] (l2);
-%             \draw[cyan,edge] (r1) to [out=0,in=90] (r2);
-%         \end{tikzpicture}
-%         \captionof{figure}{Convection: Cold front pushing creating thermals.}
-%         \label{img:tikz:convection:cold2}       
-%     \end{minipage}
-% \end{figure}
+            % cold air
+            \node (l1) at (3, 4.0) {};
+            \node (l2) at (2, 3.0) {};
+            \node (r1) at (5, 4.0) {};
+            \node (r2) at (6, 3.0) {};
+            \node[cyan] (r2t) at (6.8, 3.8) {sinking air};
+            \draw[cyan,edge] (l1) to [out=180,in=90] (l2);
+            \draw[cyan,edge] (r1) to [out=0,in=90] (r2);
+        \end{tikzpicture}
+        \captionof{figure}{Convection: Cold front pushing creating thermals.}
+        \label{img:tikz:convection:cold2}       
+    \end{minipage}
+\end{figure}
+\color{black}
+
+\subsection{Weather Fronts}
+According to \emph{metoffice} \cite{metoffice:weatherfronts}, weather fronts are boundaries between two air masses. Those masses differ in temparature and humidity.
+There are three types of weather fronts: \emph{cold}, \emph{warm} and \emph{occluded} fronts.
+
+\subsubsection{Cold Front}
+A cold front speaks of cool air that is moved forwards. As colder air is denser than warmer air, it pushes underneath the warmer air.
+By pushing up warm air, \gls{thermal}s are created and clouds start to form.
+
+\subsubsection{Warm Front}
+Different to the cold front, a warm front carries warmer air and therefore rises over the colder, denser air.
+Still, by advancing above the cold air, the warm front pushes the warmer air higher, which means that in this case too, \gls{thermal}s are created and clouds start to form.
+
+\subsubsection{Occluded Front}
+\color{orange}
+TODO
+\color{black}
 
 \subsection{Classifications}
 In order to create a \gls{wrs} that is able to display many different cloudscapes, all types of clouds have to be understood first.
@@ -132,6 +148,8 @@ Certain clouds may occur in the stratospheric or even the mesospheric layer, but
 % https://www.countryfile.com/how-to/outdoor-skills/how-to-predict-the-weather-forecast-using-clouds/
 % NASA how do clouds form: https://climatekids.nasa.gov/cloud-formation/#:~:text=Clouds%20are%20created%20when%20water,are%20floating%20in%20the%20air.&text=That%20means%20some%20of%20the,drifted%20away%20into%20the%20atmosphere.
 % NASA: https://www.nasa.gov/audience/forstudents/k-4/stories/nasa-knows/what-are-clouds-k4.html
+% http://ww2010.atmos.uiuc.edu/(Gh)/wwhlpr/cold_front_precip.rxml?hret=/guides/mtr/cld/cldtyp/mdl/altcu.rxml
+% https://content.meteoblue.com/en/meteoscool/weather/clouds/cloud-types
 
 \pagebreak
 
@@ -204,7 +222,7 @@ If the \gls{precipitation} increases in persistence and intensity, the altostrat
 
 
 \subsubsection{Altocumulus}
-\begin{wrapfigure}[10]{r}{6cm}
+\begin{wrapfigure}[9]{r}{6cm}
     \vspace{-\baselineskip}
     \includegraphics[width=6cm]{clouds/altocumulus.jpg}
     \caption{Altocumulus clouds \protect\cite{cloudtypes:wiki:altocumulus}.}
@@ -217,3 +235,19 @@ Altocumulus clouds can form through the dispersion of altostratus clouds or thro
 \emptyline
 \textbf{Interpretation:}
 Usually, they are found in settled weather. They do not produce \gls{precipitation} that reaches the surface.
+
+
+\subsubsection{Nimbostratus}
+\begin{wrapfigure}[10]{r}{6cm}
+    \vspace{-\baselineskip}
+    \includegraphics[width=6cm]{clouds/nimbostratus.jpg}
+    \caption{Nimbostratus clouds \protect\cite{cloudtypes:wiki:nimbostratus}.}
+    \label{img:clouds:nimbostratus}
+\end{wrapfigure}
+The nimbostratus clouds are the vast, grey clouds that bring heavy rain or snow for a longer period of time, sometimes up to multiple days.
+With their dark and gloomy appearance, they convey a dreary mood along with the persistent \gls{precipitation}.
+\\
+The thick, featureless layers of cloud are often formed by \gls{occludedfront}s, when an altostratus starts lowering and gets denser.
+\emptyline
+\textbf{Interpretation:}
+They bring long-term rain or snow for several hours or days.

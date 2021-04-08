@@ -362,7 +362,7 @@ Other notes:
 
 **Tasks**
 * via Email ok
-* Next meeting is scheduled for **April 08, 2021 at 2pm.**
+* Next meeting is scheduled for **April 15, 2021 at 2pm.**
 
 **Time log**
 

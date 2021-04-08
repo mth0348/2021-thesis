@@ -350,18 +350,18 @@ Next steps:
 1. .
 
 ### Meeting discussion
-Other notes: 
-* Book page: https://bfh.easydocmaker.ch/abstract/878/
-* Book Manual: https://bfh.easydocmaker.ch/static/files/booktool_manual_de.69601c25dfa8.pdf
+* Next: 
+ * 
 
 **Inputs from tutor:**
-* task description ist nicht verpflichtend
-* statistisches Mass finden für auswertung
-    * pixel-approach?
-    * binarisation? -> pixel distribution -> "noise" image can be compared
+* describe "reverse engineer" method
+* summary
+ * strategy for implementation, how to proceed from that
+ * maybe pseudo-code
+ * interview moved 2-3 weeks
+ * 3 cloud altitudes => 3 different layers => 3 shaders
 
 **Tasks**
-* via Email ok
 * Next meeting is scheduled for **April 15, 2021 at 2pm.**
 
 **Time log**

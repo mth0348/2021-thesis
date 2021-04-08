@@ -41,13 +41,80 @@ As the \gls{altitude} increases, the thermals cool down. At some point, the warm
     \captionof{figure}{Lifting by convection.}
     \label{img:tikz:convection}
 \end{figure}
+
+% \noindent
+% A \gls{thermal} does not have to rise naturally. It can also be pushed upwards by a cold front.
+
+% \begin{figure}[H]
+%     \centering
+%     \begin{minipage}{0.47\linewidth}
+%         \begin{tikzpicture}
+%             \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+%             \tikzset{shortedge/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= -4pt}}
+%             \tikzset{line/.style = {shorten >=-4pt}}
+%             \tikzset{icon/.style = {font=\Large}}
+
+%             % clouds
+%             \node[text width=2cm] (cloud) at (4.0, 3.0) {cloud starts \phantom{x} forming};
+%             \node[cloud, rotate=0, cloud puffs=15.7, cloud, minimum width=3.5cm, minimum height=2.2cm, align=center, draw] (cloud) at (cloud) {};
+
+%             % thermal
+%             \node (t1) at (4, 0.5) {};
+%             \node[red] (t1t) at (5.9, 1.2) {thermals rising upwards};
+%             \node (t2) at (4, 1.8) {};
+%             \draw[red,edge] (t1) -- (t2);
+
+%             % cold air
+%             \node (l1) at (3, 4.0) {};
+%             \node (l2) at (2, 3.0) {};
+%             \node (r1) at (5, 4.0) {};
+%             \node (r2) at (6, 3.0) {};
+%             \node[cyan] (r2t) at (6.8, 3.8) {sinking air};
+%             \draw[cyan,edge] (l1) to [out=180,in=90] (l2);
+%             \draw[cyan,edge] (r1) to [out=0,in=90] (r2);
+%         \end{tikzpicture}
+%         \captionof{figure}{Convection: Cold front approaching.}
+%         \label{img:tikz:convection:cold1}
+%     \end{minipage}        
+%     \hfill
+%     \begin{minipage}{0.47\linewidth}
+%         \begin{tikzpicture}
+%             \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+%             \tikzset{shortedge/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= -4pt}}
+%             \tikzset{line/.style = {shorten >=-4pt}}
+%             \tikzset{icon/.style = {font=\Large}}
+
+%             % clouds
+%             \node[text width=2cm] (cloud) at (4.0, 3.0) {cloud starts \phantom{x} forming};
+%             \node[cloud, rotate=0, cloud puffs=15.7, cloud, minimum width=3.5cm, minimum height=2.2cm, align=center, draw] (cloud) at (cloud) {};
+
+%             % thermal
+%             \node (t1) at (4, 0.5) {};
+%             \node[red] (t1t) at (5.9, 1.2) {thermals rising upwards};
+%             \node (t2) at (4, 1.8) {};
+%             \draw[red,edge] (t1) -- (t2);
+
+%             % cold air
+%             \node (l1) at (3, 4.0) {};
+%             \node (l2) at (2, 3.0) {};
+%             \node (r1) at (5, 4.0) {};
+%             \node (r2) at (6, 3.0) {};
+%             \node[cyan] (r2t) at (6.8, 3.8) {sinking air};
+%             \draw[cyan,edge] (l1) to [out=180,in=90] (l2);
+%             \draw[cyan,edge] (r1) to [out=0,in=90] (r2);
+%         \end{tikzpicture}
+%         \captionof{figure}{Convection: Cold front pushing creating thermals.}
+%         \label{img:tikz:convection:cold2}       
+%     \end{minipage}
+% \end{figure}
+
 \subsection{Classifications}
 In order to create a \gls{wrs} that is able to display many different cloudscapes, all types of clouds have to be understood first.
 The \gls{wmo} describes ten distinct cloud classifications. For each of those, there are further subtypes. For simplicity, those subtypes will be disregarded in this project.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{clouds-types.jpg}
-    \captionof{figure}{Distinct classifications of cloudshapes \protect\cite{cloudtypes:wiki}.}
+    \captionof{figure}{Distinct classifications of cloudshapes in the troposphere \protect\cite{cloudtypes:wiki}.}
     \label{img:ui:mockup:live}
 \end{figure}
 

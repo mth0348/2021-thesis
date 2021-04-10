@@ -49,14 +49,143 @@ A \gls{thermal} does not have to rise naturally. It can also be produced by the 
 
 \subsection{Weather Fronts}
 According to \emph{metoffice} \cite{metoffice:weatherfronts}, weather fronts are boundaries between two air masses. Those masses differ in temparature, wind direction and humidity.
-There are three types of weather fronts: \emph{cold}, \emph{warm} and \emph{occluded} fronts.
+There are three types of weather fronts: \emph{warm}, \emph{cold} and \emph{occluded} fronts.
+\\
+In the following graphics, the warm front with \color{red}$w_1$\color{black}, the cold front is marked with \color{cyan}$c_1$ \color{black} and another cold front with very cool air is marked with \color{darkcyan}$c_2$\color{black}.
+
+\subsubsection{Warm Front}
+Different to the cold front, a warm front carries warmer air and therefore rises over the colder, denser air.
+Still, by advancing towards a cold front, the warm front pushes its warmer air higher,
+which means that in this case too, \gls{thermal}s are created and clouds start to form \cite{ww2010:warmfront}.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.47\linewidth}
+        \begin{tikzpicture}
+            \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+            \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
+            \tikzset{shortshortedge/.style = {shorten <=-5pt,shorten >= -4.6pt}}
+
+            % warm front
+            \node (w1) at (0, 0) {};
+            \node (w2) at (2, 0) {};
+            \node (w3) at (3, 1.5) {};
+            \node (w4) at (0, 1.5) {};
+
+            \fill[fill=red!10] (0.0,0) node {}
+                         to [] (2.0,0) node {}
+                         to [] (3,1.5) node {}
+                         to [] (0,1.5) node {};
+            \draw[shortedge] (w1) -- (w2);
+            \draw[shortedge] (w2) -- (w3);
+            \draw[shortedge] (w3) -- (w4);
+            \draw[shortedge] (w4) -- (w1);
+
+            % cold front
+            \node (c1) at (2.1, 0) {};
+            \node (c2) at (7,0) {};
+            \node (c3) at (7,2) {};
+            \node (c4) at (4.5,2) {};
+            \node (c5) at (3.1,1.5) {};
+
+            \fill[fill=cyan!10] (2.1,0) node {}
+                          to [] (7,0) node {}
+                          to [] (7,2) node {}
+                          to [] (4.5,2) node {}
+                          to [out=180,in=50] (3.1,1.5) node {};
+            \draw[shortedge] (c1) to [] (c2);
+            \draw[shortedge] (c2) to [] (c3);
+            \draw[shortedge] (c3) to [] (c4);
+            \draw[shortshortedge] (c4) to [out=180,in=50] (c5);
+            \draw[shortshortedge] (c5) -- (c1);
+
+            % warm front moisture
+            \draw[red] (0.3,0.6) circle (0.1cm);
+            \draw[red] (0.5,0.85) circle (0.1cm);
+            \draw[red] (0.6,0.5) circle (0.1cm);
+            \draw[red] (0.9,0.8) circle (0.1cm);
+            \draw[red] (1.0,0.4) circle (0.1cm);
+            
+            % warm front arrows
+            \draw[red,edge] (1.3,0.5) to [out=0,in=-120] (2.4,1.2);
+
+            % labels
+            \node[red] at (0.3, 0.2) {$w_1$};
+            \node[cyan] at (6.7, 0.2) {$c_1$};
+
+        \end{tikzpicture}
+        \captionof{figure}{Warm front: Warmer air advances, rising over the colder air, cooling down in the process.}
+        \label{img:tikz:fronts:warm1}
+    \end{minipage}        
+    \hfill
+    \begin{minipage}{0.47\linewidth}
+        \begin{tikzpicture}
+            \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+            \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
+            \tikzset{shortshortedge/.style = {shorten <=-5pt,shorten >= -4.6pt}}
+
+            % warm front
+            \node (w1) at (0, 0) {};
+            \node (w2) at (3, 0) {};
+            \node (w3) at (4, 1.5) {};
+            \node (w4) at (0, 1.5) {};
+
+            \fill[fill=red!10] (0.0,0) node {}
+                        to [] (3.0,0) node {}
+                        to [] (4,1.5) node {}
+                        to [] (0,1.5) node {};
+            \draw[shortedge] (w1) -- (w2);
+            \draw[shortedge] (w2) -- (w3);
+            \draw[shortedge] (w3) -- (w4);
+            \draw[shortedge] (w4) -- (w1);
+
+            % cold front
+            \node (c1) at (3.1, 0) {};
+            \node (c2) at (7,0) {};
+            \node (c3) at (7,2) {};
+            \node (c4) at (5.5,2) {};
+            \node (c5) at (4.1,1.5) {};
+
+            \fill[fill=cyan!10] (3.1,0) node {}
+                        to [] (7,0) node {}
+                        to [] (7,2) node {}
+                        to [] (5.5,2) node {}
+                        to [out=180,in=50] (4.1,1.5) node {};
+            \draw[shortedge] (c1) to [] (c2);
+            \draw[shortedge] (c2) to [] (c3);
+            \draw[shortedge] (c3) to [] (c4);
+            \draw[shortshortedge] (c4) to [out=180,in=50] (c5);
+            \draw[shortshortedge] (c5) -- (c1);
+
+            % ex-warm front moisture
+            \draw[cyan] (2.35, 1.1) circle (0.1cm);
+            \draw[cyan] (2.50, 1.35) circle (0.1cm);
+            \draw[cyan] (2.7, 1.05) circle (0.1cm);
+            \draw[cyan] (3.0, 0.80) circle (0.1cm);
+
+            % clouds
+            \node (cloud1) at (2.9, 1.7) {};
+            \node (cloud2) at (3.6, 1.6) {};
+            \node (cloud3) at (3.1, 1.3) {};
+            \node[cloud,fill=white,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud1) {};
+            \node[cloud,fill=white,cloud puffs=12, cloud, minimum width=0.8cm, minimum height=0.5cm, align=center, draw] (cloud) at (cloud2) {};
+            \node[cloud,fill=white,cloud puffs=12, cloud, minimum width=1.0cm, minimum height=0.7cm, align=center, draw] (cloud) at (cloud3) {};
+
+            % labels
+            \node[red] at (0.3, 0.2) {$w_1$};
+            \node[cyan] at (6.7, 0.2) {$c_1$};
+
+        \end{tikzpicture}
+        \captionof{figure}{Warm front: As the air cools down, the moisture condenses. Clouds start to form.}
+        \label{img:tikz:fronts:warm2}       
+    \end{minipage}
+\end{figure}
+
 
 \subsubsection{Cold Front}
 A cold front represents the boundaries of an air mass carrying cool air. When trailing a warm front, \gls{thermal}s can be produced.
 As colder air is denser than warmer air, it pushes underneath the warmer air.
 By pushing up warm air, \gls{thermal}s are created and clouds start to develop \cite{ww2010:coldfront}.
-\\
-In the following graphics
 
 \begin{figure}[H]
     \centering
@@ -112,6 +241,10 @@ In the following graphics
             % warm front arrows
             \node (wf) at (2.8,2) {};
             \draw[red,edge] (4,1) to [out=90,in=0] (wf);
+
+            % labels
+            \node[cyan] at (0.3, 0.2) {$c_1$};
+            \node[red] at (6.7, 0.2) {$w_1$};
 
         \end{tikzpicture}
         \captionof{figure}{Cold front: Colder air advances, pushing the warmer air upwards, cooling it down.}
@@ -177,129 +310,13 @@ In the following graphics
             \node[cloud,fill=white,cloud puffs=12, cloud, minimum width=0.8cm, minimum height=0.5cm, align=center, draw] (cloud) at (cloud2) {};
             \node[cloud,fill=white,cloud puffs=12, cloud, minimum width=1.0cm, minimum height=0.7cm, align=center, draw] (cloud) at (cloud3) {};
 
+            % labels
+            \node[cyan] at (0.3, 0.2) {$c_1$};
+            \node[red] at (6.7, 0.2) {$w_1$};
+
         \end{tikzpicture}
         \captionof{figure}{Cold front: As the air cools down, the moisture condenses. Clouds start to form.}
         \label{img:tikz:fronts:cold2}       
-    \end{minipage}
-\end{figure}
-
-\subsubsection{Warm Front}
-Different to the cold front, a warm front carries warmer air and therefore rises over the colder, denser air.
-Still, by advancing towards a cold front, the warm front pushes its warmer air higher,
-which means that in this case too, \gls{thermal}s are created and clouds start to form \cite{ww2010:warmfront}.
-
-\begin{figure}[H]
-    \centering
-    \begin{minipage}{0.47\linewidth}
-        \begin{tikzpicture}
-            \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
-            \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
-            \tikzset{shortshortedge/.style = {shorten <=-5pt,shorten >= -4.6pt}}
-
-            % warm front
-            \node (w1) at (0, 0) {};
-            \node (w2) at (2, 0) {};
-            \node (w3) at (3, 1.5) {};
-            \node (w4) at (0, 1.5) {};
-
-            \fill[fill=red!10] (0.0,0) node {}
-                         to [] (2.0,0) node {}
-                         to [] (3,1.5) node {}
-                         to [] (0,1.5) node {};
-            \draw[shortedge] (w1) -- (w2);
-            \draw[shortedge] (w2) -- (w3);
-            \draw[shortedge] (w3) -- (w4);
-            \draw[shortedge] (w4) -- (w1);
-
-            % cold front
-            \node (c1) at (2.1, 0) {};
-            \node (c2) at (7,0) {};
-            \node (c3) at (7,2) {};
-            \node (c4) at (4.5,2) {};
-            \node (c5) at (3.1,1.5) {};
-
-            \fill[fill=cyan!10] (2.1,0) node {}
-                          to [] (7,0) node {}
-                          to [] (7,2) node {}
-                          to [] (4.5,2) node {}
-                          to [out=180,in=50] (3.1,1.5) node {};
-            \draw[shortedge] (c1) to [] (c2);
-            \draw[shortedge] (c2) to [] (c3);
-            \draw[shortedge] (c3) to [] (c4);
-            \draw[shortshortedge] (c4) to [out=180,in=50] (c5);
-            \draw[shortshortedge] (c5) -- (c1);
-
-            % warm front moisture
-            \draw[red] (0.3,0.3) circle (0.1cm);
-            \draw[red] (0.4,0.85) circle (0.1cm);
-            \draw[red] (0.6,0.5) circle (0.1cm);
-            \draw[red] (0.9,0.8) circle (0.1cm);
-            \draw[red] (1.0,0.4) circle (0.1cm);
-            
-            % warm front arrows
-            \draw[red,edge] (1.3,0.5) to [out=0,in=-120] (2.4,1.2);
-
-        \end{tikzpicture}
-        \captionof{figure}{Warm front: Warmer air advances, rising over the colder air, cooling down in the process.}
-        \label{img:tikz:fronts:warm1}
-    \end{minipage}        
-    \hfill
-    \begin{minipage}{0.47\linewidth}
-        \begin{tikzpicture}
-            \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
-            \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
-            \tikzset{shortshortedge/.style = {shorten <=-5pt,shorten >= -4.6pt}}
-
-            % warm front
-            \node (w1) at (0, 0) {};
-            \node (w2) at (3, 0) {};
-            \node (w3) at (4, 1.5) {};
-            \node (w4) at (0, 1.5) {};
-
-            \fill[fill=red!10] (0.0,0) node {}
-                        to [] (3.0,0) node {}
-                        to [] (4,1.5) node {}
-                        to [] (0,1.5) node {};
-            \draw[shortedge] (w1) -- (w2);
-            \draw[shortedge] (w2) -- (w3);
-            \draw[shortedge] (w3) -- (w4);
-            \draw[shortedge] (w4) -- (w1);
-
-            % cold front
-            \node (c1) at (3.1, 0) {};
-            \node (c2) at (7,0) {};
-            \node (c3) at (7,2) {};
-            \node (c4) at (5.5,2) {};
-            \node (c5) at (4.1,1.5) {};
-
-            \fill[fill=cyan!10] (3.1,0) node {}
-                        to [] (7,0) node {}
-                        to [] (7,2) node {}
-                        to [] (5.5,2) node {}
-                        to [out=180,in=50] (4.1,1.5) node {};
-            \draw[shortedge] (c1) to [] (c2);
-            \draw[shortedge] (c2) to [] (c3);
-            \draw[shortedge] (c3) to [] (c4);
-            \draw[shortshortedge] (c4) to [out=180,in=50] (c5);
-            \draw[shortshortedge] (c5) -- (c1);
-
-            % ex-warm front moisture
-            \draw[cyan] (2.35, 1.1) circle (0.1cm);
-            \draw[cyan] (2.50, 1.35) circle (0.1cm);
-            \draw[cyan] (2.7, 1.05) circle (0.1cm);
-            \draw[cyan] (3.0, 0.80) circle (0.1cm);
-
-            % clouds
-            \node (cloud1) at (2.9, 1.7) {};
-            \node (cloud2) at (3.6, 1.6) {};
-            \node (cloud3) at (3.1, 1.3) {};
-            \node[cloud,fill=white,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud1) {};
-            \node[cloud,fill=white,cloud puffs=12, cloud, minimum width=0.8cm, minimum height=0.5cm, align=center, draw] (cloud) at (cloud2) {};
-            \node[cloud,fill=white,cloud puffs=12, cloud, minimum width=1.0cm, minimum height=0.7cm, align=center, draw] (cloud) at (cloud3) {};
-
-        \end{tikzpicture}
-        \captionof{figure}{Warm front: As the air cools down, the moisture condenses. Clouds start to form.}
-        \label{img:tikz:fronts:warm2}       
     \end{minipage}
 \end{figure}
 
@@ -334,8 +351,8 @@ TODO
             \draw[shortedge] (c4) to [] (c1);
 
             % very cold front arrows
-            \draw[cyan!50!blue,edge] (0.5,0.5) -- (1.4,0.5);
-            \draw[cyan!50!blue,edge] (0.3,1) -- (1.2,1);
+            \draw[darkcyan,edge] (0.5,0.5) -- (1.4,0.5);
+            \draw[darkcyan,edge] (0.3,1) -- (1.2,1);
 
             % cold front
             \node (c1) at (2.25, 0) {};
@@ -385,6 +402,11 @@ TODO
 
             % phantom character to have same height as neighboring graphics.
             \node at (3.6, 2.2) {\phantom{x}};
+
+            % labels
+            \node[darkcyan] at (0.3, 0.2) {$c_2$};
+            \node[red] at (3.7, 1.75) {$w_1$};
+            \node[cyan] at (6.7, 0.2) {$c_1$};
 
         \end{tikzpicture}
         \captionof{figure}{Occluded front: Very Cold air catches up with a receding cold front, forcing the warmer air inbetween to go up, creating a \gls{thermal}.}
@@ -472,6 +494,11 @@ TODO
             \node[cloud,fill=white,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud2) {};
             \node[cloud,fill=white,cloud puffs=12, cloud, minimum width=0.8cm, minimum height=0.5cm, align=center, draw] (cloud) at (cloud3) {};
             \node[cloud,fill=white,cloud puffs=12, cloud, minimum width=1.0cm, minimum height=0.7cm, align=center, draw] (cloud) at (cloud4) {};
+
+            % labels
+            \node[darkcyan] at (0.3, 0.2) {$c_2$};
+            \node[red] at (3.8, 1.75) {$w_1$};
+            \node[cyan] at (6.7, 0.2) {$c_1$};
 
         \end{tikzpicture}
         \captionof{figure}{Occluded front: The very cold air caught up and mixes with the preceding cold front. An occluded front is created, bringing heavy \gls{precipitation}.}

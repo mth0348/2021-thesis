@@ -34,7 +34,7 @@
 \usepackage[misc,weather,alpine]{ifsym}
 \usepackage{xcolor}
 \definecolor{codered}{rgb}{0.93,0.26,0.298}
-\definecolor{codegrey}{rgb}{0.7,0.7,0.7}
+\definecolor{codegrey}{rgb}{0.65,0.65,0.65}
 \definecolor{codepink}{rgb}{0.737,0.47,0.823}
 \definecolor{codeblue}{rgb}{0.227,0.572,0.937}
 \definecolor{codegreen}{rgb}{0.441,0.664,0.286}
@@ -46,19 +46,14 @@
 \lstdefinelanguage{HLSL}{
 	morekeywords=[1]{
         % variables
-        position,sphere,direction,stepSize,dirMultiplier,dScene,dOrigin,p,dMin,dMax,result,k,d1,d2,d3,i,ao,co,d,seed,cell,pCell,
         i,j,x,y,z,frequency,amplitude,current,total,maxValue,
-        vpos,ppos,vd,pd,density,projectedSunDistance,sunColor,sunTransmittance,cloudDensity,worldPosition,
-        lightTransmittance,sunDirection,lightStepSize,insideBoxDist,
+        data,renderer,d1,d2,d3
 	},
 	morekeywords=[2]{
         % methods and functions
 		distance,normalize,min,max,dot,pow,sin,cos,tan,fract,length,smoothstep,
-        sphereHit,raymarch,sphereDistance,sceneSDF,estimateNormal,hardshadow,softshadow,blend,sphereSDF,boxSDF,
-        difference,union,intersection,ambientOcclusion,voronoi,
         random2d,random,random3d,randomSeed,floor,fbm,
-        noise,lightmarch,
-        sampleDensity,getColorVoronoi,getColorPerlin,worldToScreenPos
+        renderClouds
 	},
 	morekeywords=[3]{
         % CONSTANTS
@@ -95,7 +90,7 @@
     sensitive=false, % keywords are not case-sensitive
     morecomment=[l]{//}, % l is for line comment
     morecomment=[s]{/*}{*/}, % s is for start and end delimiter
-    belowskip=2.5em,
+    belowskip=1em,
     aboveskip=1em,
 }
 

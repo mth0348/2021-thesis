@@ -81,3 +81,35 @@ The given data is not an image of clouds, but meteorological measurement data, a
         \label{img:tikz:impl:data2}       
     \end{minipage}
 \end{figure}
+
+\noindent
+For any given day to render, an implementation would require data from that day but also from the near future of that day.
+So, in order to render a cloud image for day $x$, a potential algorithm could look like this.
+Note that the listing below describes only an idea and is by no means final or compulsory.
+
+\begin{lstlisting}[language=HLSL, caption=Pseudo-code of cloud render algorithm, label=lst:pseudo:algorithm]
+// weather data including 7-day forecast
+WeatherData data;
+
+function renderClouds(Day x) {
+    if (x > TODAY + 7) throw;
+
+    d1 = data.getDataFor(x);
+    d2 = data.getDataFor(x + 1);
+    d3 = data.getDataFor(x + 2);
+
+    if (d1.rainy) 
+        return renderer.cloudsOnRainyDay();
+    if (d2.rainy) 
+        return renderer.cloudsBeforeRainyDay();
+    // many more checks...
+}
+\end{lstlisting}
+
+\subsection{Look-Ahead Issue}
+The approach as described above relies on having data from a couple of days ahead of time. Assumed that number of days is $t$, then the weather data for day $x$ could only be rendered $t$ days after $x$.
+That would mean, for such an approach to work, the weather of today can not be rendered before $t$ days later.
+\\
+In this case however, the weather measurement data retrieved from \emph{meteoblue} also contains a seven-day weather forecast. 
+Given that $t$ is less than or equal to seven and an implementation still produces accurate cloud imagery, it would no longer be an issue.
+

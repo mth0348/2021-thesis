@@ -337,6 +337,8 @@ Next steps:
 
 | Task | time spent |
 |----|---|
+|Weather front research|4h|
+|Cloud types research|8h|
 
 &nbsp;
 
@@ -368,3 +370,8 @@ Next steps:
 
 | Task | time spent |
 |----|---|
+|cloud types|12h|
+|Weather front chapter|4h|
+|Warm weather front|4h|
+|Cold weather front|2h|
+|Occluded weather front|8h|

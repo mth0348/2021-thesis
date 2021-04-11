@@ -27,8 +27,8 @@ The given data is not an image of clouds, but meteorological measurement data, a
             \node[cloud,fill=gray!30,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud5) {};
             \node[cloud,fill=gray!30,cloud puffs=12, cloud, minimum width=1.0cm, minimum height=0.7cm, align=center, draw] (cloud) at (cloud3) {};
             \node[cloud,fill=gray!30,cloud puffs=12, cloud, minimum width=0.8cm, minimum height=0.5cm, align=center, draw] (cloud) at (cloud4) {};
-            \draw[edge] (2.5, 2) -- (4,2);
-            \node at (5,2) {rain};
+            \draw[edge] (2.5, 2) -- (3.5,2);
+            \node at (5,2) {rain ahead};
 
             % clear clouds
             \node (cloud1) at (0.5, 0.0) {};
@@ -37,8 +37,8 @@ The given data is not an image of clouds, but meteorological measurement data, a
             \node[cloud,fill=white,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud1) {};
             \node[cloud,fill=white,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud2) {};
             \node[cloud,fill=white,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud5) {};
-            \draw[edge] (2.5, 0) -- (4,0);
-            \node at (5.7,0) {fair weather};
+            \draw[edge] (2.5, 0) -- (3.5,0);
+            \node at (5.7,0) {fair weather ahead};
 
         \end{tikzpicture}
         \captionof{figure}{Weather information based on visual data.}
@@ -63,8 +63,8 @@ The given data is not an image of clouds, but meteorological measurement data, a
             \node[cloud,fill=gray!30,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud5) {};
             \node[cloud,fill=gray!30,cloud puffs=12, cloud, minimum width=1.0cm, minimum height=0.7cm, align=center, draw] (cloud) at (cloud3) {};
             \node[cloud,fill=gray!30,cloud puffs=12, cloud, minimum width=0.8cm, minimum height=0.5cm, align=center, draw] (cloud) at (cloud4) {};
-            \draw[edge] (1.5, 2) -- (3,2);
-            \node at (0,2) {rain};
+            \draw[edge] (2, 2) -- (3.5,2);
+            \node at (0,2) {rain ahead};
 
             % clear clouds
             \node (cloud1) at (4.5, 0.0) {};
@@ -73,8 +73,8 @@ The given data is not an image of clouds, but meteorological measurement data, a
             \node[cloud,fill=white,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud1) {};
             \node[cloud,fill=white,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud2) {};
             \node[cloud,fill=white,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud5) {};
-            \draw[edge] (2.0, 0) -- (3,0);
-            \node at (0.7,0) {fair weather};
+            \draw[edge] (2.5, 0) -- (3.5,0);
+            \node at (0.7,0) {fair weather ahead};
             
         \end{tikzpicture}
         \captionof{figure}{Visual construction based on weather information.}
@@ -97,14 +97,21 @@ function renderClouds(Day x) {
     d1 = data.getDataFor(x);
     d2 = data.getDataFor(x + 1);
     d3 = data.getDataFor(x + 2);
+    // and so on...
 
-    if (d1.rainy) 
+    // sophisticated checks about current and future state:
+    if (d1.isRainy)
         return renderer.cloudsOnRainyDay();
-    if (d2.rainy) 
+    if (d2.isRainy) 
         return renderer.cloudsBeforeRainyDay();
-    // more sophisticated checks...
+    if (d2.isRainy) 
+        return renderer.clouds2DaysBeforeRainyDay();
+    // and so on...
+    
 }
 \end{lstlisting}
+
+\clearpage
 
 \subsection{Look-Ahead Issue}
 The approach as described above relies on having data from a couple of days ahead of time. Assumed that number of days is $t$, then the weather data for day $x$ could only be rendered $t$ days after $x$.

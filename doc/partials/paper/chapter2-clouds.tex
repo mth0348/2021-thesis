@@ -1,6 +1,6 @@
 \section{Natural Clouds}
 Clouds are a substantial part of Earth's weather. They provide shade from the glistening sun on hot days and reflect the heat at night, keeping the ground warmer.
-For a layman, clouds are comprehensible and useful indicators for telling the weather.
+Even for a layman, clouds are comprehensible and useful indicators for telling the weather.
 If they are dark and low-hanging, they usually bring rain.
 If they are puffy and scarce, they predict fair weather ahead.
 
@@ -52,7 +52,7 @@ However, it can also be produced by the movement of \gls{weatherfront}s.
 According to \emph{metoffice} \cite{metoffice:weatherfronts}, weather fronts are boundaries between two air masses. Those masses differ in temparature, wind direction and humidity.
 There are three major types of weather fronts: \emph{warm}, \emph{cold} and \emph{occluded} fronts.
 \\
-In the following graphics, the \gls{warmfront} is marked with \color{red}$w_1$\color{black}, the \gls{coldfront} is marked with \color{cyan}$c_1$ \color{black} and a second \gls{coldfront} with much cooler air is marked with \color{darkcyan}$c_2$\color{black}.
+In the following graphics, the \gls{warmfront} is marked with \color{red}$w_1$\color{black}, while the \gls{coldfront} is marked with \color{cyan}$c_1$\color{black}.
 
 \subsubsection{Precipitation Along a Warm Front}
 When a \gls{warmfront} approaches a \gls{coldfront}, it is likely that the pending clash results in clouds, bringing \gls{precipitation} .
@@ -251,7 +251,7 @@ By pushing up warm air, that air cools down as it rises, thus clouds start to de
             \node[red] at (6.7, 0.2) {$w_1$};
 
         \end{tikzpicture}
-        \captionof{figure}{Cold front: Colder air advances, pushing the warmer air upwards, cooling it down.}
+        \captionof{figure}{\Gls{coldfront}: Colder air advances, pushing the warmer air upwards, cooling it down.}
         \label{img:tikz:fronts:cold1}
     \end{minipage}        
     \hfill
@@ -319,7 +319,7 @@ By pushing up warm air, that air cools down as it rises, thus clouds start to de
             \node[red] at (6.7, 0.2) {$w_1$};
 
         \end{tikzpicture}
-        \captionof{figure}{Cold front: As the air cools down, the moisture condenses. Clouds start to form.}
+        \captionof{figure}{\Gls{coldfront}: As the air cools down, the moisture condenses. Clouds start to form.}
         \label{img:tikz:fronts:cold2}       
     \end{minipage}
 \end{figure}
@@ -331,6 +331,7 @@ There is also the phenomen of front \gls{occlusion}, producing \emph{\gls{occlud
 This happens when there is a \gls{warmfront} that is caught in the middle of two faster moving \gls{coldfront}s.
 At some point, the preceding \gls{coldfront} overtakes the \gls{warmfront} and forces it upwards, causing \gls{thermal}s of warm air rising.
 Depending on which of the two \gls{coldfront}s is colder, the outcome may change.
+The milder \gls{coldfront} is denoted with \color{cyan}$c_1$\color{black}, while the other \gls{coldfront} with much cooler air is denoted with \color{darkcyan}$c_2$\color{black}.
 \\
 If the preceding \gls{coldfront} carries cooler air than the succeeding, the \gls{occlusion} is called a \emph{cold \gls{occlusion}} \cite{skybrary:occlusion}.
 
@@ -417,7 +418,7 @@ If the preceding \gls{coldfront} carries cooler air than the succeeding, the \gl
             \node[cyan] at (6.7, 0.2) {$c_1$};
 
         \end{tikzpicture}
-        \captionof{figure}{\Gls{occludedfront}: Cool air catches up with a preceding \gls{coldfront}, forcing the warmer air inbetween to go up, creating a \gls{thermal}.}
+        \captionof{figure}{Cold \gls{occlusion}: Cool air catches up with a preceding \gls{coldfront}, forcing the warmer air inbetween to go up, creating a \gls{thermal}.}
         \label{img:tikz:fronts:occluded1}
     \end{minipage}        
     \hfill
@@ -509,14 +510,13 @@ If the preceding \gls{coldfront} carries cooler air than the succeeding, the \gl
             \node[cyan] at (6.7, 0.2) {$c_1$};
 
         \end{tikzpicture}
-        \captionof{figure}{\Gls{occludedfront}: The cool air pushes underneath both other fronts. An \gls{occludedfront} is created, bringing heavy \gls{precipitation}.}
+        \captionof{figure}{Cold \gls{occlusion}: The cool air pushes underneath both other fronts. An \gls{occludedfront} is created, bringing heavy \gls{precipitation}.}
         \label{img:tikz:fronts:occluded2}       
     \end{minipage}
 \end{figure}
 
 \noindent
 However, if the succeeding \gls{coldfront} is carrying cooler air than the preceding \gls{coldfront}, the \gls{occlusion} is called \emph{warm \gls{occlusion}} \cite{skybrary:occlusion}.
-
 
 \begin{figure}[H]
     \centering
@@ -601,7 +601,7 @@ However, if the succeeding \gls{coldfront} is carrying cooler air than the prece
             \node[darkcyan] at (6.7, 0.2) {$c_2$};
 
         \end{tikzpicture}
-        \captionof{figure}{\Gls{occludedfront}: A \gls{coldfront} catches up with a \gls{warmfront} preceded by cool air, forcing the warmer air inbetween to go up, creating a \gls{thermal}.}
+        \captionof{figure}{Warm \gls{occlusion}: A \gls{coldfront} catches up with a \gls{warmfront} preceded by cool air, forcing the warmer air inbetween to go up, creating a \gls{thermal}.}
         \label{img:tikz:fronts:occluded3}
     \end{minipage}        
     \hfill
@@ -692,7 +692,7 @@ However, if the succeeding \gls{coldfront} is carrying cooler air than the prece
             \node[red] at (3.8, 1.75) {$w_1$};
             \node[darkcyan] at (6.7, 0.2) {$c_2$};
         \end{tikzpicture}
-        \captionof{figure}{\Gls{occludedfront}: The \gls{coldfront} is forced to climb over the cool air, pushing the \gls{warmfront} up. An \gls{occludedfront} is created, bringing heavy \gls{precipitation}.}
+        \captionof{figure}{Warm \gls{occlusion}: The \gls{coldfront} is forced to climb over the cool air, pushing the \gls{warmfront} up. An \gls{occludedfront} is created, bringing heavy \gls{precipitation}.}
         \label{img:tikz:fronts:occluded4}       
     \end{minipage}
 \end{figure}
@@ -700,6 +700,7 @@ However, if the succeeding \gls{coldfront} is carrying cooler air than the prece
 \clearpage
 
 \subsection{Classifications}
+\label{section:clouds:types}
 In order to create a \gls{wrs} that is able to display many different cloudscapes, all types of clouds have to be understood first.
 The \gls{wmo} describes ten distinct cloud classifications. For each of those, there are further subtypes. For simplicity, those subtypes will be disregarded in this project.
 
@@ -829,7 +830,7 @@ They bring long-term rain or snow for several hours or days.
 
 \pagebreak
 
-\subsubsection{Status}
+\subsubsection{Stratus}
 \begin{wrapfigure}[9]{r}{6.3cm}
     \vspace{-\baselineskip}
     \includegraphics[width=6.3cm]{clouds/stratus.jpg}
@@ -872,7 +873,7 @@ They indicate fair weather, but can develop into cumulonimbus clouds, if weather
     \caption{Stratocumulus clouds \protect\cite{cloudtypes:meteoblue}.}
     \label{img:clouds:stratocumulus}
 \end{wrapfigure}
-These low-layer patches of cloud consist mainly of water droplets, absorbing a lot of light, giving them a light to dark grey color.
+These low-layer patches of cloud consist mainly of water droplets, absorbing a lot of light, giving them a saturated grey color.
 \\
 They are the most common clouds on Earth and usually form when there is a change in weather or when a layer of stratus cloud breaks up.
 This means that stratocumulus clouds are present near cold, warm or \gls{occludedfront}s.

@@ -52,12 +52,12 @@ However, it can also be produced by the movement of \gls{weatherfront}s.
 According to \emph{metoffice} \cite{metoffice:weatherfronts}, weather fronts are boundaries between two air masses. Those masses differ in temparature, wind direction and humidity.
 There are three major types of weather fronts: \emph{warm}, \emph{cold} and \emph{occluded} fronts.
 \\
-In the following graphics, the warm front is marked with \color{red}$w_1$\color{black}, the cold front is marked with \color{cyan}$c_1$ \color{black} and a second cold front with much cooler air is marked with \color{darkcyan}$c_2$\color{black}.
+In the following graphics, the \gls{warmfront} is marked with \color{red}$w_1$\color{black}, the \gls{coldfront} is marked with \color{cyan}$c_1$ \color{black} and a second \gls{coldfront} with much cooler air is marked with \color{darkcyan}$c_2$\color{black}.
 
 \subsubsection{Precipitation Along a Warm Front}
-When a warm front approaches a cold front, it is likely that the pending clash results in clouds, bringing \gls{precipitation} .
-The warm front carries warmer air and therefore rises over the colder, denser air.
-By advancing towards a cold front, the warm front pushes its warmer air higher,
+When a \gls{warmfront} approaches a \gls{coldfront}, it is likely that the pending clash results in clouds, bringing \gls{precipitation} .
+The \gls{warmfront} carries warmer air and therefore rises over the colder, denser air.
+By advancing towards a \gls{coldfront}, the \gls{warmfront} pushes its warmer air higher,
 which means that \gls{thermal}s are created and clouds start to form \cite{ww2010:warmfront}.
 
 \begin{figure}[H]
@@ -116,7 +116,7 @@ which means that \gls{thermal}s are created and clouds start to form \cite{ww201
             \node[cyan] at (6.7, 0.2) {$c_1$};
 
         \end{tikzpicture}
-        \captionof{figure}{Warm front: Warmer air advances, rising over the colder air, cooling down in the process.}
+        \captionof{figure}{\Gls{warmfront}: Warmer air advances, rising over the colder air, cooling down in the process.}
         \label{img:tikz:fronts:warm1}
     \end{minipage}        
     \hfill
@@ -178,7 +178,7 @@ which means that \gls{thermal}s are created and clouds start to form \cite{ww201
             \node[cyan] at (6.7, 0.2) {$c_1$};
 
         \end{tikzpicture}
-        \captionof{figure}{Warm front: As the air cools down, the moisture condenses. Clouds start to form.}
+        \captionof{figure}{\Gls{warmfront}: As the air cools down, the moisture condenses. Clouds start to form.}
         \label{img:tikz:fronts:warm2}       
     \end{minipage}
 \end{figure}
@@ -186,8 +186,8 @@ which means that \gls{thermal}s are created and clouds start to form \cite{ww201
 
 \subsubsection{Precipitation Along a Cold Front}
 A cold front represents the boundaries of an air mass carrying cool air. 
-Like to the warm front movement, a cold front catching on a warm front can just as much produce clouds with \gls{precipitation}.
-When trailing a warm front, \gls{thermal}s are produced in a similar way.
+Like to the \gls{warmfront} movement, a \gls{coldfront} catching on a \gls{warmfront} can just as much produce clouds with \gls{precipitation}.
+When trailing a \gls{warmfront}, \gls{thermal}s are produced in a similar way.
 As colder air is denser than warmer air, it pushes underneath the warmer air.
 By pushing up warm air, that air cools down as it rises, thus clouds start to develop \cite{ww2010:coldfront}.
 
@@ -327,12 +327,12 @@ By pushing up warm air, that air cools down as it rises, thus clouds start to de
 \clearpage
 
 \subsubsection{Precipitation Along an Occluded Front}
-There is also the phenomen of front occlusion, producing \emph{\gls{occludedfront}}.
-This happens when there is a warm front that is caught in the middle of two faster moving cold fronts.
-At some point, the preceding cold front overtakes the warm front and forces it upwards, causing \gls{thermal}s of warm air rising.
-Depending on which of the two cold fronts is colder, the outcome may change.
+There is also the phenomen of front \gls{occlusion}, producing \emph{\gls{occludedfront}}.
+This happens when there is a \gls{warmfront} that is caught in the middle of two faster moving \gls{coldfront}s.
+At some point, the preceding \gls{coldfront} overtakes the \gls{warmfront} and forces it upwards, causing \gls{thermal}s of warm air rising.
+Depending on which of the two \gls{coldfront}s is colder, the outcome may change.
 \\
-If the preceding cold front carries cooler air than the succeeding, the occlusion is called a \emph{cold occlusion} \cite{skybrary:occlusion}.
+If the preceding \gls{coldfront} carries cooler air than the succeeding, the \gls{occlusion} is called a \emph{cold \gls{occlusion}} \cite{skybrary:occlusion}.
 
 \begin{figure}[H]
     \centering
@@ -417,7 +417,7 @@ If the preceding cold front carries cooler air than the succeeding, the occlusio
             \node[cyan] at (6.7, 0.2) {$c_1$};
 
         \end{tikzpicture}
-        \captionof{figure}{Occluded front: Cool air catches up with a preceding cold front, forcing the warmer air inbetween to go up, creating a \gls{thermal}.}
+        \captionof{figure}{\Gls{occludedfront}: Cool air catches up with a preceding \gls{coldfront}, forcing the warmer air inbetween to go up, creating a \gls{thermal}.}
         \label{img:tikz:fronts:occluded1}
     \end{minipage}        
     \hfill
@@ -448,19 +448,19 @@ If the preceding cold front carries cooler air than the succeeding, the occlusio
             \draw[cyan!50!blue,edge] (1.0,1.1) to [out=0,in=150] (2.0,0.9);
 
             % cold front
-            \node (c1) at (3.1, 0) {};
+            \node (c1) at (3.12, 0) {};
             \node (c2) at (7,0) {};
             \node (c3) at (7,2) {};
             \node (c4) at (5.5,2) {};
             \node (c5) at (4.1,1.5) {};
-            \node (c6) at (3.1, 0.5) {};
+            \node (c6) at (3.08, 0.5) {};
 
-            \fill[fill=cyan!10] (3.05,0) node {}
+            \fill[fill=cyan!10] (3.12,0) node {}
                           to [] (7,0) node {}
                           to [] (7,2) node {}
                           to [] (5.5,2) node {}
                           to [out=180,in=45] (4.1,1.5) node {}
-                          to [] (3.1,0.5) node {};
+                          to [] (3.08,0.5) node {};
             \draw[shortedge] (c1) to [] (c2);
             \draw[shortedge] (c2) to [] (c3);
             \draw[shortedge] (c3) to [] (c4);
@@ -509,13 +509,13 @@ If the preceding cold front carries cooler air than the succeeding, the occlusio
             \node[cyan] at (6.7, 0.2) {$c_1$};
 
         \end{tikzpicture}
-        \captionof{figure}{Occluded front: The cool air pushes underneath both other fronts. An \gls{occludedfront} is created, bringing heavy \gls{precipitation}.}
+        \captionof{figure}{\Gls{occludedfront}: The cool air pushes underneath both other fronts. An \gls{occludedfront} is created, bringing heavy \gls{precipitation}.}
         \label{img:tikz:fronts:occluded2}       
     \end{minipage}
 \end{figure}
 
 \noindent
-However, if the succeeding cold front is carrying cooler air than the preceding cold front, the occlusion is called \emph{warm occlusion} \cite{skybrary:occlusion}.
+However, if the succeeding \gls{coldfront} is carrying cooler air than the preceding \gls{coldfront}, the \gls{occlusion} is called \emph{warm \gls{occlusion}} \cite{skybrary:occlusion}.
 
 
 \begin{figure}[H]
@@ -527,7 +527,7 @@ However, if the succeeding cold front is carrying cooler air than the preceding 
             \tikzset{shortshortedge/.style = {shorten <=-5.5pt,shorten >= -5.3pt}}
             \tikzset{shortshortedge2/.style = {shorten <=-4.5pt,shorten >= -4.5pt}}
 
-            % cold front
+            % \gls{coldfront}
             \node (c1) at (0, 0) {};
             \node (c2) at (2, 0) {};
             \node (c3) at (1, 1.5) {};
@@ -601,8 +601,8 @@ However, if the succeeding cold front is carrying cooler air than the preceding 
             \node[darkcyan] at (6.7, 0.2) {$c_2$};
 
         \end{tikzpicture}
-        \captionof{figure}{Occluded front: A cold front catches up with a warm front preceded by cool air, forcing the warmer air inbetween to go up, creating a \gls{thermal}.}
-        \label{img:tikz:fronts:occluded1}
+        \captionof{figure}{\Gls{occludedfront}: A \gls{coldfront} catches up with a \gls{warmfront} preceded by cool air, forcing the warmer air inbetween to go up, creating a \gls{thermal}.}
+        \label{img:tikz:fronts:occluded3}
     \end{minipage}        
     \hfill
     \begin{minipage}{0.47\linewidth}
@@ -692,8 +692,8 @@ However, if the succeeding cold front is carrying cooler air than the preceding 
             \node[red] at (3.8, 1.75) {$w_1$};
             \node[darkcyan] at (6.7, 0.2) {$c_2$};
         \end{tikzpicture}
-        \captionof{figure}{Occluded front: The cold front is forced to climb over the cool air, pushing the warm front up. An occluded front is created, bringing heavy \gls{precipitation}.}
-        \label{img:tikz:fronts:occluded2}       
+        \captionof{figure}{\Gls{occludedfront}: The \gls{coldfront} is forced to climb over the cool air, pushing the \gls{warmfront} up. An \gls{occludedfront} is created, bringing heavy \gls{precipitation}.}
+        \label{img:tikz:fronts:occluded4}       
     \end{minipage}
 \end{figure}
 
@@ -742,7 +742,7 @@ Typically, they are formed when \gls{watervapor} undergoes \gls{desublimation}, 
 \noindent
 However, cirrus clouds can also form from air that flows outwards of thunderstorms.
 \emptyline
-\textbf{Interpretation:} Fair weather, but they might announce the arrival of warm front in 12-24 hours, which is often preceded by rain several hours in advance.
+\textbf{Interpretation:} Fair weather, but they might announce the arrival of \gls{warmfront} in 12-24 hours, which is often preceded by rain several hours in advance.
 Even though cirrus clouds indicate \gls{precipitation}, they themselves do not produce rainfall \cite{predict:weather}.
 
 \subsubsection{Cirrostratus}
@@ -760,7 +760,7 @@ They form under the same conditions as the cirrus clouds and can cover a massive
 Cirrostratus clouds sometimes produce white rings or arcs of lights around the sun or the moon called the \emph{\gls{halophenomenon}}.
 Sometimes, the cirrostratus clouds are so thin that the halo is the only way to tell if there are cirrostratus clouds.
 \emptyline
-\textbf{Interpretation:} Fair weather, but they indicate a warm front within one or two days, bringing \gls{precipitation} \cite{cloudtypes:meteoblue}.
+\textbf{Interpretation:} Fair weather, but they indicate a \gls{warmfront} within one or two days, bringing \gls{precipitation} \cite{cloudtypes:meteoblue}.
 
 \subsubsection{Cirrocumulus}
 \begin{wrapfigure}[10]{r}{6.3cm}
@@ -875,7 +875,7 @@ They indicate fair weather, but can develop into cumulonimbus clouds, if weather
 These low-layer patches of cloud consist mainly of water droplets, absorbing a lot of light, giving them a light to dark grey color.
 \\
 They are the most common clouds on Earth and usually form when there is a change in weather or when a layer of stratus cloud breaks up.
-This means that stratocumulus clouds are present near cold, warm or occluded fronts.
+This means that stratocumulus clouds are present near cold, warm or \gls{occludedfront}s.
 \\
 Stratocumulus do not produce \gls{precipitation} themselves, but are formed in many different conditions, including rainy or calm weather.
 \emptyline
@@ -896,7 +896,7 @@ Their top is often shaped like an anvil, whereas the base if flat and dark, givi
 \\
 They are referred to as thunderclouds, because they are the only type of cloud that is able to produce hail, thunder and lighting \cite{metoffice:cumulonimbus}.
 \\
-Cumulonimbus clouds are formed trough natural \gls{convection} or as a result of forced forced \gls{convection} when a cold front pushes up warm air.
+Cumulonimbus clouds are formed trough natural \gls{convection} or as a result of forced forced \gls{convection} when a \gls{coldfront} pushes up warm air.
 \emptyline
 \textbf{Interpretation:}
 They cause extreme weather like heavy torrential rain, hail storms, lighting and even tornados.

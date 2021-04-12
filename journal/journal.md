@@ -370,8 +370,40 @@ Next steps:
 
 | Task | time spent |
 |----|---|
-|cloud types|12h|
+|cloud types|8h|
 |Weather front chapter|4h|
 |Warm weather front|4h|
 |Cold weather front|2h|
-|Occluded weather front|8h|
+|Occluded weather front|6h|
+|Implementation approach|3h|
+|ArcGIS integration|6h|
+
+&nbsp;
+
+&nbsp;
+#
+## \#07: April 08, 2021
+### Formal and technical questions
+1. Is ok not to use swisstopo buildings?
+2. Is ok only to use ArcGIS plugin?
+3. Find date for exam (between June 15 and July 8) 
+
+
+**Answers to questions:**
+1. .
+2. .
+3. .
+
+### Meeting discussion
+
+
+**Inputs from tutor:**
+
+
+**Tasks**
+* Next meeting is scheduled for **April 22, 2021 at 2pm.**
+
+**Time log**
+
+| Task | time spent |
+|----|---|

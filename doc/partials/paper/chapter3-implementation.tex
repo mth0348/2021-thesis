@@ -127,9 +127,9 @@ Given that $t$ is less than or equal to seven and an implementation still produc
 \subsection{Layers of Cloud Shaders}
 As identified in \sectionref{section:clouds:types}, most of the clouds in the troposhpere only appear at certain \gls{altitude}s.
 The high-level clouds are all of type \emph{cirrus}.
-The mid-level clouds are both of type \emph{alto} and similar in look, while most of the low-level clouds belong to the \emph{cumulus} family.
+The mid-level types are altostratus and altocumulus, while the low-level types are stratus, stratocumulus and stratus.
 \\
-This leads to the conclusion that some of the cloud types could be combined into a single layer and rendered by the same shader.
+This leads to the conclusion that some of the cloud types could be consolidated into a combined layer and rendered by the same shader.
 Exception to that are only the two larger types that span over multiple height levels: nimbostratus and cumulonimbus. For those, a more unique solution has to be found.
 
 \begin{figure}[H]
@@ -146,14 +146,16 @@ Exception to that are only the two larger types that span over multiple height l
         \draw (0.5,4.95) -- (2,3.5);
 
         % cloud layer boxes
-        \draw (3,7) rectangle (10,6.2);
-        \draw (3,6) rectangle (10,5.2);
-        \draw (3,5) rectangle (10,4.2);
-        \draw (3,4) rectangle (10,2.2);
-        \node at (6.5,6.6) {cirrus layer};
-        \node at (6.5,5.6) {alto layer};
-        \node at (6.5,4.6) {stratus layer};
-        \node at (6.5,3.1) {fog layer};
+        \draw (3,7) rectangle (8,6.2);
+        \draw (3,6) rectangle (8,5.2);
+        \draw (3,5) rectangle (8,4.2);
+        \draw (3,4) rectangle (11,2.2);
+        \draw (8.2,7) rectangle (11,4.2);
+        \node at (5.5,6.6) {high-level clouds};
+        \node at (5.5,5.6) {mid-level clouds};
+        \node at (5.5,4.6) {low-level clouds};
+        \node at (6.8,3.1) {ground level fog};
+        \node[text width=2cm] at (10,5.6) {cumulo-nimbus};
 
         % houses
         \node[black!40] at (4.9, 1.15) {\faHome};
@@ -171,39 +173,94 @@ Exception to that are only the two larger types that span over multiple height l
         
         % ground
         \node[green!50!black,rotate=-58,anchor=west] at (1.2,3.1) {ground};
-        \draw[green!50!black,thick] (0,4.2) -- (0.2,4.2) -- (0.4,4.1) -- (0.5,4) -- (1,3) -- (2,1.5) -- (3,1.1) -- (5,1) -- (5.1,1.05) -- (5.4,1.1) -- (6,1) -- (6.5,1.1) -- (6.6,1.2) -- (7,1.2) -- (8,1) -- (10,1.1);
+        \draw[green!50!black,thick] (0,4.2) -- (0.2,4.2) -- (0.4,4.1) -- (0.5,4) -- (1,3) -- (2,1.5) -- (3,1.1) -- (5,1) -- (5.1,1.05) -- (5.4,1.1) -- (6,1) -- (6.5,1.1) -- (6.6,1.2) -- (7,1.2) -- (8,1) -- (10,1.1) -- (12,1);
 
         % height of troposphere
-        \draw (12.0,1) -- (12.0,7);
-        \draw (12.1,1) -- (11.9,1);
-        \draw (12.1,7) -- (11.9,7);
-        \node[rotate=90,anchor=west] at (11.7,2.5) {troposphere height};
+        \draw (13.0,1) -- (13.0,7);
+        \draw (13.1,1) -- (12.9,1);
+        \draw (13.1,7) -- (12.9,7);
+        \node[rotate=90,anchor=west] at (12.7,2.5) {troposphere height};
 
     \end{tikzpicture}
-    \captionof{figure}{Shader setup.}
+    \captionof{figure}{Layers of cloud shaders.}
     \label{img:tikz:shadersetup}       
 \end{figure}
 
-\subsubsection{Cirrus Layer}
+\pagebreak
+
+\subsubsection{High-Level Clouds}
 The uppermost layer would contain cirrus, cirrostratus and cirrocumulus clouds.
-All of these form under similar weather conditions and closely resemble each other in appearance.
+All of these form under similar weather conditions and closely resemble each other in appearance and formation.
 \\
-A potential \gls{shader} could be programmed to render either no clouds at all or a base variant of all three cirrus clouds, which could then be parametrized into an individual type of cirrus cloud.
+A potential \gls{shader} for that layer could be programmed to render a base variant of all three cirrus clouds, which would then be parametrized into each individual type of cirrus cloud, whichever is currently visible.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{cloudlayers/cirruslayer.png}
-    \caption{A breakdown of the cirrus cloud layer.}
+    \caption{Breakdown of the highest shader layer.}
     \label{img:cloudlayer:cirrus}
 \end{figure}
 
-\subsubsection{Alto Layer}
+\subsubsection{Mid-Level Clouds}
 The middle layer consists of altostratus and altocumulus clouds, the latter mainly being formed by dissipation of the former one.
-Since they have many shared characteristics, apart from the puffiness, they are predestined to be combined.
+Since they have many shared characteristics, apart from the puffiness, they are predestined to be processed together.
 \\
-Given a \gls{shader} is flexible enough to render altostratus clouds, then it is also able to render altocumulus, with only few adjustements necessary.
+Given a \gls{shader} is flexible enough to render altostratus clouds, then it is most likely also able to render altocumulus, with only few adjustements necessary.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{cloudlayers/altolayer.png}
-    \caption{A breakdown of the alto cloud layer.}
+    \caption{Breakdown of the middle shader layer.}
     \label{img:cloudlayer:alto}
 \end{figure}
+
+\pagebreak
+
+\subsubsection{Low-Level Clouds}
+The lower layer may prove to be more complex than the others, as the stratus and cumulus clouds do essentially not look alike.
+However, cumulus clouds could be described as less denser, smaller and separated instances of stratocumulus clouds.
+\\
+If a \gls{shader} would be able to render stratocumulus clouds and allow to control the density or the spreading of such, then cumulus clouds could be rendered in the same manner.
+
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{cloudlayers/stratolayer.png}
+    \caption{Breakdown of the lowest shader layer.}
+    \label{img:cloudlayer:alto}
+\end{figure}
+
+
+\subsubsection{Ground Level Fog}
+The lowest layer consists of fog. It is conceivable that stratus clouds will also be placed in that layer.
+Both type of clouds are to some extent combinable, as they primarily vary in density.
+\\
+Therefore, a \gls{shader} would need to have control over the outcome's density and lightness for it to be able to render both stratus clouds and ground fog.
+
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{cloudlayers/foglayer.png}
+    \caption{Breakdown of the fog shader layer.}
+    \label{img:cloudlayer:fog}
+\end{figure}
+
+\pagebreak
+
+\subsubsection{Cumulonimbus Layer}
+With all the previous layers implemented, only the two large cloud types are left, one of them is the cumulonimbus.
+\\
+Assuming the observer is walking directly underneath a cumulonimbus cloud, the cloud itself and its defining visual features are not really reckognizable.
+It could easily be mistaken for other clouds that produce \gls{precipitation}.
+\\e
+Under that assumption, it is considered that the cumulonimbus cloud will only ever be seen from a distance.
+This is why these clouds will most likely be rendered in their own layer, farther away from the main camera, but spanning over all other height levels.
+
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{cloudlayers/cumulonimbus.png}
+    \caption{Perspective similarities under clouds with \gls{precipitation}.}
+    \label{img:cloudlayer:cumulonimbus}
+\end{figure}
+
+
+\subsubsection{Nimbostratus Layer}
+A similar issue as with the cumulonimbus clouds is present for the nimbostratus clouds.
+Due to them being thick, dark layers of cloud lacking features and contours, they are more difficult to render.
+\\
+It is, however, imaginable to omit the type nimbostratus altogether and substitute it by combining and tuning the already existing layers.
+For example, the nimbostratus cloud might be imitated by darkening the color of altostratus clouds as well making them thicker. 
+With additional stratus clouds and increased fog density, a layman could hopefully no longer tell the difference.

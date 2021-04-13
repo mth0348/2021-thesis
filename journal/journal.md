@@ -395,7 +395,7 @@ Next steps:
 3. .
 
 ### Meeting discussion
-
+* other good source: https://melstrong.org/page-of-clouds/
 
 **Inputs from tutor:**
 
@@ -407,3 +407,5 @@ Next steps:
 
 | Task | time spent |
 |----|---|
+|implementation approach|12h|
+|inkscape cloud graphics|4h|

@@ -704,10 +704,48 @@ However, if the succeeding \gls{coldfront} is carrying cooler air than the prece
 In order to create a \gls{wrs} that is able to display many different cloudscapes, all types of clouds have to be understood first.
 The \gls{wmo} describes ten distinct cloud classifications. For each of those, there are further subtypes. For simplicity, those subtypes will be disregarded in this project.
 
+% \begin{figure}[H]
+%     \includegraphics[width=\linewidth]{cloudtypes.png}
+%     \captionof{figure}{Distinct classifications of cloudshapes in the troposphere \protect\cite{cloudtypes:wiki}.}
+%     \label{img:ui:mockup:live}
+% \end{figure}
+
 \begin{figure}[H]
-    \includegraphics[width=\linewidth]{clouds-types.jpg}
+    \begin{tikzpicture}[scale=1]
+        \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+        \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
+        \tikzset{small/.style = {font=\small}}
+        \tikzset{mini/.style = {font=\footnotesize}}
+        \tikzset{tiny/.style = {font=\tiny}}
+
+        \node[right,inner sep=0pt] at (-0.1,0)
+            {\includegraphics[width=\textwidth]{cloudtypes.png}};
+
+        % cloud layer names
+        \node[mini,right,darkdarkcyan] at (1.5,4.0) {Cumulonimbus};
+        \node[mini,right,darkdarkcyan] at (5.8,2.55) {Cirrocumulus};
+        \node[mini,right,darkdarkcyan] at (9,2.6) {Cirrostratus};
+        \node[mini,right,darkdarkcyan] at (11.5,3.9) {Cirrus};
+        \node[mini,right,darkdarkcyan] at (5.0,0.7) {Altocumulus};
+        \node[mini,right,darkdarkcyan] at (8.3,0.8) {Altostratus};
+        \node[mini,right,darkdarkcyan] at (12.1,1.4) {Nimbostratus};
+        \node[mini,right,darkdarkcyan] at (5.7,-1.4) {Cumulus};
+        \node[mini,right,darkdarkcyan] at (9.3,-0.85) {Stratocumulus};
+        \node[mini,right,darkdarkcyan] at (8.2,-2.35) {Stratus};
+
+        % low mid high
+        \node[mini,darkdarkcyan] at (0.45,-2.5) {Low};
+        \node[mini,darkdarkcyan] at (0.45,0) {Mid};
+        \node[mini,darkdarkcyan] at (0.45,2.5) {High};
+
+        % height numbers
+        \node[tiny,darkcyan!60] at (0.45,-1.2) {2000m};
+        \node[tiny,darkcyan!80] at (0.45,0.9) {7000m};
+        \node[tiny,darkcyan] at (0.45,4.1) {11000m};
+        
+    \end{tikzpicture}
     \captionof{figure}{Distinct classifications of cloudshapes in the troposphere \protect\cite{cloudtypes:wiki}.}
-    \label{img:ui:mockup:live}
+    \label{img:tikz:cloudtypes} 
 \end{figure}
 
 \noindent

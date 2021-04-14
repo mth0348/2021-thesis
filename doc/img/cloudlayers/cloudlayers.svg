@@ -27,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="3099.8315"
-     inkscape:cy="1197.3163"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="2495.1235"
+     inkscape:cy="2421.9322"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -168,6 +168,56 @@
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline;opacity:1">
+    <rect
+       style="fill:#dce9f0;fill-opacity:1;stroke:none;stroke-width:0.321266;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2003"
+       width="241.86673"
+       height="53.613026"
+       x="540.77014"
+       y="646.49023"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\layer-interpolation.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <rect
+       style="fill:#b4d7ea;fill-opacity:1;stroke:none;stroke-width:0.28611;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1462"
+       width="241.86671"
+       height="45.80088"
+       x="540.77014"
+       y="566.66638"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\layer-interpolation.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <rect
+       style="fill:#c3dee9;fill-opacity:1;stroke:none;stroke-width:0.246591;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1464"
+       width="241.86671"
+       height="34.023014"
+       x="540.77014"
+       y="612.46722"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\layer-interpolation.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <rect
+       style="opacity:0.4;fill:#eef4f8;fill-opacity:1;stroke:none;stroke-width:0.657128;stroke-opacity:1"
+       id="rect1444"
+       width="70.506844"
+       height="133.43686"
+       x="550.06323"
+       y="566.66638"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\layer-interpolation.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <rect
+       style="opacity:0.4;fill:#edf4f7;fill-opacity:1;stroke:none;stroke-width:0.674616;stroke-opacity:1"
+       id="rect1446"
+       width="74.309601"
+       height="133.43683"
+       x="700.1405"
+       y="566.66638"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\layer-interpolation.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
     <image
        width="319.61667"
        height="306.91666"
@@ -212,36 +262,6 @@
        inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
        inkscape:export-xdpi="100.0729"
        inkscape:export-ydpi="100.0729" />
-    <rect
-       style="fill:#dce9f0;fill-opacity:1;stroke:none;stroke-width:0.321266;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect2003"
-       width="241.86673"
-       height="53.613026"
-       x="540.77014"
-       y="646.49023"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\layer-interpolation.png"
-       inkscape:export-xdpi="200.22168"
-       inkscape:export-ydpi="200.22168" />
-    <rect
-       style="fill:#b4d7ea;fill-opacity:1;stroke:none;stroke-width:0.28611;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect1462"
-       width="241.86671"
-       height="45.80088"
-       x="540.77014"
-       y="566.66638"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\layer-interpolation.png"
-       inkscape:export-xdpi="200.22168"
-       inkscape:export-ydpi="200.22168" />
-    <rect
-       style="fill:#c3dee9;fill-opacity:1;stroke:none;stroke-width:0.246591;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect1464"
-       width="241.86671"
-       height="34.023014"
-       x="540.77014"
-       y="612.46722"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\layer-interpolation.png"
-       inkscape:export-xdpi="200.22168"
-       inkscape:export-ydpi="200.22168" />
     <rect
        style="fill:#b4d7ea;fill-opacity:1;stroke:none;stroke-width:0.325986;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1366"
@@ -4094,7 +4114,7 @@
        inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\layer-interpolation.png" />
     <path
        style="fill:#ffffff;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 755.95186,653.05485 c 0,0 -11.88697,0.6292 -15.50919,0.1258 0,0 -4.89763,-0.56634 -1.27542,-1.57323 2.33059,-0.38927 5.14123,0.43942 7.34786,-0.15869 0.38567,-0.11335 1.08107,-0.34249 2.07911,-0.76598 0.53504,-0.25993 1.01799,-0.46373 1.49087,-0.53558 1.21386,-0.18344 4.34207,-0.537 3.26492,0.89388 0,0 -1.68356,0.75516 3.5712,1.32154 0,0 6.01997,1.00686 -0.96935,0.69226 z"
+       d="m 755.57768,652.86776 c 0,0 -11.88697,0.6292 -15.50919,0.1258 0,0 -4.89763,-0.56634 -1.27542,-1.57323 2.33059,-0.38927 5.14123,0.43942 7.34786,-0.15869 0.38567,-0.11335 1.08107,-0.34249 2.07911,-0.76598 0.53504,-0.25993 1.01799,-0.46373 1.49087,-0.53558 1.21386,-0.18344 4.34207,-0.537 3.26492,0.89388 0,0 -1.68356,0.75516 3.5712,1.32154 0,0 6.01997,1.00686 -0.96935,0.69226 z"
        id="path1558"
        sodipodi:nodetypes="ccccccccc"
        inkscape:export-xdpi="200.22168"
@@ -4264,7 +4284,7 @@
        inkscape:export-ydpi="200.22168" />
     <path
        style="fill:#ffffff;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 762.30186,655.70068 c 0,0 11.88697,0.6292 15.50919,0.1258 0,0 4.89763,-0.5664 1.27542,-1.5732 -2.33059,-0.3893 -5.14123,0.4394 -7.34786,-0.1587 -0.38567,-0.1134 -1.08107,-0.3425 -2.07911,-0.766 -0.53504,-0.2599 -1.01799,-0.4637 -1.49087,-0.5356 -1.21386,-0.1834 -4.34207,-0.537 -3.26492,0.8939 0,0 1.68356,0.7551 -3.5712,1.3215 0,0 -6.01997,1.0069 0.96935,0.6923 z"
+       d="m 759.49553,655.88777 c 0,0 11.88697,0.6292 15.50919,0.1258 0,0 4.89763,-0.5664 1.27542,-1.5732 -2.33059,-0.3893 -5.14123,0.4394 -7.34786,-0.1587 -0.38567,-0.1134 -1.08107,-0.3425 -2.07911,-0.766 -0.53504,-0.2599 -1.01799,-0.4637 -1.49087,-0.5356 -1.21386,-0.1834 -4.34207,-0.537 -3.26492,0.8939 0,0 1.68356,0.7551 -3.5712,1.3215 0,0 -6.01997,1.0069 0.96935,0.6923 z"
        id="path1600"
        sodipodi:nodetypes="ccccccccc"
        inkscape:export-xdpi="200.22168"
@@ -4667,7 +4687,7 @@
        style="fill:#4b657e;fill-opacity:1;stroke:none;stroke-width:2.42431;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0"
        id="path1986"
        sodipodi:sides="3"
-       sodipodi:cx="-663.25995"
+       sodipodi:cx="-661.95033"
        sodipodi:cy="-566.06018"
        sodipodi:r1="5.5179543"
        sodipodi:r2="2.7589772"
@@ -4676,7 +4696,7 @@
        inkscape:flatsided="false"
        inkscape:rounded="0"
        inkscape:randomized="0"
-       d="m -658.48126,-563.3012 -4.77869,0 -4.77869,0 2.38935,-4.13847 2.38934,-4.13847 2.38935,4.13847 z"
+       d="m -657.17163,-563.3012 -4.77869,0 -4.77869,0 2.38935,-4.13847 2.38934,-4.13847 2.38935,4.13847 z"
        inkscape:transform-center-x="5.4419152e-06"
        inkscape:transform-center-y="1.3794726"
        transform="scale(-1)"
@@ -4688,7 +4708,7 @@
        style="fill:#4b657e;fill-opacity:1;stroke:none;stroke-width:2.42431;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0"
        id="path1994"
        sodipodi:sides="3"
-       sodipodi:cx="-738.20898"
+       sodipodi:cx="-737.54753"
        sodipodi:cy="-566.06018"
        sodipodi:r1="5.5179543"
        sodipodi:r2="2.7589772"
@@ -4697,7 +4717,7 @@
        inkscape:flatsided="false"
        inkscape:rounded="0"
        inkscape:randomized="0"
-       d="m -733.4303,-563.3012 -4.77868,0 -4.77869,0 2.38934,-4.13847 2.38935,-4.13847 2.38934,4.13847 z"
+       d="m -732.76886,-563.3012 -4.77869,0 -4.77869,0 2.38935,-4.13847 2.38934,-4.13847 2.38935,4.13847 z"
        inkscape:transform-center-x="5.4419152e-06"
        inkscape:transform-center-y="1.3794726"
        transform="scale(-1)"

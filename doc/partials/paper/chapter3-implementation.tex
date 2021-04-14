@@ -90,6 +90,7 @@ Note that the listing below describes only an idea and is by no means final or c
 \begin{lstlisting}[language=HLSL, caption=Pseudo-code of cloud render algorithm., label=lst:pseudo:algorithm]
 // weather data including 7-day forecast
 WeatherData data;
+CloudRenderer renderer;
 
 function renderClouds(Day x) {
     if (x > TODAY + 7) throw;
@@ -293,7 +294,8 @@ $$lerp(a, b, t) = a + (b - a) * t$$
 
 \noindent
 Assuming that the two weather measurement sets $w_1$ and $w_2$ can be interpolated, then the function $lerp$ can be used.
-In the following example, $w_1$ represents fair weather in Bern, whereas $w_2$ represents rainy and gloomy weather in Solothurn.
+In the following example, $w_1$ represents fair weather in Bern, whereas $w_2$ represents cloudy and gloomy weather in Solothurn.
+With increasing distance along the axis \color{darkercyan}$L$\color{black}, factor $t$ gradually rises from $0$ to $1$.
 
 \begin{figure}[H]
     \centering
@@ -312,6 +314,7 @@ In the following example, $w_1$ represents fair weather in Bern, whereas $w_2$ r
         \node at (11.4,9.8) {lerp($w_1$,$w_2$, 1)};
 
         % other labels
+        \node[darkercyan] at (-0.7,9.5) {$L$};
         \node at (-0.3,4.6) {camera};
         \node at (2.2,1.1) {city of Bern};
         \node at (12.0,1.1) {city of Solothurn};
@@ -320,3 +323,7 @@ In the following example, $w_1$ represents fair weather in Bern, whereas $w_2$ r
     \captionof{figure}{Weather data interpolation for the cloud layers from Bern to Solothurn.}
     \label{img:tikz:shadersetup}       
 \end{figure}
+
+\noindent
+In summary,  at Bern ($t = 0$), weather for data set $w_1$ is displayed, while at Solothurn ($t = 1$), weather for the data set $w_2$ is rendered.
+Everything inbetween is a mixture of both data sets, relative to which ever is closer.

@@ -410,3 +410,5 @@ Next steps:
 |----|---|
 |implementation approach|12h|
 |inkscape cloud graphics|4h|
+|inkscape cloud graphics|4h|
+|inkscape cloud graphics|4h|

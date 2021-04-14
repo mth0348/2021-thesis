@@ -125,9 +125,10 @@ In this case however, the weather measurement data retrieved from \emph{meteoblu
 Given that $t$ is less than or equal to seven and an implementation still produces accurate cloud imagery, it would no longer be an issue.
 
 \subsection{Layers of Cloud Shaders}
+\label{section:impl:layers}
 As identified in \sectionref{section:clouds:types}, most of the clouds in the troposhpere only appear at certain \gls{altitude}s.
 The high-level clouds are all of type \emph{cirrus}.
-The mid-level types are altostratus and altocumulus, while the low-level types are stratus, stratocumulus and stratus.
+The mid-level types are altostratus and altocumulus, while the low-level types are cumulus, stratocumulus and stratus.
 \\
 This leads to the conclusion that some of the cloud types could be consolidated into a combined layer and rendered by the same shader.
 Exception to that are only the two larger types that span over multiple height levels: nimbostratus and cumulonimbus. For those, a more unique solution has to be found.
@@ -139,44 +140,19 @@ Exception to that are only the two larger types that span over multiple height l
         \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
         \tikzset{icon/.style = {font=\Large}}
 
-        % icons
-        \node[icon] (cam) at (0.1, 5.2) {\faVideoCamera};
-        \node[yshift=-0.5cm,xshift=-0.3cm] at (cam) {camera};
-        \draw (0.5,5.45) -- (2,7);
-        \draw (0.5,4.95) -- (2,3.5);
-
         % cloud layer boxes
-        \node at (7,5.5) 
-            {\includegraphics[width=8cm]{cloudlayers/cloudlayers.png}};
+        \node[inner sep=0pt] at (6.6,5.1) 
+            {\includegraphics[width=\textwidth]{cloudlayers/cloudlayers.png}};
         \node[right] at (2.85,9.1) {high-level (cirro)};
-        \node[right] at (2.85,7.21) {mid-level (alto)};
-        \node[right] at (2.85,5.27) {low-level};
-        \node[right] at (2.85,3.4) {ground fog};
-        \node[right] at (7.1,9.15) {cumulonimbus};
+        \node[right] at (2.85,7.22) {mid-level (alto)};
+        \node[right] at (2.85,5.28) {low-level};
+        \node[right] at (2.85,3.5) {ground fog};
+        \node[right] at (7.0,9.15) {cumulonimbus};
 
-        % houses
-        \node[black!40] at (4.9, 1.15) {\faHome};
-        \node[black!40] at (5.2, 1.20) {\faHome};
-        \node[black!40] at (5.4, 1.24) {\faHome};
-        \node[black!40,icon] at (5.7, 1.25) {\faHome};
-        \node[black!40] at (6.0, 1.15) {\faHome};
-        \node[black!40] at (6.35, 1.22) {\faHome};
-        \node[black!40] at (6.8, 1.4) {\faUniversity};
-        \node[black!40] at (7.1, 1.32) {\faHome};
-        \node[black!40] at (7.5, 1.25) {\faHome};
-        \node[black!40,icon] at (7.8, 1.23) {\faHome};
-        \node[black!40] at (8.1, 1.16) {\faHome};
-        \node[black!60] at (6.4,0.7) {city of Bern};
-        
-        % ground
-        \node[green!50!black,rotate=-58,anchor=west] at (1.2,3.1) {ground};
-        \draw[green!50!black,thick] (0,4.2) -- (0.2,4.2) -- (0.4,4.1) -- (0.5,4) -- (1,3) -- (2,1.5) -- (3,1.1) -- (5,1) -- (5.1,1.05) -- (5.4,1.1) -- (6,1) -- (6.5,1.1) -- (6.6,1.2) -- (7,1.2) -- (8,1) -- (10,1.1) -- (12,1);
-
-        % height of troposphere
-        \draw (13.0,1) -- (13.0,9);
-        \draw (13.1,1) -- (12.9,1);
-        \draw (13.1,9) -- (12.9,9);
-        \node[rotate=90,anchor=west] at (12.7,3.5) {troposphere height};
+        % other labels
+        \node at (-0.3,4.6) {camera};
+        \node at (7.0,1.1) {city of Bern};
+        \node[rotate=90,anchor=west] at (13.3,3.5) {troposphere height};
 
     \end{tikzpicture}
     \captionof{figure}{Layers of cloud shaders.}
@@ -256,7 +232,7 @@ This is why these clouds will most likely be rendered in their own layer, farthe
 
 \pagebreak
 
-\subsubsection{Nimbostratus Layer}
+\subsubsection{Nimbostratus Substitute}
 A similar issue as with the cumulonimbus clouds is present for the nimbostratus clouds.
 Due to them being thick, dark layers of cloud lacking features and contours, they are more difficult to render.
 \\
@@ -268,4 +244,79 @@ With additional stratus clouds and increased fog density, a layman could probabl
     \includegraphics[width=\linewidth]{cloudlayers/nimbostratus.png}
     \caption{Breakdown of the nimbostratus substitute.}
     \label{img:cloudlayer:nimbostratus}
+\end{figure}
+
+\subsection{Exclusiveness Issue}
+All \gls{shader} layers described in \sectionref{section:impl:layers}, except the cumulonimbus layer, come with an issue.
+Given that multiple cloud types are consolidated into one layer, and that layer can only render one cloud type at a time, then no two cloud types of the same layer can ever be rendered together.
+\\
+However, the chance for multiple clouds of the same layer to coexist is considered to be negligible, which is why the issue is disregarded in this project.
+
+\pagebreak
+
+\subsection{Background Weather Consideration}
+Clouds can be seen from great distances, especially when the observer stands on elevated terrain, which is the case in this project.
+For this reason, clouds in close proximity to the observer do not have to be alike more distant ones.
+This is also true for weather conditions.
+Because of this, whenever rendering cloudscapes from an angle where the horizon is also visible, the weather measurements from places in the far distance also have to be taken into account.
+\\
+As mentioned in the specification documentation, there are two points of view from which the weather will be rendered.
+They are two mountains near the city of Bern: the \emph{Bantiger} and the \emph{Gurten} mountain.
+\\
+From both peaks, Bern lies in the center of the view. However, a city in the background of each perspective has been chosen to account for weather in the distance.
+
+\begin{figure}[H]
+    \centering
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{perspective-gurten.png}
+            \captionof{figure}{Perspective view from the Gurten mountain: distant weather in Solothurn is considered.}
+            \label{img:noise:fbm10_1}
+        \end{minipage}
+    \hfill
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{perspective-bantiger.png}
+            \captionof{figure}{Perspective view from the Bantiger mountain: distant weather in Fribourg is considered.}
+            \label{img:noise:fbm10_2}
+        \end{minipage}
+\end{figure}
+
+\pagebreak
+
+\subsection{Weather Data Interpolation}
+\label{section:impl:layerinterpolation}
+Following up on the background weather consideration, all \gls{shader} layers also need to know those distances and adjust accordingly.
+Given there are two measurement sets, one for each city, then the weather inbetween can be a combination of both sets.
+A very common method to achieve such an evaluation of interim data is called \emph{\gls{lerp}}.
+\Gls{lerp} can be defined as a function $lerp$, if $0 >= t >= 1$: 
+
+$$lerp(a, b, t) = a + (b - a) * t$$
+
+\noindent
+Assuming that the two weather measurement sets $w_1$ and $w_2$ can be interpolated, then the function $lerp$ can be used.
+In the following example, $w_1$ represents fair weather in Bern, whereas $w_2$ represents rainy and gloomy weather in Solothurn.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1]
+        \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+        \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
+        \tikzset{icon/.style = {font=\Large}}
+
+        % cloud layer boxes
+        \node[inner sep=0pt] at (6.6,5.1) 
+            {\includegraphics[width=\textwidth]{layer-interpolation.png}};
+
+        % interpolation labels
+        \node at (1.6,9.8) {lerp($w_1$,$w_2$, 0)};
+        \node at (6.7,9.8) {lerp($w_1$,$w_2$, 0.5)};
+        \node at (11.4,9.8) {lerp($w_1$,$w_2$, 1)};
+
+        % other labels
+        \node at (-0.3,4.6) {camera};
+        \node at (2.2,1.1) {city of Bern};
+        \node at (12.0,1.1) {city of Solothurn};
+
+    \end{tikzpicture}
+    \captionof{figure}{Weather data interpolation for the cloud layers from Bern to Solothurn.}
+    \label{img:tikz:shadersetup}       
 \end{figure}

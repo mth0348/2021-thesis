@@ -387,12 +387,13 @@ Next steps:
 1. Is ok not to use swisstopo buildings?
 2. Is ok only to use ArcGIS plugin?
 3. Find date for exam (between June 15 and July 8) - week of June 21st?
-
+4. "As mentioned in the specification documentation" ok?
 
 **Answers to questions:**
 1. .
 2. .
 3. .
+4. .
 
 ### Meeting discussion
 * other good source: https://melstrong.org/page-of-clouds/

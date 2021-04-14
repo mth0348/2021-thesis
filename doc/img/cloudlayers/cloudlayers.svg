@@ -27,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="2495.1235"
-     inkscape:cy="2421.9322"
+     inkscape:zoom="0.35355339"
+     inkscape:cx="1132.3385"
+     inkscape:cy="942.10888"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -3665,8 +3665,8 @@
        inkscape:export-xdpi="99.975082"
        inkscape:export-ydpi="99.975082" />
     <path
-       style="fill:#7ec4ff;fill-opacity:0.282258;stroke:#001f33;stroke-width:0.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 730.66801,288.30224 c 27.29178,-11.56104 41.61964,-8.13906 60.54285,12.7744 l -53.28085,103.82671 z"
+       style="fill:#7ec4ff;fill-opacity:0.282258;stroke:#001f33;stroke-width:0.753201;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 728.50277,257.12443 c 34.26032,-14.51297 52.24657,-10.21724 76.00153,16.03615 l -66.88529,130.33725 z"
        id="path1981"
        sodipodi:nodetypes="cccc"
        inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\perspective-gurten.png"
@@ -3694,8 +3694,8 @@
        inkscape:export-xdpi="99.975082"
        inkscape:export-ydpi="99.975082" />
     <path
-       style="fill:#7ec4ff;fill-opacity:0.282258;stroke:#001f33;stroke-width:0.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 1039.181,449.29873 c -27.2922,-11.56008 -34.8027,-24.23252 -32.9463,-52.37527 l 114.8377,-40.32449 z"
+       style="fill:#7ec4ff;fill-opacity:0.282258;stroke:#001f33;stroke-width:0.796421;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 1012.0491,479.86326 C 975.82231,464.51879 965.85312,447.69779 968.31724,410.34201 L 1120.7491,356.81658 Z"
        id="path2001"
        sodipodi:nodetypes="cccc"
        inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\perspective-bantiger.png"
@@ -4845,5 +4845,40 @@
          x="1082.6173"
          y="233.83205"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';stroke-width:0.423609">Solothurn</tspan></text>
+    <path
+       style="fill:#7ec4ff;fill-opacity:0.568627;stroke:#000000;stroke-width:0.0613996px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 806.01758,9.4966924 c 0,0 -0.92829,-3.4166221 -5.28766,-3.7850194 -4.35937,-0.3683973 -5.56549,3.7850194 -5.56549,3.7850194 0,0 0.80549,3.4154036 5.42658,3.2842666 4.62108,-0.131136 5.42657,-3.2842666 5.42657,-3.2842666 z"
+       id="path1469" />
+    <path
+       d="m 800.59101,6.9422569 a 2.5302578,2.5302578 0 0 0 -0.71251,0.1140373 1.2635324,1.2635324 0 0 1 0.16513,0.6158001 1.2772168,1.2772168 0 0 1 -1.27722,1.2772167 1.2635324,1.2635324 0 0 1 -0.6158,-0.1651255 2.5478195,2.5478195 0 1 0 2.4404,-1.8419286 z m 6.48917,2.221444 c -1.23685,-2.4132542 -3.68546,-4.0460398 -6.48917,-4.0460398 -2.80372,0 -5.25301,1.633925 -6.48918,4.0462693 a 0.73782076,0.73782076 0 0 0 0,0.6657492 c 1.23685,2.4132534 3.68546,4.0460394 6.48918,4.0460394 2.80371,0 5.253,-1.633925 6.48917,-4.0462693 a 0.73782076,0.73782076 0 0 0 0,-0.6657488 z m -6.48917,3.6172601 c -2.24996,0 -4.31267,-1.254407 -5.42658,-3.284271 1.11391,-2.029863 3.17639,-3.2842728 5.42658,-3.2842728 2.25018,0 4.31266,1.2544098 5.42657,3.2842728 -1.11369,2.029864 -3.17639,3.284271 -5.42657,3.284271 z"
+       id="path1455"
+       style="fill:#0d2c3f;fill-opacity:0.945098;stroke-width:0.0228074" />
+    <path
+       style="display:inline;opacity:1;fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.414651;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 797.30649,29.196715 c -0.46266,-0.223898 -0.81674,-0.658964 -0.96198,-1.182227 -0.055,-0.19877 -0.0879,-1.218135 -0.0883,-2.752111 -5.2e-4,-2.262214 0.0111,-2.467356 0.16221,-2.870784 0.17698,-0.472938 0.53478,-0.844673 1.00032,-1.0392 0.41941,-0.175135 5.42545,-0.175135 5.8449,0 0.76304,0.318854 1.1629,1.024521 1.1629,2.052429 0,0.318493 0.007,0.609786 0.0377,0.640484 0.0296,0.02958 0.68835,-0.564189 1.43972,-1.314653 l 1.36616,-1.364479 0.27563,0.02585 0.13296,0.240899 v 3.825464 c 0,2.749443 0.0369,3.528573 -0.0369,3.59988 -0.22095,0.220954 -0.49388,0.08279 -1.78821,-1.203651 -0.72544,-0.720899 -1.34358,-1.286096 -1.37366,-1.25602 -0.0296,0.02958 -0.0547,0.282654 -0.0547,0.561645 0,1.037914 -0.31923,1.662269 -1.0341,2.022172 l -0.43344,0.21837 -2.61778,-0.0028 -2.6178,-0.0028 -0.417,-0.201742 z"
+       id="path1471"
+       sodipodi:nodetypes="ssssssscscccscssssccccs"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\layer-interpolation.png" />
+    <path
+       fill="currentColor"
+       d="m 801.69636,38.549801 -4.35503,3.5869 v 3.8712 a 0.37793827,0.37793827 0 0 0 0.37795,0.378 l 2.64697,-0.01 a 0.37793827,0.37793827 0 0 0 0.37606,-0.3779 v -2.2608 a 0.37793827,0.37793827 0 0 1 0.37793,-0.378 h 1.51176 a 0.37793827,0.37793827 0 0 1 0.37793,0.378 v 2.2591 a 0.37793827,0.37793827 0 0 0 0.37794,0.3792 l 2.64604,0.01 a 0.37793827,0.37793827 0 0 0 0.37795,-0.378 v -3.8738 l -4.3541,-3.5843 a 0.28794172,0.28794172 0 0 0 -0.3614,0 z m 6.87919,2.438 -1.97473,-1.6278 v -3.2717 a 0.2834537,0.2834537 0 0 0 -0.28345,-0.2835 h -1.32279 a 0.2834537,0.2834537 0 0 0 -0.28345,0.2835 v 1.7151 l -2.1148,-1.7399 a 1.1338148,1.1338148 0 0 0 -1.44089,0 l -5.97922,4.9243 a 0.2834537,0.2834537 0 0 0 -0.0378,0.3992 l 0.60235,0.7323 a 0.2834537,0.2834537 0 0 0 0.39943,0.039 l 5.55616,-4.5763 a 0.28794172,0.28794172 0 0 1 0.3614,0 l 5.55641,4.5763 a 0.2834537,0.2834537 0 0 0 0.39919,-0.038 l 0.60234,-0.7323 a 0.2834537,0.2834537 0 0 0 -0.0402,-0.3999 z"
+       id="path1473"
+       style="fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\layer-interpolation.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:'Font Awesome 5 Free';-inkscape-font-specification:'Font Awesome 5 Free';stroke-width:0.264583"
+       x="793.75"
+       y="-3.9687498"
+       id="text1477"><tspan
+         sodipodi:role="line"
+         id="tspan1475"
+         x="793.75"
+         y="-3.9687498"
+         style="stroke-width:0.264583">Icons</tspan></text>
   </g>
 </svg>

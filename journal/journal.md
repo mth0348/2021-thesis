@@ -388,6 +388,7 @@ Next steps:
 2. Is ok only to use ArcGIS plugin?
 3. Find date for exam (between June 15 and July 8) - week of June 21st?
 4. "As mentioned in the specification documentation" ok?
+5. FBM, Voronoi reuse. documentation?
 
 **Answers to questions:**
 1. .

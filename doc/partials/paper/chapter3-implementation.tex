@@ -1,4 +1,5 @@
 \section{Implementation Approach}
+\label{section:impl}
 Clouds are comprehensible indicators for telling the weather. 
 They offer many visible features to make an rough prediction of the weather conditions, or weather changes to come.
 As described in \sectionref{section:clouds:types}, some cloud types only form under specific conditions.
@@ -140,9 +141,11 @@ Exception to that are only the two larger types that span over multiple height l
         \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
         \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
         \tikzset{icon/.style = {font=\Large}}
+        \tikzset{mini/.style = {font=\footnotesize}}
+        \tikzset{tiny/.style = {font=\tiny}}
 
         % cloud layer boxes
-        \node[inner sep=0pt] at (6.6,5.1) 
+        \node[inner sep=0pt] at (5.5,5.2) 
             {\includegraphics[width=\textwidth]{cloudlayers/cloudlayers.png}};
         \node[right] at (2.85,9.1) {high-level (cirro)};
         \node[right] at (2.85,7.22) {mid-level (alto)};
@@ -151,9 +154,18 @@ Exception to that are only the two larger types that span over multiple height l
         \node[right] at (7.0,9.15) {cumulonimbus};
 
         % other labels
-        \node at (-0.3,4.6) {camera};
+        \node at (-0.3,4.5) {camera};
         \node at (7.0,1.1) {city of Bern};
-        \node[rotate=90,anchor=west] at (13.3,3.5) {troposphere height};
+
+        % low mid high
+        \node[mini,darkdarkcyan] at (-1.6,4.2) {Low};
+        \node[mini,darkdarkcyan] at (-1.6,6.7) {Mid};
+        \node[mini,darkdarkcyan] at (-1.6,8.5) {High};
+
+        % height numbers
+        \node[tiny,darkcyan!60] at (-1.6,5.5) {2000m};
+        \node[tiny,darkcyan!80] at (-1.6,7.5) {7000m};
+        \node[tiny,darkcyan] at    (-1.6,9.5) {11000m};
 
     \end{tikzpicture}
     \captionof{figure}{Layers of cloud shaders.}
@@ -163,6 +175,7 @@ Exception to that are only the two larger types that span over multiple height l
 \pagebreak
 
 \subsubsection{High-Level Clouds}
+\label{section:impl:layers:high}
 The uppermost layer would contain cirrus, cirrostratus and cirrocumulus clouds.
 All of these form under similar weather conditions and closely resemble each other in appearance and formation.
 \\
@@ -175,6 +188,7 @@ A potential \gls{shader} for that layer could be programmed to render a base var
 \end{figure}
 
 \subsubsection{Mid-Level Clouds}
+\label{section:impl:layers:mid}
 The middle layer consists of altostratus and altocumulus clouds, the latter mainly occuring due to dissipation of the former one.
 Since they have many shared characteristics, apart from the puffiness, they are predestined to be processed together.
 \\
@@ -189,6 +203,7 @@ Given a \gls{shader} is flexible enough to render altostratus clouds, then it is
 \pagebreak
 
 \subsubsection{Low-Level Clouds}
+\label{section:impl:layers:low}
 The lower layer may prove to be more complex than the others, as the stratus and cumulus clouds do essentially not look alike.
 However, cumulus clouds could be described as less denser, smaller and separated instances of stratocumulus clouds.
 \\
@@ -202,6 +217,7 @@ If a \gls{shader} would be able to render stratocumulus clouds and allow to cont
 
 
 \subsubsection{Ground Level Fog}
+\label{section:impl:layers:fog}
 The lowest layer consists of fog. It is conceivable that stratus clouds will also be placed in that layer.
 Both type of clouds are to some extent combinable, as they primarily vary in density.
 \\
@@ -216,6 +232,7 @@ Therefore, a \gls{shader} would need to have control over the outcome's density 
 \pagebreak
 
 \subsubsection{Cumulonimbus Layer}
+\label{section:impl:layers:cumulonimbus}
 With all the previous layers implemented, only the two large cloud types are left, one of them is the cumulonimbus.
 \\
 Assuming the observer is walking directly underneath a cumulonimbus cloud, the cloud itself and its defining visual features are not really recognizable.
@@ -303,21 +320,33 @@ With increasing distance along the axis \color{darkercyan}$L$\color{black}, fact
         \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
         \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
         \tikzset{icon/.style = {font=\Large}}
+        \tikzset{mini/.style = {font=\footnotesize}}
+        \tikzset{tiny/.style = {font=\tiny}}
 
         % cloud layer boxes
-        \node[inner sep=0pt] at (6.6,5.1) 
+        \node[inner sep=0pt] at (6.0,4.9) 
             {\includegraphics[width=\textwidth]{layer-interpolation.png}};
 
         % interpolation labels
-        \node at (1.6,9.8) {lerp($w_1$,$w_2$, 0)};
-        \node at (6.7,9.8) {lerp($w_1$,$w_2$, 0.5)};
-        \node at (11.4,9.8) {lerp($w_1$,$w_2$, 1)};
+        \node at (1.9,9.3) {lerp($w_1$,$w_2$, 0)};
+        \node at (6.7,9.3) {lerp($w_1$,$w_2$, 0.5)};
+        \node at (11.2,9.3) {lerp($w_1$,$w_2$, 1)};
 
         % other labels
-        \node[darkercyan] at (-0.7,9.5) {$L$};
-        \node at (-0.3,4.6) {camera};
-        \node at (2.2,1.1) {city of Bern};
-        \node at (12.0,1.1) {city of Solothurn};
+        \node[darkercyan] at (-0.4,9.1) {$L$};
+        \node at (0.1,4.4) {camera};
+        \node at (2.5,1.1) {city of Bern};
+        \node at (11.2,1.1) {city of Solothurn};
+        
+        % low mid high
+        \node[mini,darkdarkcyan] at (-1.15,3.0) {Low};
+        \node[mini,darkdarkcyan] at (-1.15,4.9) {Mid};
+        \node[mini,darkdarkcyan] at (-1.15,7.6) {High};
+
+        % height numbers
+        \node[tiny,darkcyan!60] at (-1.15,3.9) {2000m};
+        \node[tiny,darkcyan!80] at (-1.15,5.9) {7000m};
+        \node[tiny,darkcyan] at    (-1.15,8.6) {11000m};
 
     \end{tikzpicture}
     \captionof{figure}{Weather data interpolation for the cloud layers from Bern to Solothurn.}
@@ -327,3 +356,68 @@ With increasing distance along the axis \color{darkercyan}$L$\color{black}, fact
 \noindent
 In summary,  at Bern ($t = 0$), weather for data set $w_1$ is displayed, while at Solothurn ($t = 1$), weather for the data set $w_2$ is rendered.
 Everything inbetween is a mixture of both data sets, relative to which ever is closer.
+
+\pagebreak
+
+\subsection{Alternative Approach}
+\label{section:impl:altapproach}
+Every subsection that describes another feature of the implementation approach increases the complexity of the developing concept,
+which is already depending on many ideas and structures to work.
+In cases like this it is best to prepare an alternative approach to implementation, that can be pursued should the primary one fail.
+\emptyline
+The core concept of this second implementation approach is based on \gls{particlesystem}s.
+It still relies on having four major layers with an additional cumulonimbus block. The nimbostratus will also be substituted.
+Those layers are almost identical to the layers described in \sectionref{section:impl:layers:high} to \sectionref{section:impl:layers:cumulonimbus}.
+\\
+However, instead of the layers each being a single \gls{shader}, they are replaced with a \gls{particlesystem} that emits cubes of clouds.
+Those cubes are rendered by different \gls{shader}s, depending on which layer they are spawned.
+The highest layer, \color{darkercyan}$P_1$\color{black}, would emit cloud cubes of the cirrus family.
+The middle layer, \color{darkercyan}$P_2$\color{black}, is responsible to render alto clouds.
+Layer \color{darkercyan}$P_3$ \color{black} would spawn low-level cloud cubes, while the lowest layer, \color{darkercyan}$P_4$\color{black}, would create fog particles.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1]
+        \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+        \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
+        \tikzset{icon/.style = {font=\Large}}
+        \tikzset{mini/.style = {font=\footnotesize}}
+        \tikzset{tiny/.style = {font=\tiny}}
+
+        % cloud layer boxes
+        \node[inner sep=0pt] at (6.0,4.9) 
+            {\includegraphics[width=\textwidth]{particlesystem.png}};
+
+        % particle systems
+        \node[darkercyan] at (5.0,7.5) {$P_1$};
+        \node[darkercyan] at (5.2,6.45) {$P_2$};
+        \node[darkercyan] at (5.2,4.5) {$P_3$};
+        \node[darkercyan] at (6.5,2.9) {$P_4$};
+
+        % other labels
+        \node at (0.1,4.5) {camera};
+        \node at (6.9,1.2) {city of Bern};
+        
+        % low mid high
+        \node[mini,darkdarkcyan] at (-1.15,3.3) {Low};
+        \node[mini,darkdarkcyan] at (-1.15,6.0) {Mid};
+        \node[mini,darkdarkcyan] at (-1.15,7.8) {High};
+
+        % height numbers
+        \node[tiny,darkcyan!60] at (-1.15,4.9) {2000m};
+        \node[tiny,darkcyan!80] at (-1.15,6.92) {7000m};
+        \node[tiny,darkcyan] at    (-1.15,8.65) {11000m};
+
+    \end{tikzpicture}
+    \captionof{figure}{Alternative implementation approach based on \gls{particlesystem}s.}
+    \label{img:tikz:altapproach}       
+\end{figure}
+
+\noindent
+This alternative approach would offer a much higher flexibility in controlling exactly how many clouds are present.
+Each layer is in absolute control of when it spawns cloud particles, how fast the spawn rate is, the particle's size and many more characteristics. 
+\\
+Nonetheless, contrary to the first approach, a \gls{lerp} of the clouds will prove to be more difficult in this case.
+A \gls{particlesystem} cannot be interpolated along two positions, as it is bound to a fixed location.
+This issue be could be disregarded at the cost of realism, by only using three \gls{particlesystem}s:
+one for Bern, one inbetween both cities, using interpolated weather data, and one for the distant city.

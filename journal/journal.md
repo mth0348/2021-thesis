@@ -386,22 +386,35 @@ Next steps:
 ### Formal and technical questions
 1. Is ok not to use swisstopo buildings?
 2. Is ok only to use ArcGIS plugin?
-3. Find date for exam (between June 15 and July 8) - week of June 21st?
+3. Find date for exam (between June 15 and July 8) - week of June 21st, week 25 / 
 4. "As mentioned in the specification documentation" ok? (3.4)
-5. FBM, Voronoi reuse. documentation?
+5. FBM, Voronoi reuse documentation?
 
 **Answers to questions:**
-1. .
-2. .
-3. .
-4. .
+1. yes
+2. yes
+3. not tuesday, 24th, 25th June -> friday is best
+    * inform Mr. Dubuis
+    * Mrs. Locher for meeting/room reservation (1h ahead)
+    * my own machine
+4. add page number of spec documentation if necessary
+    * gemeinsamer binder als anhang
+5. add project2 also as attachment
+    * cite refs with page number, section name, etc.
+
 
 ### Meeting discussion
 * other good source: https://melstrong.org/page-of-clouds/
 
 **Inputs from tutor:**
+* chapter 3 - maybe combine figure 21+22
+* why not one shader for every cloud type?
+ * advantages/disadvantages
+* separate different render strategies
+    /schema
+* start with one vertical layer
 
-
+ 
 **Tasks**
 * Next meeting is scheduled for **April 22, 2021 at 2pm.**
 

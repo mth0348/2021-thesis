@@ -382,7 +382,7 @@ Next steps:
 
 &nbsp;
 #
-## \#07: April 08, 2021
+## \#08: April 15, 2021
 ### Formal and technical questions
 1. Is ok not to use swisstopo buildings?
 2. Is ok only to use ArcGIS plugin?

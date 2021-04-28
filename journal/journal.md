@@ -59,7 +59,7 @@ Next meeting is scheduled for **March 4, 2021 at 2pm.**
 | Planning update | 4h |
 | Journal update | 2h |
 
-Purchased Udemy course for learning compute shaders: https://www.udemy.com/home/my-courses/learning/
+Purchased Udemy course for learning compute shaders: https://www.udemy.com/course/compute-shaders/
 
 &nbsp;
 
@@ -127,7 +127,7 @@ Purchased Udemy course for learning compute shaders: https://www.udemy.com/home/
 3. swisstopo - I would like to include that, but should I define it as a mandatory or optional goal?
 
 **Answers to questions:**
-1. Mrs. Gasenzer
+1. Mrs. Gasenzer (silvia.Gasenzer@bfh.ch)
 2. https://www.swisstopo.admin.ch/en/geodata.html
     * format openGIS reader, maybe converter from ESRI to FBX?
     * GeoTIFF images for swisstopo images: https://www.swisstopo.admin.ch/en/geodata/images/ortho/swissimage10.html
@@ -426,3 +426,32 @@ Next steps:
 |inkscape cloud graphics|4h|
 |inkscape cloud graphics|4h|
 |inkscape cloud graphics|4h|
+
+&nbsp;
+
+&nbsp;
+#
+## \#09: April 22, 2021
+### Formal and technical questions
+1. .
+
+**Answers to questions:**
+1. .
+
+
+### Meeting discussion
+* remote lectures for +3rd semester students
+
+
+**Inputs from tutor:**
+* .
+
+ 
+**Tasks**
+* Next meeting is scheduled for **April 22, 2021 at 2pm.**
+
+**Time log**
+
+| Task | time spent |
+|----|---|
+|compute shader magic|4h|

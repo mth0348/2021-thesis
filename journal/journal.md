@@ -448,10 +448,42 @@ Next steps:
 
  
 **Tasks**
-* Next meeting is scheduled for **April 22, 2021 at 2pm.**
+* Next meeting is scheduled for **April 29, 2021 at 2pm.**
 
 **Time log**
 
 | Task | time spent |
 |----|---|
 |compute shader magic|4h|
+|compute shader magic|4h|
+|cloud layers|4h|
+
+&nbsp;
+
+&nbsp;
+#
+## \#10: April 29, 2021
+### Formal and technical questions
+1. book?
+2. poster?
+
+**Answers to questions:**
+1. probably at end of semester, ask Mrs. Gasenzer
+2. same
+
+
+### Meeting discussion
+* .
+
+
+**Inputs from tutor:**
+* .
+
+ 
+**Tasks**
+* Next meeting is scheduled for **May 6, 2021 at 2pm.**
+
+**Time log**
+
+| Task | time spent |
+|----|---|

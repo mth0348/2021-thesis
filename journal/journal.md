@@ -498,6 +498,7 @@ Next steps:
 ## \#10: April 29, 2021
 ### Formal and technical questions
 1. for 3D textures, is a single element a texel or a voxel
+2. revision history, do i even use it correctly? those are not revisions, right?
 
 **Answers to questions:**
 1. 

@@ -412,8 +412,8 @@ However, since the desired outcome is a repeating texture, the underlaying textu
 
     \node (offset) at (3.0,0) {};
 
-    \fill[cyan!5] (offset) rectangle ($(offset) + (1,3)$);
-    \fill[red!5] (1,0) rectangle (3,3);
+    \fill[cyan!10] (offset) rectangle ($(offset) + (1,3)$);
+    \fill[red!10] (1,0) rectangle (3,3);
 
     \node[black!20] (x1y1) at (0,0) {\textbullet};
     \node (x2y1) at (1,0) {\textbullet};
@@ -539,9 +539,9 @@ Instead of sampling $c_{3,0}$ to $c_{3,2}$ from the second tile, $c_{0,0}$ to $c
 
     \node (offset) at (3.0,0) {};
 
-    \fill[red!5] (0,0) rectangle (1,3);
-    \fill[cyan!5] (3,0) rectangle (4,3);
-    \fill[red!5] (2,1) rectangle (3,2);
+    \fill[red!10] (0,0) rectangle (1,3);
+    \fill[cyan!10] (3,0) rectangle (4,3);
+    \fill[red!10] (2,1) rectangle (3,2);
 
     \node (x1y1) at (0,0) {\textbullet};
     \node (x2y1) at (1,0) {\textbullet};
@@ -974,7 +974,7 @@ $$
 $$
 \\
 \noindent
-The following figures each show a single thread group, with a specific thread marked in blue.
+The following figures each show a single thread group, with a specific thread marked in red.
 The group id is denoted in the top left corner, together with the coordinates of the thread inside the thread group. 
 
 \begin{figure}[H]
@@ -987,7 +987,7 @@ The group id is denoted in the top left corner, together with the coordinates of
             \tikzset{cb/.style = {shorten <=-4pt, shorten >=-4pt, black!30}}
             \tikzset{smalledge/.style = {-{Latex[length=2mm]},shorten <=-4pt}}
 
-            \fill[cyan] (0,0) rectangle (1,1);
+            \fill[red!10] (0,0) rectangle (1,1);
             
             \node (x1y1) at (0,0) {};
             \node (x1y2) at (0,1) {};
@@ -1112,11 +1112,13 @@ The group id is denoted in the top left corner, together with the coordinates of
             \draw[cb] (c1d3) edge node{} (c2d3);
             \draw[cb] (c1d4) edge node{} (c2d4);
 
-            \node[font=\small,anchor=west] at (0,6.4) {thread group id: (0,0,0)};
-            \node[font=\small,anchor=west] at (0,6) {thread coordinates: (0,0,0)};
+            \node[font=\footnotesize,anchor=west] at (0,6.3) {thread group id: (0,0,0)};
+            \node[font=\footnotesize,anchor=west] at (0,6) {thread coordinates: (0,0,0)};
+
+            \node[red] at (0.5,0.5) {$t_1$};
     
         \end{tikzpicture}
-        \captionof{figure}{Compute shader thread group with dimensions 4x4x4. Marked in blue is thread with id (0,0,0).}
+        \captionof{figure}{Compute shader thread group with dimensions 4x4x4. Marked in blue is thread \color{red}$t_1$ \color{black} with id (0,0,0).}
         \label{img:tikz:compute:threads1}
     \end{minipage}
     \hfill
@@ -1127,9 +1129,9 @@ The group id is denoted in the top left corner, together with the coordinates of
             \tikzset{cb/.style = {shorten <=-4pt, shorten >=-4pt, black!30}}
             \tikzset{smalledge/.style = {-{Latex[length=2mm]},shorten <=-4pt}}
 
-            \fill[cyan] (4,3.5) rectangle (4.5,4.5);
-            \fill[cyan] (3.5,4) rectangle (4.5,4.5);
-            \fill[cyan!10] (3.5,3.5) rectangle (4,4);
+            \fill[red!10] (4,3.5) rectangle (4.5,4.5);
+            \fill[red!10] (3.5,4) rectangle (4.5,4.5);
+            \fill[red!5] (3.5,3.5) rectangle (4,4);
             
             % second back
             \node (offset) at (0,0) {};
@@ -1249,14 +1251,13 @@ The group id is denoted in the top left corner, together with the coordinates of
             \draw[cb] (c1d3) edge node{} (c2d3);
             \draw[cb] (c1d4) edge node{} (c2d4);
 
-            \node[font=\small,anchor=west] at (0,6.4) {thread group id: (1,63,2)};
-            \node[font=\small,anchor=west] at (0,6) {thread coordinates: (3,3,1)};
+            \node[font=\footnotesize,anchor=west] at (0,6.3) {thread group id: (1,63,2)};
+            \node[font=\footnotesize,anchor=west] at (0,6) {thread coordinates: (3,3,1)};
+
+            \node[red] at (4.2,4.2) {$t_2$};
         
         \end{tikzpicture}
-        \captionof{figure}{Compute shader thread group with dimensions 4x4x4. Marked in blue is thread with id (7,255,9)}
+        \captionof{figure}{Compute shader thread group with dimensions 4x4x4. Marked in blue is thread \color{red}$t_2$ \color{black} with id (7,255,9)}
         \label{img:tikz:compute:threads2}
     \end{minipage}
 \end{figure}
-
-\subsection{3D Noise Texture Sampling}
-\label{section:noise:tex3d}

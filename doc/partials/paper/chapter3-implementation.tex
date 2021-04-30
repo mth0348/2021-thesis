@@ -29,7 +29,7 @@ The given data is not an image of clouds, but meteorological measurement data, a
             \node[cloud,fill=gray!30,cloud puffs=12, cloud, minimum width=1.0cm, minimum height=0.7cm, align=center, draw] (cloud) at (cloud3) {};
             \node[cloud,fill=gray!30,cloud puffs=12, cloud, minimum width=0.8cm, minimum height=0.5cm, align=center, draw] (cloud) at (cloud4) {};
             \draw[edge] (2.5, 2) -- (3.5,2);
-            \node at (5,2) {rain ahead};
+            \node[anchor=west,font=\small] at (4,2) {rain ahead};
 
             % clear clouds
             \node (cloud1) at (0.5, 0.0) {};
@@ -39,7 +39,7 @@ The given data is not an image of clouds, but meteorological measurement data, a
             \node[cloud,fill=white,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud2) {};
             \node[cloud,fill=white,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud5) {};
             \draw[edge] (2.5, 0) -- (3.5,0);
-            \node at (5.7,0) {fair weather ahead};
+            \node[anchor=west,font=\small] at (4,0) {fair weather ahead};
 
         \end{tikzpicture}
         \captionof{figure}{Weather information based on visual data.}
@@ -65,7 +65,7 @@ The given data is not an image of clouds, but meteorological measurement data, a
             \node[cloud,fill=gray!30,cloud puffs=12, cloud, minimum width=1.0cm, minimum height=0.7cm, align=center, draw] (cloud) at (cloud3) {};
             \node[cloud,fill=gray!30,cloud puffs=12, cloud, minimum width=0.8cm, minimum height=0.5cm, align=center, draw] (cloud) at (cloud4) {};
             \draw[edge] (2, 2) -- (3.5,2);
-            \node at (0,2) {rain ahead};
+            \node[anchor=west,font=\small] at (-1,2) {rain ahead};
 
             % clear clouds
             \node (cloud1) at (4.5, 0.0) {};
@@ -75,7 +75,7 @@ The given data is not an image of clouds, but meteorological measurement data, a
             \node[cloud,fill=white,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud2) {};
             \node[cloud,fill=white,cloud puffs=9, cloud, minimum width=0.5cm, minimum height=0.2cm, align=center, draw] (cloud) at (cloud5) {};
             \draw[edge] (2.5, 0) -- (3.5,0);
-            \node at (0.7,0) {fair weather ahead};
+            \node[anchor=west,font=\small] at (-1,0) {fair weather ahead};
             
         \end{tikzpicture}
         \captionof{figure}{Visual construction based on weather information.}

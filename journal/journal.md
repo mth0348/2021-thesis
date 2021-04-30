@@ -499,10 +499,13 @@ Next steps:
 ### Formal and technical questions
 1. for 3D textures, is a single element a texel or a voxel
 2. revision history, do i even use it correctly? those are not revisions, right?
+3. section 4.1. ok?
+4. student with LaTeX problems?
 
 **Answers to questions:**
-1. 
-
+1. . 
+2. .
+3. .
 
 ### Meeting discussion
 * .

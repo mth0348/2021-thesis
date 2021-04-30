@@ -14,7 +14,7 @@ For example, the following images show photographs of patterns that seem almost 
 \noindent
 In computer science, the virtual recreation of such randomness has been studied continuously over the last decades.
 The outcome of a randomness generator is called \emph{\gls{noise}}.
-There are many established algorithms to create random patterns, one of which is the famous \emph{Voronoi} algorithm.
+There are many established algorithms to create random patterns, one of which generates the famous \emph{Voronoi} \gls{noise}.
 
 \subsection{Previous Work}
 Many of the following subsections rely on concepts and algorithms that have been thorougly explained in the project's previous work \cite{project2:noise}.
@@ -25,14 +25,17 @@ Those algorithms will not be described again, as they have already been studied 
 
 \pagebreak
 
-\subsection{Voronoi's Algorithm}
+\subsection{Voronoi Noise Algorithm}
 \label{section:noise:voronoi}
-One of the more commonly used procedural pattern generation algorithms is that of Steven Worley, developed in 1996 \cite{worley}.
-The name derives from its similar structure to a Voronoi diagram, in which points, called \emph{seeds}, are randomly scattered inside a defined space.
+One of the more commonly used procedural pattern generation algorithms is that of Steven Worley, developed in 1996 \cite{worley}, called \emph{Worley}'s algorithm.
+The algorithm is also known as the \emph{Voronoi} algorithm due to its similar appearance to a Voronoi diagram.
+In that diagram, points, called \emph{seeds}, are randomly scattered inside a defined space.
 After that, regions are created, consisting of all points closer to that seed than to any other.
+\\
+The Voronoi \gls{noise} algorithm creates a cellular pattern and is therefore well suited for simulating natural distribution of cloud heaps, as they are in some way also arranged in cells.
 \emptyline
 The \gls{noise} algorithm starts by dividing the space into a grid, for which each cell is assigned a random point.
-From there, each fragment gets colored by how far it is to the seed in its cell.
+From there, each fragment gets shaded by how far it is to the seed in its cell.
 
 \begin{figure}[H]
     \centering
@@ -84,7 +87,7 @@ From there, each fragment gets colored by how far it is to the seed in its cell.
         \node[red] (s9) at (2.9,2.4) {\textbullet};
 
         \end{tikzpicture}
-        \captionof{figure}{Voronoi grid with pseudo-randomly assigned seed points for each cell.}
+        \captionof{figure}{Voronoi grid with \gls{pseudorandom}ly assigned seed points for each cell.}
         \label{img:tikz:noise:voronoi}
     \end{minipage}
     \hfill
@@ -143,7 +146,7 @@ From there, each fragment gets colored by how far it is to the seed in its cell.
 \end{figure}
 
 \noindent
-As understandable, in \autoref{img:tikz:noise:voronoi2}, hard contours are still visible along the grid lines. This can be improved by including the adjacent cells when finding the closest seed for any given fragment.
+As reckognizable in \autoref{img:tikz:noise:voronoi2}, hard contours are still visible along the grid lines. This can be improved by including the adjacent cells when finding the closest seed for any given fragment.
 This amounts to $3^n - 1$ neighboring cells, where $n$ is the number of dimensions. This means for 2D space its eight cells, while in 3D its 26.
 
 \begin{figure}[H]
@@ -195,7 +198,7 @@ This amounts to $3^n - 1$ neighboring cells, where $n$ is the number of dimensio
         \node[red] (s9) at (2.9,2.4) {\textbullet};
 
     \end{tikzpicture}
-    \captionof{figure}{Complete 2D Voronoi noise pattern.}
+    \captionof{figure}{Complete 2D Voronoi \gls{noise} texture.}
     \label{img:tikz:noise:voronoi3}
 \end{figure}
 
@@ -203,7 +206,7 @@ This amounts to $3^n - 1$ neighboring cells, where $n$ is the number of dimensio
 
 \noindent
 An implementation of this relatively simple algorithm could look like the following listing.
-\begin{lstlisting}[language=HLSL, caption=Implementation of 2D Voronoi noise algorithm., label=lst:shader:noise:voronoi2d]
+\begin{lstlisting}[language=HLSL, caption=Implementation of 2D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi2d]
 float2 randomSeed(float2 co) {
     return float2(
         fract(sin(dot(co, float2(12.9898, 78.233))) * 43758.5453123),
@@ -232,7 +235,7 @@ float voronoi(float2 p) {
 \noindent
 The 3D equivalent of the algorithm looks fairly similar.
 
-\begin{lstlisting}[language=HLSL, caption=Implementation of 3D Voronoi noise algorithm., label=lst:shader:noise:voronoi3d]
+\begin{lstlisting}[language=HLSL, caption=Implementation of 3D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi3d]
 float3 randomSeed(float3 co) {
     return float3(
     fract(sin(dot(co, float3(12.989, 78.233, 37.719))) * 43758.5453123),
@@ -263,6 +266,485 @@ float voronoi(float3 p) {
 
 \subsection{Seamless Noise}
 \label{section:noise:seamless}
+In \autoref{img:tikz:noise:voronoi3}, the generated cells appear to be randomly distributed, but there is still a major flaw in the texture.
+\\
+As already mentioned previously, the \gls{noisegeneration} is confined to a fixed region.
+This poses an issue when the desired area is larger than the defined space of the algorithm.
+It is therefore not possible to tile the same texture without visible seams inbetween the tiles.
+
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{noise/voronoi seam.png}
+    \caption{Tiled 3D \gls{noise} \gls{textureslice}.}
+    \label{img:rnd:noise:seam}
+\end{figure}
+
+\noindent
+The problem occurs when checking the neighboring cells of the current cell. For example, here are the seeds for two adjacent tiles of the same \gls{noise} texture.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.9, x=2cm,y=2cm]
+    \tikzset{c/.style = {shorten <=-4pt, shorten >=-4pt}}
+    \tikzset{smalledge/.style = {-{Latex[length=2mm]},shorten <=-4pt}}
+    
+    % tile label 1
+    \draw (0,3.3) -- (3,3.3);
+    \draw (0,3.25) -- (0,3.35);
+    \draw (3,3.25) -- (3,3.35);
+    \node at (1.5,3.4) {first tile};
+    
+    % tile label 2
+    \draw (3,-0.3) -- (6,-0.3);
+    \draw (3,-0.25) -- (3,-0.35);
+    \draw (6,-0.25) -- (6,-0.35);
+    \node at (4.5,-0.4) {second tile};
+
+    \node (offset) at (3.0,0) {};
+
+    \fill[cyan!5] (offset) rectangle ($(offset) + (3,3)$);
+    \fill[red!5] (0,0) rectangle (3,3);
+
+    \node (x1y1) at (0,0) {\textbullet};
+    \node (x2y1) at (1,0) {\textbullet};
+    \node (x3y1) at (2,0) {\textbullet};
+    \node (x4y1) at (3,0) {\textbullet};
+
+    \node (x1y2) at (0,1) {\textbullet};
+    \node (x2y2) at (1,1) {\textbullet};
+    \node (x3y2) at (2,1) {\textbullet};
+    \node (x4y2) at (3,1) {\textbullet};
+
+    \node (x1y3) at (0,2) {\textbullet};
+    \node (x2y3) at (1,2) {\textbullet};
+    \node (x3y3) at (2,2) {\textbullet};
+    \node (x4y3) at (3,2) {\textbullet};
+
+    \node (x1y4) at (0,3) {\textbullet};
+    \node (x2y4) at (1,3) {\textbullet};
+    \node (x3y4) at (2,3) {\textbullet};
+    \node (x4y4) at (3,3) {\textbullet};
+
+    \draw[c] (x1y1) edge node{} (x4y1);
+    \draw[c] (x1y2) edge node{} (x4y2);
+    \draw[c] (x1y3) edge node{} (x4y3);
+    \draw[c] (x1y4) edge node{} (x4y4);
+
+    \draw[c] (x1y1) edge node{} (x1y4);
+    \draw[c] (x2y1) edge node{} (x2y4);
+    \draw[c] (x3y1) edge node{} (x3y4);
+    \draw[c] (x4y1) edge node{} (x4y4);
+
+    \node[red] (s1) at (0.3,0.2) {\textbullet};
+    \node[red] (s2) at (1.4,0.8) {\textbullet};
+    \node[red] (s3) at (2.7,0.1) {\textbullet};
+    \node[red] (s4) at (0.4,1.6) {\textbullet};
+    \node[red] (s5) at (1.6,1.5) {\textbullet};
+    \node[red] (s6) at (2.4,1.1) {\textbullet};
+    \node[red] (s7) at (0.1,2.7) {\textbullet};
+    \node[red] (s8) at (1.7,2.2) {\textbullet};
+    \node[red] (s9) at (2.9,2.4) {\textbullet};
+
+    \node (x1y1) at ($(offset) + (0,0)$) {};
+    \node (x2y1) at ($(offset) + (1,0)$) {\textbullet};
+    \node (x3y1) at ($(offset) + (2,0)$) {\textbullet};
+    \node (x4y1) at ($(offset) + (3,0)$) {\textbullet};
+
+    \node (x1y2) at ($(offset) + (0,1)$) {};
+    \node (x2y2) at ($(offset) + (1,1)$) {\textbullet};
+    \node (x3y2) at ($(offset) + (2,1)$) {\textbullet};
+    \node (x4y2) at ($(offset) + (3,1)$) {\textbullet};
+
+    \node (x1y3) at ($(offset) + (0,2)$) {};
+    \node (x2y3) at ($(offset) + (1,2)$) {\textbullet};
+    \node (x3y3) at ($(offset) + (2,2)$) {\textbullet};
+    \node (x4y3) at ($(offset) + (3,2)$) {\textbullet};
+
+    \node (x1y4) at ($(offset) + (0,3)$) {};
+    \node (x2y4) at ($(offset) + (1,3)$) {\textbullet};
+    \node (x3y4) at ($(offset) + (2,3)$) {\textbullet};
+    \node (x4y4) at ($(offset) + (3,3)$) {\textbullet};
+
+    \draw[c] (x1y1) edge node{} (x4y1);
+    \draw[c] (x1y2) edge node{} (x4y2);
+    \draw[c] (x1y3) edge node{} (x4y3);
+    \draw[c] (x1y4) edge node{} (x4y4);
+
+    \draw[c] (x2y1) edge node{} (x2y4);
+    \draw[c] (x3y1) edge node{} (x3y4);
+    \draw[c] (x4y1) edge node{} (x4y4);
+
+    \node[cyan] (s1) at ($(offset) + (0.8,0.8)$) {\textbullet};
+    \node[cyan] (s2) at ($(offset) + (1.7,0.2)$) {\textbullet};
+    \node[cyan] (s3) at ($(offset) + (2.1,0.6)$) {\textbullet};
+    \node[cyan] (s4) at ($(offset) + (0.2,1.4)$) {\textbullet};
+    \node[cyan] (s5) at ($(offset) + (1.2,1.8)$) {\textbullet};
+    \node[cyan] (s6) at ($(offset) + (2.7,1.4)$) {\textbullet};
+    \node[cyan] (s7) at ($(offset) + (0.3,2.1)$) {\textbullet};
+    \node[cyan] (s8) at ($(offset) + (1.7,2.4)$) {\textbullet};
+    \node[cyan] (s9) at ($(offset) + (2.2,2.5)$) {\textbullet};
+
+    \end{tikzpicture}
+    \captionof{figure}{Voronoi \gls{noise} seeds of the second tile are different than the seeds of the first tile.}
+    \label{img:tikz:noise:seamless:1}
+\end{figure}
+
+\pagebreak
+
+\noindent
+When inspecting the cell $c_{2,1}$ of the first tile, some of its neighbors, namely $c_{3,0}$ to $c_{3,2}$, are part of the next tile.
+However, since the desired outcome is a repeating texture, the next tile will be the same as the first one.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.9, x=2cm,y=2cm]
+    \tikzset{c/.style = {shorten <=-4pt, shorten >=-4pt}}
+    \tikzset{smalledge/.style = {-{Latex[length=2mm]},shorten <=-4pt}}
+    
+    % tile label 1
+    \draw (0,3.3) -- (3,3.3);
+    \draw (0,3.25) -- (0,3.35);
+    \draw (3,3.25) -- (3,3.35);
+    \node at (1.5,3.4) {first tile};
+    
+    % tile label 2
+    \draw (3,-0.3) -- (6,-0.3);
+    \draw (3,-0.25) -- (3,-0.35);
+    \draw (6,-0.25) -- (6,-0.35);
+    \node at (4.5,-0.4) {second tile};
+
+    \node (offset) at (3.0,0) {};
+
+    \fill[cyan!5] (offset) rectangle ($(offset) + (1,3)$);
+    \fill[red!5] (1,0) rectangle (3,3);
+
+    \node[black!20] (x1y1) at (0,0) {\textbullet};
+    \node (x2y1) at (1,0) {\textbullet};
+    \node (x3y1) at (2,0) {\textbullet};
+    \node (x4y1) at (3,0) {\textbullet};
+
+    \node[black!20] (x1y2) at (0,1) {\textbullet};
+    \node (x2y2) at (1,1) {\textbullet};
+    \node (x3y2) at (2,1) {\textbullet};
+    \node (x4y2) at (3,1) {\textbullet};
+
+    \node[black!20] (x1y3) at (0,2) {\textbullet};
+    \node (x2y3) at (1,2) {\textbullet};
+    \node (x3y3) at (2,2) {\textbullet};
+    \node (x4y3) at (3,2) {\textbullet};
+
+    \node[black!20] (x1y4) at (0,3) {\textbullet};
+    \node (x2y4) at (1,3) {\textbullet};
+    \node (x3y4) at (2,3) {\textbullet};
+    \node (x4y4) at (3,3) {\textbullet};
+
+    \draw[c,black!20] (x1y1) edge node{} (x2y1);
+    \draw[c,black!20] (x1y2) edge node{} (x2y2);
+    \draw[c,black!20] (x1y3) edge node{} (x2y3);
+    \draw[c,black!20] (x1y4) edge node{} (x2y4);
+    \draw[c] (x2y1) edge node{} (x4y1);
+    \draw[c] (x2y2) edge node{} (x4y2);
+    \draw[c] (x2y3) edge node{} (x4y3);
+    \draw[c] (x2y4) edge node{} (x4y4);
+
+    \draw[c,black!20] (x1y1) edge node{} (x1y4);
+    \draw[c] (x2y1) edge node{} (x2y4);
+    \draw[c] (x3y1) edge node{} (x3y4);
+    \draw[c] (x4y1) edge node{} (x4y4);
+
+    \node[red!20] (s1) at (0.3,0.2) {\textbullet};
+    \node[red] (s2) at (1.4,0.8) {\textbullet};
+    \node[red] (s3) at (2.7,0.1) {\textbullet};
+    \node[red!20] (s4) at (0.4,1.6) {\textbullet};
+    \node[red] (s5) at (1.6,1.5) {\textbullet};
+    \node[red] (s6) at (2.4,1.1) {\textbullet};
+    \node[red!20] (s7) at (0.1,2.7) {\textbullet};
+    \node[red] (s8) at (1.7,2.2) {\textbullet};
+    \node[red] (s9) at (2.9,2.4) {\textbullet};
+
+    \node (x1y1) at ($(offset) + (0,0)$) {};
+    \node (x2y1) at ($(offset) + (1,0)$) {\textbullet};
+    \node[black!20] (x3y1) at ($(offset) + (2,0)$) {\textbullet};
+    \node[black!20] (x4y1) at ($(offset) + (3,0)$) {\textbullet};
+
+    \node (x1y2) at ($(offset) + (0,1)$) {};
+    \node (x2y2) at ($(offset) + (1,1)$) {\textbullet};
+    \node[black!20] (x3y2) at ($(offset) + (2,1)$) {\textbullet};
+    \node[black!20] (x4y2) at ($(offset) + (3,1)$) {\textbullet};
+
+    \node (x1y3) at ($(offset) + (0,2)$) {};
+    \node (x2y3) at ($(offset) + (1,2)$) {\textbullet};
+    \node[black!20] (x3y3) at ($(offset) + (2,2)$) {\textbullet};
+    \node[black!20] (x4y3) at ($(offset) + (3,2)$) {\textbullet};
+
+    \node (x1y4) at ($(offset) + (0,3)$) {};
+    \node (x2y4) at ($(offset) + (1,3)$) {\textbullet};
+    \node[black!20] (x3y4) at ($(offset) + (2,3)$) {\textbullet};
+    \node[black!20] (x4y4) at ($(offset) + (3,3)$) {\textbullet};
+
+    \draw[c] (x1y1) edge node{} (x2y1);
+    \draw[c] (x1y2) edge node{} (x2y2);
+    \draw[c] (x1y3) edge node{} (x2y3);
+    \draw[c] (x1y4) edge node{} (x2y4);
+    \draw[c,black!20] (x2y1) edge node{} (x4y1);
+    \draw[c,black!20] (x2y2) edge node{} (x4y2);
+    \draw[c,black!20] (x2y3) edge node{} (x4y3);
+    \draw[c,black!20] (x2y4) edge node{} (x4y4);
+
+    \draw[c] (x2y1) edge node{} (x2y4);
+    \draw[c,black!20] (x3y1) edge node{} (x3y4);
+    \draw[c,black!20] (x4y1) edge node{} (x4y4);
+
+    \node[cyan] (s1) at ($(offset) + (0.8,0.8)$) {\textbullet};
+    \node[cyan!20] (s2) at ($(offset) + (1.7,0.2)$) {\textbullet};
+    \node[cyan!20] (s3) at ($(offset) + (2.1,0.6)$) {\textbullet};
+    \node[cyan] (s4) at ($(offset) + (0.2,1.4)$) {\textbullet};
+    \node[cyan!20] (s5) at ($(offset) + (1.2,1.8)$) {\textbullet};
+    \node[cyan!20] (s6) at ($(offset) + (2.7,1.4)$) {\textbullet};
+    \node[cyan] (s7) at ($(offset) + (0.3,2.1)$) {\textbullet};
+    \node[cyan!20] (s8) at ($(offset) + (1.7,2.4)$) {\textbullet};
+    \node[cyan!20] (s9) at ($(offset) + (2.2,2.5)$) {\textbullet};
+
+    % cell label
+    \node[anchor=west] at (2.05,1.85) {$c_{2,1}$};
+    \node[black!70,anchor=west] at (3.05,0.85) {$c_{3,0}$};
+    \node[black!70,anchor=west] at (3.05,1.85) {$c_{3,1}$};
+    \node[black!70,anchor=west] at (3.05,2.85) {$c_{3,2}$};
+    \draw[line width=0.6mm] (2,1) -- (3,1) -- (3,2) -- (2,2) -- (2,1);
+
+    \end{tikzpicture}
+    \captionof{figure}{Voronoi \gls{noise} seeds are sampled from the second tile.}
+    \label{img:tikz:noise:seamless:2}
+\end{figure}
+
+\noindent
+Naturally, when using seeds from the second tile but placing the texture from the first tile underneath, a seam will automatically be visible.
+This is why, when the sampling point exceeds the defined space of the texture, the seeds will always be calculated based on the first tile again.
+Instead of sampling $c_{3,0}$ to $c_{3,2}$ from the second tile, $c_{0,0}$ to $c_{0,2}$ will be used.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.9, x=2cm,y=2cm]
+    \tikzset{c/.style = {shorten <=-4pt, shorten >=-4pt}}
+    \tikzset{smalledge/.style = {-{Latex[length=2mm]},shorten <=-4pt}}
+    
+    % tile label 1
+    \draw (0,3.3) -- (3,3.3);
+    \draw (0,3.25) -- (0,3.35);
+    \draw (3,3.25) -- (3,3.35);
+    \node at (1.5,3.4) {first tile};
+    
+    % tile label 2
+    \draw (3,-0.3) -- (6,-0.3);
+    \draw (3,-0.25) -- (3,-0.35);
+    \draw (6,-0.25) -- (6,-0.35);
+    \node at (4.5,-0.4) {second tile};
+
+    \node (offset) at (3.0,0) {};
+
+    \fill[red!5] (0,0) rectangle (1,3);
+    \fill[cyan!5] (3,0) rectangle (4,3);
+    \fill[red!5] (2,1) rectangle (3,2);
+
+    \node (x1y1) at (0,0) {\textbullet};
+    \node (x2y1) at (1,0) {\textbullet};
+    \node[black!20] (x3y1) at (2,0) {\textbullet};
+    \node (x4y1) at (3,0) {\textbullet};
+
+    \node (x1y2) at (0,1) {\textbullet};
+    \node (x2y2) at (1,1) {\textbullet};
+    \node[black!20] (x3y2) at (2,1) {\textbullet};
+    \node (x4y2) at (3,1) {\textbullet};
+
+    \node (x1y3) at (0,2) {\textbullet};
+    \node (x2y3) at (1,2) {\textbullet};
+    \node[black!20] (x3y3) at (2,2) {\textbullet};
+    \node (x4y3) at (3,2) {\textbullet};
+
+    \node (x1y4) at (0,3) {\textbullet};
+    \node (x2y4) at (1,3) {\textbullet};
+    \node[black!20] (x3y4) at (2,3) {\textbullet};
+    \node (x4y4) at (3,3) {\textbullet};
+
+    \draw[c] (x1y1) edge node{} (x2y1);
+    \draw[c] (x1y2) edge node{} (x2y2);
+    \draw[c] (x1y3) edge node{} (x2y3);
+    \draw[c] (x1y4) edge node{} (x2y4);
+    \draw[c,black!20] (x2y1) edge node{} (x4y1);
+    \draw[c,black!20] (x2y2) edge node{} (x4y2);
+    \draw[c,black!20] (x2y3) edge node{} (x4y3);
+    \draw[c,black!20] (x2y4) edge node{} (x4y4);
+
+    \draw[c] (x1y1) edge node{} (x1y4);
+    \draw[c] (x2y1) edge node{} (x2y4);
+    \draw[c,black!20] (x3y1) edge node{} (x3y4);
+    \draw[c] (x4y1) edge node{} (x4y4);
+
+    \node[red] (s1) at (0.3,0.2) {\textbullet};
+    \node[red!20] (s2) at (1.4,0.8) {\textbullet};
+    \node[red!20] (s3) at (2.7,0.1) {\textbullet};
+    \node[red] (s4) at (0.4,1.6) {\textbullet};
+    \node[red!20] (s5) at (1.6,1.5) {\textbullet};
+    \node[red] (s6) at (2.4,1.1) {\textbullet};
+    \node[red] (s7) at (0.1,2.7) {\textbullet};
+    \node[red!20] (s8) at (1.7,2.2) {\textbullet};
+    \node[red!20] (s9) at (2.9,2.4) {\textbullet};
+
+    \node (x1y1) at ($(offset) + (0,0)$) {};
+    \node (x2y1) at ($(offset) + (1,0)$) {\textbullet};
+    \node[black!20] (x3y1) at ($(offset) + (2,0)$) {\textbullet};
+    \node[black!20] (x4y1) at ($(offset) + (3,0)$) {\textbullet};
+
+    \node (x1y2) at ($(offset) + (0,1)$) {};
+    \node (x2y2) at ($(offset) + (1,1)$) {\textbullet};
+    \node[black!20] (x3y2) at ($(offset) + (2,1)$) {\textbullet};
+    \node[black!20] (x4y2) at ($(offset) + (3,1)$) {\textbullet};
+
+    \node (x1y3) at ($(offset) + (0,2)$) {};
+    \node (x2y3) at ($(offset) + (1,2)$) {\textbullet};
+    \node[black!20] (x3y3) at ($(offset) + (2,2)$) {\textbullet};
+    \node[black!20] (x4y3) at ($(offset) + (3,2)$) {\textbullet};
+
+    \node (x1y4) at ($(offset) + (0,3)$) {};
+    \node (x2y4) at ($(offset) + (1,3)$) {\textbullet};
+    \node[black!20] (x3y4) at ($(offset) + (2,3)$) {\textbullet};
+    \node[black!20] (x4y4) at ($(offset) + (3,3)$) {\textbullet};
+
+    \draw[c] (x1y1) edge node{} (x2y1);
+    \draw[c] (x1y2) edge node{} (x2y2);
+    \draw[c] (x1y3) edge node{} (x2y3);
+    \draw[c] (x1y4) edge node{} (x2y4);
+    \draw[c,black!20] (x2y1) edge node{} (x4y1);
+    \draw[c,black!20] (x2y2) edge node{} (x4y2);
+    \draw[c,black!20] (x2y3) edge node{} (x4y3);
+    \draw[c,black!20] (x2y4) edge node{} (x4y4);
+
+    \draw[c] (x2y1) edge node{} (x2y4);
+    \draw[c,black!20] (x3y1) edge node{} (x3y4);
+    \draw[c,black!20] (x4y1) edge node{} (x4y4);
+
+    \node[red] (s1) at ($(offset) + (0.3,0.2)$) {\textbullet};
+    \node[cyan!20] (s2) at ($(offset) + (1.7,0.2)$) {\textbullet};
+    \node[cyan!20] (s3) at ($(offset) + (2.1,0.6)$) {\textbullet};
+    \node[red] (s4) at ($(offset) + (0.4,1.6)$) {\textbullet};
+    \node[cyan!20] (s5) at ($(offset) + (1.2,1.8)$) {\textbullet};
+    \node[cyan!20] (s6) at ($(offset) + (2.7,1.4)$) {\textbullet};
+    \node[red] (s7) at ($(offset) + (0.1,2.7)$) {\textbullet};
+    \node[cyan!20] (s8) at ($(offset) + (1.7,2.4)$) {\textbullet};
+    \node[cyan!20] (s9) at ($(offset) + (2.2,2.5)$) {\textbullet};
+
+    % cell label
+    \node[anchor=west] at (2.05,1.85) {$c_{2,1}$};
+    \node[black!70,anchor=west] at (0.05,0.85) {$c_{0,0}$};
+    \node[black!70,anchor=west] at (0.05,1.85) {$c_{0,1}$};
+    \node[black!70,anchor=west] at (0.05,2.85) {$c_{0,2}$};
+    \node[black!70,anchor=west] at (3.05,0.85) {$c_{3,0}$};
+    \node[black!70,anchor=west] at (3.05,1.85) {$c_{3,1}$};
+    \node[black!70,anchor=west] at (3.05,2.85) {$c_{3,2}$};
+    \draw[line width=0.6mm] (2,1) -- (3,1) -- (3,2) -- (2,2) -- (2,1);
+
+    \end{tikzpicture}
+    \captionof{figure}{Voronoi \gls{noise} seeds that exceed the boundary are sampled from the first set again.}
+    \label{img:tikz:noise:seamless:3}
+\end{figure}
+
+\noindent
+In conclusion, the same set of points that is calculated for the first texture tile needs to be used again for every succeeding tile.
+
+\pagebreak
+
+\noindent
+Mathematically, this is solved by using the $modulo$ operation. The dividend is the current cell and the divisor is the period, or how often the \gls{noise} texture is repeated. 
+
+\begin{lstlisting}[language=HLSL, caption=Implementation of a partially seamless 3D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi3d]
+    float voronoi(float3 p, float3 period) {
+        float3 baseCell = floor(p);
+        float dMin = 999;
+    
+        for(int x = -1; x <= 1; x++) {
+            for(int y = -1; y <= 1; y++) {
+                for(int z = -1; z <= 1; z++) {
+                    float3 cell = baseCell + float3(x, y, z);
+                    float3 tiledCell = cell % period;
+                    float3 seed = cell + randomSeed(tiledCell);
+                    float d = distance(seed, p);
+                    if (d < dMin) {
+                        dMin = d;
+                    }
+                }
+            }
+        }
+        
+        return dMin;
+    }
+\end{lstlisting}
+
+\noindent
+Interestingly, this does only partially solve the problem. As it turns out, the modulo operation of the \gls{hlsl} treats negative values differently than expected.
+Instead of returning the absolute modulo value, it returns the remainder, including negative values.
+$$
+\begin{array}{l}
+    expected: -5 \bmod 3 = 1 \\
+    \phantom{ex}actual: -5 \bmod 3 = -2
+\end{array}
+$$
+
+\noindent
+When used this way, the outcome still has visible seams where cell modulo operations has to deal with negative numbers.
+The issue is further explained by Ronja \cite{ronja:tilingnoise}.
+
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{noise/voronoi seamless1.png}
+    \caption{Partially seamless, tiled 3D \gls{noise} \gls{textureslice}.}
+    \label{img:rnd:noise:seamless1}
+\end{figure}
+
+\pagebreak
+
+\noindent
+The problem is easily fixed, though. Instead of using \gls{hlsl}'s formula, the modulo operation described in the OpenGL documentation \cite{opengl:mod} can be used.
+It is defined as follows:
+$$
+\begin{array}{l}
+    mod(x, y) = x - y * floor(x/y)
+\end{array}
+$$
+
+\noindent
+With this implemented, the algorithm needs to be changed only slightly.
+
+\begin{lstlisting}[language=HLSL, caption=Implementation of seamless 3D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi3d]
+    #define mod(x,y) (x-y*floor(x/y))
+
+    float voronoi(float3 p, float3 period) {
+        float3 baseCell = floor(p);
+        float dMin = 999;
+    
+        for(int x = -1; x <= 1; x++) {
+            for(int y = -1; y <= 1; y++) {
+                for(int z = -1; z <= 1; z++) {
+                    float3 cell = baseCell + float3(x, y, z);
+                    float3 tiledCell = mod(cell, period);
+                    float3 seed = cell + randomSeed(tiledCell);
+                    float d = distance(seed, p);
+                    if (d < dMin) {
+                        dMin = d;
+                    }
+                }
+            }
+        }
+        
+        return dMin;
+    }
+\end{lstlisting}
+
+\noindent
+And with that, the \gls{noise} texture tiles seamlessly.
+
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{noise/voronoi seamless2.png}
+    \caption{Seamlessly tiled 3D \gls{noise} \gls{textureslice}.}
+    \label{img:rnd:noise:seamless2}
+\end{figure}
 
 \subsection{Compute Shaders}
 \label{section:noise:compute}

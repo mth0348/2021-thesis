@@ -653,26 +653,26 @@ In conclusion, the same set of points that is calculated for the first texture t
 \noindent
 Mathematically, this is solved by using the $modulo$ operation. The dividend is the current cell and the divisor is the period, or how often the \gls{noise} texture is repeated.
 
-\begin{lstlisting}[language=HLSL, caption=Implementation of a partially seamless 3D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi3d]
-    float voronoi(float3 p, float3 period) {
-        float3 baseCell = floor(p);
-        float dMin = 999;
-    
-        for(int x = -1; x <= 1; x++) {
-            for(int y = -1; y <= 1; y++) {
-                for(int z = -1; z <= 1; z++) {
-                    float3 cell = baseCell + float3(x, y, z);
-                    float3 tiledCell = cell % period;
-                    float3 seed = cell + randomSeed(tiledCell);
-                    float d = distance(seed, p);
-                    if (d < dMin) {
-                        dMin = d;
-                    }
+\begin{lstlisting}[language=HLSL, caption=Implementation of a partially seamless 3D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi:seamless1]
+float voronoi(float3 p, float3 period) {
+    float3 baseCell = floor(p);
+    float dMin = 999;
+
+    for(int x = -1; x <= 1; x++) {
+        for(int y = -1; y <= 1; y++) {
+            for(int z = -1; z <= 1; z++) {
+                float3 cell = baseCell + float3(x, y, z);
+                float3 tiledCell = cell % period;
+                float3 seed = cell + randomSeed(tiledCell);
+                float d = distance(seed, p);
+                if (d < dMin) {
+                    dMin = d;
                 }
             }
         }
-        return dMin;
     }
+    return dMin;
+}
 \end{lstlisting}
 
 \noindent
@@ -714,28 +714,28 @@ $$
 \end{array}
 $$
 
-\begin{lstlisting}[language=HLSL, caption=Implementation of seamless 3D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi3d]
-    #define mod(x,y) (x-y*floor(x/y))
+\begin{lstlisting}[language=HLSL, caption=Implementation of seamless 3D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi:seamless2]
+#define mod(x,y) (x-y*floor(x/y))
 
-    float voronoi(float3 p, float3 period) {
-        float3 baseCell = floor(p);
-        float dMin = 999;
-    
-        for(int x = -1; x <= 1; x++) {
-            for(int y = -1; y <= 1; y++) {
-                for(int z = -1; z <= 1; z++) {
-                    float3 cell = baseCell + float3(x, y, z);
-                    float3 tiledCell = mod(cell, period);
-                    float3 seed = cell + randomSeed(tiledCell);
-                    float d = distance(seed, p);
-                    if (d < dMin) {
-                        dMin = d;
-                    }
+float voronoi(float3 p, float3 period) {
+    float3 baseCell = floor(p);
+    float dMin = 999;
+
+    for(int x = -1; x <= 1; x++) {
+        for(int y = -1; y <= 1; y++) {
+            for(int z = -1; z <= 1; z++) {
+                float3 cell = baseCell + float3(x, y, z);
+                float3 tiledCell = mod(cell, period);
+                float3 seed = cell + randomSeed(tiledCell);
+                float d = distance(seed, p);
+                if (d < dMin) {
+                    dMin = d;
                 }
             }
         }
-        return dMin;
     }
+    return dMin;
+}
 \end{lstlisting}
 
 \noindent
@@ -752,8 +752,511 @@ And with that, the \gls{noise} texture tiles seamlessly.
 \Gls{computeshader}s are special programs that run on a graphics card. They are used for high-speed general-purpose computing.
 Unlike regular \gls{shader}s, they do not write directly to the \gls{framebuffer}, but to a buffer from which the data can be read later on.
 In many cases, this buffer is a 2D or 3D texture.
+
+\subsubsection{Compute Shader Structure}
+In Unity, compute shaders are written in \gls{hlsl} and interact with Microsoft's DirectCompute technology, a graphics card interface for \gls{computeshader}s.
+This is a standard example of such a \gls{shader}:
+
+\begin{lstlisting}[language=HLSL, caption=A standard \gls{computeshader} template., label=lst:shader:compute:standard]
+#pragma kernel CSMain
+
+RWTexture3D<float4> _Result;
+
+[numthreads(4,4,4)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    _Result[id.xyz] = float4(1,0,0,1);
+}
+\end{lstlisting}
+
+\noindent
+The so-called \emph{\gls{kernel}} is defined on the first line and describes the method that will be executed when the \gls{computeshader} is dispatched.
+In this example, there is only one \gls{kernel} with the name \lstinline[language=HLSL]{CSMain}.
+When executed, it writes to a 3D texture and sets the color of a specific \gls{texel} (short for texture element) to red.
 \\
-In Unity, compute shaders are written in \gls{hlsl} and interact with Microsoft's DirectCompute technology, a graphics card interface.
+On the third line, a 3D texture variable is declared.
+The type is \lstinline[language=HLSL]{RWTexture3D}, which means the texture is enabled for both reading and writing.
+Another important part is the \lstinline[language=HLSL]{[numthreads(8,8,8)]} statement. It specifies the dimensions of thread groups.
+
+\subsubsection{Thread Groups}
+When running a \gls{computeshader}, the kernel is executed on many threads in parallel.
+This allows the \gls{gpu} to split up the computation instructions declared in the \gls{shader}.
+For each part, a thread group is created, which only handles that specific part.
+These thread groups run individually and simultaneously, speeding up the process massively.
+\\
+The dimensions of a thread group can be controlled with the \lstinline[language=HLSL]{numthreads} attribute.
+In the example above, for each thread group, there will be 4 threads in the X dimension, 4 threads in the Y dimension and 4 threads in the Z dimension.
+\emptyline
+Every \gls{kernel} has a parameter called \lstinline[language=HLSL]{id}. This is the identifier of the current thread, short \emph{thread id}.
+The thread id is unique for the whole execution. The following example shows how a thread group is structured.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.6, x=2cm,y=2cm]
+        \tikzset{c/.style = {shorten <=-4pt, shorten >=-4pt}}
+        \tikzset{cb/.style = {shorten <=-4pt, shorten >=-4pt, black!30}}
+        \tikzset{smalledge/.style = {-{Latex[length=2mm]},shorten <=-4pt,shorten >=-4pt}}
+        
+        \node (x1y1) at (0,0) {};
+        \node (x1y2) at (0,1) {};
+        \node (x1y3) at (0,2) {};
+        \node (x1y4) at (0,3) {};
+        \node (x1y5) at (0,4) {};
+        
+        \node (x2y1) at (1,0) {};
+        \node (x2y5) at (1,4) {};
+        
+        \node (x3y1) at (2,0) {};
+        \node (x3y5) at (2,4) {};
+        
+        \node (x4y1) at (3,0) {};
+        \node (x4y5) at (3,4) {};
+    
+        \node (x5y1) at (4,0) {};
+        \node (x5y2) at (4,1) {};
+        \node (x5y3) at (4,2) {};
+        \node (x5y4) at (4,3) {};
+        \node (x5y5) at (4,4) {};
+    
+        \draw[c] (x1y1) edge node{} (x5y1);
+        \draw[c] (x1y2) edge node{} (x5y2);
+        \draw[c] (x1y3) edge node{} (x5y3);
+        \draw[c] (x1y4) edge node{} (x5y4);
+        \draw[c] (x1y5) edge node{} (x5y5);
+    
+        \draw[c] (x1y1) edge node{} (x1y5);
+        \draw[c] (x2y1) edge node{} (x2y5);
+        \draw[c] (x3y1) edge node{} (x3y5);
+        \draw[c] (x4y1) edge node{} (x4y5);
+        \draw[c] (x5y1) edge node{} (x5y5);
+    
+        % first back
+        \node (offset) at (0,0) {};
+        \node (a1b1) at ($(offset) + (0.5,4)$)   {};
+        \node (a2b1) at ($(offset) + (1.5,4)$)   {};
+        \node (a3b1) at ($(offset) + (2.5,4)$)   {};
+        \node (a4b1) at ($(offset) + (3.5,4)$)   {};
+        \node (a1b2) at ($(offset) + (0.5,4.5)$) {};
+        \node (a2b2) at ($(offset) + (1.5,4.5)$) {};
+        \node (a3b2) at ($(offset) + (2.5,4.5)$) {};
+        \node (a4b2) at ($(offset) + (3.5,4.5)$) {};
+        \node (a5b2) at ($(offset) + (4.5,4.5)$) {};
+        \node (c1d1) at ($(offset) + (4,0.5)$)   {};
+        \node (c1d2) at ($(offset) + (4,1.5)$)   {};
+        \node (c1d3) at ($(offset) + (4,2.5)$)   {};
+        \node (c1d4) at ($(offset) + (4,3.5)$)   {};
+        \node (c2d1) at ($(offset) + (4.5,0.5)$) {};
+        \node (c2d2) at ($(offset) + (4.5,1.5)$) {};
+        \node (c2d3) at ($(offset) + (4.5,2.5)$) {};
+        \node (c2d4) at ($(offset) + (4.5,3.5)$) {};
+        \draw[cb] (a1b2) edge node{} (a5b2);
+        \draw[cb] (c2d1) edge node{} (a5b2);
+        \draw[cb] (a1b1) edge node{} (a1b2);
+        \draw[cb] (a2b1) edge node{} (a2b2);
+        \draw[cb] (a3b1) edge node{} (a3b2);
+        \draw[cb] (a4b1) edge node{} (a4b2);
+        \draw[cb] (c1d1) edge node{} (c2d1);
+        \draw[cb] (c1d2) edge node{} (c2d2);
+        \draw[cb] (c1d3) edge node{} (c2d3);
+        \draw[cb] (c1d4) edge node{} (c2d4);
+    
+        % second back
+        \node (offset) at (0.5,0.5) {};
+        \node (a1b1) at ($(offset) + (0.5,4)$)   {};
+        \node (a2b1) at ($(offset) + (1.5,4)$)   {};
+        \node (a3b1) at ($(offset) + (2.5,4)$)   {};
+        \node (a4b1) at ($(offset) + (3.5,4)$)   {};
+        \node (a1b2) at ($(offset) + (0.5,4.5)$) {};
+        \node (a2b2) at ($(offset) + (1.5,4.5)$) {};
+        \node (a3b2) at ($(offset) + (2.5,4.5)$) {};
+        \node (a4b2) at ($(offset) + (3.5,4.5)$) {};
+        \node (a5b2) at ($(offset) + (4.5,4.5)$) {};
+        \node (c1d1) at ($(offset) + (4,0.5)$)   {};
+        \node (c1d2) at ($(offset) + (4,1.5)$)   {};
+        \node (c1d3) at ($(offset) + (4,2.5)$)   {};
+        \node (c1d4) at ($(offset) + (4,3.5)$)   {};
+        \node (c2d1) at ($(offset) + (4.5,0.5)$) {};
+        \node (c2d2) at ($(offset) + (4.5,1.5)$) {};
+        \node (c2d3) at ($(offset) + (4.5,2.5)$) {};
+        \node (c2d4) at ($(offset) + (4.5,3.5)$) {};
+        \draw[cb] (a1b2) edge node{} (a5b2);
+        \draw[cb] (c2d1) edge node{} (a5b2);
+        \draw[cb] (a1b1) edge node{} (a1b2);
+        \draw[cb] (a2b1) edge node{} (a2b2);
+        \draw[cb] (a3b1) edge node{} (a3b2);
+        \draw[cb] (a4b1) edge node{} (a4b2);
+        \draw[cb] (c1d1) edge node{} (c2d1);
+        \draw[cb] (c1d2) edge node{} (c2d2);
+        \draw[cb] (c1d3) edge node{} (c2d3);
+        \draw[cb] (c1d4) edge node{} (c2d4);
+    
+        % third back
+        \node (offset) at (1,1) {};
+        \node (a1b1) at ($(offset) + (0.5,4)$)   {};
+        \node (a2b1) at ($(offset) + (1.5,4)$)   {};
+        \node (a3b1) at ($(offset) + (2.5,4)$)   {};
+        \node (a4b1) at ($(offset) + (3.5,4)$)   {};
+        \node (a1b2) at ($(offset) + (0.5,4.5)$) {};
+        \node (a2b2) at ($(offset) + (1.5,4.5)$) {};
+        \node (a3b2) at ($(offset) + (2.5,4.5)$) {};
+        \node (a4b2) at ($(offset) + (3.5,4.5)$) {};
+        \node (a5b2) at ($(offset) + (4.5,4.5)$) {};
+        \node (c1d1) at ($(offset) + (4,0.5)$)   {};
+        \node (c1d2) at ($(offset) + (4,1.5)$)   {};
+        \node (c1d3) at ($(offset) + (4,2.5)$)   {};
+        \node (c1d4) at ($(offset) + (4,3.5)$)   {};
+        \node (c2d1) at ($(offset) + (4.5,0.5)$) {};
+        \node (c2d2) at ($(offset) + (4.5,1.5)$) {};
+        \node (c2d3) at ($(offset) + (4.5,2.5)$) {};
+        \node (c2d4) at ($(offset) + (4.5,3.5)$) {};
+        \draw[cb] (a1b2) edge node{} (a5b2);
+        \draw[cb] (c2d1) edge node{} (a5b2);
+        \draw[cb] (a1b1) edge node{} (a1b2);
+        \draw[cb] (a2b1) edge node{} (a2b2);
+        \draw[cb] (a3b1) edge node{} (a3b2);
+        \draw[cb] (a4b1) edge node{} (a4b2);
+        \draw[cb] (c1d1) edge node{} (c2d1);
+        \draw[cb] (c1d2) edge node{} (c2d2);
+        \draw[cb] (c1d3) edge node{} (c2d3);
+        \draw[cb] (c1d4) edge node{} (c2d4);
+
+        \draw[smalledge] (0,-0.5) -- (4,-0.5);
+        \node[anchor=north] at (0,-0.5) {$0$};
+        \node[anchor=north] at (4,-0.5) {$x$};
+        \node[anchor=north] at (2,-0.5) {X dimension};
+
+        \draw[smalledge] (-0.5,0) -- (-0.5,4);
+        \node[anchor=south,rotate=90] at (-0.5,0) {$0$};
+        \node[anchor=south,rotate=90] at (-0.5,4) {$y$};
+        \node[anchor=south,rotate=90] at (-0.5,2) {Y dimension};
+
+        \draw[smalledge] (0,4.5) -- (1.5,6);
+        \node[anchor=south,rotate=45] at (0,4.5) {$0$};
+        \node[anchor=south,rotate=45] at (1.5,6) {$z$};
+        \node[anchor=south,rotate=45] at (0.75,5.25) {Z dimension};
+
+    \end{tikzpicture}
+    \captionof{figure}{Compute shader thread group with labeled dimensions.}
+    \label{img:tikz:compute:threads}
+\end{figure}
+\noindent
+Each cell represents a single thread that is run when the thread group is executed.
+The identifier of a thread is equal to its coordinates in this system, with the thread group identifier added as an offset.
+
+\subsubsection{Dispatching a Compute Shader}
+When dispatching a \gls{computeshader}, that is executing it, the number of thread groups for each dimension has to be passed along.
+To fill a 3D texture with a resolution of 256x256x256 pixels, a \gls{computeshader} with thread groups the size of 4x4x4 needs to be dispatched with $256 / 4 = 64$ thread groups in each dimension.
+\\
+Each thread group will be assigned its own identifier, the \emph{thread group id}.
+
+\pagebreak
+
+\subsubsection{Thread and Thread Group Identifiers}
+The thread group id, or simply group id, is calculated by taking the current index of the thread group in each dimension.
+When dispatching a \gls{kernel} with 64 groups in each dimension, that means that the group identifiers range from (0,0,0) to (63,63,63).
+\\
+In each thread group, the thread id is then calculated as follows.
+Given $id_{group}$ is the thread group id, $n_{threads}$ is the number of threads specified in the \gls{kernel}, and  $pos$ are the coordinates of the thread inside the thread group, then:
+$$
+\begin{array}{l}
+    id_{thread} = id_{group} * n_{threads} + pos
+\end{array}
+$$
+
+\noindent
+Here are two practical examples. 
+
+$$
+\begin{array}{l}
+    id_1 = \phantom{0}(0,0,0) * (4,4,4) + (0,0,0) = (0,0,0) \\
+    id_2 = (1,63,2) * (4,4,4) + (3,3,1) = (7,255,9)
+\end{array}
+$$
+\\
+\noindent
+The following figures each show a single thread group, with a specific thread marked in blue.
+The group id is denoted in the top left corner, together with the coordinates of the thread inside the thread group. 
+
+\begin{figure}[H]
+    \centering
+
+    \begin{minipage}{0.47\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.6, x=2cm,y=2cm]
+            \tikzset{c/.style = {shorten <=-4pt, shorten >=-4pt}}
+            \tikzset{cb/.style = {shorten <=-4pt, shorten >=-4pt, black!30}}
+            \tikzset{smalledge/.style = {-{Latex[length=2mm]},shorten <=-4pt}}
+
+            \fill[cyan] (0,0) rectangle (1,1);
+            
+            \node (x1y1) at (0,0) {};
+            \node (x1y2) at (0,1) {};
+            \node (x1y3) at (0,2) {};
+            \node (x1y4) at (0,3) {};
+            \node (x1y5) at (0,4) {};
+            
+            \node (x2y1) at (1,0) {};
+            \node (x2y5) at (1,4) {};
+            
+            \node (x3y1) at (2,0) {};
+            \node (x3y5) at (2,4) {};
+            
+            \node (x4y1) at (3,0) {};
+            \node (x4y5) at (3,4) {};
+        
+            \node (x5y1) at (4,0) {};
+            \node (x5y2) at (4,1) {};
+            \node (x5y3) at (4,2) {};
+            \node (x5y4) at (4,3) {};
+            \node (x5y5) at (4,4) {};
+        
+            \draw[c] (x1y1) edge node{} (x5y1);
+            \draw[c] (x1y2) edge node{} (x5y2);
+            \draw[c] (x1y3) edge node{} (x5y3);
+            \draw[c] (x1y4) edge node{} (x5y4);
+            \draw[c] (x1y5) edge node{} (x5y5);
+        
+            \draw[c] (x1y1) edge node{} (x1y5);
+            \draw[c] (x2y1) edge node{} (x2y5);
+            \draw[c] (x3y1) edge node{} (x3y5);
+            \draw[c] (x4y1) edge node{} (x4y5);
+            \draw[c] (x5y1) edge node{} (x5y5);
+        
+            % first back
+            \node (offset) at (0,0) {};
+            \node (a1b1) at ($(offset) + (0.5,4)$)   {};
+            \node (a2b1) at ($(offset) + (1.5,4)$)   {};
+            \node (a3b1) at ($(offset) + (2.5,4)$)   {};
+            \node (a4b1) at ($(offset) + (3.5,4)$)   {};
+            \node (a1b2) at ($(offset) + (0.5,4.5)$) {};
+            \node (a2b2) at ($(offset) + (1.5,4.5)$) {};
+            \node (a3b2) at ($(offset) + (2.5,4.5)$) {};
+            \node (a4b2) at ($(offset) + (3.5,4.5)$) {};
+            \node (a5b2) at ($(offset) + (4.5,4.5)$) {};
+            \node (c1d1) at ($(offset) + (4,0.5)$)   {};
+            \node (c1d2) at ($(offset) + (4,1.5)$)   {};
+            \node (c1d3) at ($(offset) + (4,2.5)$)   {};
+            \node (c1d4) at ($(offset) + (4,3.5)$)   {};
+            \node (c2d1) at ($(offset) + (4.5,0.5)$) {};
+            \node (c2d2) at ($(offset) + (4.5,1.5)$) {};
+            \node (c2d3) at ($(offset) + (4.5,2.5)$) {};
+            \node (c2d4) at ($(offset) + (4.5,3.5)$) {};
+            \draw[cb] (a1b2) edge node{} (a5b2);
+            \draw[cb] (c2d1) edge node{} (a5b2);
+            \draw[cb] (a1b1) edge node{} (a1b2);
+            \draw[cb] (a2b1) edge node{} (a2b2);
+            \draw[cb] (a3b1) edge node{} (a3b2);
+            \draw[cb] (a4b1) edge node{} (a4b2);
+            \draw[cb] (c1d1) edge node{} (c2d1);
+            \draw[cb] (c1d2) edge node{} (c2d2);
+            \draw[cb] (c1d3) edge node{} (c2d3);
+            \draw[cb] (c1d4) edge node{} (c2d4);
+        
+            % second back
+            \node (offset) at (0.5,0.5) {};
+            \node (a1b1) at ($(offset) + (0.5,4)$)   {};
+            \node (a2b1) at ($(offset) + (1.5,4)$)   {};
+            \node (a3b1) at ($(offset) + (2.5,4)$)   {};
+            \node (a4b1) at ($(offset) + (3.5,4)$)   {};
+            \node (a1b2) at ($(offset) + (0.5,4.5)$) {};
+            \node (a2b2) at ($(offset) + (1.5,4.5)$) {};
+            \node (a3b2) at ($(offset) + (2.5,4.5)$) {};
+            \node (a4b2) at ($(offset) + (3.5,4.5)$) {};
+            \node (a5b2) at ($(offset) + (4.5,4.5)$) {};
+            \node (c1d1) at ($(offset) + (4,0.5)$)   {};
+            \node (c1d2) at ($(offset) + (4,1.5)$)   {};
+            \node (c1d3) at ($(offset) + (4,2.5)$)   {};
+            \node (c1d4) at ($(offset) + (4,3.5)$)   {};
+            \node (c2d1) at ($(offset) + (4.5,0.5)$) {};
+            \node (c2d2) at ($(offset) + (4.5,1.5)$) {};
+            \node (c2d3) at ($(offset) + (4.5,2.5)$) {};
+            \node (c2d4) at ($(offset) + (4.5,3.5)$) {};
+            \draw[cb] (a1b2) edge node{} (a5b2);
+            \draw[cb] (c2d1) edge node{} (a5b2);
+            \draw[cb] (a1b1) edge node{} (a1b2);
+            \draw[cb] (a2b1) edge node{} (a2b2);
+            \draw[cb] (a3b1) edge node{} (a3b2);
+            \draw[cb] (a4b1) edge node{} (a4b2);
+            \draw[cb] (c1d1) edge node{} (c2d1);
+            \draw[cb] (c1d2) edge node{} (c2d2);
+            \draw[cb] (c1d3) edge node{} (c2d3);
+            \draw[cb] (c1d4) edge node{} (c2d4);
+        
+            % third back
+            \node (offset) at (1,1) {};
+            \node (a1b1) at ($(offset) + (0.5,4)$)   {};
+            \node (a2b1) at ($(offset) + (1.5,4)$)   {};
+            \node (a3b1) at ($(offset) + (2.5,4)$)   {};
+            \node (a4b1) at ($(offset) + (3.5,4)$)   {};
+            \node (a1b2) at ($(offset) + (0.5,4.5)$) {};
+            \node (a2b2) at ($(offset) + (1.5,4.5)$) {};
+            \node (a3b2) at ($(offset) + (2.5,4.5)$) {};
+            \node (a4b2) at ($(offset) + (3.5,4.5)$) {};
+            \node (a5b2) at ($(offset) + (4.5,4.5)$) {};
+            \node (c1d1) at ($(offset) + (4,0.5)$)   {};
+            \node (c1d2) at ($(offset) + (4,1.5)$)   {};
+            \node (c1d3) at ($(offset) + (4,2.5)$)   {};
+            \node (c1d4) at ($(offset) + (4,3.5)$)   {};
+            \node (c2d1) at ($(offset) + (4.5,0.5)$) {};
+            \node (c2d2) at ($(offset) + (4.5,1.5)$) {};
+            \node (c2d3) at ($(offset) + (4.5,2.5)$) {};
+            \node (c2d4) at ($(offset) + (4.5,3.5)$) {};
+            \draw[cb] (a1b2) edge node{} (a5b2);
+            \draw[cb] (c2d1) edge node{} (a5b2);
+            \draw[cb] (a1b1) edge node{} (a1b2);
+            \draw[cb] (a2b1) edge node{} (a2b2);
+            \draw[cb] (a3b1) edge node{} (a3b2);
+            \draw[cb] (a4b1) edge node{} (a4b2);
+            \draw[cb] (c1d1) edge node{} (c2d1);
+            \draw[cb] (c1d2) edge node{} (c2d2);
+            \draw[cb] (c1d3) edge node{} (c2d3);
+            \draw[cb] (c1d4) edge node{} (c2d4);
+
+            \node[font=\small,anchor=west] at (0,6.4) {thread group id: (0,0,0)};
+            \node[font=\small,anchor=west] at (0,6) {thread coordinates: (0,0,0)};
+    
+        \end{tikzpicture}
+        \captionof{figure}{Compute shader thread group with dimensions 4x4x4. Marked in blue is thread with id (0,0,0).}
+        \label{img:tikz:compute:threads1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.47\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.6, x=2cm,y=2cm]
+            \tikzset{c/.style = {shorten <=-4pt, shorten >=-4pt}}
+            \tikzset{cb/.style = {shorten <=-4pt, shorten >=-4pt, black!30}}
+            \tikzset{smalledge/.style = {-{Latex[length=2mm]},shorten <=-4pt}}
+
+            \fill[cyan] (4,3.5) rectangle (4.5,4.5);
+            \fill[cyan] (3.5,4) rectangle (4.5,4.5);
+            \fill[cyan!10] (3.5,3.5) rectangle (4,4);
+            
+            % second back
+            \node (offset) at (0,0) {};
+            \node (a1b1) at ($(offset) + (0.5,4)$)   {};
+            \node (a2b1) at ($(offset) + (1.5,4)$)   {};
+            \node (a3b1) at ($(offset) + (2.5,4)$)   {};
+            \node (a4b1) at ($(offset) + (3.5,4)$)   {};
+            \node (a1b2) at ($(offset) + (0.5,4.5)$) {};
+            \node (a2b2) at ($(offset) + (1.5,4.5)$) {};
+            \node (a3b2) at ($(offset) + (2.5,4.5)$) {};
+            \node (a4b2) at ($(offset) + (3.5,4.5)$) {};
+            \node (a5b2) at ($(offset) + (4.5,4.5)$) {};
+            \node (c1d1) at ($(offset) + (4,0.5)$)   {};
+            \node (c1d2) at ($(offset) + (4,1.5)$)   {};
+            \node (c1d3) at ($(offset) + (4,2.5)$)   {};
+            \node (c1d4) at ($(offset) + (4,3.5)$)   {};
+            \node (c2d1) at ($(offset) + (4.5,0.5)$) {};
+            \node (c2d2) at ($(offset) + (4.5,1.5)$) {};
+            \node (c2d3) at ($(offset) + (4.5,2.5)$) {};
+            \node (c2d4) at ($(offset) + (4.5,3.5)$) {};
+            \draw[c] (a1b2) edge node{} (a5b2);
+            \draw[c] (c2d1) edge node{} (a5b2);
+            \draw[c] (a1b1) edge node{} (a1b2);
+            \draw[c] (a2b1) edge node{} (a2b2);
+            \draw[c] (a3b1) edge node{} (a3b2);
+            \draw[c] (a4b1) edge node{} (a4b2);
+            \draw[c] (c1d1) edge node{} (c2d1);
+            \draw[c] (c1d2) edge node{} (c2d2);
+            \draw[c] (c1d3) edge node{} (c2d3);
+            \draw[c] (c1d4) edge node{} (c2d4);
+            
+            \node (offset) at (0,0) {};
+            \node (x1y1) at ($(offset) + (0,0)$) {};
+            \node (x1y2) at ($(offset) + (0,1)$) {};
+            \node (x1y3) at ($(offset) + (0,2)$) {};
+            \node (x1y4) at ($(offset) + (0,3)$) {};
+            \node (x1y5) at ($(offset) + (0,4)$) {};
+            \node (x2y1) at ($(offset) + (1,0)$) {};
+            \node (x2y5) at ($(offset) + (1,4)$) {};
+            \node (x3y1) at ($(offset) + (2,0)$) {};
+            \node (x3y5) at ($(offset) + (2,4)$) {};
+            \node (x4y1) at ($(offset) + (3,0)$) {};
+            \node (x4y5) at ($(offset) + (3,4)$) {};
+            \node (x5y1) at ($(offset) + (4,0)$) {};
+            \node (x5y2) at ($(offset) + (4,1)$) {};
+            \node (x5y3) at ($(offset) + (4,2)$) {};
+            \node (x5y4) at ($(offset) + (4,3)$) {};
+            \node (x5y5) at ($(offset) + (4,4)$) {};
+            \draw[cb] (x1y1) edge node{} (x5y1);
+            \draw[cb] (x1y2) edge node{} (x5y2);
+            \draw[cb] (x1y3) edge node{} (x5y3);
+            \draw[cb] (x1y4) edge node{} (x5y4);
+            \draw[cb] (x1y5) edge node{} (x5y5);
+            \draw[cb] (x1y1) edge node{} (x1y5);
+            \draw[cb] (x2y1) edge node{} (x2y5);
+            \draw[cb] (x3y1) edge node{} (x3y5);
+            \draw[cb] (x4y1) edge node{} (x4y5);
+            \draw[cb] (x5y1) edge node{} (x5y5);
+        
+            % second back
+            \node (offset) at (0.5,0.5) {};
+            \node (a1b1) at ($(offset) + (0.5,4)$)   {};
+            \node (a2b1) at ($(offset) + (1.5,4)$)   {};
+            \node (a3b1) at ($(offset) + (2.5,4)$)   {};
+            \node (a4b1) at ($(offset) + (3.5,4)$)   {};
+            \node (a1b2) at ($(offset) + (0.5,4.5)$) {};
+            \node (a2b2) at ($(offset) + (1.5,4.5)$) {};
+            \node (a3b2) at ($(offset) + (2.5,4.5)$) {};
+            \node (a4b2) at ($(offset) + (3.5,4.5)$) {};
+            \node (a5b2) at ($(offset) + (4.5,4.5)$) {};
+            \node (c1d1) at ($(offset) + (4,0.5)$)   {};
+            \node (c1d2) at ($(offset) + (4,1.5)$)   {};
+            \node (c1d3) at ($(offset) + (4,2.5)$)   {};
+            \node (c1d4) at ($(offset) + (4,3.5)$)   {};
+            \node (c2d1) at ($(offset) + (4.5,0.5)$) {};
+            \node (c2d2) at ($(offset) + (4.5,1.5)$) {};
+            \node (c2d3) at ($(offset) + (4.5,2.5)$) {};
+            \node (c2d4) at ($(offset) + (4.5,3.5)$) {};
+            \draw[cb] (a1b2) edge node{} (a5b2);
+            \draw[cb] (c2d1) edge node{} (a5b2);
+            \draw[cb] (a1b1) edge node{} (a1b2);
+            \draw[cb] (a2b1) edge node{} (a2b2);
+            \draw[cb] (a3b1) edge node{} (a3b2);
+            \draw[cb] (a4b1) edge node{} (a4b2);
+            \draw[cb] (c1d1) edge node{} (c2d1);
+            \draw[cb] (c1d2) edge node{} (c2d2);
+            \draw[cb] (c1d3) edge node{} (c2d3);
+            \draw[cb] (c1d4) edge node{} (c2d4);
+        
+            % third back
+            \node (offset) at (1,1) {};
+            \node (a1b1) at ($(offset) + (0.5,4)$)   {};
+            \node (a2b1) at ($(offset) + (1.5,4)$)   {};
+            \node (a3b1) at ($(offset) + (2.5,4)$)   {};
+            \node (a4b1) at ($(offset) + (3.5,4)$)   {};
+            \node (a1b2) at ($(offset) + (0.5,4.5)$) {};
+            \node (a2b2) at ($(offset) + (1.5,4.5)$) {};
+            \node (a3b2) at ($(offset) + (2.5,4.5)$) {};
+            \node (a4b2) at ($(offset) + (3.5,4.5)$) {};
+            \node (a5b2) at ($(offset) + (4.5,4.5)$) {};
+            \node (c1d1) at ($(offset) + (4,0.5)$)   {};
+            \node (c1d2) at ($(offset) + (4,1.5)$)   {};
+            \node (c1d3) at ($(offset) + (4,2.5)$)   {};
+            \node (c1d4) at ($(offset) + (4,3.5)$)   {};
+            \node (c2d1) at ($(offset) + (4.5,0.5)$) {};
+            \node (c2d2) at ($(offset) + (4.5,1.5)$) {};
+            \node (c2d3) at ($(offset) + (4.5,2.5)$) {};
+            \node (c2d4) at ($(offset) + (4.5,3.5)$) {};
+            \draw[cb] (a1b2) edge node{} (a5b2);
+            \draw[cb] (c2d1) edge node{} (a5b2);
+            \draw[cb] (a1b1) edge node{} (a1b2);
+            \draw[cb] (a2b1) edge node{} (a2b2);
+            \draw[cb] (a3b1) edge node{} (a3b2);
+            \draw[cb] (a4b1) edge node{} (a4b2);
+            \draw[cb] (c1d1) edge node{} (c2d1);
+            \draw[cb] (c1d2) edge node{} (c2d2);
+            \draw[cb] (c1d3) edge node{} (c2d3);
+            \draw[cb] (c1d4) edge node{} (c2d4);
+
+            \node[font=\small,anchor=west] at (0,6.4) {thread group id: (1,63,2)};
+            \node[font=\small,anchor=west] at (0,6) {thread coordinates: (3,3,1)};
+        
+        \end{tikzpicture}
+        \captionof{figure}{Compute shader thread group with dimensions 4x4x4. Marked in blue is thread with id (7,255,9)}
+        \label{img:tikz:compute:threads2}
+    \end{minipage}
+\end{figure}
 
 \subsection{3D Noise Texture Sampling}
 \label{section:noise:tex3d}

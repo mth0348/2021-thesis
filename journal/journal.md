@@ -487,3 +487,34 @@ Next steps:
 
 | Task | time spent |
 |----|---|
+|noise generation|8h|
+|seamless noise|8h|
+|compute shaders|4h|
+
+&nbsp;
+
+&nbsp;
+#
+## \#10: April 29, 2021
+### Formal and technical questions
+1. for 3D textures, is a single element a texel or a voxel
+
+**Answers to questions:**
+1. 
+
+
+### Meeting discussion
+* .
+
+
+**Inputs from tutor:**
+* .
+
+ 
+**Tasks**
+* Next meeting is scheduled for **May 6, 2021 at 2pm.**
+
+**Time log**
+
+| Task | time spent |
+|----|---|

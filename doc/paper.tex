@@ -50,20 +50,23 @@
         % variables
         i,j,x,y,z,frequency,amplitude,current,total,maxValue,
         data,renderer,d1,d2,d3,
-        baseCell,cell,seed,dMin,d,p,co,period,tiledCell
+        baseCell,cell,seed,dMin,d,p,co,period,tiledCell,
+        _Result,id
 	},
 	morekeywords=[2]{
         % methods and functions
 		distance,normalize,min,max,dot,pow,sin,cos,tan,fract,length,smoothstep,
         random2d,random,random3d,randomSeed,floor,fbm,
         renderClouds,mod,
-        voronoi
+        voronoi,
+        CSMain,numthreads
 	},
 	morekeywords=[3]{
         % CONSTANTS
         STEP_SIZE,MAX_STEPS,MINIMUM_STEP_SIZE,SURFACE_DISTANCE,MAX_DISTANCE,EPSILON,
         AO_ITERATIONS,AO_INTENSITY,AO_STEP_SIZE,
         LACUNARITY,GAIN,OCTAVES,TODAY,
+        SV_DispatchThreadID
     },
 	% morekeywords=[4]{
     %     % Unity Variables

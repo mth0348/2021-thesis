@@ -227,7 +227,6 @@ float voronoi(float2 p) {
             }
         }
     }
-    
     return dMin;
 }
 \end{lstlisting}
@@ -259,7 +258,6 @@ float voronoi(float3 p) {
             }
         }
     }
-    
     return dMin;
 }
 \end{lstlisting}
@@ -274,7 +272,7 @@ It is therefore not possible to tile the same texture without visible seams inbe
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{noise/voronoi seam.png}
-    \caption{Tiled 3D \gls{noise} \gls{textureslice}.}
+    \caption{Tiled 3D \gls{noise} \gls{textureslice}s.}
     \label{img:rnd:noise:seam}
 \end{figure}
 
@@ -392,7 +390,7 @@ The problem occurs when checking the neighboring cells of the current cell. For 
 
 \noindent
 When inspecting the cell $c_{2,1}$ of the first tile, some of its neighbors, namely $c_{3,0}$ to $c_{3,2}$, are part of the next tile.
-However, since the desired outcome is a repeating texture, the next tile will be the same as the first one.
+However, since the desired outcome is a repeating texture, the underlaying texture will be the same as the first one.
 
 \begin{figure}[H]
     \centering
@@ -517,7 +515,7 @@ However, since the desired outcome is a repeating texture, the next tile will be
 \end{figure}
 
 \noindent
-Naturally, when using seeds from the second tile but placing the texture from the first tile underneath, a seam will automatically be visible.
+Naturally, when using seeds from the second tile but placing the texture from the first tile underneath, a disruption in the pattern will be visible in the form of a seam.
 This is why, when the sampling point exceeds the defined space of the texture, the seeds will always be calculated based on the first tile again.
 Instead of sampling $c_{3,0}$ to $c_{3,2}$ from the second tile, $c_{0,0}$ to $c_{0,2}$ will be used.
 
@@ -653,7 +651,7 @@ In conclusion, the same set of points that is calculated for the first texture t
 \pagebreak
 
 \noindent
-Mathematically, this is solved by using the $modulo$ operation. The dividend is the current cell and the divisor is the period, or how often the \gls{noise} texture is repeated. 
+Mathematically, this is solved by using the $modulo$ operation. The dividend is the current cell and the divisor is the period, or how often the \gls{noise} texture is repeated.
 
 \begin{lstlisting}[language=HLSL, caption=Implementation of a partially seamless 3D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi3d]
     float voronoi(float3 p, float3 period) {
@@ -673,7 +671,6 @@ Mathematically, this is solved by using the $modulo$ operation. The dividend is 
                 }
             }
         }
-        
         return dMin;
     }
 \end{lstlisting}
@@ -694,23 +691,28 @@ The issue is further explained by Ronja \cite{ronja:tilingnoise}.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{noise/voronoi seamless1.png}
-    \caption{Partially seamless, tiled 3D \gls{noise} \gls{textureslice}.}
+    \caption{Partially seamless, tiled 3D \gls{noise} \gls{textureslice}s.}
     \label{img:rnd:noise:seamless1}
 \end{figure}
 
 \pagebreak
 
 \noindent
-The problem is easily fixed, though. Instead of using \gls{hlsl}'s formula, the modulo operation described in the OpenGL documentation \cite{opengl:mod} can be used.
-It is defined as follows:
+The problem is easily fixed, though. To get a positive dividend, one can simply take the remainder of the dividend, add the divisor and then take the remainder again, knowing that the number will positive beforehand.
+$$
+\begin{array}{l}
+    mod(x, y) = (x \mathbin{\%} y + y) \mathbin{\%} y
+\end{array}
+$$
+
+\noindent
+Alternatively, the implementation as described in the OpenGL documentation \cite{opengl:mod} can be used.
+It is capable of dealing with negative dividends, and is defined as follows:
 $$
 \begin{array}{l}
     mod(x, y) = x - y * floor(x/y)
 \end{array}
 $$
-
-\noindent
-With this implemented, the algorithm needs to be changed only slightly.
 
 \begin{lstlisting}[language=HLSL, caption=Implementation of seamless 3D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi3d]
     #define mod(x,y) (x-y*floor(x/y))
@@ -732,7 +734,6 @@ With this implemented, the algorithm needs to be changed only slightly.
                 }
             }
         }
-        
         return dMin;
     }
 \end{lstlisting}
@@ -742,12 +743,17 @@ And with that, the \gls{noise} texture tiles seamlessly.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{noise/voronoi seamless2.png}
-    \caption{Seamlessly tiled 3D \gls{noise} \gls{textureslice}.}
+    \caption{Seamlessly tiled 3D \gls{noise} \gls{textureslice}s.}
     \label{img:rnd:noise:seamless2}
 \end{figure}
 
 \subsection{Compute Shaders}
 \label{section:noise:compute}
+\Gls{computeshader}s are special programs that run on a graphics card. They are used for high-speed general-purpose computing.
+Unlike regular \gls{shader}s, they do not write directly to the \gls{framebuffer}, but to a buffer from which the data can be read later on.
+In many cases, this buffer is a 2D or 3D texture.
+\\
+In Unity, compute shaders are written in \gls{hlsl} and interact with Microsoft's DirectCompute technology, a graphics card interface.
 
 \subsection{3D Noise Texture Sampling}
 \label{section:noise:tex3d}

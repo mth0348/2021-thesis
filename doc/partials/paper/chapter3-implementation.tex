@@ -370,9 +370,9 @@ It still relies on having four major layers with an additional cumulonimbus bloc
 Those layers are almost identical to the layers described in \sectionref{section:impl:layers:high} to \sectionref{section:impl:layers:cumulonimbus}.
 \\
 However, instead of the layers each being a single \gls{shader}, they are replaced with a \gls{particlesystem} that emits cubes of clouds.
-Those cubes are rendered by different \gls{shader}s, depending on which layer they are spawned.
+Those cubes are rendered by different \gls{shader}s, depending on which layer they are spawned in.
 The highest layer, \color{darkercyan}$P_1$\color{black}, would emit cloud cubes of the cirrus family.
-The middle layer, \color{darkercyan}$P_2$\color{black}, is responsible to render alto clouds.
+The middle layer, \color{darkercyan}$P_2$\color{black}, is responsible to render alto cloud cubes.
 Layer \color{darkercyan}$P_3$ \color{black} would spawn low-level cloud cubes, while the lowest layer, \color{darkercyan}$P_4$\color{black}, would create fog particles.
 
 \begin{figure}[H]
@@ -421,3 +421,5 @@ Nonetheless, contrary to the first approach, a \gls{lerp} of the clouds will pro
 A \gls{particlesystem} cannot be interpolated along two positions, as it is bound to a fixed location.
 This issue be could be disregarded at the cost of realism, by only using three \gls{particlesystem}s:
 one for Bern, one inbetween both cities, using interpolated weather data, and one for the distant city.
+\\
+Additionally, the number of cloud cubes may heavily impact performance. If the system is required to limit the number of cloud cubes, its realism would suffer further.

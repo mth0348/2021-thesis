@@ -49,13 +49,15 @@
 	morekeywords=[1]{
         % variables
         i,j,x,y,z,frequency,amplitude,current,total,maxValue,
-        data,renderer,d1,d2,d3
+        data,renderer,d1,d2,d3,
+        baseCell,cell,seed,dMin,d,p,co
 	},
 	morekeywords=[2]{
         % methods and functions
 		distance,normalize,min,max,dot,pow,sin,cos,tan,fract,length,smoothstep,
         random2d,random,random3d,randomSeed,floor,fbm,
-        renderClouds
+        renderClouds,
+        voronoi
 	},
 	morekeywords=[3]{
         % CONSTANTS
@@ -182,6 +184,8 @@
 \input{partials/paper/chapter2-clouds.tex}
 \clearpage
 \input{partials/paper/chapter3-implementation.tex}
+\clearpage
+\input{partials/paper/chapter4-noise.tex}
 \clearpage
 
 \printnoidxglossary 

@@ -7,7 +7,7 @@ For example, the following images show photographs of patterns that seem almost 
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{nature-random.png}
-    \caption{Random pattern observed in Nature \protect\cite{bookofshaders:noise}.}
+    \caption{Random patterns observed in Nature \protect\cite{bookofshaders:noise}.}
     \label{img:rnd:natural}
 \end{figure}
 
@@ -35,7 +35,7 @@ After that, regions are created, consisting of all points closer to that seed th
 The Voronoi \gls{noise} algorithm creates a cellular pattern and is therefore well suited for simulating natural distribution of cloud heaps, as they are in some way also arranged in cells.
 \emptyline
 The \gls{noise} algorithm starts by dividing the space into a grid, for which each cell is assigned a random point.
-From there, each fragment gets shaded by how far it is to the seed in its cell.
+From there, each pixel gets shaded by how far it is to the seed in its cell.
 
 \begin{figure}[H]
     \centering
@@ -205,7 +205,7 @@ This amounts to $3^n - 1$ neighboring cells, where $n$ is the number of dimensio
 \pagebreak
 
 \noindent
-An implementation of this relatively simple algorithm could look like the following listing.
+An implementation in \gls{hlsl} of this relatively simple algorithm could look like the following listing.
 \begin{lstlisting}[language=HLSL, caption=Implementation of 2D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi2d]
 float2 randomSeed(float2 co) {
     return float2(
@@ -269,6 +269,7 @@ In \autoref{img:tikz:noise:voronoi3}, the generated cells appear to be randomly 
 As already mentioned previously, the \gls{noisegeneration} is confined to a fixed region.
 This poses an issue when the desired area is larger than the defined space of the algorithm.
 It is therefore not possible to tile the same texture without visible seams inbetween the tiles.
+Tiling the texture saves the calculation of an overly large area of \gls{noise} and is therefore the desired approach in many cases.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{noise/voronoi seam.png}
@@ -299,8 +300,8 @@ The problem occurs when checking the neighboring cells of the current cell. For 
 
     \node (offset) at (3.0,0) {};
 
-    \fill[cyan!5] (offset) rectangle ($(offset) + (3,3)$);
-    \fill[red!5] (0,0) rectangle (3,3);
+    \fill[cyan!10] (offset) rectangle ($(offset) + (3,3)$);
+    \fill[red!10] (0,0) rectangle (3,3);
 
     \node (x1y1) at (0,0) {\textbullet};
     \node (x2y1) at (1,0) {\textbullet};
@@ -676,7 +677,7 @@ float voronoi(float3 p, float3 period) {
 \end{lstlisting}
 
 \noindent
-Interestingly, this does only partially solve the problem. As it turns out, the modulo operation of the \gls{hlsl} treats negative values differently than expected.
+Interestingly, this does only partially solve the problem. As it turns out, the modulo operation available in \gls{hlsl} treats negative values differently than expected.
 Instead of returning the absolute modulo value, it returns the remainder, including negative values.
 $$
 \begin{array}{l}
@@ -686,7 +687,7 @@ $$
 $$
 
 \noindent
-When used this way, the outcome still has visible seams where cell modulo operations has to deal with negative numbers.
+When used this way, the outcome still has visible seams where the modulo operations have to deal with negative numbers.
 The issue is further explained by Ronja \cite{ronja:tilingnoise}.
 
 \begin{figure}[H]
@@ -698,7 +699,7 @@ The issue is further explained by Ronja \cite{ronja:tilingnoise}.
 \pagebreak
 
 \noindent
-The problem is easily fixed, though. To get a positive dividend, one can simply take the remainder of the dividend, add the divisor and then take the remainder again, knowing that the number will positive beforehand.
+The problem is easily fixed, though. To get a positive dividend, one can simply take the remainder of the dividend, add the divisor and then take the remainder again, knowing that the number will now be positive beforehand.
 $$
 \begin{array}{l}
     mod(x, y) = (x \mathbin{\%} y + y) \mathbin{\%} y
@@ -707,7 +708,7 @@ $$
 
 \noindent
 Alternatively, the implementation as described in the OpenGL documentation \cite{opengl:mod} can be used.
-It is capable of dealing with negative dividends, and is defined as follows:
+It is capable of dealing with negative values, and is defined as follows:
 $$
 \begin{array}{l}
     mod(x, y) = x - y * floor(x/y)
@@ -772,14 +773,15 @@ void CSMain (uint3 id : SV_DispatchThreadID)
 \noindent
 The so-called \emph{\gls{kernel}} is defined on the first line and describes the method that will be executed when the \gls{computeshader} is dispatched.
 In this example, there is only one \gls{kernel} with the name \lstinline[language=HLSL]{CSMain}.
-When executed, it writes to a 3D texture and sets the color of a specific \gls{texel} (short for texture element) to red.
+When executed, it writes to a 3D texture and sets the color of a specific texture element, short \emph{\gls{texel}}, to red.
 \\
 On the third line, a 3D texture variable is declared.
+It does not have to be initialized.
 The type is \lstinline[language=HLSL]{RWTexture3D}, which means the texture is enabled for both reading and writing.
-Another important part is the \lstinline[language=HLSL]{[numthreads(8,8,8)]} statement. It specifies the dimensions of thread groups.
+Another important part is the \lstinline[language=HLSL]{[numthreads(4,4,4)]} statement. It specifies the dimensions of thread groups.
 
 \subsubsection{Thread Groups}
-When running a \gls{computeshader}, the kernel is executed on many threads in parallel.
+When running a \gls{computeshader}, the \gls{kernel} is executed on many threads in parallel.
 This allows the \gls{gpu} to split up the computation instructions declared in the \gls{shader}.
 For each part, a thread group is created, which only handles that specific part.
 These thread groups run individually and simultaneously, speeding up the process massively.
@@ -788,7 +790,7 @@ The dimensions of a thread group can be controlled with the \lstinline[language=
 In the example above, for each thread group, there will be 4 threads in the X dimension, 4 threads in the Y dimension and 4 threads in the Z dimension.
 \emptyline
 Every \gls{kernel} has a parameter called \lstinline[language=HLSL]{id}. This is the identifier of the current thread, short \emph{thread id}.
-The thread id is unique for the whole execution. The following example shows how a thread group is structured.
+The thread id is unique over all thread groups. The following example shows how a thread group is structured.
 
 \begin{figure}[H]
     \centering
@@ -923,17 +925,17 @@ The thread id is unique for the whole execution. The following example shows how
         \draw[smalledge] (0,-0.5) -- (4,-0.5);
         \node[anchor=north] at (0,-0.5) {$0$};
         \node[anchor=north] at (4,-0.5) {$x$};
-        \node[anchor=north] at (2,-0.5) {X dimension};
+        \node[font=\small,anchor=north] at (2,-0.5) {X dimension};
 
         \draw[smalledge] (-0.5,0) -- (-0.5,4);
         \node[anchor=south,rotate=90] at (-0.5,0) {$0$};
         \node[anchor=south,rotate=90] at (-0.5,4) {$y$};
-        \node[anchor=south,rotate=90] at (-0.5,2) {Y dimension};
+        \node[font=\small,anchor=south,rotate=90] at (-0.5,2) {Y dimension};
 
         \draw[smalledge] (0,4.5) -- (1.5,6);
         \node[anchor=south,rotate=45] at (0,4.5) {$0$};
         \node[anchor=south,rotate=45] at (1.5,6) {$z$};
-        \node[anchor=south,rotate=45] at (0.75,5.25) {Z dimension};
+        \node[font=\small,anchor=south,rotate=45] at (0.75,5.25) {Z dimension};
 
     \end{tikzpicture}
     \captionof{figure}{Compute shader thread group with labeled dimensions.}
@@ -944,8 +946,8 @@ Each cell represents a single thread that is run when the thread group is execut
 The identifier of a thread is equal to its coordinates in this system, with the thread group identifier added as an offset.
 
 \subsubsection{Dispatching a Compute Shader}
-When dispatching a \gls{computeshader}, that is executing it, the number of thread groups for each dimension has to be passed along.
-To fill a 3D texture with a resolution of 256x256x256 pixels, a \gls{computeshader} with thread groups the size of 4x4x4 needs to be dispatched with $256 / 4 = 64$ thread groups in each dimension.
+When dispatching a \gls{computeshader}, the number of thread groups for each dimension has to be passed along.
+To fill a 3D texture with a resolution of 256x256x256 pixels, a \gls{computeshader} with thread groups the size of 4x4x4 threads needs to be dispatched with $256 / 4 = 64$ thread groups in each dimension.
 \\
 Each thread group will be assigned its own identifier, the \emph{thread group id}.
 
@@ -953,7 +955,7 @@ Each thread group will be assigned its own identifier, the \emph{thread group id
 
 \subsubsection{Thread and Thread Group Identifiers}
 The thread group id, or simply group id, is calculated by taking the current index of the thread group in each dimension.
-When dispatching a \gls{kernel} with 64 groups in each dimension, that means that the group identifiers range from (0,0,0) to (63,63,63).
+When dispatching a \gls{kernel} with 64 groups in each dimension, it that means that the group identifiers range from (0,0,0) to (63,63,63).
 \\
 In each thread group, the thread id is then calculated as follows.
 Given $id_{group}$ is the thread group id, $n_{threads}$ is the number of threads specified in the \gls{kernel}, and  $pos$ are the coordinates of the thread inside the thread group, then:
@@ -1115,10 +1117,10 @@ The group id is denoted in the top left corner, together with the coordinates of
             \node[font=\footnotesize,anchor=west] at (0,6.3) {thread group id: (0,0,0)};
             \node[font=\footnotesize,anchor=west] at (0,6) {thread coordinates: (0,0,0)};
 
-            \node[red] at (0.5,0.5) {$t_1$};
+            \node at (0.5,0.5) {$t_1$};
     
         \end{tikzpicture}
-        \captionof{figure}{Compute shader thread group with dimensions 4x4x4. Marked in blue is thread \color{red}$t_1$ \color{black} with id (0,0,0).}
+        \captionof{figure}{Compute shader thread group with dimensions 4x4x4. Marked in blue is thread $t_1 $ with $id_1 = (0,0,0)$.}
         \label{img:tikz:compute:threads1}
     \end{minipage}
     \hfill
@@ -1254,10 +1256,10 @@ The group id is denoted in the top left corner, together with the coordinates of
             \node[font=\footnotesize,anchor=west] at (0,6.3) {thread group id: (1,63,2)};
             \node[font=\footnotesize,anchor=west] at (0,6) {thread coordinates: (3,3,1)};
 
-            \node[red] at (4.2,4.2) {$t_2$};
+            \node at (4.2,4.2) {$t_2$};
         
         \end{tikzpicture}
-        \captionof{figure}{Compute shader thread group with dimensions 4x4x4. Marked in blue is thread \color{red}$t_2$ \color{black} with id (7,255,9)}
+        \captionof{figure}{Compute shader thread group with dimensions 4x4x4. Marked in blue is thread $t_2 $ with $id_2 = (7,255,9)$.}
         \label{img:tikz:compute:threads2}
     \end{minipage}
 \end{figure}

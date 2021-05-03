@@ -468,7 +468,7 @@ Next steps:
 2. poster?
 
 **Answers to questions:**
-1. probably at end of semester, ask Mrs. Gasenzer
+1. probably at end of semester, ask Mrs. Gasenzer (mail response says: 02.06.2021)
 2. same
 
 
@@ -490,6 +490,8 @@ Next steps:
 |noise generation|8h|
 |seamless noise|8h|
 |compute shaders|4h|
+|compute shaders|4h|
+|cloud layers, appearence|4h|
 
 &nbsp;
 
@@ -501,11 +503,14 @@ Next steps:
 2. revision history, do i even use it correctly? those are not revisions, right?
 3. section 4.1. ok?
 4. student with LaTeX problems?
+5. fBm?
 
 **Answers to questions:**
 1. . 
 2. .
 3. .
+4. .
+5. .
 
 ### Meeting discussion
 * .
@@ -517,6 +522,7 @@ Next steps:
  
 **Tasks**
 * Next meeting is scheduled for **May 6, 2021 at 2pm.**
+* second expert meeting to schedule
 
 **Time log**
 

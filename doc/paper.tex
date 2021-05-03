@@ -48,25 +48,30 @@
 \lstdefinelanguage{HLSL}{
 	morekeywords=[1]{
         % variables
-        i,j,x,y,z,frequency,amplitude,current,total,maxValue,
+        i,j,x,y,z,r,g,b,a,frequency,amplitude,current,total,maxValue,
         data,renderer,d1,d2,d3,
         baseCell,cell,seed,dMin,d,p,co,period,tiledCell,
-        _Result,id
+        _Result,_NoiseScale,id,_NoiseTexture3D,
+        threadCoord,noiseCoord,samplePos,noise,detail0,detail1,detail2,color,
+        worldPos
 	},
 	morekeywords=[2]{
         % methods and functions
+        vert,frag,
 		distance,normalize,min,max,dot,pow,sin,cos,tan,fract,length,smoothstep,
         random2d,random,random3d,randomSeed,floor,fbm,
-        renderClouds,mod,
+        random3dTo3d,random3dTo1d,tex3D,tex2D,
+        renderClouds,mod,sampleDensity,
         voronoi,
-        CSMain,numthreads
+        CSMain,CSNoise,numthreads
 	},
 	morekeywords=[3]{
         % CONSTANTS
         STEP_SIZE,MAX_STEPS,MINIMUM_STEP_SIZE,SURFACE_DISTANCE,MAX_DISTANCE,EPSILON,
         AO_ITERATIONS,AO_INTENSITY,AO_STEP_SIZE,
         LACUNARITY,GAIN,OCTAVES,TODAY,
-        SV_DispatchThreadID
+        SV_DispatchThreadID,
+        SV_Target,TEXCOORD0,TEXCOORD1,TEXCOORD2,SV_POSITION,POSITION
     },
 	% morekeywords=[4]{
     %     % Unity Variables

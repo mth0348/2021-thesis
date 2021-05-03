@@ -19,7 +19,7 @@ There are many established algorithms to create random patterns, one of which ge
 \subsection{Previous Work}
 Many of the following subsections rely on concepts and algorithms that have been thorougly explained in the project's previous work \cite{project2:noise}.
 This include sine-based deterministic number generation algorithms, also known as also \emph{\gls{pseudorandom}} number generation \cite{project2:noise:pseudo}.
-It further includes different \gls{noisegeneration} algorithms like Perlin \gls{noise} \cite{project2:noise:perlin}.
+It further includes different \gls{noisegeneration} algorithms like Perlin \gls{noise} \cite{project2:noise:perlin} and functions like the \gls{fbm} \cite{project2:noise:fbm}.
 \emptyline
 Those algorithms will not be described again, as they have already been studied and documented before.
 
@@ -789,7 +789,7 @@ These thread groups run individually and simultaneously, speeding up the process
 The dimensions of a thread group can be controlled with the \lstinline[language=HLSL]{numthreads} attribute.
 In the example above, for each thread group, there will be 4 threads in the X dimension, 4 threads in the Y dimension and 4 threads in the Z dimension.
 \emptyline
-Every \gls{kernel} has a parameter called \lstinline[language=HLSL]{id}. This is the identifier of the current thread, short \emph{thread id}.
+Every \gls{kernel} has a parameter called \lstinline[language=HLSL]{id}. This is the identifier of the current thread, short \emph{thread id} or \emph{dispatch thread id}.
 The thread id is unique over all thread groups. The following example shows how a thread group is structured.
 
 \begin{figure}[H]
@@ -1263,3 +1263,51 @@ The group id is denoted in the top left corner, together with the coordinates of
         \label{img:tikz:compute:threads2}
     \end{minipage}
 \end{figure}
+
+\pagebreak
+
+\subsubsection{Making Use of All Channels}
+Once it is clear how the dispatch thread id is calculated, a \gls{computeshader} can be implemented.
+The following example shows a \gls{kernel} that computes a 3D Voronoi \gls{noise} texture with the use of \gls{fbm}, here called \lstinline[language=HLSL]{fbm}.
+Each channel of the texture is assigned a \gls{noise} value that was calculated with a different amount of octaves.
+
+\begin{lstlisting}[language=HLSL, caption=An implementation of a 3D \gls{noise} \gls{computeshader}., label=lst:shader:compute:3dnoise]
+[numthreads(8,8,8)]
+void CSNoise (uint3 id : SV_DispatchThreadID)
+{
+    float3 threadCoord = float3(id.x, id.y, id.z) / 256;
+    float3 noiseCoord = threadCoord * _NoiseScale;
+    
+    float r = fbm(noiseCoord, 1);
+    float g = fbm(noiseCoord, 4);
+    float b = fbm(noiseCoord, 8);
+    float a = 1;
+
+    _Result[id.xyz] = float4(r, g, b, a);
+}
+\end{lstlisting}
+
+\noindent
+With each channel holding a different level of detail, all \gls{shader}s that read from this texture can fetch multiple \gls{noise} values with a single texture lookup.
+\autoref{lst:shader:compute:3dnoise2} shows an excerpt of a standard \gls{fragmentshader} that reads from a 3D \gls{noise} texture as described above.
+\begin{lstlisting}[language=HLSL, caption=An implementation of a shader making use of a 3D noise texture., label=lst:shader:compute:3dnoise2]
+float3 sampleDensity(float3 p) {
+    return tex3D(_NoiseTexture3D, p).xyz;
+}
+
+fixed4 frag(v2f i) : SV_Target
+{
+    fixed4 color = 0;
+
+    float3 samplePos = i.worldPos * _NoiseScale;
+    float3 noise = sampleDensity(samplePos);
+
+    float detail0 = noise.x;
+    float detail1 = noise.y;
+    float detail2 = noise.z;
+
+    // making use of the different detail levels...
+
+    return color;
+}
+\end{lstlisting}

@@ -958,10 +958,10 @@ The thread group id, or simply group id, is calculated by taking the current ind
 When dispatching a \gls{kernel} with 64 groups in each dimension, it that means that the group identifiers range from (0,0,0) to (63,63,63).
 \\
 In each thread group, the thread id is then calculated as follows.
-Given $id_{group}$ is the thread group id, $n_{threads}$ is the number of threads specified in the \gls{kernel}, and  $pos$ are the coordinates of the thread inside the thread group, then:
+Given $id_{group}$ is the thread group id, $n_{threads}$ is the number of threads specified in the \gls{kernel}, and  $t_{coord}$ are the coordinates of the thread inside the thread group, then:
 $$
 \begin{array}{l}
-    id_{thread} = id_{group} * n_{threads} + pos
+    id_{thread} = id_{group} * n_{threads} + t_{coord}
 \end{array}
 $$
 
@@ -1120,7 +1120,7 @@ The group id is denoted in the top left corner, together with the coordinates of
             \node at (0.5,0.5) {$t_1$};
     
         \end{tikzpicture}
-        \captionof{figure}{Compute shader thread group with dimensions 4x4x4. Marked in blue is thread $t_1 $ with $id_1 = (0,0,0)$.}
+        \captionof{figure}{Compute shader thread group with dimensions 4x4x4. Marked in red is thread $t_1 $ with $id_1 = (0,0,0)$.}
         \label{img:tikz:compute:threads1}
     \end{minipage}
     \hfill
@@ -1259,7 +1259,7 @@ The group id is denoted in the top left corner, together with the coordinates of
             \node at (4.2,4.2) {$t_2$};
         
         \end{tikzpicture}
-        \captionof{figure}{Compute shader thread group with dimensions 4x4x4. Marked in blue is thread $t_2 $ with $id_2 = (7,255,9)$.}
+        \captionof{figure}{Compute shader thread group with dimensions 4x4x4. Marked in red is thread $t_2 $ with $id_2 = (7,255,9)$.}
         \label{img:tikz:compute:threads2}
     \end{minipage}
 \end{figure}

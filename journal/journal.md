@@ -469,7 +469,9 @@ Next steps:
 
 **Answers to questions:**
 1. probably at end of semester, ask Mrs. Gasenzer (mail response says: 02.06.2021)
-2. same
+2. 07.06. 12:00 via moodle
+2. not too much text, better use cool graphics
+2. explain with eye-catching images (with legends)
 
 
 ### Meeting discussion
@@ -503,26 +505,66 @@ Next steps:
 2. revision history, do i even use it correctly? those are not revisions, right?
 3. section 4.1. ok?
 4. student with LaTeX problems?
-5. fBm?
 
 **Answers to questions:**
-1. . 
-2. .
-3. .
-4. .
-5. .
+1. look up definitions of voxel/texel
+2. ok, reviews etc are good entries
+3. maybe add project2 as attachment ("for convenience" / appendence)
+3. Proj spec is not attachement / but same dossier
+4. ok
+
 
 ### Meeting discussion
-* .
-
+* how are threads synchronized - add chapter
+* compare performance to previous work
+* "dispatch shader" add unity code snippet
+* topology of compute shader / kernel / maybe show in diagram
+    * virtual shader units <-> real hardware units
 
 **Inputs from tutor:**
 * .
 
  
 **Tasks**
-* Next meeting is scheduled for **May 6, 2021 at 2pm.**
-* second expert meeting to schedule
+* Second expert meeting to schedule!
+* maybe firt week of june
+* Next meeting is scheduled for **May 12, 2021 at 2pm.**
+
+**Time log**
+
+| Task | time spent |
+|----|---|
+
+&nbsp;
+
+&nbsp;
+#
+## \#10: April 29, 2021
+### Formal and technical questions
+1. film idea is ok
+1. make two films: one in swiss german / one in english
+1. defense in german (english words / technical words obviouly ok)
+1. slides in english ok
+1. green screen is provided by BFH, start of June, drehbuch ready
+2. structure / implementation / results?
+
+**Answers to questions:**
+1. .
+2. technical impl: algorithms, progress pics, 
+2. results: what has been achieved, how realistic, compare to spec
+2. testing: 1-2 paragraphs, visual testing, gui stuff, messbarkeit,
+2. project management: soll<->ist, future work, personal conclusion
+
+### Meeting discussion
+ expert meeting: 03.06.2021 16:00
+ -> send document in advance
+
+**Inputs from tutor:**
+* .
+
+ 
+**Tasks**
+* Next meeting is scheduled for **May 20, 2021 at 2pm.**
 
 **Time log**
 

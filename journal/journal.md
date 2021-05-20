@@ -539,7 +539,7 @@ Next steps:
 
 &nbsp;
 #
-## \#10: April 29, 2021
+## \#10: May 12, 2021
 ### Formal and technical questions
 1. film idea is ok
 1. make two films: one in swiss german / one in english
@@ -565,6 +565,32 @@ Next steps:
  
 **Tasks**
 * Next meeting is scheduled for **May 20, 2021 at 2pm.**
+
+**Time log**
+
+| Task | time spent |
+|----|---|
+
+&nbsp;
+
+&nbsp;
+#
+## \#10: May 20, 2021
+### Formal and technical questions
+1. 
+
+**Answers to questions:**
+1. .
+
+### Meeting discussion
+
+
+**Inputs from tutor:**
+* .
+
+ 
+**Tasks**
+* Next meeting is scheduled for **May 27, 2021 at 2pm.**
 
 **Time log**
 

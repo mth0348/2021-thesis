@@ -577,12 +577,22 @@ Next steps:
 #
 ## \#10: May 20, 2021
 ### Formal and technical questions
-1. 
+1. Progress plan:
+    * Push documentation to nearly finished
+    * Implement lighting
+    * implement meteoblue data
+
 
 **Answers to questions:**
 1. .
 
 ### Meeting discussion
+evtl gurten/bantiger tower for video setting
+* printed documentation
+    * same binder
+    * does dr. dubuis also want a print?
+    
+* ask mr. anrig if printed version is required for BFH archive
 
 
 **Inputs from tutor:**
@@ -591,6 +601,9 @@ Next steps:
  
 **Tasks**
 * Next meeting is scheduled for **May 27, 2021 at 2pm.**
+* Meeting from 17.06. moved to 16.06. 2pm
+* Deadline final draft: Tuesday 08.06.2021
+* 03.06. poster ready for review, submit until Monday 07.06.
 
 **Time log**
 

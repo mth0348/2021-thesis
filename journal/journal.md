@@ -570,12 +570,13 @@ Next steps:
 
 | Task | time spent |
 |----|---|
+|Journal & Document|4h|
 
 &nbsp;
 
 &nbsp;
 #
-## \#10: May 20, 2021
+## \#11: May 20, 2021
 ### Formal and technical questions
 1. Progress plan:
     * Push documentation to nearly finished
@@ -604,6 +605,48 @@ evtl gurten/bantiger tower for video setting
 * Meeting from 17.06. moved to 16.06. 2pm
 * Deadline final draft: Tuesday 08.06.2021
 * 03.06. poster ready for review, submit until Monday 07.06.
+
+**Time log**
+
+| Task | time spent |
+|----|---|
+|Implement cloud shaders|12h|
+|Meteoblue integration|2h|
+|Time of day implementation|4h|
+|Meteoblue integration implementation|2h|
+
+&nbsp;
+
+&nbsp;
+#
+## \#12: May 27, 2021
+### Formal and technical questions
+1. BFH media news? pool?
+2. Next up:
+    * finish document
+    * finish book entry
+    * finish poster draft
+    * write script for film
+
+**Answers to questions:**
+1. .
+
+### Meeting discussion
+* ask mr. anrig if printed version is required for BFH archive
+
+
+
+**Inputs from tutor:**
+* .
+
+ 
+**Tasks**
+* Next meeting is scheduled for **June 03, 2021 at 2pm.**
+* Meeting from 17.06. moved to 16.06. 2pm
+* Deadline final draft: Tuesday 08.06.2021
+* 02.06. book submitted.
+* 03.06. poster ready for review, submit until Monday 07.06.
+* 03.06. expert meeting at 4pm -> send document in advance
 
 **Time log**
 

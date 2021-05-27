@@ -621,7 +621,7 @@ evtl gurten/bantiger tower for video setting
 #
 ## \#12: May 27, 2021
 ### Formal and technical questions
-1. BFH media news? pool?
+1. BFH media news? pool? -> all
 2. Next up:
     * finish document
     * finish book entry
@@ -632,12 +632,18 @@ evtl gurten/bantiger tower for video setting
 1. .
 
 ### Meeting discussion
-* ask mr. anrig if printed version is required for BFH archive
-
-
+* Greenscreen is ordered, is delivered to Bern
+* sunset/sunrise times available on other platforms
+* dusk/dawn => sun 6°/12°/18° below horizon (bürgerlich, nautical, astronomical (dark))
+* moon can be ignored
+* dont forget GUI (also important for marketing purposes)
+* meteoblue API
+    * mapping should be in document / api|license description not
+    * ARCGIS plugin: dito
+* attachments in ToC (before glossary)
 
 **Inputs from tutor:**
-* .
+* Greenscreen: Mrs. Zehnder is informed
 
  
 **Tasks**
@@ -647,6 +653,7 @@ evtl gurten/bantiger tower for video setting
 * 02.06. book submitted.
 * 03.06. poster ready for review, submit until Monday 07.06.
 * 03.06. expert meeting at 4pm -> send document in advance
+* ask mr. anrig if printed version is required for BFH archive
 
 **Time log**
 

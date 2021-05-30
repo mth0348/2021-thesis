@@ -645,17 +645,18 @@ evtl gurten/bantiger tower for video setting
 **Inputs from tutor:**
 * Greenscreen: Mrs. Zehnder is informed
 
- 
-**Tasks**
+ **Tasks**
 * Next meeting is scheduled for **June 03, 2021 at 2pm.**
 * Meeting from 17.06. moved to 16.06. 2pm
 * Deadline final draft: Tuesday 08.06.2021
 * 02.06. book submitted.
 * 03.06. poster ready for review, submit until Monday 07.06.
 * 03.06. expert meeting at 4pm -> send document in advance
-* ask mr. anrig if printed version is required for BFH archive
+* ask mr. anrig if printed version is required for BFH archive -> yes it is
 
 **Time log**
 
 | Task | time spent |
+|documentation|4h|
+|shader stuff|3h|
 |----|---|

@@ -550,10 +550,10 @@ Next steps:
 
 **Answers to questions:**
 1. .
-2. technical impl: algorithms, progress pics, 
-2. results: what has been achieved, how realistic, compare to spec
-2. testing: 1-2 paragraphs, visual testing, gui stuff, messbarkeit,
-2. project management: soll<->ist, future work, personal conclusion
+2. ✅technical impl: algorithms, progress pics, 
+2. ✅results: what has been achieved, how realistic, compare to spec
+2. ✅testing: 1-2 paragraphs, visual testing, gui stuff, messbarkeit,
+2. ✅project management: soll<->ist, future work, personal conclusion
 
 ### Meeting discussion
  expert meeting: 03.06.2021 16:00

@@ -1,0 +1,122 @@
+\section{Project Management}
+\label{section:project}
+
+\subsection{Schedule Comparison}
+\label{section:project:schedule}
+The following chart shows the original schedule (in \color{gray}grey\color{black}) with a side-by-side comparison with the actual time spent for each task (in \color{cyan}blue\color{black}). It indicates that the schedule was mostly met throughout the project.
+\vspace{\baselineskip}
+
+\begin{ganttchart}[
+    vgrid={dotted},
+    hgrid={draw=black!50, dotted},
+    bar/.append style={fill=lightgray},
+    x unit=0.65cm,
+    ms/.append style={milestone/.append style={fill=gray, scale = 0.7, yshift=0.2cm}},
+    ms2/.append style={milestone/.append style={fill=cyan, scale = 0.7, yshift=-0.2cm}},
+    progress label text={},
+    bar1/.append style={bar height=0.2},
+    bar2/.append style={bar height=0.2},
+    bar2/.append style={bar top shift=0.018cm},
+    ]{1}{16}
+    \gantttitle{Work weeks}{16} \\
+    \gantttitlelist{1,...,16}{1} \\
+    \ganttgroup{Organization}{1}{4} \\
+    \ganttbar[bar1]{Specification}{1}{4}
+    \ganttbar[bar2, bar/.append style={fill=cyan}]{}{1}{4} \\
+    \ganttmilestone[ms]{Specification finished}{4}
+    \ganttmilestone[ms2]{}{4} \\
+    \ganttmilestone[ms]{Expert meeting 1}{4}
+    \ganttmilestone[ms2]{}{4} \\
+    \ganttgroup{Research}{5}{11} \\
+    \ganttbar[bar1]{Documentation}{5}{11}
+    \ganttbar[bar2, bar/.append style={fill=cyan}]{}{5}{14} \\
+    \ganttmilestone[ms]{Interview with meteoblue}{6} \\
+    \ganttgroup{Implementation}{7}{15} \\
+    \ganttbar[bar1]{Impl: Data processing}{7}{8}
+    \ganttbar[bar2, bar/.append style={fill=cyan}]{}{7}{8} \\
+    \ganttbar[bar1]{Impl: Rendering system}{9}{13}
+    \ganttbar[bar2, bar/.append style={fill=cyan}]{}{9}{14} \\
+    \ganttbar[bar1]{Impl: User interface}{14}{15}
+    \ganttbar[bar2, bar/.append style={fill=cyan}]{}{15}{15} \\
+    \ganttmilestone[ms]{Progress evaluation}{11}
+    \ganttmilestone[ms2]{}{11} \\
+    \ganttmilestone[ms]{Expert meeting 2}{15}
+    \ganttmilestone[ms2]{Expert meeting 2}{15} \\
+    \ganttmilestone[ms]{Implementation finished}{15}
+    \ganttmilestone[ms2]{}{15} \\
+    \ganttgroup{Finalization}{16}{16} \\
+    \ganttbar[bar1]{Finalizing and review}{16}{16}
+    \ganttbar[bar2, bar/.append style={fill=cyan}]{}{16}{16}
+\end{ganttchart}
+\emptyline
+The only major discrepancy between the planned and the actual schedule is the interview with \emph{meteoblue}, which was turned down by \emph{meteoblue}.
+The interview would overstep the limited license that was arranged for this project.
+This was unfortunate, but left more time for the documentation, which turned out to require more time and effort.
+
+\subsection{Fulfillment of Requirements}
+\label{section:project:requirements}
+The following table shows the original requirements and wether or not they were met during the project.
+\emptyline
+\begin{tabularx}{\textwidth}{|l|X|c|}
+    \hline
+    \textbf{Number} & \textbf{Name}                                                         & \textbf{Is met?} \\ \hline
+    R.1             & Understanding the basic nature of clouds                              & Yes                 \\ \hline
+    R.2             & Understanding of different characteristics of clouds                  & Yes                 \\ \hline
+    R.3             & Understanding of compute shaders                                      & Yes                 \\ \hline
+    D.1             & Periodical acquirement of real-time weather data from \emph{meteoblue}& Yes                 \\ \hline
+    D.2             & Periodical acquirement of photographs of 360-degree cameras           & Yes                 \\ \hline
+    D.3             & Acquirement of elevation model data from \emph{swisstopo}             & No                  \\ \hline
+    D.4             & Noise generation based on compute shaders                             & Yes                 \\ \hline
+    D.5.1           & Implementation of data aggregation and processing                     & Yes                 \\ \hline
+    D.5.2           & Implementation of core rendering system                               & Yes                 \\ \hline
+    D.5.3           & Implementation of user interface                                      & Yes                 \\ \hline
+    O.1             & Rendering performance optimization                                    & Partially           \\ \hline
+\end{tabularx}
+\emptyline
+Both requirements D.3 and O.1 are not or only partially met.
+
+\subsubsection{Elevation Model Replacement}
+Originally, it was planned to retrieve elevation model data from \emph{swisstopo}. This turned out to be more problematic than anticipated, having multiple file formats that are incompatible with Unity Engine.
+This would have required a middleware to convert the files to a suitable format, which was also difficult to find.
+Additionally, the elevation model data was split into tiles, which would have needed to be stitched together in-engine.
+\emptyline
+Luckily, during research, a Unity Engine plugin for \emph{ArcGIS} services developed by \emph{ESRI} was found.
+This allowed for a quick setup without further mapping and tiling of geodata or arial images.
+\\
+Since the generated 3D models from the plugin were more than a suitable replacement for the \emph{swisstopo} data, the requirement D.3 was annuled, as there was now another, easier way to get 3D elevation data.
+From then on, only the \emph{ArcGIS} plugin was used.
+
+\subsubsection{Rendering Performance Optimization}
+There have been several attempts at optimizing the rendering performance.
+This includes the reduction of \gls{raymarching} and \gls{lightmarching} steps, the careful choice of scale and amount of octaves for 3D \gls{noisegeneration} as well as the avoidance of using heavy operations like \lstinline[language=HLSL]{pow(), exp(), log()}.
+However, there was not sufficient time to delve deeper into performance optimization, but since the software is able to run with a decent \gls{framerate}, the issue was no longer pursued.
+
+\subsection{Future Work}
+\label{section:project:futurework}
+\subsubsection{Rendering Capabilities}
+Despite the considerable effort already put into lighting and illumination methods, there are still some features missing.
+One of those are god rays, the volumetric light shafts that shine through gaps in clouds, giving the scene even more depth.
+Other absent features are the sun's and moon's halo: A bright circle around the celestial body.
+
+\subsubsection{Live Data Feed}
+The resulting weather rendering system is still dependent on locally accumulated meteo data. 
+A potential follow-up project could be an implementation of a live data feed system that continuously updated the weather rendering system.
+
+\subsubsection{Simulation Game}
+Alternatively, the project could be turned into a simulator game, similar to how Microsoft's Flight Simulator works.
+
+\subsubsection{Meteorological Events}
+There is also the option to include meteorological events like thunderstorms, blizzards, rainbows and many more natural phenomena.
+
+\subsection{Project Conclusion}
+\label{section:project:conclusion}
+It is noteworthy that three more weeks were put into research.
+This is mainly because new methods and algorithms have been continuously researched during prototyping, which resulted in constant documentation of those findings.
+However, this did not conflict with the remainder of the schedule.
+\\
+Still, the total amount of time spent was about ten percent more than the originally estimated time budget of 320 hours.
+This is probably due to the fact that there was quite some effort put into the final implementation.
+\\
+The project occurred during the same time as the global coronavirus lockdown restrictions, but was unhindered by that.
+\emptyline
+In summary, all project requirements were met, almost all milestones were completed in time and the final implementation turned out great, making this a successful and very informative project.

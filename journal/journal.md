@@ -659,4 +659,5 @@ evtl gurten/bantiger tower for video setting
 | Task | time spent |
 |documentation|4h|
 |shader stuff|3h|
+|shader magic|8h|
 |----|---|

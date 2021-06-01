@@ -661,3 +661,32 @@ evtl gurten/bantiger tower for video setting
 |shader stuff|3h|
 |shader magic|8h|
 |----|---|
+
+&nbsp;
+
+&nbsp;
+#
+## \#12: June 03, 2021
+### Formal and technical questions
+1. system overview diagram. again?
+2. .
+
+**Answers to questions:**
+1. .
+2. .
+
+### Meeting discussion
+.
+
+**Inputs from tutor:**
+.
+
+ **Tasks**
+* Next meeting is scheduled for **June 10, 2021 at 2pm.**
+* Deadline final draft: Tuesday 08.06.2021
+* Submit poster until Monday 07.06.
+
+**Time log**
+
+| Task | time spent |
+|----|---|

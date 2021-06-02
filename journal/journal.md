@@ -687,6 +687,7 @@ evtl gurten/bantiger tower for video setting
 * Next meeting is scheduled for **June 10, 2021 at 2pm.**
 * Deadline final draft: Tuesday 08.06.2021
 * Submit poster until Monday 07.06.
+* send links to riedo
 
 **Time log**
 

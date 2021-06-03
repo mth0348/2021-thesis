@@ -87,6 +87,10 @@ Since the generated 3D models from the plugin were more than a suitable replacem
 From then on, only the \emph{ArcGIS} plugin was used.
 
 \subsubsection{Rendering Performance Optimization}
+
+% mention compute shader...
+% the rest is additional optimization
+
 There have been several attempts at optimizing the rendering performance.
 This includes the reduction of \gls{raymarching} and \gls{lightmarching} steps, the careful choice of scale and amount of octaves for 3D \gls{noisegeneration} as well as the avoidance of using heavy operations like \lstinline[language=HLSL]{pow(), exp(), log()}.
 However, there was not sufficient time to delve deeper into performance optimization, but since the software is able to run with a decent \gls{framerate}, the issue was no longer pursued.
@@ -99,6 +103,8 @@ One of those are god rays, the volumetric light shafts that shine through gaps i
 Other absent features are the sun's and moon's halo: A bright circle around the celestial body.
 
 \subsubsection{Live Data Feed}
+% TODO mention that meteoblue might have real-time API
+% TODO its more a license issue than a technical issue
 The resulting weather rendering system is still dependent on locally accumulated meteo data. 
 A potential follow-up project could be an implementation of a live data feed system that continuously updated the weather rendering system.
 

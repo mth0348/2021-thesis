@@ -688,6 +688,15 @@ Remarks on book:
 * "Not all cloud types have made it into the final system" -> we concentrated on this type of cloud" / positiver formulieren / fokus auf 1 typ
 * mention compute shader in "performance optimization" chapter (7.2.2)
 
+### Feedback expert meeting
+* important: check references
+* erscheinungsbild > physik
+    * nochmals erleutern: kein modell, sondern visueller effekt
+* maybe two approaches sidebyside: layers vs. particles -> chapter 5.
+* visual => USP
+* code: page 20: comments missing
+    * basic comments or remark à la "no comments necessary"
+
 **Inputs from tutor:**
 * increase pattern inside cloud body (mask opacity)
 * coloring / depth feeling

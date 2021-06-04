@@ -657,13 +657,13 @@ evtl gurten/bantiger tower for video setting
 **Time log**
 
 | Task | time spent |
+|-|-|
 |documentation|4h|
 |shader stuff|3h|
 |shader magic|8h|
 |shader magic|8h|
 |shader magic|4h|
 |poster & book|3h|
-|----|---|
 
 &nbsp;
 
@@ -727,7 +727,8 @@ Remarks on book:
 1. .
 
 ### Meeting discussion
-
+* check if esri access is still up?
+* https://community.esri.com/t5/learn-arcgis-documents/frequently-asked-questions-for-learn-arcgis-student-program/ta-p/904958#toc-hId-318184905
 
 **Inputs from tutor:**
 

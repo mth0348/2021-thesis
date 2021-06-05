@@ -3,6 +3,74 @@
 This section describes the current solution, the implemented software architecture and the final results of the project.
 Discrepancies between the planned implementation approach and the current solution are listed in \sectionref{section:techimpl:comparison_impl}.
 
+\subsection{System Overview}
+The following graphics displays the current system overview.
+As described in \sectionref{section:techimpl:arcgis} and \sectionref{section:project:swisstoporeplacement}, instead of the elevation model data from \emph{swisstopo}, a Unity plugin for \emph{ArcGIS} maps services was used.
+This change is reflected in the new system overview, and is the only adjustment that was made.
+
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{system diagram.png}
+    \caption{The system overview diagram.}
+    \label{img:techimpl:system}
+\end{figure}
+
+\subsection{Unity Project Architecture}
+The project architecture in Unity consists of a set of \gls{volumetric} \gls{shader}s, the \emph{ArcGIS} component and some auxiliary objects.
+\\
+\begin{wrapfigure}[10]{r}{4cm}
+    \vspace{-\baselineskip}
+    \includegraphics[width=4cm]{unity scene hierarchy.png}
+    \caption{Hierarchy of the Unity project.}
+    \label{img:techimpl:hierarchy}
+\end{wrapfigure}
+\autoref{img:techimpl:hierarchy} shows the content of the Unity scene file.
+The first section, named "general", contains the standard game objects for the primary camera and for the directional lighting.
+\\
+The \emph{ArcGIS} component only requires a single game object, which has been placed into its own section.
+\\
+It is followed by the core of the weather rendering system, which is housed under the section named "clouds".
+In it, there are several controlling game objects like the "meteoblue master", which are responsible for setting up the shaders.
+\\
+At last, the "UI" section contains the default game objects for a \gls{ui} in Unity, adjusted to this project.
+
+\subsubsection{Scene Anatomy}
+The scene setup is similar to what was originally planned. There are multiple layers of clouds, each rendered by a unique \gls{volumetric} \gls{shader}.
+However, there is no layer for high-level clouds. It turned out that the intricate visual appearance of cirrus clouds was more difficult to simulate than anticipated.
+\\
+The current scene anatomy is depicted in the following graphics, as viewed from the side.
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1]
+        \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+        \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
+        \tikzset{icon/.style = {font=\Large}}
+        \tikzset{mini/.style = {font=\footnotesize}}
+        \tikzset{tiny/.style = {font=\tiny}}
+
+        % cloud layer boxes
+        \node[inner sep=0pt] at (6,4) 
+            {\includegraphics[width=0.8\textwidth]{anatomy.png}};
+
+        \node at (0.3,0.5) {camera};
+
+        % labels
+        \node[red] at (2.3,2.1) {$C_{low}$};
+        \node[red] at (2.3,4.5) {$C_{mid}$};
+        \node[red] at (9.3,2.2) {$C_{back}$};
+        \node[darkercyan] at (5.00,6.40) {$P_{rain}$};
+        \node[darkercyan] at (7.85,7.05) {$P_{sky}$};
+        \node[tiny] at (00.95,6.52) {$x$};
+        \node[tiny] at (-0.06,7.45) {$y$};
+        \node[tiny] at (00.65,6.90) {$z$};
+        
+    \end{tikzpicture}
+    \captionof{figure}{Compute shader thread group with labeled dimensions.}
+    \label{img:tikz:techimpl:anatomy}
+\end{figure}
+
+
 \subsection{Meteoblue Integration}
 \label{section:techimpl:meteoblue}
 While the bachelor project specifictation document described the use of \emph{meteoblue}'s "basic 1h" package, this was not the only package that was used in the final implementation.

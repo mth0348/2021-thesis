@@ -27,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="-727.79586"
-     inkscape:cy="1642.2392"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="-852.71442"
+     inkscape:cy="2614.1017"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -104,6 +104,47 @@
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline;opacity:1">
+    <g
+       id="g2053"
+       transform="translate(8.995833,-2.38125)"
+       style="fill:#e2e6f4;fill-opacity:1;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168">
+      <path
+         style="fill:#e2e6f4;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m -115.9946,751.91368 -59.4942,-10e-6 16.51224,-70.72617 h 55.70399 z"
+         id="path2020"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         style="fill:#e2e6f4;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m -115.9946,751.91367 h 0.85989 l 12.40466,-70.61513 -0.54252,-0.11102 -12.72203,70.72616 z"
+         id="path2022"
+         sodipodi:nodetypes="cccccc" />
+    </g>
+    <g
+       id="g2018"
+       transform="translate(-11.377083,-4.8947917)"
+       style="fill:#ffe6e6;fill-opacity:1;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168">
+      <path
+         style="fill:#ffe6e6;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m -108.03263,749.00325 6.98984,-2.68973 V 692.99808 H -143.839 l -9.95397,2.49751 v 53.24308 z"
+         id="path2009"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         style="fill:#ffe6e6;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m -108.03263,749.00325 v -53.50766 l 6.98984,-2.49751"
+         id="path2011"
+         sodipodi:nodetypes="ccc" />
+      <path
+         style="fill:#ffe6e6;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m -108.03263,695.49559 h -45.76034"
+         id="path2013"
+         sodipodi:nodetypes="cc" />
+    </g>
     <rect
        style="fill:#dce9f0;fill-opacity:1;stroke:none;stroke-width:0.333908;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect2003"
@@ -6239,5 +6280,612 @@
        inkscape:export-xdpi="100.0729"
        inkscape:export-ydpi="100.0729"
        inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:'Font Awesome 5 Free';-inkscape-font-specification:'Font Awesome 5 Free';stroke-width:0.264583"
+       x="-310.94144"
+       y="508.13287"
+       id="text1699"><tspan
+         sodipodi:role="line"
+         id="tspan1697"
+         x="-310.94144"
+         y="508.13287"
+         style="stroke-width:0.264583">scene anatomy</tspan></text>
+    <rect
+       style="fill:#dce9f0;fill-opacity:1;stroke:none;stroke-width:0.389469;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1895"
+       width="245.93428"
+       height="77.489632"
+       x="-327.40326"
+       y="583.94495"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <rect
+       style="fill:#c3dee9;fill-opacity:1;stroke:none;stroke-width:0.241794;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1899"
+       width="245.93427"
+       height="32.170933"
+       x="-327.40326"
+       y="551.77399"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <rect
+       style="display:inline;opacity:0.5;fill:#f0f5f8;fill-opacity:1;stroke:#000000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.25"
+       id="rect1901"
+       width="62.038601"
+       height="16.93878"
+       x="-252.84288"
+       y="593.59155"
+       ry="0"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png" />
+    <rect
+       style="display:inline;opacity:0.5;fill:#f0f5f8;fill-opacity:1;stroke:#000000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.25"
+       id="rect1903"
+       width="62.038601"
+       height="16.93878"
+       x="-252.65579"
+       y="563.19916"
+       ry="0"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png" />
+    <rect
+       style="fill:#b4d7ea;fill-opacity:1;stroke:none;stroke-width:0.241386;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1905"
+       width="245.93427"
+       height="32.062019"
+       x="-327.40326"
+       y="519.71198"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <g
+       id="g1914"
+       transform="matrix(0.93504585,0,0,1,-509.61175,511.56352)"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729">
+      <path
+         style="fill:#ffd950;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 335.47633,134.09845 c -32.36635,-6.73519 -53.69446,3.74177 -53.69446,3.74177 l -1.59024,4.58368 63.23597,-4.02241 z"
+         id="path1910" />
+      <path
+         style="fill:#96b266;fill-opacity:1;stroke:none;stroke-width:0.285957px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 215.62738,132.67314 c 0,0 14.37119,-3.04271 27.8152,3.0427 0,0 14.06214,-2.77812 23.48842,-0.52916 0,0 28.43333,3.70417 84.52733,-2.77813 0,0 8.96267,-1.52135 18.38894,1.45521 0,0 11.7442,-4.43177 22.32943,0.46302 0,0 21.24774,-4.10104 44.96793,-1.38906 0,0 14.68025,1.91823 20.70687,-0.26458 v 17.19791 H 215.55013 Z"
+         id="path1912" />
+    </g>
+    <path
+       style="fill:#b6c1a5;fill-opacity:1;stroke:none;stroke-width:0.317954;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -296.52952,621.55754 c 4.34567,-3.67108 12.65016,-3.15235 15.80109,4.68232 4.01489,2.913 4.40694,11.2321 6.25199,13.0957 5.18734,4.4522 7.37327,11.0419 10.55176,17.3636 l -41.154,-6.1494 c 2.16725,-8.0817 4.09622,-22.4812 8.54916,-28.99222 z"
+       id="path1916"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <path
+       style="display:inline;opacity:1;fill:#5e7a47;fill-opacity:1;stroke:none;stroke-width:0.264385px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -308.06251,645.95644 c 0,0 4.49119,0.85989 8.91634,-0.92604 4.42516,-1.78594 13.14337,7.54062 13.14337,7.54062 0,0 14.46429,-8.92969 33.08955,4.49792 0,0 18.0969,-2.51354 32.82538,4.36562 h -87.97463 z"
+       id="path1918"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <path
+       fill="currentColor"
+       d="m -181.8514,643.0105 -4.35503,3.5869 v 3.8712 a 0.37793827,0.37793827 0 0 0 0.37795,0.378 l 2.64697,-0.01 a 0.37793827,0.37793827 0 0 0 0.37606,-0.3779 v -2.2608 a 0.37793827,0.37793827 0 0 1 0.37793,-0.378 h 1.51176 a 0.37793827,0.37793827 0 0 1 0.37793,0.378 v 2.2591 a 0.37793827,0.37793827 0 0 0 0.37794,0.3792 l 2.64604,0.01 a 0.37793827,0.37793827 0 0 0 0.37795,-0.378 v -3.8738 l -4.3541,-3.5843 a 0.28794172,0.28794172 0 0 0 -0.3614,0 z m 6.87919,2.438 -1.97473,-1.6278 v -3.2717 a 0.2834537,0.2834537 0 0 0 -0.28345,-0.2835 h -1.32279 a 0.2834537,0.2834537 0 0 0 -0.28345,0.2835 v 1.7151 l -2.1148,-1.7399 a 1.1338148,1.1338148 0 0 0 -1.44089,0 l -5.97922,4.9243 a 0.2834537,0.2834537 0 0 0 -0.0378,0.3992 l 0.60235,0.7323 a 0.2834537,0.2834537 0 0 0 0.39943,0.039 l 5.55616,-4.5763 a 0.28794172,0.28794172 0 0 1 0.3614,0 l 5.55641,4.5763 a 0.2834537,0.2834537 0 0 0 0.39919,-0.038 l 0.60234,-0.7323 a 0.2834537,0.2834537 0 0 0 -0.0402,-0.3999 z"
+       id="path1920"
+       style="fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <path
+       style="fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -294.46585,612.22267 c -0.33473,-0.16199 -0.59091,-0.47676 -0.69599,-0.85534 -0.0398,-0.14381 -0.0636,-0.88132 -0.0639,-1.99115 -3.8e-4,-1.63671 0.008,-1.78513 0.11736,-2.07701 0.12804,-0.34217 0.38691,-0.61112 0.72373,-0.75186 0.30344,-0.12671 3.92531,-0.12671 4.22878,0 0.55206,0.23069 0.84136,0.74124 0.84136,1.48493 0,0.23043 0.005,0.44118 0.0273,0.46339 0.0214,0.0214 0.49802,-0.40819 1.04164,-0.95115 l 0.98841,-0.9872 0.19942,0.0187 0.0962,0.17429 v 2.76772 c 0,1.98922 0.0267,2.55292 -0.0267,2.60451 -0.15986,0.15986 -0.35732,0.0599 -1.29377,-0.87084 -0.52485,-0.52157 -0.97208,-0.93049 -0.99384,-0.90873 -0.0214,0.0214 -0.0396,0.2045 -0.0396,0.40635 0,0.75093 -0.23096,1.20265 -0.74817,1.46304 l -0.31359,0.15799 -1.89396,-0.002 -1.89398,-0.002 -0.3017,-0.14596 z"
+       id="path1922"
+       sodipodi:nodetypes="ssssssscscccscssssccccs"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png" />
+    <rect
+       style="display:inline;opacity:0.5;fill:#f0f5f8;fill-opacity:1;stroke:#000000;stroke-width:0.151146;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.25"
+       id="rect1924"
+       width="55.446949"
+       height="78.795441"
+       x="-172.9593"
+       y="531.86597"
+       ry="0"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png" />
+    <g
+       id="g1934"
+       transform="matrix(1.0908383,0,0,1.4230825,-431.63001,261.11534)"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png">
+      <path
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 257.39159,243.43735 c 0,0 4.46391,3.72101 8.64279,-0.0428 0,0 3.59964,3.7638 5.8339,-0.72744 0,0 2.85488,1.96096 3.80651,-0.91723 0,0 0.86887,-0.15814 0.95163,-0.56931 0,0 1.44812,1.45491 2.68938,-0.18978 0,0 0.8275,-1.80282 -2.23426,-1.58142 0,0 -0.70338,-1.61306 -2.73076,-1.17025 0,0 -2.44113,-3.0996 -5.62701,-0.0949 0,0 0.49649,-2.5619 -2.81351,-2.11911 0,0 -1.86188,-1.64467 -3.97201,-1.20188 0,0 0.33099,-1.51817 0.0414,-1.7712 0,0 8.9784,-1.42329 3.39277,-8.66621 0,0 1.69638,-2.53028 -1.98601,-3.82705 0,0 3.47551,-1.58142 1.24126,-6.64198 0,0 3.8065,-0.85397 6.33038,-7.84387 0,0 4.22027,2.34051 8.89566,-2.4354 0,0 1.11713,0.53769 5.58564,-1.29677 0,0 10.88166,-1.17024 3.59964,-1.42327 l -5.42015,-0.25304 c 0,0 2.97902,-0.94885 -1.655,-1.48654 0,0 -6.37177,-0.75908 -8.4819,0.0317 0,0 -2.35838,-6.42059 -7.69577,-1.13863 0,0 -1.61363,-5.59824 -6.3304,-1.67631 0,0 -3.47551,-5.09219 -9.35078,-0.37954 0,0 -3.10313,0.28465 -2.27562,3.16285 0,0 -1.03439,0.47442 -0.70338,1.26514 0,0 -6.37177,-2.15074 -6.62002,2.84656 0,0 -0.33101,1.5498 2.31701,4.08008 0,0 -5.91665,3.79542 0.41375,7.71735 0,0 0.12412,1.64469 1.11712,2.24563 0,0 -4.75814,5.28196 2.64801,7.6541 l 1.24125,1.20188 c 0,0 -1.19987,1.23351 -0.91025,2.59354 0,0 -2.35838,2.18237 -0.28962,4.90242 0,0 -1.69638,1.07536 -0.24826,3.70053 0,0 -2.44113,-0.15814 -3.84788,1.58143 0,0 -3.31001,-0.28466 -3.47551,2.49865 0,0 -0.37238,2.78331 4.46851,2.11911 0,0 1.77913,1.4549 5.08914,-0.12652 0,0 3.60886,3.72285 8.36239,-0.0205 z"
+         id="path1926"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.146625px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 270.44873,242.57017 c 0,0 -0.58113,-2.08672 -3.30332,-1.95493 0,0 -2.22213,-2.89235 -5.03784,-0.42881 0,0 -0.93527,-2.77542 -3.74039,-1.76774 0,0 -1.03994,-1.60349 -3.88445,-0.85667 0,0 0.48938,-1.4497 -0.36704,-2.04279 0,0 7.06767,-1.7402 3.60918,-8.50066 0,0 1.9881,-1.86707 -2.07986,-3.7561 0,0 3.67034,-1.91101 1.46813,-6.43591 0,0 5.75021,-3.822 6.48427,-7.99545 0,0 3.75776,1.49441 6.54111,-0.92182 l 0.839,-1.8389 c 0,0 4.41946,2.00946 8.5103,-2.14745 l -2.24894,-0.51731 c 0,0 4.46558,-1.3399 -2.53866,-1.53758 l -8.25828,-0.044 c 0,0 -2.661,-5.53531 -8.07476,-0.92255 0,0 -1.80459,-4.85438 -6.6678,-1.60348 0,0 -0.30587,-1.55956 -3.63975,-2.28442 0,0 -0.83082,0.53335 -0.15795,2.11487 l -0.9432,1.13603 c 0,0 -4.38427,-1.00503 -5.6743,0.88848 -1.69835,2.49285 -0.599,3.84914 1.50141,6.20714 0,0 -5.69315,4.25662 0.34962,7.4895 l 0.47472,1.61517 0.75619,0.88471 c 0,0 -4.53223,5.3964 2.54275,7.47371 l 1.35078,1.42852 c 0,0 -1.29955,1.56029 -0.87134,2.6366 0,0 -2.33317,2.05065 -0.34507,4.79634 0,0 -0.99883,1.83178 0.0411,3.87458 l -3.99055,1.84225 -2.83368,0.55472 0.61172,2.21853 5.02149,1.96214 3.27457,-0.72991 3.12746,1.22735 7.26466,-1.91045 6.05606,0.65897 1.60667,-0.16786 2.09426,0.21178 z"
+         id="path1928"
+         sodipodi:nodetypes="cccccccccccccccccccccscccccccccccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="fill:#ced1d0;fill-opacity:1;stroke:none;stroke-width:0.145303px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 278.50617,241.53792 c 0,0 -1.35099,0.0751 -1.93043,-0.97248 0,0 -1.71973,1.67687 -2.99444,0.41294 0,0 -1.55947,0.84554 -2.38592,-0.31455 0,0 -0.10721,0.80636 -1.05367,0.23543 0,0 -0.53953,1.4179 -2.36609,1.96899 -1.45554,0.43915 -3.77605,0.0163 -5.39529,-1.19768 0,0 -1.8476,0.3157 -2.5948,-1.635 0,0 -0.4158,3.05529 -3.38396,2.19537 0,0 -2.74674,3.41583 -7.3388,1.0296 0,0 -1.4461,1.02987 -3.25004,-0.11888 0,0 -1.87263,0.44273 -1.94106,-0.76289 0,0 -2.56392,0.5124 -2.21627,-1.7194 0,0 0.56493,-1.73081 2.95503,-0.34162 0,0 0.32133,-0.59699 1.07192,-0.17079 0,0 0.38621,-1.9499 2.02795,-0.88818 0,0 -0.1014,-0.77429 0.7098,-1.59415 0,0 -1.39603,-1.89111 -0.5468,-4.17778 0,0 -3.06403,0.73165 -1.07832,3.89831 0,0 -2.63047,0.0212 -4.09663,1.66865 0,0 -2.85833,-0.42344 -3.33165,2.60758 0,0 0.26195,2.70328 4.53551,1.89486 0,0 1.5401,1.5761 4.99905,-0.0723 l 0.15795,-0.045 c 0,0 4.25402,3.63257 8.32684,0.0871 0,0 4.09991,3.34132 8.64833,-0.13149 0,0 3.37511,3.51629 5.69279,-0.57156 0,0 2.74532,1.71666 3.94762,-1.07311 l 0.95708,-0.46625 c 0,0 0.93411,0.81244 1.50012,0.47642 z"
+         id="path1930"
+         sodipodi:nodetypes="cccccscccccccccccccccccccccccsc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="display:inline;opacity:1;fill:none;stroke:#000000;stroke-width:0.299999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 257.39159,243.43734 c 0,0 4.46391,3.72102 8.64279,-0.0428 0,0 3.59964,3.7638 5.8339,-0.72744 0,0 2.85488,1.96096 3.80651,-0.91723 0,0 0.86887,-0.15814 0.95163,-0.56931 0,0 1.44812,1.45491 2.68938,-0.18978 0,0 0.8275,-1.80282 -2.23426,-1.58142 0,0 -0.70338,-1.61306 -2.73076,-1.17025 0,0 -2.44113,-3.0996 -5.62701,-0.0949 0,0 0.49649,-2.56189 -2.81351,-2.1191 0,0 -1.86188,-1.64468 -3.97201,-1.20189 0,0 0.33099,-1.51817 0.0414,-1.7712 0,0 8.9784,-1.42329 3.39277,-8.66621 0,0 1.69638,-2.53027 -1.98601,-3.82704 0,0 3.47551,-1.58143 1.24126,-6.64199 0,0 3.8065,-0.85397 6.33038,-7.84387 0,0 4.22027,2.34051 8.89566,-2.43539 0,0 1.11713,0.53768 5.58564,-1.29678 0,0 10.88166,-1.17024 3.59964,-1.42327 l -5.42015,-0.25304 c 0,0 2.97902,-0.94885 -1.655,-1.48654 0,0 -6.37177,-0.75908 -8.4819,0.0317 0,0 -2.35838,-6.42059 -7.69577,-1.13863 0,0 -1.61363,-5.59824 -6.3304,-1.67631 0,0 -3.47551,-5.09219 -9.35078,-0.37954 0,0 -3.10313,0.28465 -2.27562,3.16285 0,0 -1.03439,0.47442 -0.70338,1.26514 0,0 -6.37177,-2.15074 -6.62002,2.84656 0,0 -0.33101,1.5498 2.31701,4.08009 0,0 -5.91665,3.79541 0.41375,7.71735 0,0 0.12412,1.64468 1.11712,2.24562 0,0 -4.75814,5.28197 2.64801,7.6541 l 1.24125,1.20189 c 0,0 -1.19987,1.2335 -0.91025,2.59353 0,0 -2.35838,2.18237 -0.28962,4.90242 0,0 -1.69638,1.07536 -0.24826,3.70053 0,0 -2.44113,-0.15814 -3.84788,1.58144 0,0 -3.31001,-0.28467 -3.47551,2.49864 0,0 -0.37238,2.78331 4.46851,2.11911 0,0 1.77913,1.4549 5.08914,-0.12651 0,0 3.60886,3.72284 8.36239,-0.0205 z"
+         id="path1932"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <g
+       id="g1940"
+       transform="matrix(1.0101851,0,0,1.0523569,-390.67496,155.98573)"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png">
+      <path
+         style="display:inline;opacity:1;fill:#ffffff;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 180.44763,393.82892 c -1.63694,-0.27084 -2.0885,-0.51161 -2.0885,-0.51161 0,0 -0.64913,-0.21066 1.15716,-0.63198 1.80625,-0.42132 -1.52406,-0.48151 -1.52406,-0.48151 l -4.14874,-0.0602 c 0,0 -7.45083,-3.09971 -14.19611,0.66208 0,0 -2.54003,-2.46774 -9.22885,2.91916 0,0 -1.94737,-0.99312 -5.1648,1.50471 0,0 -13.40583,1.47463 -0.22577,1.6251 l 12.74973,0.0857 c 0.2803,-2.8e-4 0.62179,8.9e-4 0.86564,0.0153 0.70412,0.0477 3.08214,0.26901 0.26617,0.96346 -0.41494,0.077 -0.60661,0.069 -1.23897,0.0884 l -10.21682,0.10401 c -0.63791,-0.0113 -1.0243,0.0614 -1.42275,0.15597 -0.99527,0.23836 -2.34444,0.71641 0.74681,1.08507 l 19.92534,-0.0602 c 0,0 4.34632,0.12037 6.9146,-0.90284 0,0 16.51036,1.80566 20.85668,0.84264 0,0 9.84977,-2.16679 0.36689,-3.88217 0,0 -10.59643,-1.92143 -3.25122,-2.29289 0.42588,-0.006 0.84187,-0.0523 1.20123,-0.10433 1.19047,-0.17346 3.15494,-0.60012 -2.69061,-0.98758 -3.14562,-0.30619 -6.48035,0.3034 -9.65305,-0.13627 z"
+         id="path1936"
+         sodipodi:nodetypes="ccscccccccccccccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.245222px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 167.35117,399.85531 c 0,0 6.05002,-4.5632 16.13337,-0.69608 l 6.65746,0.23202 c 0,0 2.40542,0.23204 0.0244,0.73476 0,0 -8.10815,0.31444 -9.46372,0.76882 0,0 -2.42492,-0.20619 -3.38089,-0.29272 -2.01588,-0.18248 -1.33338,-0.11286 -3.70044,-0.36567 -0.0122,-0.001 -0.0126,-0.002 -0.0237,0.002 -0.92197,0.36751 -1.11859,0.42335 -2.87978,0.68894 -0.82907,0.0677 -0.97381,0.14531 -2.49161,0.20316 l -7.69473,0.0286 c 0,0 2.1304,-2.30932 6.81977,-1.30389 z"
+         id="path1938"
+         sodipodi:nodetypes="cccccsssccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <g
+       id="g1948"
+       transform="translate(-272.40429,358.54566)"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png">
+      <path
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 27.151904,246.35959 c -0.732783,-0.87161 -4.414616,-0.2247 -3.961075,2.65136 0.329282,0.98072 1.466973,2.96254 5.026195,0.85466 0,0 1.242634,1.86395 4.748654,0.48817 0,0 2.440886,2.6628 6.967645,0 0,0 5.369971,5.41435 11.450023,-0.0887 0,0 4.748654,5.23682 11.450036,-0.0444 0,0 4.171705,2.97342 7.89962,-0.5326 0,0 1.997096,2.08586 4.260482,-0.0444 l 3.683627,0.0351 c 0.572844,-0.008 1.029692,-0.015 1.439329,-0.27042 0.895804,-0.60909 2.494102,-2.10841 -0.906868,-3.44819 0,0 1.109502,-4.21609 -3.949811,-3.55039 0,0 -2.79594,-8.4322 -9.807966,-1.95273 0,0 -1.065121,-1.59767 -2.79594,-0.93197 0,0 -2.130241,-2.4409 -5.68063,-1.28702 0,0 -0.849588,-1.58172 -2.245027,-2.93627 -1.181355,-1.14675 -4.267018,-2.35046 -7.352854,-0.34139 -0.816697,0.53172 -1.354617,1.29793 -2.1628,2.78947 0,0 -3.994205,-0.79883 -4.038587,2.52967 0,0 -1.952714,-0.0444 -2.307754,1.86395 0,0 -4.082956,-2.21899 -7.145172,1.42016 0,0 -3.816665,-0.62132 -4.571127,2.79594 z"
+         id="path1944"
+         sodipodi:nodetypes="ccccccccccccccccssccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.352833px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 67.055217,251.23425 c 0,0 -3.429976,-4.25726 -6.773524,-1.68817 0,0 -3.689189,-1.24468 -5.716306,0.0251 0,0 -1.287524,-2.60078 -4.532329,-1.49816 0,0 -5.702033,-11.5931 -12.758704,-0.28354 0,0 -4.325111,-1.72557 -4.325111,2.40132 0,0 2.573247,2.73358 7.010808,-0.0263 0,0 5.446658,5.54153 11.431577,-0.10654 0,0 4.740041,5.36379 11.438831,-0.0287 1.456771,0.96427 2.967826,1.30569 4.160446,1.20801 z"
+         id="path1946"
+         sodipodi:nodetypes="ccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -285.57043,606.55727 7.81468,-13.53542"
+       id="path1950"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -285.46722,612.26465 7.64278,13.23772"
+       id="path1952"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <path
+       style="fill:#000000;fill-opacity:0;stroke:#4c6f82;stroke-width:0.295501;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -307.98986,661.40319 V 519.84429"
+       id="path1954"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <path
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.5;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.3"
+       d="m -172.79402,626.08221 12.51774,0.63748 c 3.6924,-0.0349 5.47661,-2.17726 1.24036,-2.59564 l -7.49075,-0.41372 c -0.92895,-0.15196 -1.64608,-0.15922 -2.304,-0.61617 -0.97963,-0.68926 -1.62142,-2.12777 2.37301,-2.2344 1.30763,0.074 2.73664,0.18473 3.80722,0.35079 4.59575,0.71095 14.08012,2.03303 20.01843,1.85291 l 12.23681,-0.24477 c 0,0 5.75458,0.48955 0.72758,1.38703 0,0 -3.56005,0.62733 -0.39067,1.75315 0,0 1.04998,0.28208 1.69356,0.25971 l 2.54833,-0.0885 c 0.65935,-0.0183 1.42947,-0.0447 1.97765,0.051 1.7498,0.30668 6.30847,1.2701 -0.0919,2.06782 -1.22539,0.0858 -1.93278,0.0906 -2.97868,0.0585 l -11.35706,-0.34847 c 1.26721,1.88475 -1.16377,2.17104 -4.26798,2.02884 -8.36304,-1.19926 -18.37834,0.49776 -26.10957,-1.73436 -1.50894,-0.44372 -3.18697,-1.1364 -4.15003,-2.17106 z"
+       id="path1958"
+       sodipodi:nodetypes="ccccccccccccccccccccc"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png" />
+    <g
+       id="g2057"
+       style="fill:#e2f7fe;fill-opacity:0.89999998;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168">
+      <path
+         style="fill:#e2f7fe;fill-opacity:0.89999998;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m -141.23341,757.44843 -59.4942,-10e-6 16.51224,-70.72617 h 55.70399 z"
+         id="path1968"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         style="fill:#e2f7fe;fill-opacity:0.89999998;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m -141.23341,757.44842 h 0.85989 l 12.40466,-70.61513 -0.54252,-0.11102 -12.72203,70.72616 z"
+         id="path1970"
+         sodipodi:nodetypes="cccccc" />
+    </g>
+    <g
+       id="g2049"
+       transform="translate(24.330651,34.271606)"
+       style="fill:#ffe6e6;fill-opacity:0.89999998;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168">
+      <path
+         style="fill:#ffe6e6;fill-opacity:0.89999998;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m -194.02221,719.89909 22.73255,-6.79077 v -18.25815 h -43.32538 l -25.16751,6.59855 v 18.45037 z"
+         id="path2043"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         style="fill:#ffe6e6;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.89999998;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m -194.02221,719.89909 v -18.45037 l 22.73255,-6.59855"
+         id="path2045"
+         sodipodi:nodetypes="ccc" />
+      <path
+         style="fill:#ffe6e6;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.89999998;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m -194.02221,701.44872 h -45.76034"
+         id="path2047"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       id="g2027"
+       transform="translate(30.427083,3.7041666)"
+       style="fill:#ffe6e6;fill-opacity:0.89999998;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168">
+      <path
+         style="fill:#ffe6e6;fill-opacity:0.89999998;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m -201.13158,722.89251 29.84192,-9.78419 v -18.25815 h -43.32538 l -31.71561,9.59197 v 18.26328 z"
+         id="path1997"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         style="fill:#ffe6e6;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.89999998;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m -201.13158,722.89251 v -18.45037 l 29.84192,-9.59197"
+         id="path1999"
+         sodipodi:nodetypes="ccc" />
+      <path
+         style="fill:#ffe6e6;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.89999998;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m -201.13158,704.44214 h -45.19907"
+         id="path2002"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <path
+       style="fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -233.26181,747.42791 1.17778,-2.8395 8.23432,-0.012 0.0371,5.25696 -2.62369,1.16668 z"
+       id="path2065"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="fill:#aeaeae;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+       d="m -223.84973,744.57637 -5.52422,4.34806"
+       id="path2067"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -233.69746,746.43792 -3.77857,1.92628 2.91786,3.64602 8.99584,-5.55625 z"
+       id="path2059"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -225.56233,746.45397 -0.0468,6.5864 -3.18739,1.98781 -0.0288,-6.66498 z"
+       id="path2061"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -228.79652,755.02818 -8.60741,0.004 -0.0721,-6.66798 8.65073,-10e-4 z"
+       id="path2063"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <image
+       width="94.98542"
+       height="33.337502"
+       preserveAspectRatio="none"
+       xlink:href="data:image/png;base64,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
+"
+       id="image2087"
+       x="-20.926125"
+       y="723.45398" />
+    <rect
+       style="fill:#ffe6e6;fill-opacity:0.901961;stroke:#545454;stroke-width:0.292182;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2150"
+       width="60.619587"
+       height="29.46608"
+       x="-403.31601"
+       y="-721.29993"
+       transform="scale(1,-1)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.438334;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -325.56683,691.79806 -18.17623,57.87215"
+       id="path2154" />
+    <rect
+       style="fill:#ffe6e6;fill-opacity:0.901961;stroke:#545454;stroke-width:0.292182;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2158"
+       width="46.804359"
+       height="22.028637"
+       x="-403.1727"
+       y="-747.63416"
+       transform="scale(1,-1)" />
+    <rect
+       style="fill:#ffe6e6;fill-opacity:0.901961;stroke:#545454;stroke-width:0.292182;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2160"
+       width="23.947794"
+       height="58.118267"
+       x="-319.26959"
+       y="-749.54126"
+       transform="scale(1,-1)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.438334;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -271.06576,691.79806 -18.17623,57.87215"
+       id="path2162" />
+    <path
+       style="fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -427.64752,745.54329 c -0.48901,-0.23666 -0.86326,-0.69651 -1.01678,-1.24958 -0.0581,-0.21009 -0.0929,-1.28753 -0.0933,-2.90889 -5.5e-4,-2.39108 0.0117,-2.60791 0.17145,-3.03432 0.18706,-0.49988 0.56525,-0.89279 1.05731,-1.0984 0.4433,-0.18512 5.73452,-0.18512 6.17787,0 0.80651,0.33701 1.22915,1.08288 1.22915,2.16935 0,0.33663 0.007,0.64452 0.0399,0.67697 0.0313,0.0313 0.72756,-0.59633 1.52174,-1.38955 l 1.44398,-1.44221 0.29133,0.0273 0.14054,0.25462 v 4.04339 c 0,2.90607 0.039,3.72959 -0.039,3.80496 -0.23354,0.23354 -0.52201,0.0875 -1.89008,-1.27222 -0.76676,-0.76197 -1.42012,-1.35936 -1.45191,-1.32757 -0.0313,0.0313 -0.0579,0.29875 -0.0579,0.59364 0,1.09704 -0.33741,1.75696 -1.09301,2.13737 l -0.45812,0.23081 -2.76691,-0.003 -2.76693,-0.003 -0.44076,-0.21323 z"
+       id="path2164"
+       sodipodi:nodetypes="ssssssscscccscssssccccs"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png" />
+    <path
+       style="fill:none;stroke:#ff6b6b;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -228.23156,689.09843 1.48364,-0.52032 -1.04246,-0.45457"
+       id="path2174"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="fill:none;stroke:#4972d1;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -230.23393,684.90321 Z"
+       id="path2176"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="fill:none;stroke:#4972d1;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -230.54529,686.10392 0.8615,-0.82441 -1.58466,0.24544"
+       id="path2178"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="fill:none;stroke:#33c833;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -237.04848,681.16145 0.51098,-1.18232 0.52837,1.18799"
+       id="path2180"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="fill:none;stroke:#4972d1;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -236.5375,688.57811 6.85371,-3.2986"
+       id="path2182"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#33c833;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -236.5375,688.57811 v -8.59898"
+       id="path2184"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="fill:none;stroke:#ff6b6b;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -236.5375,688.57811 h 9.78958"
+       id="path2172"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
   </g>
 </svg>

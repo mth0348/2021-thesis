@@ -19,7 +19,75 @@
    inkscape:export-xdpi="200.22168"
    inkscape:export-ydpi="200.22168">
   <defs
-     id="defs2" />
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2783">
+      <stop
+         style="stop-color:#dce9f0;stop-opacity:1"
+         offset="0"
+         id="stop2779" />
+      <stop
+         style="stop-color:#b4d7ea;stop-opacity:1"
+         offset="1"
+         id="stop2781" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2767">
+      <stop
+         style="stop-color:#fffeeb;stop-opacity:1"
+         offset="0"
+         id="stop2763" />
+      <stop
+         style="stop-color:#ffcf3a;stop-opacity:0;"
+         offset="1"
+         id="stop2765" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2369">
+      <stop
+         style="stop-color:#dce9f0;stop-opacity:1;"
+         offset="0"
+         id="stop2365" />
+      <stop
+         style="stop-color:#b4d7ea;stop-opacity:1"
+         offset="1"
+         id="stop2367" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2369"
+       id="linearGradient2371"
+       x1="-266.97552"
+       y1="627.49542"
+       x2="-268.65933"
+       y2="534.13812"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.92023289,0,0,0.74397268,-6.4985453,147.99774)" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2767"
+       id="radialGradient2771"
+       cx="61.752525"
+       cy="590.41772"
+       fx="61.752525"
+       fy="590.41772"
+       r="34.197395"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(4.8198104,-8.9011487e-7,2.1984823e-5,4.9638282,-64.913443,-834.13039)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2783"
+       id="linearGradient2785"
+       x1="-0.79374999"
+       y1="638.17499"
+       x2="-0.79374999"
+       y2="554.30206"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,0.83841812,0,86.389623)" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -27,9 +95,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="-852.71442"
-     inkscape:cy="2614.1017"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="21.739142"
+     inkscape:cy="2204.8968"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -6292,153 +6360,43 @@
          y="508.13287"
          style="stroke-width:0.264583">scene anatomy</tspan></text>
     <rect
-       style="fill:#dce9f0;fill-opacity:1;stroke:none;stroke-width:0.389469;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:url(#linearGradient2371);fill-opacity:1;stroke:none;stroke-width:0.43581;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect1895"
-       width="245.93428"
-       height="77.489632"
-       x="-327.40326"
-       y="583.94495"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
+       width="226.31682"
+       height="105.43774"
+       x="-307.7858"
+       y="534.64923"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png"
        inkscape:export-xdpi="100.0729"
        inkscape:export-ydpi="100.0729" />
-    <rect
-       style="fill:#c3dee9;fill-opacity:1;stroke:none;stroke-width:0.241794;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect1899"
-       width="245.93427"
-       height="32.170933"
-       x="-327.40326"
-       y="551.77399"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
-       inkscape:export-xdpi="100.0729"
-       inkscape:export-ydpi="100.0729" />
-    <rect
-       style="display:inline;opacity:0.5;fill:#f0f5f8;fill-opacity:1;stroke:#000000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.25"
-       id="rect1901"
-       width="62.038601"
-       height="16.93878"
-       x="-252.84288"
-       y="593.59155"
-       ry="0"
-       inkscape:export-xdpi="100.0729"
-       inkscape:export-ydpi="100.0729"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png" />
-    <rect
-       style="display:inline;opacity:0.5;fill:#f0f5f8;fill-opacity:1;stroke:#000000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.25"
-       id="rect1903"
-       width="62.038601"
-       height="16.93878"
-       x="-252.65579"
-       y="563.19916"
-       ry="0"
-       inkscape:export-xdpi="100.0729"
-       inkscape:export-ydpi="100.0729"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png" />
-    <rect
-       style="fill:#b4d7ea;fill-opacity:1;stroke:none;stroke-width:0.241386;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect1905"
-       width="245.93427"
-       height="32.062019"
-       x="-327.40326"
-       y="519.71198"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
-       inkscape:export-xdpi="100.0729"
-       inkscape:export-ydpi="100.0729" />
-    <g
-       id="g1914"
-       transform="matrix(0.93504585,0,0,1,-509.61175,511.56352)"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
-       inkscape:export-xdpi="100.0729"
-       inkscape:export-ydpi="100.0729">
-      <path
-         style="fill:#ffd950;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 335.47633,134.09845 c -32.36635,-6.73519 -53.69446,3.74177 -53.69446,3.74177 l -1.59024,4.58368 63.23597,-4.02241 z"
-         id="path1910" />
-      <path
-         style="fill:#96b266;fill-opacity:1;stroke:none;stroke-width:0.285957px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 215.62738,132.67314 c 0,0 14.37119,-3.04271 27.8152,3.0427 0,0 14.06214,-2.77812 23.48842,-0.52916 0,0 28.43333,3.70417 84.52733,-2.77813 0,0 8.96267,-1.52135 18.38894,1.45521 0,0 11.7442,-4.43177 22.32943,0.46302 0,0 21.24774,-4.10104 44.96793,-1.38906 0,0 14.68025,1.91823 20.70687,-0.26458 v 17.19791 H 215.55013 Z"
-         id="path1912" />
-    </g>
     <path
-       style="fill:#b6c1a5;fill-opacity:1;stroke:none;stroke-width:0.317954;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -296.52952,621.55754 c 4.34567,-3.67108 12.65016,-3.15235 15.80109,4.68232 4.01489,2.913 4.40694,11.2321 6.25199,13.0957 5.18734,4.4522 7.37327,11.0419 10.55176,17.3636 l -41.154,-6.1494 c 2.16725,-8.0817 4.09622,-22.4812 8.54916,-28.99222 z"
-       id="path1916"
-       sodipodi:nodetypes="cccccc"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
+       style="fill:#96b266;fill-opacity:1;stroke:none;stroke-width:0.276514px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -307.99026,623.07617 c 0,0 13.43772,-3.04271 26.00848,3.0427 0,0 13.14875,-2.77812 21.96275,-0.52916 0,0 26.58647,3.70417 79.03693,-2.77813 0,0 8.38051,-1.52135 17.1945,1.45521 0,0 10.98137,-4.43177 20.87905,0.46302 0,0 19.86761,-4.10104 42.04707,-1.38906 0,0 13.726709,1.91823 19.361875,-0.26458 v 17.19791 H -308.0625 Z"
+       id="path1912"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png"
        inkscape:export-xdpi="100.0729"
        inkscape:export-ydpi="100.0729" />
     <path
        style="display:inline;opacity:1;fill:#5e7a47;fill-opacity:1;stroke:none;stroke-width:0.264385px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -308.06251,645.95644 c 0,0 4.49119,0.85989 8.91634,-0.92604 4.42516,-1.78594 13.14337,7.54062 13.14337,7.54062 0,0 14.46429,-8.92969 33.08955,4.49792 0,0 18.0969,-2.51354 32.82538,4.36562 h -87.97463 z"
+       d="m -308.06251,624.79595 c 0,0 4.49119,0.85989 8.91634,-0.92604 4.42516,-1.78594 13.14337,7.54062 13.14337,7.54062 0,0 14.46429,-8.92969 33.08955,4.49792 0,0 18.0969,-2.51354 32.82538,4.36562 h -87.97463 z"
        id="path1918"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png"
        inkscape:export-xdpi="100.0729"
        inkscape:export-ydpi="100.0729" />
     <path
        fill="currentColor"
-       d="m -181.8514,643.0105 -4.35503,3.5869 v 3.8712 a 0.37793827,0.37793827 0 0 0 0.37795,0.378 l 2.64697,-0.01 a 0.37793827,0.37793827 0 0 0 0.37606,-0.3779 v -2.2608 a 0.37793827,0.37793827 0 0 1 0.37793,-0.378 h 1.51176 a 0.37793827,0.37793827 0 0 1 0.37793,0.378 v 2.2591 a 0.37793827,0.37793827 0 0 0 0.37794,0.3792 l 2.64604,0.01 a 0.37793827,0.37793827 0 0 0 0.37795,-0.378 v -3.8738 l -4.3541,-3.5843 a 0.28794172,0.28794172 0 0 0 -0.3614,0 z m 6.87919,2.438 -1.97473,-1.6278 v -3.2717 a 0.2834537,0.2834537 0 0 0 -0.28345,-0.2835 h -1.32279 a 0.2834537,0.2834537 0 0 0 -0.28345,0.2835 v 1.7151 l -2.1148,-1.7399 a 1.1338148,1.1338148 0 0 0 -1.44089,0 l -5.97922,4.9243 a 0.2834537,0.2834537 0 0 0 -0.0378,0.3992 l 0.60235,0.7323 a 0.2834537,0.2834537 0 0 0 0.39943,0.039 l 5.55616,-4.5763 a 0.28794172,0.28794172 0 0 1 0.3614,0 l 5.55641,4.5763 a 0.2834537,0.2834537 0 0 0 0.39919,-0.038 l 0.60234,-0.7323 a 0.2834537,0.2834537 0 0 0 -0.0402,-0.3999 z"
+       d="m -195.12565,620.26642 -4.35503,3.5869 v 3.8712 a 0.37793827,0.37793827 0 0 0 0.37795,0.378 l 2.64697,-0.01 a 0.37793827,0.37793827 0 0 0 0.37606,-0.3779 v -2.2608 a 0.37793827,0.37793827 0 0 1 0.37793,-0.378 h 1.51176 a 0.37793827,0.37793827 0 0 1 0.37793,0.378 v 2.2591 a 0.37793827,0.37793827 0 0 0 0.37794,0.3792 l 2.64604,0.01 a 0.37793827,0.37793827 0 0 0 0.37795,-0.378 v -3.8738 l -4.3541,-3.5843 a 0.28794172,0.28794172 0 0 0 -0.3614,0 z m 6.87919,2.438 -1.97473,-1.6278 v -3.2717 a 0.2834537,0.2834537 0 0 0 -0.28345,-0.2835 h -1.32279 a 0.2834537,0.2834537 0 0 0 -0.28345,0.2835 v 1.7151 l -2.1148,-1.7399 a 1.1338148,1.1338148 0 0 0 -1.44089,0 l -5.97922,4.9243 a 0.2834537,0.2834537 0 0 0 -0.0378,0.3992 l 0.60235,0.7323 a 0.2834537,0.2834537 0 0 0 0.39943,0.039 l 5.55616,-4.5763 a 0.28794172,0.28794172 0 0 1 0.3614,0 l 5.55641,4.5763 a 0.2834537,0.2834537 0 0 0 0.39919,-0.038 l 0.60234,-0.7323 a 0.2834537,0.2834537 0 0 0 -0.0402,-0.3999 z"
        id="path1920"
        style="fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png"
        inkscape:export-xdpi="100.0729"
        inkscape:export-ydpi="100.0729" />
-    <path
-       style="fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -294.46585,612.22267 c -0.33473,-0.16199 -0.59091,-0.47676 -0.69599,-0.85534 -0.0398,-0.14381 -0.0636,-0.88132 -0.0639,-1.99115 -3.8e-4,-1.63671 0.008,-1.78513 0.11736,-2.07701 0.12804,-0.34217 0.38691,-0.61112 0.72373,-0.75186 0.30344,-0.12671 3.92531,-0.12671 4.22878,0 0.55206,0.23069 0.84136,0.74124 0.84136,1.48493 0,0.23043 0.005,0.44118 0.0273,0.46339 0.0214,0.0214 0.49802,-0.40819 1.04164,-0.95115 l 0.98841,-0.9872 0.19942,0.0187 0.0962,0.17429 v 2.76772 c 0,1.98922 0.0267,2.55292 -0.0267,2.60451 -0.15986,0.15986 -0.35732,0.0599 -1.29377,-0.87084 -0.52485,-0.52157 -0.97208,-0.93049 -0.99384,-0.90873 -0.0214,0.0214 -0.0396,0.2045 -0.0396,0.40635 0,0.75093 -0.23096,1.20265 -0.74817,1.46304 l -0.31359,0.15799 -1.89396,-0.002 -1.89398,-0.002 -0.3017,-0.14596 z"
-       id="path1922"
-       sodipodi:nodetypes="ssssssscscccscssssccccs"
-       inkscape:export-xdpi="100.0729"
-       inkscape:export-ydpi="100.0729"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png" />
-    <rect
-       style="display:inline;opacity:0.5;fill:#f0f5f8;fill-opacity:1;stroke:#000000;stroke-width:0.151146;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.25"
-       id="rect1924"
-       width="55.446949"
-       height="78.795441"
-       x="-172.9593"
-       y="531.86597"
-       ry="0"
-       inkscape:export-xdpi="100.0729"
-       inkscape:export-ydpi="100.0729"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png" />
-    <g
-       id="g1934"
-       transform="matrix(1.0908383,0,0,1.4230825,-431.63001,261.11534)"
-       inkscape:export-xdpi="100.0729"
-       inkscape:export-ydpi="100.0729"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png">
-      <path
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 257.39159,243.43735 c 0,0 4.46391,3.72101 8.64279,-0.0428 0,0 3.59964,3.7638 5.8339,-0.72744 0,0 2.85488,1.96096 3.80651,-0.91723 0,0 0.86887,-0.15814 0.95163,-0.56931 0,0 1.44812,1.45491 2.68938,-0.18978 0,0 0.8275,-1.80282 -2.23426,-1.58142 0,0 -0.70338,-1.61306 -2.73076,-1.17025 0,0 -2.44113,-3.0996 -5.62701,-0.0949 0,0 0.49649,-2.5619 -2.81351,-2.11911 0,0 -1.86188,-1.64467 -3.97201,-1.20188 0,0 0.33099,-1.51817 0.0414,-1.7712 0,0 8.9784,-1.42329 3.39277,-8.66621 0,0 1.69638,-2.53028 -1.98601,-3.82705 0,0 3.47551,-1.58142 1.24126,-6.64198 0,0 3.8065,-0.85397 6.33038,-7.84387 0,0 4.22027,2.34051 8.89566,-2.4354 0,0 1.11713,0.53769 5.58564,-1.29677 0,0 10.88166,-1.17024 3.59964,-1.42327 l -5.42015,-0.25304 c 0,0 2.97902,-0.94885 -1.655,-1.48654 0,0 -6.37177,-0.75908 -8.4819,0.0317 0,0 -2.35838,-6.42059 -7.69577,-1.13863 0,0 -1.61363,-5.59824 -6.3304,-1.67631 0,0 -3.47551,-5.09219 -9.35078,-0.37954 0,0 -3.10313,0.28465 -2.27562,3.16285 0,0 -1.03439,0.47442 -0.70338,1.26514 0,0 -6.37177,-2.15074 -6.62002,2.84656 0,0 -0.33101,1.5498 2.31701,4.08008 0,0 -5.91665,3.79542 0.41375,7.71735 0,0 0.12412,1.64469 1.11712,2.24563 0,0 -4.75814,5.28196 2.64801,7.6541 l 1.24125,1.20188 c 0,0 -1.19987,1.23351 -0.91025,2.59354 0,0 -2.35838,2.18237 -0.28962,4.90242 0,0 -1.69638,1.07536 -0.24826,3.70053 0,0 -2.44113,-0.15814 -3.84788,1.58143 0,0 -3.31001,-0.28466 -3.47551,2.49865 0,0 -0.37238,2.78331 4.46851,2.11911 0,0 1.77913,1.4549 5.08914,-0.12652 0,0 3.60886,3.72285 8.36239,-0.0205 z"
-         id="path1926"
-         inkscape:export-xdpi="200.22168"
-         inkscape:export-ydpi="200.22168" />
-      <path
-         style="fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.146625px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 270.44873,242.57017 c 0,0 -0.58113,-2.08672 -3.30332,-1.95493 0,0 -2.22213,-2.89235 -5.03784,-0.42881 0,0 -0.93527,-2.77542 -3.74039,-1.76774 0,0 -1.03994,-1.60349 -3.88445,-0.85667 0,0 0.48938,-1.4497 -0.36704,-2.04279 0,0 7.06767,-1.7402 3.60918,-8.50066 0,0 1.9881,-1.86707 -2.07986,-3.7561 0,0 3.67034,-1.91101 1.46813,-6.43591 0,0 5.75021,-3.822 6.48427,-7.99545 0,0 3.75776,1.49441 6.54111,-0.92182 l 0.839,-1.8389 c 0,0 4.41946,2.00946 8.5103,-2.14745 l -2.24894,-0.51731 c 0,0 4.46558,-1.3399 -2.53866,-1.53758 l -8.25828,-0.044 c 0,0 -2.661,-5.53531 -8.07476,-0.92255 0,0 -1.80459,-4.85438 -6.6678,-1.60348 0,0 -0.30587,-1.55956 -3.63975,-2.28442 0,0 -0.83082,0.53335 -0.15795,2.11487 l -0.9432,1.13603 c 0,0 -4.38427,-1.00503 -5.6743,0.88848 -1.69835,2.49285 -0.599,3.84914 1.50141,6.20714 0,0 -5.69315,4.25662 0.34962,7.4895 l 0.47472,1.61517 0.75619,0.88471 c 0,0 -4.53223,5.3964 2.54275,7.47371 l 1.35078,1.42852 c 0,0 -1.29955,1.56029 -0.87134,2.6366 0,0 -2.33317,2.05065 -0.34507,4.79634 0,0 -0.99883,1.83178 0.0411,3.87458 l -3.99055,1.84225 -2.83368,0.55472 0.61172,2.21853 5.02149,1.96214 3.27457,-0.72991 3.12746,1.22735 7.26466,-1.91045 6.05606,0.65897 1.60667,-0.16786 2.09426,0.21178 z"
-         id="path1928"
-         sodipodi:nodetypes="cccccccccccccccccccccscccccccccccccccccccc"
-         inkscape:export-xdpi="200.22168"
-         inkscape:export-ydpi="200.22168" />
-      <path
-         style="fill:#ced1d0;fill-opacity:1;stroke:none;stroke-width:0.145303px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 278.50617,241.53792 c 0,0 -1.35099,0.0751 -1.93043,-0.97248 0,0 -1.71973,1.67687 -2.99444,0.41294 0,0 -1.55947,0.84554 -2.38592,-0.31455 0,0 -0.10721,0.80636 -1.05367,0.23543 0,0 -0.53953,1.4179 -2.36609,1.96899 -1.45554,0.43915 -3.77605,0.0163 -5.39529,-1.19768 0,0 -1.8476,0.3157 -2.5948,-1.635 0,0 -0.4158,3.05529 -3.38396,2.19537 0,0 -2.74674,3.41583 -7.3388,1.0296 0,0 -1.4461,1.02987 -3.25004,-0.11888 0,0 -1.87263,0.44273 -1.94106,-0.76289 0,0 -2.56392,0.5124 -2.21627,-1.7194 0,0 0.56493,-1.73081 2.95503,-0.34162 0,0 0.32133,-0.59699 1.07192,-0.17079 0,0 0.38621,-1.9499 2.02795,-0.88818 0,0 -0.1014,-0.77429 0.7098,-1.59415 0,0 -1.39603,-1.89111 -0.5468,-4.17778 0,0 -3.06403,0.73165 -1.07832,3.89831 0,0 -2.63047,0.0212 -4.09663,1.66865 0,0 -2.85833,-0.42344 -3.33165,2.60758 0,0 0.26195,2.70328 4.53551,1.89486 0,0 1.5401,1.5761 4.99905,-0.0723 l 0.15795,-0.045 c 0,0 4.25402,3.63257 8.32684,0.0871 0,0 4.09991,3.34132 8.64833,-0.13149 0,0 3.37511,3.51629 5.69279,-0.57156 0,0 2.74532,1.71666 3.94762,-1.07311 l 0.95708,-0.46625 c 0,0 0.93411,0.81244 1.50012,0.47642 z"
-         id="path1930"
-         sodipodi:nodetypes="cccccscccccccccccccccccccccccsc"
-         inkscape:export-xdpi="200.22168"
-         inkscape:export-ydpi="200.22168" />
-      <path
-         style="display:inline;opacity:1;fill:none;stroke:#000000;stroke-width:0.299999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 257.39159,243.43734 c 0,0 4.46391,3.72102 8.64279,-0.0428 0,0 3.59964,3.7638 5.8339,-0.72744 0,0 2.85488,1.96096 3.80651,-0.91723 0,0 0.86887,-0.15814 0.95163,-0.56931 0,0 1.44812,1.45491 2.68938,-0.18978 0,0 0.8275,-1.80282 -2.23426,-1.58142 0,0 -0.70338,-1.61306 -2.73076,-1.17025 0,0 -2.44113,-3.0996 -5.62701,-0.0949 0,0 0.49649,-2.56189 -2.81351,-2.1191 0,0 -1.86188,-1.64468 -3.97201,-1.20189 0,0 0.33099,-1.51817 0.0414,-1.7712 0,0 8.9784,-1.42329 3.39277,-8.66621 0,0 1.69638,-2.53027 -1.98601,-3.82704 0,0 3.47551,-1.58143 1.24126,-6.64199 0,0 3.8065,-0.85397 6.33038,-7.84387 0,0 4.22027,2.34051 8.89566,-2.43539 0,0 1.11713,0.53768 5.58564,-1.29678 0,0 10.88166,-1.17024 3.59964,-1.42327 l -5.42015,-0.25304 c 0,0 2.97902,-0.94885 -1.655,-1.48654 0,0 -6.37177,-0.75908 -8.4819,0.0317 0,0 -2.35838,-6.42059 -7.69577,-1.13863 0,0 -1.61363,-5.59824 -6.3304,-1.67631 0,0 -3.47551,-5.09219 -9.35078,-0.37954 0,0 -3.10313,0.28465 -2.27562,3.16285 0,0 -1.03439,0.47442 -0.70338,1.26514 0,0 -6.37177,-2.15074 -6.62002,2.84656 0,0 -0.33101,1.5498 2.31701,4.08009 0,0 -5.91665,3.79541 0.41375,7.71735 0,0 0.12412,1.64468 1.11712,2.24562 0,0 -4.75814,5.28197 2.64801,7.6541 l 1.24125,1.20189 c 0,0 -1.19987,1.2335 -0.91025,2.59353 0,0 -2.35838,2.18237 -0.28962,4.90242 0,0 -1.69638,1.07536 -0.24826,3.70053 0,0 -2.44113,-0.15814 -3.84788,1.58144 0,0 -3.31001,-0.28467 -3.47551,2.49864 0,0 -0.37238,2.78331 4.46851,2.11911 0,0 1.77913,1.4549 5.08914,-0.12651 0,0 3.60886,3.72284 8.36239,-0.0205 z"
-         id="path1932"
-         inkscape:export-xdpi="200.22168"
-         inkscape:export-ydpi="200.22168" />
-    </g>
     <g
        id="g1940"
-       transform="matrix(1.0101851,0,0,1.0523569,-390.67496,155.98573)"
+       transform="matrix(1.0101851,0,0,1.0523569,-438.38257,157.29535)"
        inkscape:export-xdpi="100.0729"
        inkscape:export-ydpi="100.0729"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png">
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png">
       <path
          style="display:inline;opacity:1;fill:#ffffff;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 180.44763,393.82892 c -1.63694,-0.27084 -2.0885,-0.51161 -2.0885,-0.51161 0,0 -0.64913,-0.21066 1.15716,-0.63198 1.80625,-0.42132 -1.52406,-0.48151 -1.52406,-0.48151 l -4.14874,-0.0602 c 0,0 -7.45083,-3.09971 -14.19611,0.66208 0,0 -2.54003,-2.46774 -9.22885,2.91916 0,0 -1.94737,-0.99312 -5.1648,1.50471 0,0 -13.40583,1.47463 -0.22577,1.6251 l 12.74973,0.0857 c 0.2803,-2.8e-4 0.62179,8.9e-4 0.86564,0.0153 0.70412,0.0477 3.08214,0.26901 0.26617,0.96346 -0.41494,0.077 -0.60661,0.069 -1.23897,0.0884 l -10.21682,0.10401 c -0.63791,-0.0113 -1.0243,0.0614 -1.42275,0.15597 -0.99527,0.23836 -2.34444,0.71641 0.74681,1.08507 l 19.92534,-0.0602 c 0,0 4.34632,0.12037 6.9146,-0.90284 0,0 16.51036,1.80566 20.85668,0.84264 0,0 9.84977,-2.16679 0.36689,-3.88217 0,0 -10.59643,-1.92143 -3.25122,-2.29289 0.42588,-0.006 0.84187,-0.0523 1.20123,-0.10433 1.19047,-0.17346 3.15494,-0.60012 -2.69061,-0.98758 -3.14562,-0.30619 -6.48035,0.3034 -9.65305,-0.13627 z"
@@ -6456,54 +6414,26 @@
     </g>
     <g
        id="g1948"
-       transform="translate(-272.40429,358.54566)"
+       transform="translate(-181.85337,349.7525)"
        inkscape:export-xdpi="100.0729"
        inkscape:export-ydpi="100.0729"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png">
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png"
+       style="fill:#ececec">
       <path
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#ececec;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 27.151904,246.35959 c -0.732783,-0.87161 -4.414616,-0.2247 -3.961075,2.65136 0.329282,0.98072 1.466973,2.96254 5.026195,0.85466 0,0 1.242634,1.86395 4.748654,0.48817 0,0 2.440886,2.6628 6.967645,0 0,0 5.369971,5.41435 11.450023,-0.0887 0,0 4.748654,5.23682 11.450036,-0.0444 0,0 4.171705,2.97342 7.89962,-0.5326 0,0 1.997096,2.08586 4.260482,-0.0444 l 3.683627,0.0351 c 0.572844,-0.008 1.029692,-0.015 1.439329,-0.27042 0.895804,-0.60909 2.494102,-2.10841 -0.906868,-3.44819 0,0 1.109502,-4.21609 -3.949811,-3.55039 0,0 -2.79594,-8.4322 -9.807966,-1.95273 0,0 -1.065121,-1.59767 -2.79594,-0.93197 0,0 -2.130241,-2.4409 -5.68063,-1.28702 0,0 -0.849588,-1.58172 -2.245027,-2.93627 -1.181355,-1.14675 -4.267018,-2.35046 -7.352854,-0.34139 -0.816697,0.53172 -1.354617,1.29793 -2.1628,2.78947 0,0 -3.994205,-0.79883 -4.038587,2.52967 0,0 -1.952714,-0.0444 -2.307754,1.86395 0,0 -4.082956,-2.21899 -7.145172,1.42016 0,0 -3.816665,-0.62132 -4.571127,2.79594 z"
          id="path1944"
          sodipodi:nodetypes="ccccccccccccccccssccccc"
          inkscape:export-xdpi="200.22168"
          inkscape:export-ydpi="200.22168" />
       <path
-         style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.352833px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="display:inline;opacity:1;fill:#ececec;fill-opacity:1;stroke:none;stroke-width:0.352833px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 67.055217,251.23425 c 0,0 -3.429976,-4.25726 -6.773524,-1.68817 0,0 -3.689189,-1.24468 -5.716306,0.0251 0,0 -1.287524,-2.60078 -4.532329,-1.49816 0,0 -5.702033,-11.5931 -12.758704,-0.28354 0,0 -4.325111,-1.72557 -4.325111,2.40132 0,0 2.573247,2.73358 7.010808,-0.0263 0,0 5.446658,5.54153 11.431577,-0.10654 0,0 4.740041,5.36379 11.438831,-0.0287 1.456771,0.96427 2.967826,1.30569 4.160446,1.20801 z"
          id="path1946"
          sodipodi:nodetypes="ccccccccccc"
          inkscape:export-xdpi="200.22168"
          inkscape:export-ydpi="200.22168" />
     </g>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -285.57043,606.55727 7.81468,-13.53542"
-       id="path1950"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
-       inkscape:export-xdpi="100.0729"
-       inkscape:export-ydpi="100.0729" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -285.46722,612.26465 7.64278,13.23772"
-       id="path1952"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
-       inkscape:export-xdpi="100.0729"
-       inkscape:export-ydpi="100.0729" />
-    <path
-       style="fill:#000000;fill-opacity:0;stroke:#4c6f82;stroke-width:0.295501;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M -307.98986,661.40319 V 519.84429"
-       id="path1954"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png"
-       inkscape:export-xdpi="100.0729"
-       inkscape:export-ydpi="100.0729" />
-    <path
-       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.5;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.3"
-       d="m -172.79402,626.08221 12.51774,0.63748 c 3.6924,-0.0349 5.47661,-2.17726 1.24036,-2.59564 l -7.49075,-0.41372 c -0.92895,-0.15196 -1.64608,-0.15922 -2.304,-0.61617 -0.97963,-0.68926 -1.62142,-2.12777 2.37301,-2.2344 1.30763,0.074 2.73664,0.18473 3.80722,0.35079 4.59575,0.71095 14.08012,2.03303 20.01843,1.85291 l 12.23681,-0.24477 c 0,0 5.75458,0.48955 0.72758,1.38703 0,0 -3.56005,0.62733 -0.39067,1.75315 0,0 1.04998,0.28208 1.69356,0.25971 l 2.54833,-0.0885 c 0.65935,-0.0183 1.42947,-0.0447 1.97765,0.051 1.7498,0.30668 6.30847,1.2701 -0.0919,2.06782 -1.22539,0.0858 -1.93278,0.0906 -2.97868,0.0585 l -11.35706,-0.34847 c 1.26721,1.88475 -1.16377,2.17104 -4.26798,2.02884 -8.36304,-1.19926 -18.37834,0.49776 -26.10957,-1.73436 -1.50894,-0.44372 -3.18697,-1.1364 -4.15003,-2.17106 z"
-       id="path1958"
-       sodipodi:nodetypes="ccccccccccccccccccccc"
-       inkscape:export-xdpi="100.0729"
-       inkscape:export-ydpi="100.0729"
-       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\cloudtypes.png" />
     <g
        id="g2057"
        style="fill:#e2f7fe;fill-opacity:0.89999998;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none"
@@ -6791,8 +6721,8 @@ SlXSKu2Qm5vLDz/8gJ6euHunDQMGDMh/QjA9PR0zMzNyc3PVnhseHk7z5mK0LAjakJ2djaurK45q
 BB0kwlkQBEEHiXAWBEHQQf8f4XQlAzvP+sMAAAAASUVORK5CYII=
 "
        id="image2087"
-       x="-20.926125"
-       y="723.45398" />
+       x="-80.607407"
+       y="722.14435" />
     <rect
        style="fill:#ffe6e6;fill-opacity:0.901961;stroke:#545454;stroke-width:0.292182;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect2150"
@@ -6887,5 +6817,1078 @@ BB0kwlkQBEEHiXAWBEHQQf8f4XQlAzvP+sMAAAAASUVORK5CYII=
        inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
        inkscape:export-xdpi="200.22168"
        inkscape:export-ydpi="200.22168" />
+    <g
+       id="g2200"
+       style="display:inline;opacity:1;fill:#e2e6f4;fill-opacity:1;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168"
+       transform="matrix(1.0000356,0,0,0.97864598,41.097728,104.41341)">
+      <path
+         style="fill:#e2e6f4;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -141.23341,757.44843 -59.4942,-10e-6 0.0484,-70.72617 h 59.35222 z"
+         id="path2196"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         style="fill:#e2e6f4;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -141.23341,757.44841 0.61217,-0.34087 0.0132,-70.80304 -0.71899,0.41775 0.0936,70.72618 z"
+         id="path2198"
+         sodipodi:nodetypes="cccccc" />
+    </g>
+    <g
+       id="g2018-3"
+       transform="matrix(1.0920165,0,0,0.87085056,-2.8065076,183.50109)"
+       style="display:inline;opacity:1;fill:#ffe6e6;fill-opacity:1;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168">
+      <path
+         style="fill:#ffe6e6;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -108.03263,749.00325 6.98984,-2.68973 V 692.99808 H -143.839 l -9.95397,2.49751 v 53.24308 z"
+         id="path2009-3"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         style="fill:#ffe6e6;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -108.03263,749.00325 v -53.50766 l 6.98984,-2.49751"
+         id="path2011-6"
+         sodipodi:nodetypes="ccc" />
+      <path
+         style="fill:#ffe6e6;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -108.03263,695.49559 h -45.76034"
+         id="path2013-3"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       id="g2057-9"
+       style="display:inline;opacity:1;fill:#e2f7fe;fill-opacity:0.9;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168"
+       transform="translate(6.4758891,96.724852)">
+      <path
+         style="fill:#e2f7fe;fill-opacity:0.9;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -141.23341,757.44843 -59.4942,-10e-6 0.0484,-70.72617 h 59.35222 z"
+         id="path1968-2"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         style="fill:#e2f7fe;fill-opacity:0.9;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -141.23341,757.44841 0.61217,-0.34087 0.0132,-70.80304 -0.71899,0.41775 0.0936,70.72618 z"
+         id="path1970-4"
+         sodipodi:nodetypes="cccccc" />
+    </g>
+    <path
+       style="display:inline;opacity:1;fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -234.92428,845.08822 1.17778,-2.8395 8.23432,-0.012 0.0371,5.25696 -2.62369,1.16668 z"
+       id="path2065-4"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="display:inline;opacity:1;fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -225.5122,842.23668 -5.52422,4.34806"
+       id="path2067-3"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="display:inline;opacity:1;fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -235.35993,844.09823 -3.77857,1.92628 2.91786,3.64602 8.99584,-5.55625 z"
+       id="path2059-1"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="display:inline;opacity:1;fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -227.2248,844.11428 -0.0468,6.5864 -3.18739,1.98781 -0.0288,-6.66498 z"
+       id="path2061-0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="display:inline;opacity:1;fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -230.45899,852.68849 -8.60741,0.004 -0.0721,-6.66798 8.65073,-10e-4 z"
+       id="path2063-1"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="display:inline;opacity:1;fill:none;stroke:#ff6b6b;stroke-width:0.564999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -229.89403,786.75874 1.48364,-0.52032 -1.04246,-0.45457"
+       id="path2174-6"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="display:inline;opacity:1;fill:none;stroke:#4972d1;stroke-width:0.564999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -231.8964,782.56352 Z"
+       id="path2176-1"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="display:inline;opacity:1;fill:none;stroke:#4972d1;stroke-width:0.564999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -232.20776,783.76423 0.8615,-0.82441 -1.58466,0.24544"
+       id="path2178-2"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="display:inline;opacity:1;fill:none;stroke:#33c833;stroke-width:0.564999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -238.71095,778.82176 0.51098,-1.18232 0.52837,1.18799"
+       id="path2180-2"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="display:inline;opacity:1;fill:none;stroke:#4972d1;stroke-width:0.564999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -238.19997,786.23842 6.85371,-3.2986"
+       id="path2182-0"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;opacity:1;fill:none;stroke:#33c833;stroke-width:0.564999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -238.19997,786.23842 v -8.59898"
+       id="path2184-3"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="display:inline;opacity:1;fill:none;stroke:#ff6b6b;stroke-width:0.564999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -238.19997,786.23842 h 9.78958"
+       id="path2172-1"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="display:inline;opacity:1;fill:#e2f7fe;fill-opacity:0.901961;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -134.13214,783.02937 -58.54428,-0.0115 -1.5269,0.42924 59.35219,2e-5 z"
+       id="path2194"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <g
+       id="g2224"
+       transform="translate(28.764599,128.08737)"
+       style="display:inline;opacity:1;fill:#ffe6e6;fill-opacity:0.9;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168">
+      <path
+         style="fill:#ffe6e6;fill-opacity:0.9;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -201.13158,722.89251 29.84192,-9.78419 v -18.25815 h -43.32538 l -31.71561,9.59197 v 18.26328 z"
+         id="path2218"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         style="fill:#ffe6e6;fill-opacity:0.9;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -201.13158,722.89251 v -18.45037 l 29.84192,-9.59197"
+         id="path2220"
+         sodipodi:nodetypes="ccc" />
+      <path
+         style="fill:#ffe6e6;fill-opacity:0.9;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -201.13158,704.44214 h -45.19907"
+         id="path2222"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       id="g2027-1"
+       transform="translate(28.764599,101.36445)"
+       style="display:inline;opacity:1;fill:#ffe6e6;fill-opacity:0.9;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168">
+      <path
+         style="fill:#ffe6e6;fill-opacity:0.9;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -201.13158,722.89251 29.84192,-9.78419 v -18.25815 h -43.32538 l -31.71561,9.59197 v 18.26328 z"
+         id="path1997-3"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         style="fill:#ffe6e6;fill-opacity:0.9;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -201.13158,722.89251 v -18.45037 l 29.84192,-9.59197"
+         id="path1999-4"
+         sodipodi:nodetypes="ccc" />
+      <path
+         style="fill:#ffe6e6;fill-opacity:0.9;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -201.13158,704.44214 h -45.19907"
+         id="path2002-9"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <path
+       style="display:inline;opacity:1;fill:#e2e6f4;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -99.515343,776.05362 -58.544277,-0.0115 -1.5269,0.42924 59.35219,2e-5 z"
+       id="path2361"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\anatomy.png"
+       inkscape:export-xdpi="200.22168"
+       inkscape:export-ydpi="200.22168" />
+    <path
+       style="display:inline;opacity:1;fill:#5e7a47;fill-opacity:1;stroke:none;stroke-width:0.264385px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -81.499595,624.79596 c 0,0 -4.226607,1.52135 -9.180923,3.96875 -4.278402,2.11351 -12.878792,2.64583 -12.878792,2.64583 0,0 -35.89554,-1.78594 -62.06143,5.55625 0,0 -39.73865,-3.57188 -54.46713,3.30728 l 138.588265,10e-6 z"
+       id="path2373"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       sodipodi:nodetypes="csccccc" />
+    <rect
+       style="fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2375"
+       width="0.60144889"
+       height="1.883485"
+       x="-142.17426"
+       y="605.90509"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2377"
+       width="0.60144889"
+       height="1.883485"
+       x="-139.24496"
+       y="608.26746"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2379"
+       width="0.60144889"
+       height="1.883485"
+       x="-135.60693"
+       y="606.8028"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2381"
+       width="0.60144889"
+       height="1.883485"
+       x="-131.6618"
+       y="606.46887"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2383"
+       width="0.60144889"
+       height="1.883485"
+       x="-128.73248"
+       y="608.83124"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2385"
+       width="0.60144889"
+       height="1.883485"
+       x="-125.09444"
+       y="607.36658"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2387"
+       width="0.60144889"
+       height="1.883485"
+       x="-126.27563"
+       y="611.00458"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2389"
+       width="0.60144889"
+       height="1.883485"
+       x="-123.34634"
+       y="613.36694"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2391"
+       width="0.60144889"
+       height="1.883485"
+       x="-119.70831"
+       y="611.90228"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2393"
+       width="0.60144889"
+       height="1.883485"
+       x="-122.07064"
+       y="605.76013"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2395"
+       width="0.60144889"
+       height="1.883485"
+       x="-119.14133"
+       y="608.1225"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2397"
+       width="0.60144889"
+       height="1.883485"
+       x="-115.50331"
+       y="606.65784"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2399"
+       width="0.60144889"
+       height="1.883485"
+       x="-136.90622"
+       y="610.95734"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2401"
+       width="0.60144889"
+       height="1.883485"
+       x="-130.38614"
+       y="613.08344"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2403"
+       width="0.60144889"
+       height="1.883485"
+       x="-132.65399"
+       y="610.5321"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <g
+       id="g2409"
+       transform="translate(-235.9126,334.29385)"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png">
+      <path
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 27.151904,246.35959 c -0.732783,-0.87161 -4.414616,-0.2247 -3.961075,2.65136 0.329282,0.98072 1.466973,2.96254 5.026195,0.85466 0,0 1.242634,1.86395 4.748654,0.48817 0,0 2.440886,2.6628 6.967645,0 0,0 5.369971,5.41435 11.450023,-0.0887 0,0 4.748654,5.23682 11.450036,-0.0444 0,0 4.171705,2.97342 7.89962,-0.5326 0,0 1.997096,2.08586 4.260482,-0.0444 l 3.683627,0.0351 c 0.572844,-0.008 1.029692,-0.015 1.439329,-0.27042 0.895804,-0.60909 2.494102,-2.10841 -0.906868,-3.44819 0,0 1.109502,-4.21609 -3.949811,-3.55039 0,0 -2.79594,-8.4322 -9.807966,-1.95273 0,0 -1.065121,-1.59767 -2.79594,-0.93197 0,0 -2.130241,-2.4409 -5.68063,-1.28702 0,0 -0.849588,-1.58172 -2.245027,-2.93627 -1.181355,-1.14675 -4.267018,-2.35046 -7.352854,-0.34139 -0.816697,0.53172 -1.354617,1.29793 -2.1628,2.78947 0,0 -3.994205,-0.79883 -4.038587,2.52967 0,0 -1.952714,-0.0444 -2.307754,1.86395 0,0 -4.082956,-2.21899 -7.145172,1.42016 0,0 -3.816665,-0.62132 -4.571127,2.79594 z"
+         id="path2405"
+         sodipodi:nodetypes="ccccccccccccccccssccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.352833px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 67.055217,251.23425 c 0,0 -3.429976,-4.25726 -6.773524,-1.68817 0,0 -3.689189,-1.24468 -5.716306,0.0251 0,0 -1.287524,-2.60078 -4.532329,-1.49816 0,0 -5.702033,-11.5931 -12.758704,-0.28354 0,0 -4.325111,-1.72557 -4.325111,2.40132 0,0 2.573247,2.73358 7.010808,-0.0263 0,0 5.446658,5.54153 11.431577,-0.10654 0,0 4.740041,5.36379 11.438831,-0.0287 1.456771,0.96427 2.967826,1.30569 4.160446,1.20801 z"
+         id="path2407"
+         sodipodi:nodetypes="ccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <rect
+       style="fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2411"
+       width="0.60144889"
+       height="1.883485"
+       x="-196.23347"
+       y="590.44641"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2413"
+       width="0.60144889"
+       height="1.883485"
+       x="-193.30418"
+       y="592.80878"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2415"
+       width="0.60144889"
+       height="1.883485"
+       x="-189.66615"
+       y="591.34412"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2417"
+       width="0.60144889"
+       height="1.883485"
+       x="-185.72102"
+       y="591.01019"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2419"
+       width="0.60144889"
+       height="1.883485"
+       x="-182.7917"
+       y="593.37256"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2421"
+       width="0.60144889"
+       height="1.883485"
+       x="-179.15367"
+       y="591.9079"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2423"
+       width="0.60144889"
+       height="1.883485"
+       x="-180.33485"
+       y="595.5459"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2425"
+       width="0.60144889"
+       height="1.883485"
+       x="-177.40556"
+       y="597.90826"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2427"
+       width="0.60144889"
+       height="1.883485"
+       x="-173.76753"
+       y="596.4436"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2429"
+       width="0.60144889"
+       height="1.883485"
+       x="-176.12987"
+       y="590.30145"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2431"
+       width="0.60144889"
+       height="1.883485"
+       x="-173.20055"
+       y="592.66382"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2433"
+       width="0.60144889"
+       height="1.883485"
+       x="-169.56253"
+       y="591.19916"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2435"
+       width="0.60144889"
+       height="1.883485"
+       x="-190.96544"
+       y="595.49866"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2437"
+       width="0.60144889"
+       height="1.883485"
+       x="-184.44536"
+       y="597.62476"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2439"
+       width="0.60144889"
+       height="1.883485"
+       x="-186.71321"
+       y="595.07343"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <g
+       id="g2445"
+       transform="matrix(1.0101851,0,0,1.0523569,-302.36911,146.25712)"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png"
+       style="fill:#ececec">
+      <path
+         style="display:inline;opacity:1;fill:#ececec;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 180.44763,393.82892 c -1.63694,-0.27084 -2.0885,-0.51161 -2.0885,-0.51161 0,0 -0.64913,-0.21066 1.15716,-0.63198 1.80625,-0.42132 -1.52406,-0.48151 -1.52406,-0.48151 l -4.14874,-0.0602 c 0,0 -7.45083,-3.09971 -14.19611,0.66208 0,0 -2.54003,-2.46774 -9.22885,2.91916 0,0 -1.94737,-0.99312 -5.1648,1.50471 0,0 -13.40583,1.47463 -0.22577,1.6251 l 12.74973,0.0857 c 0.2803,-2.8e-4 0.62179,8.9e-4 0.86564,0.0153 0.70412,0.0477 3.08214,0.26901 0.26617,0.96346 -0.41494,0.077 -0.60661,0.069 -1.23897,0.0884 l -10.21682,0.10401 c -0.63791,-0.0113 -1.0243,0.0614 -1.42275,0.15597 -0.99527,0.23836 -2.34444,0.71641 0.74681,1.08507 l 19.92534,-0.0602 c 0,0 4.34632,0.12037 6.9146,-0.90284 0,0 16.51036,1.80566 20.85668,0.84264 0,0 9.84977,-2.16679 0.36689,-3.88217 0,0 -10.59643,-1.92143 -3.25122,-2.29289 0.42588,-0.006 0.84187,-0.0523 1.20123,-0.10433 1.19047,-0.17346 3.15494,-0.60012 -2.69061,-0.98758 -3.14562,-0.30619 -6.48035,0.3034 -9.65305,-0.13627 z"
+         id="path2441"
+         sodipodi:nodetypes="ccscccccccccccccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="display:inline;opacity:1;fill:#ececec;fill-opacity:1;stroke:none;stroke-width:0.245222px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 167.35117,399.85531 c 0,0 6.05002,-4.5632 16.13337,-0.69608 l 6.65746,0.23202 c 0,0 2.40542,0.23204 0.0244,0.73476 0,0 -8.10815,0.31444 -9.46372,0.76882 0,0 -2.42492,-0.20619 -3.38089,-0.29272 -2.01588,-0.18248 -1.33338,-0.11286 -3.70044,-0.36567 -0.0122,-0.001 -0.0126,-0.002 -0.0237,0.002 -0.92197,0.36751 -1.11859,0.42335 -2.87978,0.68894 -0.82907,0.0677 -0.97381,0.14531 -2.49161,0.20316 l -7.69473,0.0286 c 0,0 2.1304,-2.30932 6.81977,-1.30389 z"
+         id="path2443"
+         sodipodi:nodetypes="cccccsssccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <g
+       id="g2451"
+       transform="matrix(1.0101851,0,0,1.0523569,-395.16509,141.01864)"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png">
+      <path
+         style="display:inline;opacity:1;fill:#ffffff;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 180.44763,393.82892 c -1.63694,-0.27084 -2.0885,-0.51161 -2.0885,-0.51161 0,0 -0.64913,-0.21066 1.15716,-0.63198 1.80625,-0.42132 -1.52406,-0.48151 -1.52406,-0.48151 l -4.14874,-0.0602 c 0,0 -7.45083,-3.09971 -14.19611,0.66208 0,0 -2.54003,-2.46774 -9.22885,2.91916 0,0 -1.94737,-0.99312 -5.1648,1.50471 0,0 -13.40583,1.47463 -0.22577,1.6251 l 12.74973,0.0857 c 0.2803,-2.8e-4 0.62179,8.9e-4 0.86564,0.0153 0.70412,0.0477 3.08214,0.26901 0.26617,0.96346 -0.41494,0.077 -0.60661,0.069 -1.23897,0.0884 l -10.21682,0.10401 c -0.63791,-0.0113 -1.0243,0.0614 -1.42275,0.15597 -0.99527,0.23836 -2.34444,0.71641 0.74681,1.08507 l 19.92534,-0.0602 c 0,0 4.34632,0.12037 6.9146,-0.90284 0,0 16.51036,1.80566 20.85668,0.84264 0,0 9.84977,-2.16679 0.36689,-3.88217 0,0 -10.59643,-1.92143 -3.25122,-2.29289 0.42588,-0.006 0.84187,-0.0523 1.20123,-0.10433 1.19047,-0.17346 3.15494,-0.60012 -2.69061,-0.98758 -3.14562,-0.30619 -6.48035,0.3034 -9.65305,-0.13627 z"
+         id="path2447"
+         sodipodi:nodetypes="ccscccccccccccccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.245222px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 167.35117,399.85531 c 0,0 6.05002,-4.5632 16.13337,-0.69608 l 6.65746,0.23202 c 0,0 2.40542,0.23204 0.0244,0.73476 0,0 -8.10815,0.31444 -9.46372,0.76882 0,0 -2.42492,-0.20619 -3.38089,-0.29272 -2.01588,-0.18248 -1.33338,-0.11286 -3.70044,-0.36567 -0.0122,-0.001 -0.0126,-0.002 -0.0237,0.002 -0.92197,0.36751 -1.11859,0.42335 -2.87978,0.68894 -0.82907,0.0677 -0.97381,0.14531 -2.49161,0.20316 l -7.69473,0.0286 c 0,0 2.1304,-2.30932 6.81977,-1.30389 z"
+         id="path2449"
+         sodipodi:nodetypes="cccccsssccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <g
+       id="g2509"
+       transform="translate(-235.9126,334.29385)"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png"
+       style="fill:#ececec;stroke:none">
+      <path
+         style="fill:#ececec;stroke:none;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 40.164833,250.50261 c 0,0 5.138461,5.26552 11.218513,-0.23753 0,0 4.748654,5.23682 11.450036,-0.0444 0,0 4.171705,2.97342 7.89962,-0.5326 0,0 1.997096,2.08586 4.260482,-0.0444 l 3.683627,0.0351 c 0.572844,-0.008 1.029692,-0.015 1.439329,-0.27042 0.895804,-0.60909 2.494102,-2.10841 -0.906868,-3.44819 0,0 1.109502,-4.21609 -3.949811,-3.55039 0,0 -2.79594,-8.4322 -9.807966,-1.95273 0,0 -1.065121,-1.59767 -2.79594,-0.93197 0,0 -2.130241,-2.4409 -5.68063,-1.28702 0,0 -0.849588,-1.58172 -2.245027,-2.93627 -1.181355,-1.14675 -4.267018,-2.35046 -7.352854,-0.34139 -0.816697,0.53172 -1.354617,1.29793 -2.1628,2.78947 0,0 -3.994205,-0.79883 -4.038587,2.52967 -0.290639,-0.0426 -0.854342,-0.39518 -0.858528,-0.11169 z"
+         id="path2505"
+         sodipodi:nodetypes="ccccccccccccssccsc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <g
+       id="g2469"
+       transform="translate(-302.33848,354.42971)"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png">
+      <path
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 27.151904,246.35959 c -0.732783,-0.87161 -4.414616,-0.2247 -3.961075,2.65136 0.329282,0.98072 1.466973,2.96254 5.026195,0.85466 0,0 1.242634,1.86395 4.748654,0.48817 0,0 2.440886,2.6628 6.967645,0 0,0 5.369971,5.41435 11.450023,-0.0887 0,0 4.748654,5.23682 11.450036,-0.0444 0,0 4.171705,2.97342 7.89962,-0.5326 0,0 1.997096,2.08586 4.260482,-0.0444 l 3.683627,0.0351 c 0.572844,-0.008 1.029692,-0.015 1.439329,-0.27042 0.895804,-0.60909 2.494102,-2.10841 -0.906868,-3.44819 0,0 1.109502,-4.21609 -3.949811,-3.55039 0,0 -2.79594,-8.4322 -9.807966,-1.95273 0,0 -1.065121,-1.59767 -2.79594,-0.93197 0,0 -2.130241,-2.4409 -5.68063,-1.28702 0,0 -0.849588,-1.58172 -2.245027,-2.93627 -1.181355,-1.14675 -4.267018,-2.35046 -7.352854,-0.34139 -0.816697,0.53172 -1.354617,1.29793 -2.1628,2.78947 0,0 -3.994205,-0.79883 -4.038587,2.52967 0,0 -1.952714,-0.0444 -2.307754,1.86395 0,0 -4.082956,-2.21899 -7.145172,1.42016 0,0 -3.816665,-0.62132 -4.571127,2.79594 z"
+         id="path2465"
+         sodipodi:nodetypes="ccccccccccccccccssccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.352833px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 67.055217,251.23425 c 0,0 -3.429976,-4.25726 -6.773524,-1.68817 0,0 -3.689189,-1.24468 -5.716306,0.0251 0,0 -1.287524,-2.60078 -4.532329,-1.49816 0,0 -5.702033,-11.5931 -12.758704,-0.28354 0,0 -4.325111,-1.72557 -4.325111,2.40132 0,0 2.573247,2.73358 7.010808,-0.0263 0,0 5.446658,5.54153 11.431577,-0.10654 0,0 4.740041,5.36379 11.438831,-0.0287 1.456771,0.96427 2.967826,1.30569 4.160446,1.20801 z"
+         id="path2467"
+         sodipodi:nodetypes="ccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <rect
+       style="fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2471"
+       width="0.60144889"
+       height="1.883485"
+       x="-262.84644"
+       y="610.58228"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2473"
+       width="0.60144889"
+       height="1.883485"
+       x="-259.91714"
+       y="612.94464"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2475"
+       width="0.60144889"
+       height="1.883485"
+       x="-256.27911"
+       y="611.47998"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2477"
+       width="0.60144889"
+       height="1.883485"
+       x="-252.33398"
+       y="611.14606"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2479"
+       width="0.60144889"
+       height="1.883485"
+       x="-249.40466"
+       y="613.50842"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2481"
+       width="0.60144889"
+       height="1.883485"
+       x="-245.76663"
+       y="612.04376"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2483"
+       width="0.60144889"
+       height="1.883485"
+       x="-246.94781"
+       y="615.68176"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2485"
+       width="0.60144889"
+       height="1.883485"
+       x="-244.01852"
+       y="618.04413"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2487"
+       width="0.60144889"
+       height="1.883485"
+       x="-240.38049"
+       y="616.57947"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2489"
+       width="0.60144889"
+       height="1.883485"
+       x="-242.74283"
+       y="610.43732"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2491"
+       width="0.60144889"
+       height="1.883485"
+       x="-239.81352"
+       y="612.79968"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2493"
+       width="0.60144889"
+       height="1.883485"
+       x="-236.17551"
+       y="611.33502"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2495"
+       width="0.60144889"
+       height="1.883485"
+       x="-257.5784"
+       y="615.63452"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2497"
+       width="0.60144889"
+       height="1.883485"
+       x="-251.05832"
+       y="617.76062"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <rect
+       style="display:inline;opacity:1;fill:#e6eff4;fill-opacity:1;stroke:#000000;stroke-width:0.189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2499"
+       width="0.60144889"
+       height="1.883485"
+       x="-253.32617"
+       y="615.20929"
+       ry="0.30072445"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png" />
+    <g
+       id="g2537"
+       transform="translate(-235.9126,334.29385)"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png"
+       style="fill:none">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 27.151904,246.35959 c -0.732783,-0.87161 -4.414616,-0.2247 -3.961075,2.65136 0.329282,0.98072 1.466973,2.96254 5.026195,0.85466 0,0 1.242634,1.86395 4.748654,0.48817 0,0 2.440886,2.6628 6.967645,0 0,0 5.369971,5.41435 11.450023,-0.0887 0,0 4.748654,5.23682 11.450036,-0.0444 0,0 4.171705,2.97342 7.89962,-0.5326 0,0 1.997096,2.08586 4.260482,-0.0444 l 3.683627,0.0351 c 0.572844,-0.008 1.029692,-0.015 1.439329,-0.27042 0.895804,-0.60909 2.494102,-2.10841 -0.906868,-3.44819 0,0 1.109502,-4.21609 -3.949811,-3.55039 0,0 -2.79594,-8.4322 -9.807966,-1.95273 0,0 -1.065121,-1.59767 -2.79594,-0.93197 0,0 -2.130241,-2.4409 -5.68063,-1.28702 0,0 -0.849588,-1.58172 -2.245027,-2.93627 -1.181355,-1.14675 -4.267018,-2.35046 -7.352854,-0.34139 -0.816697,0.53172 -1.354617,1.29793 -2.1628,2.78947 0,0 -3.994205,-0.79883 -4.038587,2.52967 0,0 -1.952714,-0.0444 -2.307754,1.86395 0,0 -4.082956,-2.21899 -7.145172,1.42016 0,0 -3.816665,-0.62132 -4.571127,2.79594 z"
+         id="path2533"
+         sodipodi:nodetypes="ccccccccccccccccssccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:0.352833px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 67.055217,251.23425 c 0,0 -3.429976,-4.25726 -6.773524,-1.68817 0,0 -3.689189,-1.24468 -5.716306,0.0251 0,0 -1.287524,-2.60078 -4.532329,-1.49816 0,0 -5.702033,-11.5931 -12.758704,-0.28354 0,0 -4.325111,-1.72557 -4.325111,2.40132 0,0 2.573247,2.73358 7.010808,-0.0263 0,0 5.446658,5.54153 11.431577,-0.10654 0,0 4.740041,5.36379 11.438831,-0.0287 1.456771,0.96427 2.967826,1.30569 4.160446,1.20801 z"
+         id="path2535"
+         sodipodi:nodetypes="ccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <rect
+       style="fill:#000000;fill-opacity:0.471774;stroke:#000000;stroke-width:0.729449;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2501"
+       width="113.25955"
+       height="105.43776"
+       x="-194.72853"
+       y="534.64923"
+       ry="0"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\rain proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <rect
+       style="fill:url(#linearGradient2785);fill-opacity:1;stroke:none;stroke-width:0.437587;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2549"
+       width="226.31682"
+       height="106.29912"
+       x="-51.404549"
+       y="534.64923"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <path
+       id="circle2761"
+       style="fill:url(#radialGradient2771);fill-opacity:1;stroke:none;stroke-width:6.8132;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 232.90234 2020.7207 L 232.90234 2264.0488 A 169.75 169.75 0 0 0 401.5 2094.3027 A 169.75 169.75 0 0 0 384.72266 2020.7207 L 232.90234 2020.7207 z "
+       transform="scale(0.26458333)"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <circle
+       style="fill:#ffef6b;fill-opacity:1;stroke:none;stroke-width:0.363717;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2759"
+       cx="61.317188"
+       cy="554.11768"
+       r="9.0619793"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <path
+       style="fill:#96b266;fill-opacity:1;stroke:none;stroke-width:0.276514px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -51.60901,624.03109 c 0,0 13.43772,-3.04271 26.00848,3.0427 0,0 13.14875,-2.77812 21.96275,-0.52916 0,0 26.58647,3.70417 79.03693,-2.77813 0,0 8.38051,-1.52135 17.1945,1.45521 0,0 10.98137,-4.43177 20.87905,0.46302 0,0 19.86761,-4.10104 42.04707,-1.38906 0,0 13.72671,1.91823 19.36188,-0.26458 V 641.229 h -226.5629 z"
+       id="path2551"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <path
+       style="display:inline;opacity:1;fill:#5e7a47;fill-opacity:1;stroke:none;stroke-width:0.264385px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -51.68126,625.75087 c 0,0 4.49119,0.85989 8.91634,-0.92604 4.42516,-1.78594 13.14337,7.54062 13.14337,7.54062 0,0 14.46429,-8.92969 33.08955,4.49792 0,0 18.0969,-2.51354 32.82538,4.36562 h -87.97463 z"
+       id="path2553"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <path
+       style="display:inline;opacity:1;fill:#5e7a47;fill-opacity:1;stroke:none;stroke-width:0.264385px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 174.88165,625.75088 c 0,0 -4.2266,1.52135 -9.18092,3.96875 -4.2784,2.11351 -12.87879,2.64583 -12.87879,2.64583 0,0 -35.89554,-1.78594 -62.06143,5.55625 0,0 -39.73865,-3.57188 -54.46713,3.30728 l 138.58826,1e-5 z"
+       id="path2569"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729"
+       sodipodi:nodetypes="csccccc" />
+    <g
+       id="g2719"
+       transform="matrix(1.7099517,0,0,1.7099517,-288.18184,112.18793)"
+       style="stroke-width:0.175444;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729">
+      <path
+         style="display:inline;opacity:1;fill:#ffffff;stroke:#000000;stroke-width:0.175444;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 158.25776,268.39845 c 0,0 -2.40606,-5.61407 -5.47087,-0.25786 0,0 -1.51813,-0.0571 -1.54671,1.46078 0,0 -1.7759,0.51575 -1.28896,2.26284 0,0 -3.2894,2.62793 0.21169,5.36366 0.16617,0.10713 0.39888,0.22604 0.72035,0.22434 l 9.20051,-0.0438 c 0.29792,-0.0171 0.53661,-0.0791 0.75635,-0.18587 0.91376,-0.55528 3.19545,-2.36042 0.42302,-5.31503 0,0 0.1015,-0.94178 -0.98235,-1.05317 0,0 0.72355,-2.27358 -2.02312,-2.45327 z"
+         id="path2715"
+         sodipodi:nodetypes="ccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.175444;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 148.81036,275.24936 c 0,0 0.10803,-0.47974 0.75551,-0.36202 0,0 -0.23543,-1.35368 1.53024,-1.44197 0,0 2.58968,-5.7973 5.44417,0.23542 0,0 2.23652,-0.412 1.85397,2.08939 0,0 1.3568,0.0512 1.3568,1.49306 l -9.14232,0.0516 c 0,0 -1.19424,-0.43453 -1.79837,-2.06571 z"
+         id="path2717"
+         sodipodi:nodetypes="ccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <g
+       id="g2725"
+       transform="matrix(1.7099517,0,0,1.7099517,-114.63326,133.17101)"
+       style="stroke-width:0.175444;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729">
+      <path
+         style="display:inline;opacity:1;fill:#ffffff;stroke:#000000;stroke-width:0.175444;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 158.25776,268.39845 c 0,0 -2.40606,-5.61407 -5.47087,-0.25786 0,0 -1.51813,-0.0571 -1.54671,1.46078 0,0 -1.7759,0.51575 -1.28896,2.26284 0,0 -3.2894,2.62793 0.21169,5.36366 0.16617,0.10713 0.39888,0.22604 0.72035,0.22434 l 9.20051,-0.0438 c 0.29792,-0.0171 0.53661,-0.0791 0.75635,-0.18587 0.91376,-0.55528 3.19545,-2.36042 0.42302,-5.31503 0,0 0.1015,-0.94178 -0.98235,-1.05317 0,0 0.72355,-2.27358 -2.02312,-2.45327 z"
+         id="path2721"
+         sodipodi:nodetypes="ccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.175444;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 148.81036,275.24936 c 0,0 0.10803,-0.47974 0.75551,-0.36202 0,0 -0.23543,-1.35368 1.53024,-1.44197 0,0 2.58968,-5.7973 5.44417,0.23542 0,0 2.23652,-0.412 1.85397,2.08939 0,0 1.3568,0.0512 1.3568,1.49306 l -9.14232,0.0516 c 0,0 -1.19424,-0.43453 -1.79837,-2.06571 z"
+         id="path2723"
+         sodipodi:nodetypes="ccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <g
+       id="g2731"
+       transform="matrix(0.73606503,0,0,0.73606503,-151.07973,393.43748)"
+       style="stroke-width:0.407573;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729">
+      <path
+         style="display:inline;opacity:1;fill:#ffffff;stroke:#000000;stroke-width:0.407573;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 158.25776,268.39845 c 0,0 -2.40606,-5.61407 -5.47087,-0.25786 0,0 -1.51813,-0.0571 -1.54671,1.46078 0,0 -1.7759,0.51575 -1.28896,2.26284 0,0 -3.2894,2.62793 0.21169,5.36366 0.16617,0.10713 0.39888,0.22604 0.72035,0.22434 l 9.20051,-0.0438 c 0.29792,-0.0171 0.53661,-0.0791 0.75635,-0.18587 0.91376,-0.55528 3.19545,-2.36042 0.42302,-5.31503 0,0 0.1015,-0.94178 -0.98235,-1.05317 0,0 0.72355,-2.27358 -2.02312,-2.45327 z"
+         id="path2727"
+         sodipodi:nodetypes="ccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.407573;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 148.81036,275.24936 c 0,0 0.10803,-0.47974 0.75551,-0.36202 0,0 -0.23543,-1.35368 1.53024,-1.44197 0,0 2.58968,-5.7973 5.44417,0.23542 0,0 2.23652,-0.412 1.85397,2.08939 0,0 1.3568,0.0512 1.3568,1.49306 l -9.14232,0.0516 c 0,0 -1.19424,-0.43453 -1.79837,-2.06571 z"
+         id="path2729"
+         sodipodi:nodetypes="ccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <g
+       id="g2737"
+       transform="matrix(-0.73606503,0,0,0.73606503,90.109535,396.08331)"
+       style="stroke-width:0.407573;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729">
+      <path
+         style="display:inline;opacity:1;fill:#ffffff;stroke:#000000;stroke-width:0.407573;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 158.25776,268.39845 c 0,0 -2.40606,-5.61407 -5.47087,-0.25786 0,0 -1.51813,-0.0571 -1.54671,1.46078 0,0 -1.7759,0.51575 -1.28896,2.26284 0,0 -3.2894,2.62793 0.21169,5.36366 0.16617,0.10713 0.39888,0.22604 0.72035,0.22434 l 9.20051,-0.0438 c 0.29792,-0.0171 0.53661,-0.0791 0.75635,-0.18587 0.91376,-0.55528 3.19545,-2.36042 0.42302,-5.31503 0,0 0.1015,-0.94178 -0.98235,-1.05317 0,0 0.72355,-2.27358 -2.02312,-2.45327 z"
+         id="path2733"
+         sodipodi:nodetypes="ccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.407573;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 148.81036,275.24936 c 0,0 0.10803,-0.47974 0.75551,-0.36202 0,0 -0.23543,-1.35368 1.53024,-1.44197 0,0 2.58968,-5.7973 5.44417,0.23542 0,0 2.23652,-0.412 1.85397,2.08939 0,0 1.3568,0.0512 1.3568,1.49306 l -9.14232,0.0516 c 0,0 -1.19424,-0.43453 -1.79837,-2.06571 z"
+         id="path2735"
+         sodipodi:nodetypes="ccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <g
+       id="g2743"
+       transform="matrix(0.73606503,0,0,0.73606503,0.79109666,364.30994)"
+       style="stroke-width:0.407573;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729">
+      <path
+         style="display:inline;opacity:1;fill:#ffffff;stroke:#000000;stroke-width:0.407573;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 158.25776,268.39845 c 0,0 -2.40606,-5.61407 -5.47087,-0.25786 0,0 -1.51813,-0.0571 -1.54671,1.46078 0,0 -1.7759,0.51575 -1.28896,2.26284 0,0 -3.2894,2.62793 0.21169,5.36366 0.16617,0.10713 0.39888,0.22604 0.72035,0.22434 l 9.20051,-0.0438 c 0.29792,-0.0171 0.53661,-0.0791 0.75635,-0.18587 0.91376,-0.55528 3.19545,-2.36042 0.42302,-5.31503 0,0 0.1015,-0.94178 -0.98235,-1.05317 0,0 0.72355,-2.27358 -2.02312,-2.45327 z"
+         id="path2739"
+         sodipodi:nodetypes="ccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.407573;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 148.81036,275.24936 c 0,0 0.10803,-0.47974 0.75551,-0.36202 0,0 -0.23543,-1.35368 1.53024,-1.44197 0,0 2.58968,-5.7973 5.44417,0.23542 0,0 2.23652,-0.412 1.85397,2.08939 0,0 1.3568,0.0512 1.3568,1.49306 l -9.14232,0.0516 c 0,0 -1.19424,-0.43453 -1.79837,-2.06571 z"
+         id="path2741"
+         sodipodi:nodetypes="ccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <g
+       id="g2749"
+       transform="matrix(0.73606503,0,0,0.73606503,13.358805,360.07661)"
+       style="stroke-width:0.407573;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729">
+      <path
+         style="display:inline;opacity:1;fill:#ffffff;stroke:#000000;stroke-width:0.407573;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 158.25776,268.39845 c 0,0 -2.40606,-5.61407 -5.47087,-0.25786 0,0 -1.51813,-0.0571 -1.54671,1.46078 0,0 -1.7759,0.51575 -1.28896,2.26284 0,0 -3.2894,2.62793 0.21169,5.36366 0.16617,0.10713 0.39888,0.22604 0.72035,0.22434 l 9.20051,-0.0438 c 0.29792,-0.0171 0.53661,-0.0791 0.75635,-0.18587 0.91376,-0.55528 3.19545,-2.36042 0.42302,-5.31503 0,0 0.1015,-0.94178 -0.98235,-1.05317 0,0 0.72355,-2.27358 -2.02312,-2.45327 z"
+         id="path2745"
+         sodipodi:nodetypes="ccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.407573;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 148.81036,275.24936 c 0,0 0.10803,-0.47974 0.75551,-0.36202 0,0 -0.23543,-1.35368 1.53024,-1.44197 0,0 2.58968,-5.7973 5.44417,0.23542 0,0 2.23652,-0.412 1.85397,2.08939 0,0 1.3568,0.0512 1.3568,1.49306 l -9.14232,0.0516 c 0,0 -1.19424,-0.43453 -1.79837,-2.06571 z"
+         id="path2747"
+         sodipodi:nodetypes="ccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <g
+       id="g2755"
+       transform="matrix(0.73606503,0,0,0.73606503,-104.1162,406.53435)"
+       style="stroke-width:0.407573;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729">
+      <path
+         style="display:inline;opacity:1;fill:#ffffff;stroke:#000000;stroke-width:0.407573;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 158.25776,268.39845 c 0,0 -2.40606,-5.61407 -5.47087,-0.25786 0,0 -1.51813,-0.0571 -1.54671,1.46078 0,0 -1.7759,0.51575 -1.28896,2.26284 0,0 -3.2894,2.62793 0.21169,5.36366 0.16617,0.10713 0.39888,0.22604 0.72035,0.22434 l 9.20051,-0.0438 c 0.29792,-0.0171 0.53661,-0.0791 0.75635,-0.18587 0.91376,-0.55528 3.19545,-2.36042 0.42302,-5.31503 0,0 0.1015,-0.94178 -0.98235,-1.05317 0,0 0.72355,-2.27358 -2.02312,-2.45327 z"
+         id="path2751"
+         sodipodi:nodetypes="ccccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+      <path
+         style="fill:#e6eff4;fill-opacity:1;stroke:none;stroke-width:0.407573;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 148.81036,275.24936 c 0,0 0.10803,-0.47974 0.75551,-0.36202 0,0 -0.23543,-1.35368 1.53024,-1.44197 0,0 2.58968,-5.7973 5.44417,0.23542 0,0 2.23652,-0.412 1.85397,2.08939 0,0 1.3568,0.0512 1.3568,1.49306 l -9.14232,0.0516 c 0,0 -1.19424,-0.43453 -1.79837,-2.06571 z"
+         id="path2753"
+         sodipodi:nodetypes="ccccccccc"
+         inkscape:export-xdpi="200.22168"
+         inkscape:export-ydpi="200.22168" />
+    </g>
+    <path
+       fill="currentColor"
+       d="m 61.520183,620.55988 -4.35503,3.5869 v 3.8712 a 0.37793827,0.37793827 0 0 0 0.37795,0.378 l 2.64697,-0.01 a 0.37793827,0.37793827 0 0 0 0.37606,-0.3779 v -2.2608 a 0.37793827,0.37793827 0 0 1 0.37793,-0.378 h 1.51176 a 0.37793827,0.37793827 0 0 1 0.37793,0.378 v 2.2591 a 0.37793827,0.37793827 0 0 0 0.37794,0.3792 l 2.64604,0.01 a 0.37793827,0.37793827 0 0 0 0.37795,-0.378 v -3.8738 l -4.3541,-3.5843 a 0.28794172,0.28794172 0 0 0 -0.3614,0 z m 6.87919,2.438 -1.97473,-1.6278 v -3.2717 a 0.2834537,0.2834537 0 0 0 -0.28345,-0.2835 h -1.32279 a 0.2834537,0.2834537 0 0 0 -0.28345,0.2835 v 1.7151 l -2.1148,-1.7399 a 1.1338148,1.1338148 0 0 0 -1.44089,0 l -5.97922,4.9243 a 0.2834537,0.2834537 0 0 0 -0.0378,0.3992 l 0.60235,0.7323 a 0.2834537,0.2834537 0 0 0 0.39943,0.039 l 5.55616,-4.5763 a 0.28794172,0.28794172 0 0 1 0.3614,0 l 5.55641,4.5763 a 0.2834537,0.2834537 0 0 0 0.39919,-0.038 l 0.60234,-0.7323 a 0.2834537,0.2834537 0 0 0 -0.0402,-0.3999 z"
+       id="path2801"
+       style="fill:#aeaeae;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
+    <rect
+       style="fill:#2b0000;fill-opacity:0;stroke:#000000;stroke-width:0.732318;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2787"
+       width="113.29211"
+       height="106.23816"
+       x="61.605812"
+       y="534.63293"
+       ry="0"
+       inkscape:export-filename="D:\User Data\Workspace\2021-bsc-thesis\doc\img\sky proxy.png"
+       inkscape:export-xdpi="100.0729"
+       inkscape:export-ydpi="100.0729" />
   </g>
 </svg>

@@ -36,9 +36,9 @@ At last, the "UI" section contains the default game objects for a \gls{ui} in Un
 \subsubsection{Scene Anatomy}
 The scene setup is similar to what was originally planned. There are multiple layers of clouds, each rendered by a unique \gls{volumetric} \gls{shader}.
 However, there is no layer for high-level clouds. It turned out that the intricate visual appearance of cirrus clouds was more difficult to simulate than anticipated.
+Also, there is no dedicated layer for ground fog, as the Unity engine already offers a way to include fog into the scene.
 \\
-The current scene anatomy is depicted in the following graphics, as viewed from the side.
-
+The current scene anatomy is depicted in the following graphic, as viewed from the side.
 
 \begin{figure}[H]
     \centering
@@ -53,23 +53,103 @@ The current scene anatomy is depicted in the following graphics, as viewed from 
         \node[inner sep=0pt] at (6,4) 
             {\includegraphics[width=0.8\textwidth]{anatomy.png}};
 
-        \node at (0.3,0.5) {camera};
+        \node at (0.3,0.4) {camera};
 
         % labels
         \node[red] at (2.3,2.1) {$C_{low}$};
         \node[red] at (2.3,4.5) {$C_{mid}$};
-        \node[red] at (9.3,2.2) {$C_{back}$};
-        \node[darkercyan] at (5.00,6.40) {$P_{rain}$};
-        \node[darkercyan] at (7.85,7.05) {$P_{sky}$};
+        \node[red] at (9.65,2.6) {$C_{back}$};
+        \node[darkercyan] at (4.60,6.42) {$P_{rain}$};
+        \node[darkercyan] at (7.50,7.10) {$P_{sky}$};
         \node[tiny] at (00.95,6.52) {$x$};
         \node[tiny] at (-0.06,7.45) {$y$};
-        \node[tiny] at (00.65,6.90) {$z$};
+        \node[tiny] at (00.66,6.91) {$z$};
         
     \end{tikzpicture}
-    \captionof{figure}{Compute shader thread group with labeled dimensions.}
+    \captionof{figure}{Final Unity scene anatomy.}
     \label{img:tikz:techimpl:anatomy}
 \end{figure}
 
+\noindent
+In the scene, there are three cloud layers: \color{red}$C_{low}$\color{black}, \color{red}$C_{mid}$ \color{black} and \color{red}$C_{back}$\color{black}.
+The \gls{shader} for layer \color{red}$C_{low}$ \color{black} handles low-level clouds like the puffy cumulus, while \color{red}$C_{mid}$ \color{black} is responsible for rendering mid-level clouds of the "alto"-type.
+Both front layers use weather data for Bern, Switzerland.
+Behind the two front layers, there is \color{red}$C_{back}$\color{black}, which renders an approximation of cumulonimbus clouds. It uses the weather data of the correspondent location in the distance (either Solothurn or Fribourg) instead of Bern.
+\emptyline
+There are also two \gls{proxyobject}s, which are game objects that substitute a certain visual effect, like rain or the sun's halo.
+They are transparent planes and are placed inbetween the cloud layers.
+
+\clearpage
+
+\noindent
+The \gls{proxyobject} \color{darkercyan}$P_{rain}$ \color{black} is responsible for darkening the scene whenever it rains.
+The same effect could be achieved with \gls{pp}, but using a \gls{proxyobject} offers finer and more customizable control over the effect.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+        \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+        \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
+        \tikzset{icon/.style = {font=\Large}}
+        \tikzset{mini/.style = {font=\footnotesize}}
+        \tikzset{tiny/.style = {font=\tiny}}
+
+        % cloud layer boxes
+        \node[inner sep=0pt] at (7,0) 
+            {\includegraphics[width=0.8\textwidth]{rain proxy.png}};
+
+        % tile label 1
+        \draw (-0.7,4) -- (6.9,4);
+        \draw (-0.7,3.95) -- (-0.7,4.05);
+        \draw (6.9,3.95) -- (6.9,4.05);
+        \node at (3.1,4.3) {without proxy};
+        
+        % tile label 2
+        \draw (7,-4) -- (14.7,-4);
+        \draw (7,-3.95) -- (7,-4.05);
+        \draw (14.7,-3.95) -- (14.7,-4.05);
+        \node at (10.85,-4.3) {proxy in effect};
+        
+    \end{tikzpicture}
+    \captionof{figure}{Desired effect of the rain \gls{proxyplane}.}
+    \label{img:techimpl:rainproxy}
+\end{figure}
+
+\noindent
+The other \gls{proxyobject}, \color{darkercyan}$P_{sky}$\color{black}, makes sure the sun is surrounded by a bright circle of the same color, supporting the strength of the sunlight in the sky.
+This effect is most prominent when the sun is setting or rising, giving the scene a more vibrant and natural look.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+        \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+        \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
+        \tikzset{icon/.style = {font=\Large}}
+        \tikzset{mini/.style = {font=\footnotesize}}
+        \tikzset{tiny/.style = {font=\tiny}}
+
+        % cloud layer boxes
+        \node[inner sep=0pt] at (7,0) 
+            {\includegraphics[width=0.8\textwidth]{sky proxy.png}};
+
+        % tile label 1
+        \draw (-0.7,4) -- (6.9,4);
+        \draw (-0.7,3.95) -- (-0.7,4.05);
+        \draw (6.9,3.95) -- (6.9,4.05);
+        \node at (3.1,4.3) {without proxy};
+        
+        % tile label 2
+        \draw (7,-4) -- (14.7,-4);
+        \draw (7,-3.95) -- (7,-4.05);
+        \draw (14.7,-3.95) -- (14.7,-4.05);
+        \node at (10.85,-4.3) {proxy in effect};
+        
+    \end{tikzpicture}
+    \captionof{figure}{Desired effect of the sky \gls{proxyplane}.}
+    \label{img:techimpl:skyproxy}
+\end{figure}
+
+\clearpage
 
 \subsection{Meteoblue Integration}
 \label{section:techimpl:meteoblue}
@@ -120,8 +200,8 @@ This happens during runtime and is continuously updated.
 After setting up the plugin in Unity, the camera needed to be positioned on top of the Gurten mountain. Also, there needed to be a translation mechanic to move the camera to the top of the Bantiger mountain.
 This was done with via script and is not part of the \emph{ArcGIS} plugin.
 
-\subsection{Shader Architecture}
-\label{section:techimpl:architecture}
+\subsection{Render Process}
+\label{section:techimpl:process}
 The architecture described in the implementation approach in \sectionref{section:impl:layers} was chosen, but underwent some alterations.
 First, 
 TODO

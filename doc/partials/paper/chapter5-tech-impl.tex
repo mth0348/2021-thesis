@@ -25,9 +25,10 @@ The following table displays a list of properties from both data packages and ho
     Wind direction              & Basic (1h)          & Converted form degrees to a directional vector \\ \hline
     Precipitation               & Basic (1h)          & Used for controlling rain particle system and cloud color.\newline Factored into cloud edge highlight colors from sunshine.\newline Factored into skybox colors. \\ \hline
     Precipitation probability   & Basic (1h)          & Included in approximation of precipitation     \\ \hline
-    Cloud coverage low          & Clouds (1h)         & Used unmodified                                \\ \hline
-    Cloud coverage mid          & Clouds (1h)         & Used unmodified                                \\ \hline
-    Cloud coverage high         & Clouds (1h)         & Used unmodified                                \\ \hline
+    Cloud coverage low          & Clouds (1h)         & Used for the weather in Bern                   \\ \hline
+    Cloud coverage mid          & Clouds (1h)         & Used for the weather in Bern                   \\ \hline
+    Cloud coverage high         & Clouds (1h)         & Used for the weather in Bern                   \\ \hline
+    Total cloud coverage        & Clouds (1h)         & Used for the distant weather                   \\ \hline
 \end{tabularx}
 \emptyline
 Other properties like temperature and UV index provide insufficient or irrelevant information and have therefore not been mapped.
@@ -40,7 +41,7 @@ During the research phase of the project, the \emph{ArcGIS Maps SDK for Unity} \
 The plugin was easily installed. The setup process required minimal amount of effort and the plugin was ready to run in no time. 
 
 \begin{figure}[H]
-    \includegraphics[width=\linewidth]{unity-sdk.png}
+    \includegraphics[width=\linewidth]{unity-sdk2.png}
     \caption{ArcGIS Maps SDK for Unity \protect\cite{arcgis:unitysdk}.}
 \end{figure}
 

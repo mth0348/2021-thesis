@@ -239,6 +239,10 @@ In the output texture, each \gls{texel} holds four different \gls{noise} values,
 The compute shader is dispatched only once, at the start of the simulation.
 This saves on a great deal of performance, as the \gls{noise} does not need to be recalculated each frame.
 
+\subsection{Rendering Techniques}
+As mentioned in \sectionref{section:noise:previous}, algorithms that have been documented in the previous project will not be described again.
+The current solution uses techniques like \gls{raymarching}, \gls{lightmarching} and \gls{sunlightforwarding} in a very similar fashion.
+
 \subsection{Shadow Casting}
 \label{section:techimpl:shadow}
 The \gls{volumetric} cloud \gls{shader}s do not contain a \gls{shadowpass}, which means that the cloud objects do not cast shadows themselves.
@@ -255,39 +259,99 @@ However, the problem was solved with an alternative approach to casting shadows.
         \begin{minipage}{0.47\linewidth}
             \includegraphics[width=\linewidth]{shadowcasting1.png}
             \captionof{figure}{Shadow casting: Normally, objects would cast their own shadow in a dedicated \gls{shadowpass}.}
-        \label{img:result:1}
+            \label{img:shadow:casting1}
         \end{minipage}
     \hfill
         \begin{minipage}{0.47\linewidth}
             \includegraphics[width=\linewidth]{shadowcasting2.png}
             \captionof{figure}{Shadow casting substitution: The 3D \gls{noise} texture is sampled again in the ground shader and added as shadow.}
-            \label{img:result:2}
+            \label{img:shadow:casting2}
         \end{minipage}
 \end{figure}
 
 \noindent
-The shader for the ground tile, which is provided by the \emph{ArcGIS} plugin, was modified to read the 3D \gls{noise} texture.
+What \autoref{img:shadow:casting2} shows is not a plane that casts the shadow, but instead an illustration of how the data is used from the same \gls{noise} texture that was used for the clouds.
+Hence, the shader for the ground tile, which is provided by the \emph{ArcGIS} plugin, was modified to read the 3D \gls{noise} texture.
 With that information, the ground shader knows where the clouds will be in the sky and adds a darkened, transparent layer over the existing ground color.
 \emptyline
 This method works well for the current solution, but would there be other objects than clouds, they would not cast shadows for the same reasons.
 
+\clearpage
+
 \subsection{Results}
 \label{section:techimpl:results}
+The final implementation yields great results, visualizing the \emph{meteoblue} weather reports in a variety of different settings, at all times of day.
+As displayed in \autoref{img:result:anatomy}, each cloud layer renders an approximation of the clouds it represents.
+In the low-level layer, there are small puffy \gls{cloudlet}s. In the alto-layer, there are dense fields of clouds and lastly, the distant cloud layer shows high-towering heaps of cumulonimbus approximations.
+
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{anatomy_result.png}
+    \caption{Side-by-side comparison of the cloud layers and their visual outputs.}
+    \label{img:result:anatomy}
+\end{figure}
+
+\noindent
+Combined, the final output shows a diverse scene for the weather conditions extracted from the \emph{meteoblue} data.
+
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{anatomy/all.png}
+    \caption{Final render output of the weather rendering system.}
+    \label{img:result:final1}
+\end{figure}
+
+\clearpage
+
+\noindent
+The current solution is able to render the weather for all times of day. The following figures demonstrate the capabilities of the weather rendering system.
 
 \begin{figure}[H]
     \centering
         \begin{minipage}{0.47\linewidth}
-            \includegraphics[width=\linewidth]{../../journal/results/r2.png}
-            \captionof{figure}{Shadow casting: Normally, objects would cast their own shadow in a dedicated \gls{shadowpass}.}
-            \label{img:shadow:casting1}
+            \includegraphics[width=\linewidth]{results/wheel1.png}
+            \captionof{figure}{Final render output for a partly cloudy morning before sunrise.}
+            \label{img:result:1}
         \end{minipage}
     \hfill
         \begin{minipage}{0.47\linewidth}
-            \includegraphics[width=\linewidth]{../../journal/results/r5.png}
-            \captionof{figure}{Shadow casting substitution: The 3D \gls{noise} texture is sampled again in the ground shader and added as shadow.}
-            \label{img:shadow:casting2}
+            \includegraphics[width=\linewidth]{results/wheel2.png}
+            \captionof{figure}{Final render output for a early afternoon.}
+            \label{img:result:2}
         \end{minipage}
 \end{figure}
+
+
+\begin{figure}[H]
+    \centering
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{results/wheel3.png}
+            \captionof{figure}{Final render output for a rainy evening.}
+            \label{img:result:3}
+        \end{minipage}
+    \hfill
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{results/wheel4.png}
+            \captionof{figure}{Final render output for a golden sunset.}
+            \label{img:result:4}
+        \end{minipage}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{results/wheel5.png}
+            \captionof{figure}{Final render output for a evening right after sunset.}
+            \label{img:result:5}
+        \end{minipage}
+    \hfill
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{results/wheel6.png}
+            \captionof{figure}{Final render output for a cloudy morning.}
+            \label{img:result:6}
+        \end{minipage}
+\end{figure}
+
+\clearpage
 
 \subsection{Testing}
 \label{section:techimpl:testing}
@@ -297,8 +361,3 @@ This method works well for the current solution, but would there be other object
 
 \subsection{Comparison to Previous Work}
 \label{section:techimpl:comparison}
-%performance
-
-2. technical impl: algorithms, progress pics, 
-2. results: what has been achieved, how realistic, compare to spec
-2. testing: 1-2 paragraphs, visual testing, gui stuff, messbarkeit,

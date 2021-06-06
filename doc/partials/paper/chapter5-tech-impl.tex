@@ -1,7 +1,6 @@
 \section{Technical Implementation}
 \label{section:techimpl}
 This section describes the current solution, the implemented software architecture and the final results of the project.
-Discrepancies between the planned implementation approach and the current solution are listed in \sectionref{section:techimpl:comparison_impl}.
 
 \subsection{System Overview}
 The following graphics displays the current system overview.
@@ -14,15 +13,64 @@ This change is reflected in the new system overview, and is the only adjustment 
     \label{img:techimpl:system}
 \end{figure}
 
-\subsection{Unity Project Architecture}
-The project architecture in Unity consists of a set of \gls{volumetric} \gls{shader}s, the \emph{ArcGIS} component and some auxiliary objects.
+\clearpage
+
+\subsection{Meteoblue Integration}
+\label{section:techimpl:meteoblue}
+While the bachelor project specifictation document described the use of \emph{meteoblue}'s "basic 1h" package, this was not the only package that was used in the final implementation.
+After the cancellation of the technical interview with \emph{meteoblue} and further research into additional, available weather data sources, the package "clouds 1h" was suggested.
+It provides an overview of cloud coverage percentage for each cloud layer, which is exactly what the implementation was missing.
+\emptyline
+\begin{tabularx}{\linewidth}{|l|X|}
+    \hline
+    \textbf{Package name}   & \textbf{Description} \\ \hline
+    Basic (1h)              & Mainly used for shading and visual effects. \\ \hline
+    Clouds (1h)             & Mainly used for cloud coverage data. \\ \hline
+\end{tabularx}
+\emptyline
+The following table displays a list of properties from both data packages and how they are used in the final implementation.
+\emptyline
+\begin{tabularx}{\linewidth}{|l|l|X|}
+    \hline
+    \textbf{Property name}      & \textbf{Source}     & \textbf{Usage}                                 \\ \hline
+    Wind speed                  & Basic (1h)          & Used with a multiplier                         \\ \hline
+    Wind direction              & Basic (1h)          & Converted form degrees to a directional vector \\ \hline
+    Precipitation               & Basic (1h)          & Used for controlling rain particle system and cloud color.\newline Factored into cloud edge highlight colors from sunshine.\newline Factored into skybox colors. \\ \hline
+    Precipitation probability   & Basic (1h)          & Included in approximation of precipitation     \\ \hline
+    Cloud coverage low          & Clouds (1h)         & Used for the weather in Bern                   \\ \hline
+    Cloud coverage mid          & Clouds (1h)         & Used for the weather in Bern                   \\ \hline
+    Cloud coverage high         & Clouds (1h)         & Used for the weather in Bern                   \\ \hline
+    Total cloud coverage        & Clouds (1h)         & Used for the distant weather                   \\ \hline
+\end{tabularx}
+\emptyline
+Other properties like temperature and UV index provide insufficient or irrelevant information and have therefore not been mapped.
+
+\subsection{ArcGIS Integration}
+\label{section:techimpl:arcgis}
+During the research phase of the project, the \emph{ArcGIS Maps SDK for Unity} \cite{arcgis:unitysdk} was found. This proved to be a suitable replacement for the originally planned \emph{swisstopo} elevation model data.
+The plugin was easily installed. The setup process required minimal amount of effort and the plugin was ready to run in no time. 
+
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{unity-sdk2.png}
+    \caption{ArcGIS Maps SDK for Unity \protect\cite{arcgis:unitysdk}.}
+\end{figure}
+
+\noindent
+The plugin generates and renders map tiles according to the elevation model and automatically maps aerial photographs as textures on top.
+This happens during runtime and is continuously updated.
 \\
-\begin{wrapfigure}[10]{r}{4cm}
+After setting up the plugin in Unity, the camera needed to be positioned on top of the Gurten mountain. Also, there needed to be a translation mechanic to move the camera to the top of the Bantiger mountain.
+This was done with via script and is not part of the \emph{ArcGIS} plugin.
+
+\subsection{Unity Project Architecture}
+\begin{wrapfigure}[13]{r}{4cm}
     \vspace{-\baselineskip}
     \includegraphics[width=4cm]{unity scene hierarchy.png}
     \caption{Hierarchy of the Unity project.}
     \label{img:techimpl:hierarchy}
 \end{wrapfigure}
+The project architecture in Unity consists of a set of \gls{volumetric} \gls{shader}s, the \emph{ArcGIS} component and some auxiliary objects.
+\\
 \autoref{img:techimpl:hierarchy} shows the content of the Unity scene file.
 The first section, named "general", contains the standard game objects for the primary camera and for the directional lighting.
 \\
@@ -33,8 +81,10 @@ In it, there are several controlling game objects like the "meteoblue master", w
 \\
 At last, the "UI" section contains the default game objects for a \gls{ui} in Unity, adjusted to this project.
 
+\clearpage
+
 \subsubsection{Scene Anatomy}
-The scene setup is similar to what was originally planned. There are multiple layers of clouds, each rendered by a unique \gls{volumetric} \gls{shader}.
+The scene setup is similar to what was originally planned in \sectionref{section:impl:layers}. There are multiple layers of clouds, each rendered by a unique \gls{volumetric} \gls{shader}.
 However, there is no layer for high-level clouds. It turned out that the intricate visual appearance of cirrus clouds was more difficult to simulate than anticipated.
 Also, there is no dedicated layer for ground fog, as the Unity engine already offers a way to include fog into the scene.
 \\
@@ -151,90 +201,99 @@ This effect is most prominent when the sun is setting or rising, giving the scen
 
 \clearpage
 
-\subsection{Meteoblue Integration}
-\label{section:techimpl:meteoblue}
-While the bachelor project specifictation document described the use of \emph{meteoblue}'s "basic 1h" package, this was not the only package that was used in the final implementation.
-After the cancellation of the technical interview with \emph{meteoblue} and further research into additional, available weather data sources, the package "clouds 1h" was suggested.
-It provides an overview of cloud coverage percentage for each cloud layer, which is exactly what the implementation was missing.
-\emptyline
-\begin{tabularx}{\linewidth}{|l|X|}
-    \hline
-    \textbf{Package name}   & \textbf{Description} \\ \hline
-    Basic (1h)              & Mainly used for shading and visual effects. \\ \hline
-    Clouds (1h)             & Mainly used for cloud coverage data. \\ \hline
-\end{tabularx}
-\emptyline
-The following table displays a list of properties from both data packages and how they are used in the final implementation.
-\emptyline
-\begin{tabularx}{\linewidth}{|l|l|X|}
-    \hline
-    \textbf{Property name}      & \textbf{Source}     & \textbf{Usage}                                 \\ \hline
-    Wind speed                  & Basic (1h)          & Used with a multiplier                         \\ \hline
-    Wind direction              & Basic (1h)          & Converted form degrees to a directional vector \\ \hline
-    Precipitation               & Basic (1h)          & Used for controlling rain particle system and cloud color.\newline Factored into cloud edge highlight colors from sunshine.\newline Factored into skybox colors. \\ \hline
-    Precipitation probability   & Basic (1h)          & Included in approximation of precipitation     \\ \hline
-    Cloud coverage low          & Clouds (1h)         & Used for the weather in Bern                   \\ \hline
-    Cloud coverage mid          & Clouds (1h)         & Used for the weather in Bern                   \\ \hline
-    Cloud coverage high         & Clouds (1h)         & Used for the weather in Bern                   \\ \hline
-    Total cloud coverage        & Clouds (1h)         & Used for the distant weather                   \\ \hline
-\end{tabularx}
-\emptyline
-Other properties like temperature and UV index provide insufficient or irrelevant information and have therefore not been mapped.
-
-\clearpage
-
-\subsection{ArcGIS Integration}
-\label{section:techimpl:arcgis}
-During the research phase of the project, the \emph{ArcGIS Maps SDK for Unity} \cite{arcgis:unitysdk} was found. This proved to be a suitable replacement for the originally planned \emph{swisstopo} elevation model data.
-The plugin was easily installed. The setup process required minimal amount of effort and the plugin was ready to run in no time. 
+\subsection{Render Process}
+\label{section:techimpl:process}
+Each component in the scene fulfills a specific role. The following graphic lists the tasks that each component has to do during the start of the simulation (OnStart), and during each \gls{updateloop} (OnUpdate).
 
 \begin{figure}[H]
-    \includegraphics[width=\linewidth]{unity-sdk2.png}
-    \caption{ArcGIS Maps SDK for Unity \protect\cite{arcgis:unitysdk}.}
+    \includegraphics[width=\linewidth]{render process.png}
+    \caption{Render process of the Unity project implementation.}
 \end{figure}
 
 \noindent
-The plugin generates and renders map tiles according to the elevation model and automatically maps aerial photographs as textures on top.
-This happens during runtime and is continuously updated.
-\\
-After setting up the plugin in Unity, the camera needed to be positioned on top of the Gurten mountain. Also, there needed to be a translation mechanic to move the camera to the top of the Bantiger mountain.
-This was done with via script and is not part of the \emph{ArcGIS} plugin.
+Since the 3D \gls{noise} texture, that is generated at the start by the "cloud master", is seamless, it does not have to be recalculated every frame.
+After the \emph{meteoblue} data is loaded by the "meteoblue master", the setup is almost complete.
+The default values for time of day and camera position are set while the \emph{ArcGIS} component starts itself and runs automatically.
+\emptyline
+During the update loop of the engine, the weather data is interpolated from hour to hour, depending on the current time.
+This is necessary as the \emph{meteoblue} data is only available for every full hour.
+This pseudo-code snippet shows how an average value for the weather data would be determined based on the time.
 
-\subsection{Render Process}
-\label{section:techimpl:process}
-The architecture described in the implementation approach in \sectionref{section:impl:layers} was chosen, but underwent some alterations.
-First, 
-TODO
-TODO
-TODO
-TODO
-TODO
-TODO
+\begin{lstlisting}[language=HLSL, caption=Pseudo-code for linear interpolation of weather data., label=lst:psuedo:weather:lerp]
+simulationTime = "18:45" // current simulation time (24h-clock)
+time1 = floor(simulationTime) // "18:00"
+time2 = ceil(simulationTime) // "19:00"
+x = lerp(time1, time2, simulationTime) // 0.75
+
+weatherData = lerp(weatherDataFor(time1), weatherDataFor(time2), x)
+\end{lstlisting}
+
+\clearpage
 
 \subsection{Noise Generation}
 \label{section:techimpl:noise}
 As extensively described in \sectionref{section:noise}, the \gls{noise} texture is generated by a \gls{computeshader}.
 The resulting 3D texture is seamless and is solely based on the Voronoi \gls{noisegeneration} algorithm, invoked with different scales and octaves.
-In the final texture, each \gls{texel} holds four different \gls{noise} values, one for each color channel.
+In the output texture, each \gls{texel} holds four different \gls{noise} values, one for each color channel.
 \\
-The compute shader is dispatched only once, at the start of the simulation. This saves on a great deal of performance, as the \gls{noise} does not need to be recalculated each frame.
+The compute shader is dispatched only once, at the start of the simulation.
+This saves on a great deal of performance, as the \gls{noise} does not need to be recalculated each frame.
 
 \subsection{Shadow Casting}
 \label{section:techimpl:shadow}
-The \gls{volumetric} cloud \gls{shader}s do not contain a \gls{shadowpass}, which means that the cloud objects do not cast any shadows.
-The reason for this is that the \emph{ArcGIS} plugin generates and renders the 
+The \gls{volumetric} cloud \gls{shader}s do not contain a \gls{shadowpass}, which means that the cloud objects do not cast shadows themselves.
+This is associated with the \emph{ArcGIS}  component.
+\\
+The \emph{ArcGIS} plugin generates geometry with an extremely high scale, where one \gls{inengine} unit corresponds to one meter in real life.
+The resulting geometry is huge compared to the rest of the scene. This is a problem, because the map's dimension exceed the capabilities and size of Unity's shadow texture.
+Unfortunately the geometry cannot be reduced in size so easily, because when reducing the scale of the generated map, the textures lose a good amount of detail.
+\\
+However, the problem was solved with an alternative approach to casting shadows.
+
+\begin{figure}[H]
+    \centering
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{shadowcasting1.png}
+            \captionof{figure}{Shadow casting: Normally, objects would cast their own shadow in a dedicated \gls{shadowpass}.}
+        \label{img:result:1}
+        \end{minipage}
+    \hfill
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{shadowcasting2.png}
+            \captionof{figure}{Shadow casting substitution: The 3D \gls{noise} texture is sampled again in the ground shader and added as shadow.}
+            \label{img:result:2}
+        \end{minipage}
+\end{figure}
+
+\noindent
+The shader for the ground tile, which is provided by the \emph{ArcGIS} plugin, was modified to read the 3D \gls{noise} texture.
+With that information, the ground shader knows where the clouds will be in the sky and adds a darkened, transparent layer over the existing ground color.
+\emptyline
+This method works well for the current solution, but would there be other objects than clouds, they would not cast shadows for the same reasons.
 
 \subsection{Results}
 \label{section:techimpl:results}
 
+\begin{figure}[H]
+    \centering
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{../../journal/results/r2.png}
+            \captionof{figure}{Shadow casting: Normally, objects would cast their own shadow in a dedicated \gls{shadowpass}.}
+            \label{img:shadow:casting1}
+        \end{minipage}
+    \hfill
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{../../journal/results/r5.png}
+            \captionof{figure}{Shadow casting substitution: The 3D \gls{noise} texture is sampled again in the ground shader and added as shadow.}
+            \label{img:shadow:casting2}
+        \end{minipage}
+\end{figure}
+
 \subsection{Testing}
 \label{section:techimpl:testing}
 
-\subsection{Measurability}
+\subsection{Realism and Measurability}
 \label{section:techimpl:measure}
-
-\subsection{Comparison to Implementation Approach}
-\label{section:techimpl:comparison_impl}
 
 \subsection{Comparison to Previous Work}
 \label{section:techimpl:comparison}

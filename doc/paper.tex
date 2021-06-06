@@ -53,15 +53,17 @@
         baseCell,cell,seed,dMin,d,p,co,period,tiledCell,
         _Result,_NoiseScale,id,_NoiseTexture3D,
         threadCoord,noiseCoord,samplePos,noise,detail0,detail1,detail2,color,
-        worldPos
+        worldPos,
+        simulationTime,time1,time2,weatherData
 	},
 	morekeywords=[2]{
         % methods and functions
         vert,frag,
 		distance,normalize,min,max,dot,pow,sin,cos,tan,fract,length,smoothstep,mod,log,exp,
-        random2d,random,random3d,randomSeed,floor,fbm,
+        random2d,random,random3d,randomSeed,floor,fbm,ceil,lerp,
         random3dTo3d,random3dTo1d,tex3D,tex2D,
         renderClouds,sampleDensity,
+        weatherDataFor,
         voronoi,
         CSMain,CSNoise,numthreads
 	},
@@ -86,7 +88,7 @@
 	morestring=[b]", % defines that strings are enclosed in double quotes
 	morestring=[b]', % defines that strings are enclosed in single quotes
     backgroundcolor=\color{backcolor},
-    stringstyle=\color{codered},
+    stringstyle=\color{codegreen},
     numberstyle=\tiny,
     basicstyle=\ttfamily\footnotesize,
     breakatwhitespace=false,

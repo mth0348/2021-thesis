@@ -152,7 +152,7 @@ The same effect could be achieved with \gls{pp}, but using a \gls{proxyobject} o
         \draw (-0.7,4) -- (6.9,4);
         \draw (-0.7,3.95) -- (-0.7,4.05);
         \draw (6.9,3.95) -- (6.9,4.05);
-        \node at (3.1,4.3) {without proxy};
+        \node at (3.1,4.3) {no proxy};
         
         % tile label 2
         \draw (7,-4) -- (14.7,-4);
@@ -186,7 +186,7 @@ This effect is most prominent when the sun is setting or rising, giving the scen
         \draw (-0.7,4) -- (6.9,4);
         \draw (-0.7,3.95) -- (-0.7,4.05);
         \draw (6.9,3.95) -- (6.9,4.05);
-        \node at (3.1,4.3) {without proxy};
+        \node at (3.1,4.3) {no proxy};
         
         % tile label 2
         \draw (7,-4) -- (14.7,-4);
@@ -274,7 +274,7 @@ However, the problem was solved with an alternative approach to casting shadows.
 
 \noindent
 What \autoref{img:shadow:casting2} shows is not a plane that casts the shadow, but instead an illustration of how the data is used from the same \gls{noise} texture that was used for the clouds.
-Hence, the shader for the ground tile, which is provided by the \emph{ArcGIS} plugin, was modified to read the 3D \gls{noise} texture.
+Thus, the shader for the ground tile, which is provided by the \emph{ArcGIS} plugin, was modified to read the 3D \gls{noise} texture.
 With that information, the ground shader knows where the clouds will be in the sky and adds a darkened, transparent layer over the existing ground color.
 \emptyline
 This method works well for the current solution, but would there be other objects than clouds, they would not cast shadows for the same reasons.
@@ -284,6 +284,8 @@ This method works well for the current solution, but would there be other object
 \subsection{Results}
 \label{section:techimpl:results}
 The final implementation yields great results, visualizing the \emph{meteoblue} weather reports in a variety of different settings, at all times of day.
+
+\subsection{Cloud Layers}
 As displayed in \autoref{img:result:anatomy}, each cloud layer renders an approximation of the clouds it represents.
 In the low-level layer, there are small puffy \gls{cloudlet}s. In the alto-layer, there are dense fields of clouds and lastly, the distant cloud layer shows high-towering heaps of cumulonimbus approximations.
 
@@ -362,11 +364,8 @@ The outer edge of the clouds reacts the most to the sun's position and intensity
 \clearpage
 
 \subsubsection{Proxy Objects}
-The 
-% The planned The other \gls{proxyobject}, \color{darkercyan}$P_{sky}$\color{black}, makes sure the sun is surrounded by a bright circle of the same color, supporting the strength of the sunlight in the sky.
-% This effect is most prominent when the sun is setting or rising, giving the scene a more vibrant and natural look.
-% TODO
-
+The \gls{proxyobject}s were used instead of complex, custom \gls{pp} effects. Their effects are key to the credibility of realism of the rendered scenes.
+As the following graphics show, the \gls{proxyplane}s add a vital visual upgrade to the scenery.
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}[scale=0.8]
@@ -384,7 +383,7 @@ The
         \draw (-0.7,4.4) -- (6.9,4.4);
         \draw (-0.7,4.35) -- (-0.7,4.45);
         \draw (6.9,4.35) -- (6.9,4.45);
-        \node at (3.1,4.7) {without proxy};
+        \node at (3.1,4.7) {no proxy};
         
         % tile label 2
         \draw (7,-4.4) -- (14.7,-4.4);
@@ -414,7 +413,7 @@ The
         \draw (-0.7,4.4) -- (6.9,4.4);
         \draw (-0.7,4.35) -- (-0.7,4.45);
         \draw (6.9,4.35) -- (6.9,4.45);
-        \node at (3.1,4.7) {without proxy};
+        \node at (3.1,4.7) {no proxy};
         
         % tile label 2
         \draw (7,-4.4) -- (14.7,-4.4);
@@ -427,11 +426,45 @@ The
     \label{img:results:skyproxy}
 \end{figure}
 
-\subsection{Testing}
-\label{section:techimpl:testing}
+\clearpage
+
+\subsubsection{Shadow Mapping}
+As described in \sectionref{section:techimpl:shadow}, the cloud objects do not cast shadows.
+Instead, the terrain \gls{shader} was modified to read the 3D \gls{noise} texture and calculate the shadow itself .
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+        \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+        \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
+        \tikzset{icon/.style = {font=\Large}}
+        \tikzset{mini/.style = {font=\footnotesize}}
+        \tikzset{tiny/.style = {font=\tiny}}
+
+        % cloud layer boxes
+        \node[inner sep=0pt] at (7,0.1) 
+            {\includegraphics[width=0.8\textwidth]{results/shadow.png}};
+
+        % tile label 1
+        \draw (-0.7,4.6) -- (6.9,4.6);
+        \draw (-0.7,4.55) -- (-0.7,4.65);
+        \draw (6.9,4.55) -- (6.9,4.65);
+        \node at (3.1,4.9) {without shadow mapping};
+        
+        % tile label 2
+        \draw (7,-4.4) -- (14.7,-4.4);
+        \draw (7,-4.35) -- (7,-4.45);
+        \draw (14.7,-4.35) -- (14.7,-4.45);
+        \node at (10.85,-4.7) {with shadow mapping};
+        
+    \end{tikzpicture}
+    \captionof{figure}{Visual comparison of a rendered scene with and without the shadow mapping on the ground tiles.}
+    \label{img:results:shadowmapping}
+\end{figure}
 
 \subsection{Realism and Measurability}
 \label{section:techimpl:measure}
+% https://diglib.eg.org/xmlui/bitstream/handle/10.2312/EGWR.EGWR01.235-248/235-248.pdf?sequence=1&isAllowed=y
 
 \subsection{Comparison to Previous Work}
 \label{section:techimpl:comparison}

@@ -299,7 +299,7 @@ In the low-level layer, there are small puffy \gls{cloudlet}s. In the alto-layer
 Combined, the final output shows a diverse scene for the weather conditions extracted from the \emph{meteoblue} data.
 
 \begin{figure}[H]
-    \includegraphics[width=\linewidth]{anatomy/all.png}
+    \includegraphics[width=\linewidth]{anatomy/all2.png}
     \caption{Final render output of the weather rendering system.}
     \label{img:result:final1}
 \end{figure}
@@ -462,9 +462,44 @@ Instead, the terrain \gls{shader} was modified to read the 3D \gls{noise} textur
     \label{img:results:shadowmapping}
 \end{figure}
 
-\subsection{Realism and Measurability}
+\subsection{Visual Realism}
 \label{section:techimpl:measure}
-% https://diglib.eg.org/xmlui/bitstream/handle/10.2312/EGWR.EGWR01.235-248/235-248.pdf?sequence=1&isAllowed=y
+Since this project renders cloudscapes based on real weather forecasts, it is only logical that the clouds are supposed to look as realistic as possible.
+To assess the realism of the rendered image, several aspects have to be considered.
+\\
+First is the tone mapping of the image. The human eye is adapted to natural colors and quickly detects disparities in a color palette that does not reflect Nature's colors.
+\\
+According to Rademacher \cite{diglib:realism}, the shadow softness of cast shadows is a great way of determining how realistic a rendered image looks.
+Apparently, the same is true for surface smoothness.
+Unfortunately, both these techniques are not applicable as the clouds have no smooth surface and the shadow is cast on a vibrantly colored terrain, making it hard to read where shadows start and end.
+\\
+Rademacher makes another good point, which relates to the simplicity of the scene.
+He states that "[...] in a rendering application, it may be better to spend time on generating proper soft shadows and adequate textures, rather than adding more of the same lights
+or objects, or simply adding new objects for variety" \cite{diglib:realism2}.
+\\
+This leaves to believe that to achieve higher fidelity and realism, the focus should be put on the texturing and shadow casting of the clouds, rather than the shape and quantity.
+\emptyline
+Still, there are some other methods invovling \gls{neuralnetwork}s that try to interpret the realism of a rendered image.
+
+\subsubsection{Convolutional Neural Network}
+Given there is a \gls{cnn} that is able to classify images of the sky, the weather or clouds into descriptive labels or even genera of cloud formations, then one could just seed those rendered images into the CNN and verify whether the results are truthfully showing "real" clouds.
+Of course, this is heavily dependent of how well the \gls{cnn} was trained.
+
+\subsubsection{Generative Adversarial Network}
+A similar approach to the \gls{cnn} is a \gls{gan} setup. It describes two neural networks, which compete with each other in a cat-and-mouse game: The \textit{generative} network tries to imitate the training set by generating artificial photographs with many realistic characteristics, while the \emph{discriminative} network tries to tell whether the generated images are fake or not.
+\\
+With this method, the rendered cloud images could be passed through the discriminative neural network to see if at least the network thinks the images are of real clouds.
+
+\subsubsection{Histogram Comparison}
+The \textit{\gls{histogram}} is a graphical representation of data like brightness or color distribution of a given photograph.
+When extracting the color \gls{histogram}s of the real photograph and the one of the rendered image, they could be compared and rated how different in color they are.
+
+\subsubsection{Professional Meteorological Assessment}
+Another viable solution is to let a professional meteorologist inspect and rate the rendered images and judge the realism of the depicted scenarios, which should reveal if the rendered clouds could actually form and exist in reality.
+
+\subsubsection{Measurability and Conclusion}
+The previous subsections suggest that there are ways to validate and interpret the visual realism of the rendered images, but no practical method to factually measure that value.
+As for this project, the suitable method to estimate the realism of a rendered image, that still conforms to the scope of the project, is comparing the \gls{inengine} render side-by-side with the \emph{Roundshot} image.
 
 \subsection{Comparison to Previous Work}
 \label{section:techimpl:comparison}

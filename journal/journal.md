@@ -727,14 +727,20 @@ Remarks on book:
 1. .
 
 ### Meeting discussion
-* check if esri access is still up?
-* https://community.esri.com/t5/learn-arcgis-documents/frequently-asked-questions-for-learn-arcgis-student-program/ta-p/904958#toc-hId-318184905
+* Mr. Dubuis gave positive feedback
+    * mention about references / images / adjusted images e.g. wiki (inkscape)
+* missing:
+    * ciritcal conclusion
+    * project conclusion (prj mngmt)
+    * ms flight sim
+    * abstract
+* check if esri access is still up? https://community.esri.com/t5/learn-arcgis-documents/frequently-asked-questions-for-learn-arcgis-student-program/ta-p/904958#toc-hId-318184905
 
 **Inputs from tutor:**
 
 
  **Tasks**
-* Next meeting is scheduled for **June 16, 2021 at 2pm.**
+* Last meeting is scheduled for **June 16, 2021 at 2pm.**
 
 **Time log**
 

@@ -501,5 +501,37 @@ Another viable solution is to let a professional meteorologist inspect and rate 
 The previous subsections suggest that there are ways to validate and interpret the visual realism of the rendered images, but no practical method to factually measure that value.
 As for this project, the suitable method to estimate the realism of a rendered image, that still conforms to the scope of the project, is comparing the \gls{inengine} render side-by-side with the \emph{Roundshot} image.
 
+\clearpage
+
 \subsection{Comparison to Previous Work}
 \label{section:techimpl:comparison}
+The prototype created in the previous work was able to render a single layer of clouds. There was no \gls{ui} and the scene only contained mockup plants and rocks.
+That implementation was able to run at approximately 30 \gls{fps} in Full HD. The \gls{raymarching} and step count was 25, while there were only two steps for the \gls{lightmarching}.
+Therefore, the number of texture lookups $s_{previous}$ adds up to a total of:
+$$
+\begin{array}{l}
+    s = n_{layers} * (steps_{ray} * steps_{light}) \\
+    s_{previous} = 1 * (25 * 2) = 50
+\end{array}
+$$
+
+\noindent
+The new solution that was achieved in this project has three cloud layers instead of just one.
+It also uses 100 steps for \gls{raymarching} and 25 for \gls{lightmarching}.
+
+$$
+\begin{array}{l}
+    s_{current} = 3 * (100 * 25) = 7500
+\end{array}
+$$
+
+\noindent
+Knowing that the current solution runs at 60 \gls{fps}, this gives an approximate performance gain of factor $(7500 / 50) * (60/30) = 300$.
+That is an astounding \textbf{3000\%} more resourceful.
+\\
+For almost all of this, credit has to be given to the use of a \gls{computeshader}.
+The fact that the \gls{noise} has to be calculated only once allows for much higher fidelity in rendering the clouds.
+\emptyline
+Some of the code of the previous work was used as a template.
+However, a flaw in the \gls{raymarching} algorithm was discovered.
+Fixing that also caused a noticeable increase in performance.

@@ -199,6 +199,9 @@ This effect is most prominent when the sun is setting or rising, giving the scen
     \label{img:techimpl:skyproxy}
 \end{figure}
 
+\noindent
+This effect could also be implemented in the skybox, but with the skybox of the \gls{hdrp} being part of the \gls{pp}, it is easier to maintain a \gls{proxyobject} than to create a custom \gls{pp} effect.
+
 \clearpage
 
 \subsection{Render Process}
@@ -301,7 +304,7 @@ Combined, the final output shows a diverse scene for the weather conditions extr
 
 \clearpage
 
-\noindent
+\subsubsection{Times Of Day}
 The current solution is able to render the weather for all times of day. The following figures demonstrate the capabilities of the weather rendering system.
 
 \begin{figure}[H]
@@ -352,6 +355,72 @@ The current solution is able to render the weather for all times of day. The fol
 \end{figure}
 
 \clearpage
+
+\subsubsection{Proxy Objects}
+The 
+% The planned The other \gls{proxyobject}, \color{darkercyan}$P_{sky}$\color{black}, makes sure the sun is surrounded by a bright circle of the same color, supporting the strength of the sunlight in the sky.
+% This effect is most prominent when the sun is setting or rising, giving the scene a more vibrant and natural look.
+% TODO
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+        \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+        \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
+        \tikzset{icon/.style = {font=\Large}}
+        \tikzset{mini/.style = {font=\footnotesize}}
+        \tikzset{tiny/.style = {font=\tiny}}
+
+        % cloud layer boxes
+        \node[inner sep=0pt] at (7,0) 
+            {\includegraphics[width=0.8\textwidth]{results/rainproxy.png}};
+
+        % tile label 1
+        \draw (-0.7,4.4) -- (6.9,4.4);
+        \draw (-0.7,4.35) -- (-0.7,4.45);
+        \draw (6.9,4.35) -- (6.9,4.45);
+        \node at (3.1,4.7) {without proxy};
+        
+        % tile label 2
+        \draw (7,-4.4) -- (14.7,-4.4);
+        \draw (7,-4.35) -- (7,-4.45);
+        \draw (14.7,-4.35) -- (14.7,-4.45);
+        \node at (10.85,-4.7) {proxy in effect};
+        
+    \end{tikzpicture}
+    \captionof{figure}{Visual comparison of a rendered scene with and without the rain \gls{proxyplane}.}
+    \label{img:results:rainproxy}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+        \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+        \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
+        \tikzset{icon/.style = {font=\Large}}
+        \tikzset{mini/.style = {font=\footnotesize}}
+        \tikzset{tiny/.style = {font=\tiny}}
+
+        % cloud layer boxes
+        \node[inner sep=0pt] at (7,0) 
+            {\includegraphics[width=0.8\textwidth]{results/skyproxy.png}};
+
+        % tile label 1
+        \draw (-0.7,4.4) -- (6.9,4.4);
+        \draw (-0.7,4.35) -- (-0.7,4.45);
+        \draw (6.9,4.35) -- (6.9,4.45);
+        \node at (3.1,4.7) {without proxy};
+        
+        % tile label 2
+        \draw (7,-4.4) -- (14.7,-4.4);
+        \draw (7,-4.35) -- (7,-4.45);
+        \draw (14.7,-4.35) -- (14.7,-4.45);
+        \node at (10.85,-4.7) {proxy in effect};
+        
+    \end{tikzpicture}
+    \captionof{figure}{Visual comparison of a rendered scene with and without the sky \gls{proxyplane}.}
+    \label{img:results:skyproxy}
+\end{figure}
 
 \subsection{Testing}
 \label{section:techimpl:testing}

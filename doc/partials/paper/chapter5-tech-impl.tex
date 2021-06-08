@@ -469,7 +469,7 @@ To assess the realism of the rendered image, several aspects have to be consider
 \\
 First is the tone mapping of the image. The human eye is adapted to natural colors and quickly detects disparities in a color palette that does not reflect Nature's colors.
 \\
-According to Rademacher \cite{diglib:realism}, the shadow softness of cast shadows is a great way of determining how realistic a rendered image looks.
+According to Rademacher \cite{diglib:realism}, the shadow softness of cast shadows is a also great way of determining how realistic a rendered image looks.
 Apparently, the same is true for surface smoothness.
 Unfortunately, both these techniques are not applicable as the clouds have no smooth surface and the shadow is cast on a vibrantly colored terrain, making it hard to read where shadows start and end.
 \\
@@ -477,7 +477,7 @@ Rademacher makes another good point, which relates to the simplicity of the scen
 He states that "[...] in a rendering application, it may be better to spend time on generating proper soft shadows and adequate textures, rather than adding more of the same lights
 or objects, or simply adding new objects for variety" \cite{diglib:realism2}.
 \\
-This leaves to believe that to achieve higher fidelity and realism, the focus should be put on the texturing and shadow casting of the clouds, rather than the shape and quantity.
+This leaves to believe that in order to achieve higher fidelity and realism, the focus should be put on the texturing and shadow casting of the clouds, rather than the shape and quantity.
 \emptyline
 Still, there are some other methods invovling \gls{neuralnetwork}s that try to interpret the realism of a rendered image.
 
@@ -500,6 +500,10 @@ Another viable solution is to let a professional meteorologist inspect and rate 
 \subsubsection{Measurability and Conclusion}
 The previous subsections suggest that there are ways to validate and interpret the visual realism of the rendered images, but no practical method to factually measure that value.
 As for this project, the suitable method to estimate the realism of a rendered image, that still conforms to the scope of the project, is comparing the \gls{inengine} render side-by-side with the \emph{Roundshot} image.
+
+\subsection{Physical Accuracy}
+It is important to note that the project is only a visualization of weather forecasts, not a physically accurate simulator.
+Specifically the formation and dissipation of clouds, the sun's position in the sky, and the wind speed do not necessarily match their real counterparts.
 
 \clearpage
 
@@ -527,11 +531,34 @@ $$
 
 \noindent
 Knowing that the current solution runs at 60 \gls{fps}, this gives an approximate performance gain of factor $(7500 / 50) * (60/30) = 300$.
-That is an astounding \textbf{3000\%} more resourceful.
+That is an astounding \textbf{3000\%} more powerful.
 \\
 For almost all of this, credit has to be given to the use of a \gls{computeshader}.
-The fact that the \gls{noise} has to be calculated only once allows for much higher fidelity in rendering the clouds.
+The fact that the \gls{noise} has to be calculated only once instead of every frame allows for much higher fidelity in rendering the clouds.
 \emptyline
 Some of the code of the previous work was used as a template.
 However, a flaw in the \gls{raymarching} algorithm was discovered.
 Fixing that also caused a noticeable increase in performance.
+
+\subsection{Comparison to Other Work}
+As it happens, Microsoft's Flight Simulator game (2020) also uses weather data from \emph{meteoblue} to render its \gls{volumetric} clouds \cite{meteoblue:msfs}.
+The results are extraordinarily realistic, but also certainly based on an extensively more complex solution than simple data packages, like in this project.
+
+\begin{figure}[H]
+    \centering
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{results/wheel2.png}
+            \captionof{figure}{Screenshot of Microsoft's Flight Simulator (TODO).} % TODO
+            \label{img:msfs:1}
+        \end{minipage}
+    \hfill
+        \begin{minipage}{0.47\linewidth}
+            \includegraphics[width=\linewidth]{results/wheel2.png}
+            \captionof{figure}{Final render output of weather rendering system.}
+            \label{img:msfs:2}
+        \end{minipage}
+\end{figure}
+
+\noindent
+The comparison brings out a couple of things that are missing in the weather rendering sytem, but especially that there is room for improvement regarding the cloud shapes.
+Also, the cloud colors lack diversity and are too uniform to be naturally realistic.

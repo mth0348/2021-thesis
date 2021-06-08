@@ -1,9 +1,8 @@
 \section{Conclusion and Critical Discussion}
 \label{section:conclusion}
-% Viewed from a critical perspective, two out of three prototypes have been developed during the project, of which one was dropped because it was too similar to another.
-% Additionally, a complete cloud shader has been programmed, which was not originally planned.
-% However, it combined all research into one practical example of how to create such a cloud shader.
-% Compared to state-of-the-art cloud shaders, the one made during this project can keep up in terms of appearance and customization options, but lacks good performance and the ability to render different cloud types.
-% In section 4, sphere tracing is extensively described and explained in detail, but was not used in the final prototype, as there is no defined SDF for a cloud volume.
-% The same applies for all shadow related algorithms.
-% The shader does not use shadow rays nor include ambient occlusion.
+Viewed from a critical perspective, the project fulfilled or substituted all of its requirements and passed all its tests.
+The \emph{meteoblue} data is incorporated into the system, as well as the elevation model from \emph{ArcGIS} and the live photographs from \emph{Roundshot}.
+In \sectionref{section:impl}, a prediction model was described where data of future forecast would be used to estimate the cloud types, but this was not implemented in the final weather rendering system, as this data was provided by the "clouds-1h" package.
+\\
+The new system outperformed the previous prototype by a factor of 300. Thus, the use of a \gls{computeshader} was definitely worth the effort.
+Compared to state-of-the-art cloud systems, the one made during this project can keep up in terms of customization options, but lacks some realistic details and the ability to render cirrus clouds.

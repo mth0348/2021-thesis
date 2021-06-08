@@ -1,15 +1,14 @@
 \section*{Abstract}
-\color{orange}
-Clouds contribute a great deal to the overall ambience in games and can be the cherry on top by filling the sky with life.
-To get as close as possible to real clouds, this project engages in researching and prototyping a \gls{procedural}, volumetric cloud shader.
+Clouds contribute a great deal to the overall ambience in games, but an implementation of such effects often proves to be more challenging than anticipated.
+To get as close as possible to real clouds, this project engages in researching and developing a near real-time weather rendering system.
+This means that real weather forecasts from \emph{meteoblue} are used to visualize past, current and future weather at any given time of day.
+The environment is created with elevation model data from \emph{ArcGIS}. Live photographs from \emph{Roundshot} cameras can be viewed side-by-side with the rendered output.
 \\
-In order to achieve \gls{volumetric} rendering, the document dives into the concept of \gls{raymarching}, a group of methods used to render a 3D data set inside a container box to make it appear volumetric.
-Several variants of it are expanded on, like constant step, traditional, and sphere-traced \gls{raymarching}. Additionally, to account for perception of depth, the volume can be shaded with the aid of \gls{surfacenormal} estimation.
+The document dives into the science of clouds and illustrates the ten distinct classifications and how each of those could be represented in a weather simulation. 
+In order to achieve high fidelity, the implementation relies on concepts like Voronoi \gls{noisegeneration} and \gls{raymarching}, which means to generate a random 3D cloud pattern and render it in volumetrically.
 \\
-In the second part, 2D and 3D \gls{noise} generation algorithms like Perlin's noise and the Voronoi algorithm are explained in detail. With \gls{fbm}, the different layers of noise are then merged into one highly detailed noise texture.
+At last, the goal of the project is to create a fully fledged, near real-time weather rendering system in Unity.
+It is able to render \gls{procedural} and volumetric cloudscapes, for any given date and time.
+A intuitive user interface allows the user to control the weather simulation manually or let it run automatically based on the \emph{meteoblue} weather reports.
 \\
-At last, the goal of the project was to create prototypes in Unity displaying both volumetric rendering and noise algorithms, of which all were created successfully.
-Prepared with the combined knowledge of the research results and prototypes, a final shader was created, able to render a completely \gls{procedural} and volumetric cloudscape.
-\\
-For future work, the shader could be expanded into a fully-fledged weather simulation system with meteorologically accurate formation of clouds, rain, snow and much more.
-\color{black}
+For future work, the weather rendering system could be incorporated in a game or further improved to achieve even higher visual realism.

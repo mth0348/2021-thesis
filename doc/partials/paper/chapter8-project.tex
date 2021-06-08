@@ -51,7 +51,7 @@ The following chart shows the original schedule (in \color{gray}grey\color{black
 \emptyline
 The only major discrepancy between the planned and the actual schedule is the interview with \emph{meteoblue}, which was turned down by \emph{meteoblue}.
 The interview would overstep the limited license that was arranged for this project.
-This was unfortunate, but left more time for the documentation, which turned out to require more time and effort.
+This was unfortunate, but left more time for the documentation, which came in handy.
 
 \subsection{Fulfillment of Requirements}
 \label{section:project:requirements}
@@ -88,11 +88,8 @@ Since the generated 3D models from the plugin were more than a suitable replacem
 From then on, only the \emph{ArcGIS} plugin was used.
 
 \subsubsection{Rendering Performance Optimization}
-
-% mention compute shader...
-% the rest is additional optimization
-
-There have been several attempts at optimizing the rendering performance.
+The use of a \gls{computeshader} resulted in a massive performance boost.
+There have been several other attempts at additionally optimizing the rendering performance.
 This includes the reduction of \gls{raymarching} and \gls{lightmarching} steps, the careful choice of scale and amount of octaves for 3D \gls{noisegeneration} as well as the avoidance of using heavy operations like \lstinline[language=HLSL]{pow(), exp(), log()}.
 However, there was not sufficient time to delve deeper into performance optimization, but since the software is able to run with a decent \gls{framerate}, the issue was no longer pursued.
 
@@ -104,10 +101,10 @@ One of those are god rays, the volumetric light shafts that shine through gaps i
 Other absent features are the sun's and moon's halo: A bright circle around the celestial body.
 
 \subsubsection{Live Data Feed}
-% TODO mention that meteoblue might have real-time API
-% TODO its more a license issue than a technical issue
 The resulting weather rendering system is still dependent on locally accumulated meteo data. 
 A potential follow-up project could be an implementation of a live data feed system that continuously updated the weather rendering system.
+\\
+Technically, this would already be possible for the current solution. The question is rather if such a data stream exists and what license would be required to use it.
 
 \subsubsection{Simulation Game}
 Alternatively, the project could be turned into a simulator game, similar to how Microsoft's Flight Simulator works.
@@ -118,11 +115,14 @@ There is also the option to include meteorological events like thunderstorms, bl
 \subsection{Project Conclusion}
 \label{section:project:conclusion}
 It is noteworthy that three more weeks were put into research.
-This is mainly because new methods and algorithms have been continuously researched during prototyping, which resulted in constant documentation of those findings.
+This was to be expected, because new algorithms have been continuously researched during implementation, which had to be documented.
 However, this did not conflict with the remainder of the schedule.
 \\
+Also, the implementation of the rendering system itself took one more week than planned.
+This is negligible, though, as the implementation of the \gls{ui} was completed quicker than anticipated.
+\\
 Still, the total amount of time spent was about ten percent more than the originally estimated time budget of 320 hours.
-This is probably due to the fact that there was quite some effort put into the final implementation.
+This is probably due to the fact that there was quite some effort put into the final implementation and graphical illustrations for the documentation.
 \\
 The project occurred during the same time as the global coronavirus lockdown restrictions, but was unhindered by that.
 \emptyline

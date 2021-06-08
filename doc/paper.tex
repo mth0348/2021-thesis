@@ -117,6 +117,7 @@
 \usepackage{svg}
 \usepackage{tikz}
 \usepackage{fontawesome}
+\usepackage{pdfpages}
 \usetikzlibrary{positioning, shapes}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{svg.path}
@@ -135,7 +136,7 @@
 \definecolor{columbiablue}{rgb}{0.61, 0.87, 1.0}
 
 % Glossary
-\usepackage[toc]{glossaries}
+\usepackage[toc]{glossaries,appendix}
 \input{partials/glossary.tex}
 \makenoidxglossaries
 
@@ -145,7 +146,7 @@
 \usepackage[backend=biber, style=ieee]{biblatex}
 \addbibresource{partials/paper.bib}
 
-% add another lavel of headings
+% add another level of headings
 %\setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{4}
 \titleformat{\paragraph}
@@ -186,6 +187,9 @@
 \input{partials/abstract.tex}
 \clearpage
 
+\input{partials/acknowledgements.tex}
+\clearpage
+
 \tableofcontents
 \clearpage
 
@@ -207,6 +211,16 @@
 \clearpage
 \input{partials/paper/chapter8-project.tex}
 \clearpage
+\input{partials/declaration-authorship.tex}
+\clearpage
+
+\begin{appendices}
+    \includepdf[pages=1,pagecommand=\section{Bachelor Project Specification Document},width=\textwidth]{specification.pdf}
+    \includepdf[pages=2-,pagecommand={},width=\textwidth]{specification.pdf}
+    
+    \includepdf[pages=1,pagecommand=\section{Previous Work: Procedural Cloud Shader},width=\textwidth]{project2.pdf}
+    \includepdf[pages=2-,pagecommand={},width=\textwidth]{project2.pdf}
+\end{appendices}
 
 \printnoidxglossary 
 \clearpage

@@ -675,18 +675,18 @@ evtl gurten/bantiger tower for video setting
 2. title image? 
 
 **Answers to questions:**
-1. add to "5. technical impl."
+1. ✅ add to "5. technical impl."
     * "introduction/system overview"
         * as already shown in spec document
-2. final render as title image
+2. ✅ final render as title image
     * with roundshot image as comparison
 
 ### Meeting discussion
 Remarks on book:
-* rename project to "near real-time weather rendering system"
-* "Apart from some lighting issues and the missing details in the clouds, they seem convincingly real." -> "anders formulieren = die features die da sind sind recht gut, andere fehlen evtl noch"
-* "Not all cloud types have made it into the final system" -> we concentrated on this type of cloud" / positiver formulieren / fokus auf 1 typ
-* mention compute shader in "performance optimization" chapter (7.2.2)
+* ✅ rename project to "near real-time weather rendering system"
+* ✅ "Apart from some lighting issues and the missing details in the clouds, they seem convincingly real." -> "anders formulieren = die features die da sind sind recht gut, andere fehlen evtl noch"
+* ✅ "Not all cloud types have made it into the final system" -> we concentrated on this type of cloud" / positiver formulieren / fokus auf 1 typ
+* ✅ mention compute shader in "performance optimization" chapter (7.2.2)
 
 ### Feedback expert meeting
 * important: check references
@@ -698,11 +698,11 @@ Remarks on book:
     * basic comments or remark à la "no comments necessary"
 
 **Inputs from tutor:**
-* increase pattern inside cloud body (mask opacity)
-* coloring / depth feeling
-* crop images with ImBatch (https://www.highmotionsoftware.com/products/imbatch)
-* fog missing
-* ask for poster if printed (Heinz Kipfer)
+* ✅ increase pattern inside cloud body (mask opacity)
+* ✅ coloring / depth feeling
+* ✅ crop images with ImBatch (https://www.highmotionsoftware.com/products/imbatch)
+* ✅ fog missing
+* ✅ ask for poster if printed (Heinz Kipfer)
 
  **Tasks**
 * Next meeting is scheduled for **June 10, 2021 at 2pm.**
@@ -714,6 +714,10 @@ Remarks on book:
 
 | Task | time spent |
 |----|---|
+|shader magic|4h|
+|poster & book|3h|
+|documentation|8h|
+|documentation|8h|
 
 &nbsp;
 

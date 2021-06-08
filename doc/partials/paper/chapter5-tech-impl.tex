@@ -17,7 +17,7 @@ This change is reflected in the new system overview, and is the only adjustment 
 
 \subsection{Meteoblue Integration}
 \label{section:techimpl:meteoblue}
-While the bachelor project specifictation document described the use of \emph{meteoblue}'s "basic 1h" package, this was not the only package that was used in the final implementation.
+While the bachelor project specification document described the use of \emph{meteoblue}'s "basic 1h" package, this was not the only package that was used in the final implementation.
 After the cancellation of the technical interview with \emph{meteoblue} and further research into additional, available weather data sources, the package "clouds 1h" was suggested.
 It provides an overview of cloud coverage percentage for each cloud layer, which is exactly what the implementation was missing.
 \emptyline
@@ -127,7 +127,7 @@ Both front layers use weather data for Bern, Switzerland.
 Behind the two front layers, there is \color{red}$C_{back}$\color{black}, which renders an approximation of cumulonimbus clouds. It uses the weather data of the correspondent location in the distance (either Solothurn or Fribourg) instead of Bern.
 \emptyline
 There are also two \gls{proxyobject}s, which are game objects that substitute a certain visual effect, like rain or the sun's halo.
-They are transparent planes and are placed inbetween the cloud layers.
+They are transparent planes and are placed in-between the cloud layers.
 
 \clearpage
 
@@ -479,7 +479,7 @@ or objects, or simply adding new objects for variety" \cite{diglib:realism2}.
 \\
 This leaves to believe that in order to achieve higher fidelity and realism, the focus should be put on the texturing and shadow casting of the clouds, rather than the shape and quantity.
 \emptyline
-Still, there are some other methods invovling \gls{neuralnetwork}s that try to interpret the realism of a rendered image.
+Still, there are some other methods involving \gls{neuralnetwork}s that try to interpret the realism of a rendered image.
 
 \subsubsection{Convolutional Neural Network}
 Given there is a \gls{cnn} that is able to classify images of the sky, the weather or clouds into descriptive labels or even genera of cloud formations, then one could just seed those rendered images into the CNN and verify whether the results are truthfully showing "real" clouds.
@@ -560,5 +560,5 @@ The results are extraordinarily realistic, but also certainly based on an extens
 \end{figure}
 
 \noindent
-The comparison brings out a couple of things that are missing in the weather rendering sytem, but especially that there is room for improvement regarding the cloud shapes.
+The comparison brings out a couple of things that are missing in the weather rendering system, but especially that there is room for improvement regarding the cloud shapes.
 Also, the cloud colors lack diversity and are too uniform to be naturally realistic.

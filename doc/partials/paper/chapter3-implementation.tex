@@ -128,7 +128,7 @@ Given that $t$ is less than or equal to seven and an implementation still produc
 
 \subsection{Layers of Cloud Shaders}
 \label{section:impl:layers}
-As identified in \sectionref{section:clouds:types}, most of the clouds in the troposhpere only appear at certain \gls{altitude}s.
+As identified in \sectionref{section:clouds:types}, most of the clouds in the troposphere only appear at certain \gls{altitude}s.
 The high-level clouds are all of type \emph{cirrus}.
 The mid-level types are altostratus and altocumulus, while the low-level types are cumulus, stratocumulus and stratus.
 \\
@@ -189,10 +189,10 @@ A potential \gls{shader} for that layer could be programmed to render a base var
 
 \subsubsection{Mid-Level Clouds}
 \label{section:impl:layers:mid}
-The middle layer consists of altostratus and altocumulus clouds, the latter mainly occuring due to dissipation of the former one.
+The middle layer consists of altostratus and altocumulus clouds, the latter mainly occurring due to dissipation of the former one.
 Since they have many shared characteristics, apart from the puffiness, they are predestined to be processed together.
 \\
-Given a \gls{shader} is flexible enough to render altostratus clouds, then it is most likely also able to render altocumulus, with only few adjustements necessary.
+Given a \gls{shader} is flexible enough to render altostratus clouds, then it is most likely also able to render altocumulus, with only few adjustments necessary.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{cloudlayers/altolayer.png}
@@ -305,7 +305,7 @@ From both peaks, Bern lies in the center of the view. However, a city in the bac
 \subsection{Weather Data Interpolation}
 \label{section:impl:layerinterpolation}
 Following up on the background weather consideration, all \gls{shader} layers also need to know those distances and adjust accordingly.
-Given there are two measurement sets, one for each city, then the weather inbetween can be a combination of both sets.
+Given there are two measurement sets, one for each city, then the weather in-between can be a combination of both sets.
 A very common method to achieve such an evaluation of interim data is called \emph{\gls{lerp}}.
 \Gls{lerp} can be defined as a function $lerp$, if $0 >= t >= 1$: 
 
@@ -357,7 +357,7 @@ With increasing distance along the axis \color{darkercyan}$L$\color{black}, fact
 
 \noindent
 In summary,  at Bern ($t = 0$), weather for data set $w_1$ is displayed, while at Solothurn ($t = 1$), weather for the data set $w_2$ is rendered.
-Everything inbetween is a mixture of both data sets, relative to which ever is closer.
+Everything in-between is a mixture of both data sets, relative to which ever is closer.
 
 \pagebreak
 
@@ -422,6 +422,6 @@ Each layer is in absolute control of when it spawns cloud particles, how fast th
 Nonetheless, contrary to the first approach, a \gls{lerp} of the clouds will prove to be more difficult in this case.
 A \gls{particlesystem} cannot be interpolated along two positions, as it is bound to a fixed location.
 This issue be could be disregarded at the cost of realism, by only using three \gls{particlesystem}s:
-one for Bern, one inbetween both cities, using interpolated weather data, and one for the distant city.
+one for Bern, one in-between both cities, using interpolated weather data, and one for the distant city.
 \\
 Additionally, the number of cloud cubes may heavily impact performance. If the system is required to limit the number of cloud cubes, its realism would suffer further.

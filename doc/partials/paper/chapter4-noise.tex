@@ -1,7 +1,7 @@
 \section{Noise Generation}
 \label{section:noise}
 Nature's chaotic and fortuitous behavior creates a world full of diversity and unpredictability.
-This can be observed in a surprisingly high amount of objects, structures and phenomenons.
+This can be observed in a surprisingly high amount of objects, structures and phenomena.
 \\
 For example, the following images show photographs of patterns that seem almost completely random.
 
@@ -18,7 +18,7 @@ There are many established algorithms to create random patterns, one of which ge
 
 \subsection{Previous Work}
 \label{section:noise:previous}
-Many of the following subsections rely on concepts and algorithms that have been thorougly explained in the project's previous work \cite{project2:noise}.
+Many of the following subsections rely on concepts and algorithms that have been thoroughly explained in the project's previous work \cite{project2:noise}.
 This include sine-based deterministic number generation algorithms, also known as also \emph{\gls{pseudorandom}} number generation \cite{project2:noise:pseudo}.
 It further includes different \gls{noisegeneration} algorithms like Perlin \gls{noise} \cite{project2:noise:perlin} and functions like the \gls{fbm} \cite{project2:noise:fbm}.
 \emptyline
@@ -147,7 +147,7 @@ From there, each pixel gets shaded by how far it is to the seed in its cell.
 \end{figure}
 
 \noindent
-As reckognizable in \autoref{img:tikz:noise:voronoi2}, hard contours are still visible along the grid lines. This can be improved by including the adjacent cells when finding the closest seed for any given fragment.
+As recognizable in \autoref{img:tikz:noise:voronoi2}, hard contours are still visible along the grid lines. This can be improved by including the adjacent cells when finding the closest seed for any given fragment.
 This amounts to $3^n - 1$ neighboring cells, where $n$ is the number of dimensions. This means for 2D space its eight cells, while in 3D its 26.
 
 \begin{figure}[H]
@@ -269,7 +269,7 @@ In \autoref{img:tikz:noise:voronoi3}, the generated cells appear to be randomly 
 \\
 As already mentioned previously, the \gls{noisegeneration} is confined to a fixed region.
 This poses an issue when the desired area is larger than the defined space of the algorithm.
-It is therefore not possible to tile the same texture without visible seams inbetween the tiles.
+It is therefore not possible to tile the same texture without visible seams in-between the tiles.
 Tiling the texture saves the calculation of an overly large area of \gls{noise} and is therefore the desired approach in many cases.
 
 \begin{figure}[H]
@@ -756,7 +756,7 @@ Unlike regular \gls{shader}s, they do not write directly to the \gls{framebuffer
 It is more common that the target buffer is a 2D or 3D texture.
 \\
 \Gls{computeshader}s also skip the \gls{rop}, which is responsible for a process called \gls{rasterization}, in which the final image is created.
-This process is usually computationally demanding and by skipping it, a great deal of performance can be safed.
+This process is usually computationally demanding and by skipping it, a great deal of performance can be saved.
 
 \subsubsection{Compute Shader Structure}
 The following figure shows that the \gls{computeshader} is dispatched with a large number of thread groups, each containing a set of threads, of which each represents a single invocation of the \gls{shader}.

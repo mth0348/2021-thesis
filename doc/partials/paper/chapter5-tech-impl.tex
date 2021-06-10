@@ -507,6 +507,51 @@ Specifically the formation and dissipation of clouds, the sun's position in the 
 
 \clearpage
 
+\subsection{Roundshot Image Overlay}
+The following graphic shows how the \emph{Roundshot} images are integrated into the weather rendering system.
+When the application is running in "real-time mode", which is the mode that visualized the \emph{meteoblue} data, then a button at the bottom of the \gls{ui} lets the user toggle an overlay.
+The overlay shows a photograph of the same location and of the corresponding time and date, taken by a \emph{Roundshot} camera.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+        \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+        \tikzset{shortedge/.style = {shorten <=-4pt,shorten >= -4pt}}
+        \tikzset{icon/.style = {font=\Large}}
+        \tikzset{mini/.style = {font=\footnotesize}}
+        \tikzset{tiny/.style = {font=\tiny}}
+
+        % cloud layer boxes
+        \node[inner sep=0pt] at (7,0.1) 
+            {\includegraphics[width=0.8\textwidth]{results/roundshot.png}};
+
+        % tile label 1
+        \draw (-0.7,4.6) -- (6.9,4.6);
+        \draw (-0.7,4.55) -- (-0.7,4.65);
+        \draw (6.9,4.55) -- (6.9,4.65);
+        \node at (3.1,4.9) {no overlay};
+        
+        % tile label 2
+        \draw (7,-4.4) -- (14.7,-4.4);
+        \draw (7,-4.35) -- (7,-4.45);
+        \draw (14.7,-4.35) -- (14.7,-4.45);
+        \node at (10.85,-4.7) {overlay active};
+        
+    \end{tikzpicture}
+    \captionof{figure}{Visual comparison of the rendered scene with and without the \emph{Roundshot} image overlay activated.}
+    \label{img:results:roundshot}
+\end{figure}
+
+\noindent
+\autoref{img:results:roundshot} only shows a visual comparison of the two cases where the overlay is activated and where it is not.
+In the application, the overlay spans over the whole viewport instead of just half.
+
+\noindent
+The comparison brings out a couple of things that are missing in the weather rendering system, but especially that there is room for improvement regarding the cloud shapes.
+Also, the cloud colors lack diversity and are too uniform to be naturally realistic.
+
+\clearpage
+
 \subsection{Comparison to Previous Work}
 \label{section:techimpl:comparison}
 The prototype created in the previous work was able to render a single layer of clouds. There was no \gls{ui} and the scene only contained mockup plants and rocks.
@@ -560,5 +605,5 @@ The results are extraordinarily realistic, but also certainly based on an extens
 \end{figure}
 
 \noindent
-The comparison brings out a couple of things that are missing in the weather rendering system, but especially that there is room for improvement regarding the cloud shapes.
-Also, the cloud colors lack diversity and are too uniform to be naturally realistic.
+The comparison shows that the colors of the environment is just as important as the realism of the clouds.
+For example, the vibrant colors towards the horizon in \autoref{img:msfs:1} give the scene a much more natural appearance.

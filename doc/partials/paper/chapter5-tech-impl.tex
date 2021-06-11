@@ -84,8 +84,9 @@ At last, the "UI" section contains the default game objects for a \gls{ui} in Un
 \clearpage
 
 \subsubsection{Scene Anatomy}
-The scene setup is similar to what was originally planned in \sectionref{section:impl:layers}. There are multiple layers of clouds, each rendered by a unique \gls{volumetric} \gls{shader}.
-However, there is no layer for high-level clouds. It turned out that the intricate visual appearance of cirrus clouds was more difficult to simulate than anticipated.
+The scene setup is similar to what was originally planned in \sectionref{section:impl:layers}. There are multiple layers of clouds, each rendered by a unique \gls{volumetric} \gls{shader}
+in a container box, which is henceforth called "container".
+Instead of three cloud layers, only two were implemented. There is no layer for high-level clouds. It turned out that the intricate visual appearance of cirrus clouds was more difficult to simulate than anticipated.
 Also, there is no dedicated layer for ground fog, as the Unity engine already offers a way to include fog into the scene.
 \\
 The current scene anatomy is depicted in the following graphic, as viewed from the side.
@@ -100,10 +101,14 @@ The current scene anatomy is depicted in the following graphic, as viewed from t
         \tikzset{tiny/.style = {font=\tiny}}
 
         % cloud layer boxes
-        \node[inner sep=0pt] at (6,4) 
+        \node[inner sep=0pt] at (6,3.4) 
             {\includegraphics[width=0.8\textwidth]{anatomy.png}};
 
         \node at (0.3,0.4) {camera};
+
+        % legend
+        \node at (7.2,-0.4) {cloud layers};
+        \node at (10.9,-0.4) {\gls{proxyobject}s};
 
         % labels
         \node[red] at (2.3,2.1) {$C_{low}$};
@@ -243,8 +248,246 @@ The compute shader is dispatched only once, at the start of the simulation.
 This significantly saves on performance, as the \gls{noise} is constant and therefore, does not need to be recalculated each frame.
 
 \subsection{Rendering Techniques}
-As mentioned in \sectionref{section:noise:previous}, algorithms that have been documented in the previous project will not be described again.
-The current solution uses techniques like \gls{raymarching}, \gls{lightmarching} and \gls{sunlightforwarding} in a very similar fashion.
+The following subsections recapitulate some of the research done in the previous work.
+This is because the current solution uses techniques like \gls{raymarching} in a very similar fashion.
+\\
+This section primarily describes the process of rendering, which is done in the \gls{fragmentshader}.
+This is why the term \emph{\gls{fragment}}, which is a single pixel that is being colored, is often mentioned. 
+
+\subsubsection{Ray Marching}
+The \gls{raymarching} algorithm works as was adapted from the previous project and works as follows:
+\\
+For each pixel \gls{fragment}, a ray is cast from the \gls{fragment} into the container and extended along the view direction for that \gls{fragment}.
+The ray does not stop until the end of the container is reached.
+It samples the density $N$ times along its path and returns the sum of those samples, giving an approximate qualifier for how dark this \gls{fragment} should be.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1.2]
+        \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+        \tikzset{shortedge/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= -4pt}}
+        \tikzset{icon/.style = {font=\Large}}
+
+        % icons
+        \node[icon,rotate=35,anchor=west] (cam) at (0, 0) {\faVideoCamera};
+
+        % clouds
+        \node[cloud, cloud puffs=15.7, minimum width=5cm, minimum height=3.5cm, align=center, draw] (cloud) at (4.5, 3.5) {};
+        \node[cloud, cloud puffs=15.7, minimum width=2cm, minimum height=1.5cm, align=center, draw] (cloud) at (5.0, 1.1) {};
+        \node[cloud, cloud puffs=15.7, minimum width=3cm, minimum height=2.0cm, align=center, draw] (cloud) at (0.2, 3.5) {};
+        \node[cloud, cloud puffs=15.7, minimum width=1.5cm,minimum height= 1cm, align=center, draw] (cloud) at (1.75, 0.9) {};
+
+        % outer point
+        \node (pOut) at (7, 5.25) {};
+        \draw[red, edge] (cam) -- (pOut) node[midway,above,sloped,xshift=-3cm] {};
+
+        % cloud points
+        \node[red] (p1) at (1.5, 1.125) {\textbullet};
+        \node (p2) at (2.5, 1.875) {\textopenbullet};
+        \node[red] (p3) at (3.5, 2.625) {\textbullet};
+        \node[red] (p4) at (4.5, 3.375) {\textbullet};
+        \node[red] (p5) at (5.5, 4.125) {\textbullet};
+
+        \node[red, yshift=0.4cm] at (p1) {$p_1$};
+        \node[red, yshift=0.4cm] at (p2) {$p_2$};
+        \node[red, yshift=0.4cm] at (p3) {$p_3$};
+        \node[red, yshift=0.4cm] at (p4) {$p_4$};
+        \node[red, yshift=0.4cm] at (p5) {$p_5$};
+
+
+        \end{tikzpicture}
+    \captionof{figure}{Ray marching algorithm with a step size of $N = 5$.}
+    \label{img:tikz:prototypes:densitysampling}
+\end{figure}
+
+\clearpage
+
+\subsubsection{Cloud Edge Illumination}
+Whenever a cloud obscures the sun, the edges of that cloud are usually shining in a bright color, while the cloud's body is darkened.
+To estimate the distance from the cloud to the sun, the following method was chosen:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1.2]
+        \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+        \tikzset{shortedge/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= -4pt}}
+        \tikzset{line/.style = {shorten >=-4pt}}
+        \tikzset{icon/.style = {font=\Large}}
+
+        % icons
+        \node[icon,rotate=35,anchor=west] (cam) at (0, 0) {\faVideoCamera};
+        \node[icon] (light) at (8, 6) {\faLightbulbO};
+        \node at (8, 6.5) {light source};
+
+        % clouds
+        \node (cloud) at (4.0, 5.2) {};
+        \node[cloud, rotate=-15, cloud puffs=15.7, cloud, minimum width=3.5cm, minimum height=2.2cm, align=center, draw] (cloud) at (cloud) {};
+
+        % screen space
+        \draw (1,1) -- (5,0) -- (5,3);
+
+        % rays
+        \node[red] (p1) at (3, 2.25) {\ding{53}};
+        \node[red] (st1) at ($(p1) + (0.5, -0.2)$) {$st_2$};
+
+        \node[cyan,mark=x] (c1) at (2.4, 2.4) {\ding{53}};
+        \node[cyan] (st2) at ($(c1) + (-0.5, 0.2)$) {$st_1$};
+
+        \node (p2) at (5, 3.75) {};
+        \node (c2) at (4, 4) {};
+        \node[cyan] (c3) at (4.9, 4.9) {\textbullet};
+
+        \draw[red, line] (cam) -- (p1);
+        \draw[red, line, loosely dashed] (p1) -- (p2);
+        \draw[red, edge, loosely dashed] (p2) -- (light);
+        
+        \draw[cyan, line] (cam) -- (c1);
+        \draw[cyan, line, loosely dashed] (c1) -- (c2);
+        \draw[cyan, edge, loosely dashed] (c2) -- (c3);
+
+        % rest of screen space
+        \draw (5,3) -- (1,4) node[midway,above,sloped,xshift=-1cm] {screen space} -- (1,1);
+
+        \end{tikzpicture}
+    \captionof{figure}{Cloud edge illumination method.}
+    \label{img:tikz:prototypes:sunlight}
+\end{figure}
+
+\noindent
+When casting the ray, both the \gls{fragment}'s and the light source's screen-space position is calculated.
+Those are two-dimensional coordinates relative to the screen that the camera renders to.
+Now if the distance $d = \norm{\overrightarrow{st_1 st_2}} < t$, with $t$ being some threshold, a portion of the sun's color is added to the \gls{fragment}'s color, relative to how small $d$ is.
+\\
+It is noteworthy that when calculating the screen-space position, the depth value gets lost. Therefore, theoretically, the clouds would be illuminated when $d < t$ even if the sun is in front of the clouds.
+This is especially an issue when the light source is behind the camera.
+Since the the light source rotates around the camera in this implemtation, this is often the case and needs to be solved.
+However, the \gls{dotproduct} between the two shown vectors will be negative, which presents an easy way to rule out this special case.
+
+\clearpage
+
+\subsubsection{Directional Lighting}
+To calculate the influence of directional light on the current \gls{fragment}, another ray is cast from the \gls{raymarching} sample point towards the sun.
+Along its path, the density is sampled again $L$ times in constant steps.
+With the lack of an official term, this process is called \textit{\gls{lightmarching}} in this project.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1]
+        \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+        \tikzset{shortedge/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= -4pt}}
+        \tikzset{lightedge1/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= 0.8cm}}
+        \tikzset{lightedge2/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= 0.85cm}}
+        \tikzset{lightedge3/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= 0.90cm}}
+        \tikzset{icon/.style = {font=\Large}}
+
+        % icons
+        \node[icon,rotate=35,anchor=west] (cam) at (1, 0.75) {\faVideoCamera};
+        \node[icon] (light) at (1, 6) {\faLightbulbO};
+        \node at (1, 6.5) {light source};
+
+        % clouds
+        \node (cloud) at (4.5, 3.5) {};
+        \node[cloud, cloud puffs=15.7, cloud ignores aspect, minimum width=5cm, minimum height=3.5cm, align=center, draw] (cloud) at (cloud) {};
+
+        % outer point
+        \node (pOut) at (7, 5.25) {};
+
+        % rays
+        \draw[red, edge] (cam) -- (pOut) node[midway,above,sloped,xshift=-3cm] {};
+        
+        % cloud points
+        \node[red] (p1) at (3.5, 2.625) {\textbullet};
+        \node[red] (p2) at (4.5, 3.375) {\textbullet};
+        \node[red] (p3) at (5.5, 4.125) {\textbullet};
+        \node[red] (p4) at (4.5, 3.375) {\textbullet};
+        \node[red] (p5) at (5.5, 4.125) {\textbullet};
+
+        % light march rays
+        \draw[cyan, lightedge1] (p1) -- (light) node[midway,above] {};
+        \draw[cyan, lightedge2] (p2) -- (light) node[midway,above] {};
+        \draw[cyan, lightedge3] (p3) -- (light) node[midway,above,yshift=0.5cm] {lightmarch rays};
+
+        % light sample points
+        \node[cyan] (l1) at (3.25, 2.95) {\textbullet};
+        \node[cyan] (l2) at (4.15, 3.625) {\textbullet};
+        \node[cyan] (l3) at (5.0, 4.325) {\textbullet};
+        
+        \node[cyan] (l5) at (3.0, 3.3) {\textbullet};
+        \node[cyan] (l6) at (3.75, 3.95) {\textbullet};
+        \node[cyan] (l7) at (4.5, 4.55) {\textbullet};
+        
+        \node[cyan] (l8) at (2.75, 3.65) {\textbullet};
+        \node[cyan] (l9) at (3.35, 4.22) {\textbullet};
+        \node[cyan] (l10) at (3.95, 4.775) {\textbullet};
+
+        \end{tikzpicture}
+    \captionof{figure}{Directional \gls{lightmarching} samples (part 1).}
+    \label{img:tikz:prototypes:lightmarching1}
+\end{figure}
+
+\noindent
+In \autoref{img:tikz:prototypes:lightmarching1} is visible that a lot of density samples return a high value, resulting in a dark \gls{fragment} color for this ray.
+In other terms, there is a lot of cloud mass in front of that sample point, so the fragment will not receive a lot of sunlight color.
+\\
+On the other hand, in \autoref{img:tikz:prototypes:lightmarching2}, only very few samples are even inside a cloud, resulting in an overall low value.
+This leads to a higher influence of the sun's color for that \gls{fragment}, meaning the samples are more exposed to the sun.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1]
+        \tikzset{edge/.style = {-{Latex[length=3mm]},shorten >= -4pt}}
+        \tikzset{shortedge/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= -4pt}}
+        \tikzset{lightedge1/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= 0.8cm}}
+        \tikzset{lightedge2/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= 0.85cm}}
+        \tikzset{lightedge3/.style = {-{Latex[length=3mm]},shorten <=-4pt,shorten >= 0.90cm}}
+        \tikzset{icon/.style = {font=\Large}}
+
+        % icons
+        \node[icon,rotate=35,anchor=west] (cam) at (1, 0.75) {\faVideoCamera};
+        \node[icon] (light) at (1, 6) {\faLightbulbO};
+        \node at (1, 6.5) {light source};
+
+        % clouds
+        \node (cloud) at (5.7, 2.7) {};
+        \node[cloud, cloud puffs=15.7, cloud ignores aspect, minimum width=5cm, minimum height=3.5cm, align=center, draw] (cloud) at (cloud) {};
+
+        % outer point
+        \node (pOut) at (7, 5.25) {};
+
+        % rays
+        \draw[red, edge] (cam) -- (pOut) node[midway,above,sloped,xshift=-3cm] {};
+        
+        % cloud points
+        \node[red] (p1) at (3.5, 2.625) {\textbullet};
+        \node[red] (p2) at (4.5, 3.375) {\textbullet};
+        \node[red] (p3) at (5.5, 4.125) {\textbullet};
+        \node[red] (p4) at (4.5, 3.375) {\textbullet};
+        \node[red] (p5) at (5.5, 4.125) {\textbullet};
+
+        % light march rays
+        \draw[cyan, lightedge1] (p1) -- (light) node[midway,above] {};
+        \draw[cyan, lightedge2] (p2) -- (light) node[midway,above] {};
+        \draw[cyan, lightedge3] (p3) -- (light) node[midway,above,yshift=0.5cm] {lightmarch rays};
+
+        % light sample points
+        \node (l1) at (3.25, 2.95) {\textopenbullet};
+        \node[cyan] (l2) at (4.15, 3.625) {\textbullet};
+        \node (l3) at (5.0, 4.325) {\textopenbullet};
+        
+        \node (l5) at (3.0, 3.3) {\textopenbullet};
+        \node (l6) at (3.75, 3.95) {\textopenbullet};
+        \node (l7) at (4.5, 4.55) {\textopenbullet};
+        
+        \node (l8) at (2.75, 3.65) {\textopenbullet};
+        \node (l9) at (3.35, 4.22) {\textopenbullet};
+        \node (l10) at (3.95, 4.775) {\textopenbullet};
+
+        \end{tikzpicture}
+    \captionof{figure}{Directional \gls{lightmarching} samples (part 2).}
+    \label{img:tikz:prototypes:lightmarching2}
+\end{figure}
+
+\clearpage
 
 \subsection{Shadow Casting}
 \label{section:techimpl:shadow}
@@ -357,7 +600,7 @@ The current solution is able to render the weather for all times of day. The fol
 \end{figure}
 
 \noindent
-the colors of the clouds are influenced by the skybox and the sun's light. They also adapt to the amount of \gls{precipitation} as well as the fog color.
+The colors of the clouds are influenced by the skybox and the sun's light. They also adapt to the amount of \gls{precipitation} as well as the fog color.
 The clouds have an outer and inner primary color, both enriched with details from the \gls{noise} texture.
 The outer edge of the clouds reacts the most to the sun's position and intensity, especially improving the scene at sunrise and sunset.
 
@@ -428,7 +671,13 @@ As the following graphics show, the \gls{proxyplane}s add a vital visual upgrade
 
 \clearpage
 
+\subsection{Additional Features}
+Some features in the final implementation have not been originally planned.
+They are listed and described in the following subsections.
+
 \subsubsection{Shadow Mapping}
+Shadow casting, or in this case rather shadow mapping, was not specified as a requirement. The feature was implemented as a means of enhancing realism in the rendered images.
+\\
 As described in \sectionref{section:techimpl:shadow}, the cloud objects do not cast shadows.
 Instead, the terrain \gls{shader} was modified to read the 3D \gls{noise} texture and calculate the shadow itself .
 
@@ -462,7 +711,12 @@ Instead, the terrain \gls{shader} was modified to read the 3D \gls{noise} textur
     \label{img:results:shadowmapping}
 \end{figure}
 
-\subsubsection{Additional Features}
-% TODO
-rain
-shadow mapping
+\noindent
+The feature is missing one detail, though.
+It does not respect the position of the sun, but rather maps the shadow always as if the sun was directly above the clouds, like at noon.
+Given that this feature is supplementary to the mandatory requirements, this issue is ignored.
+
+\subsubsection{Rain Particle System}
+In \autoref{img:results:rainproxy}, rain drops are visible. This is also a feature that was not originally planned.
+To improve the authenticity of rainfall, rain drops have been added in the form of a \gls{particlesystem}.
+the \gls{particlesystem} is positioned directly in front of the camera and is activated whenever the \emph{meteoblue} data provides a \gls{precipitation} value greater than zero.

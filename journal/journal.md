@@ -742,14 +742,14 @@ Remarks on book:
 * check if esri access is still up? https://community.esri.com/t5/learn-arcgis-documents/frequently-asked-questions-for-learn-arcgis-student-program/ta-p/904958#toc-hId-318184905
 
 **Inputs from tutor:**
-* appendices as seperate documents
-* appendices after listings in ToC
-* insert raymarching again in tech impl.
-    * note that it comes from project2 (1,2 page)
-    * "we have evaluated many techniques, and raymarching was chosen in project2"
+* ✅ appendices as seperate documents
+* ✅ appendices after listings in ToC
+* ✅ insert raymarching again in tech impl.
+    * ✅ note that it comes from project2 (1,2 page)
+    * ✅ "we have evaluated many techniques, and raymarching was chosen in project2"
 * auf moodle abgeben: merged pdf
 * in papier abgeben: merged pdf
-* latex grafphics: all not externally referenced graphics, copyright by author, implemented in latex.
+* ✅ latex grafphics: all not externally referenced graphics, copyright by author, implemented in latex.
 * graphics: add " (adapted from [6])" to figure captions
 * introduction chapter is missing
     * base we beschäftigen us with real weather 

@@ -1590,10 +1590,11 @@ void CSNoise (uint3 id : SV_DispatchThreadID)
     float3 threadCoord = float3(id.x, id.y, id.z) / 256;
     float3 noiseCoord = threadCoord * _NoiseScale;
     
+    // assigning different noise values to each channel
     float r = fbm(noiseCoord * 1, 1);
-    float g = fbm(noiseCoord * 2, 4);
-    float b = fbm(noiseCoord * 5, 8);
-    float a = 1;
+    float g = fbm(noiseCoord * 1, 4);
+    float b = fbm(noiseCoord * 4, 8);
+    float a = fbm(noiseCoord * 8, 8);
 
     _Result[id.xyz] = float4(r, g, b, a);
 }
@@ -1623,3 +1624,7 @@ fixed4 frag(v2f i) : SV_Target
     return color;
 }
 \end{lstlisting}
+
+\subsection{Conclusion}
+The algorithms described in \sectionref{section:noise} can be used unaltered in the final implementation.
+With the ability to use a total of four different noise values for each \gls{fragment} in the \gls{fragmentshader}, the generated \gls{noise} will provide plenty of randomess.

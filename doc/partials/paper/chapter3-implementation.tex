@@ -168,7 +168,7 @@ Exception to that are only the two larger types that span over multiple height l
         \node[tiny,darkcyan] at    (-1.6,9.5) {11000m};
 
     \end{tikzpicture}
-    \captionof{figure}{Layers of cloud shaders.}
+    \captionof{figure}{Layers of cloud shaders (adapted from \protect\cite{cloudtypes:wiki}).}
     \label{img:tikz:shadersetup:particles}       
 \end{figure}
 
@@ -350,7 +350,7 @@ With increasing distance along the axis \color{darkercyan}$L$\color{black}, fact
         \node[tiny,darkcyan] at    (-1.15,8.6) {11000m};
 
     \end{tikzpicture}
-    \captionof{figure}{Weather data interpolation for the cloud layers from Bern to Solothurn.}
+    \captionof{figure}{Weather data interpolation for the cloud layers from Bern to Solothurn (adapted from \protect\cite{cloudtypes:wiki}).}
     \label{img:tikz:shadersetup:lerp}       
 \end{figure}
 
@@ -358,17 +358,16 @@ With increasing distance along the axis \color{darkercyan}$L$\color{black}, fact
 In summary,  at Bern ($t = 0$), weather for data set $w_1$ is displayed, while at Solothurn ($t = 1$), weather for the data set $w_2$ is rendered.
 Everything in-between is a mixture of both data sets, relative to which ever is closer.
 
-\pagebreak
-
 \subsection{Alternative Approach}
 \label{section:impl:altapproach}
 Every subsection that describes another feature of the implementation approach increases the complexity of the developing concept,
 which is already depending on many ideas and structures to work.
 In cases like this it is best to prepare an alternative approach to implementation, that can be pursued should the primary one fail.
-\\
+\pagebreak
 The core concept of this second implementation approach is based on \gls{particlesystem}s.
 It still relies on having four major layers with an additional cumulonimbus block. The nimbostratus will also be substituted.
 Those layers are almost identical to the layers described in \sectionref{section:impl:layers:high} to \sectionref{section:impl:layers:cumulonimbus}.
+\\
 However, instead of the layers each being a single \gls{shader}, they are replaced with a \gls{particlesystem} that emits cubes of clouds.
 Those cubes are rendered by different \gls{shader}s, depending on which layer they are spawned in.
 The highest layer, \color{darkercyan}$P_1$\color{black}, would emit cloud cubes of the cirrus family.
@@ -409,7 +408,7 @@ Layer \color{darkercyan}$P_3$ \color{black} would spawn low-level cloud cubes, w
         \node[tiny,darkcyan] at    (-1.15,8.65) {11000m};
 
     \end{tikzpicture}
-    \captionof{figure}{Alternative implementation approach based on \gls{particlesystem}s.}
+    \captionof{figure}{Alternative implementation approach based on \gls{particlesystem}s (adapted from \protect\cite{cloudtypes:wiki}).}
     \label{img:tikz:altapproach}       
 \end{figure}
 

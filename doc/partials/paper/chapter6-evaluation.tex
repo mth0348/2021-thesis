@@ -114,20 +114,16 @@ $$
 
 \noindent
 Knowing that the current solution runs at 60 \gls{fps}, this gives an approximate performance gain of factor $(7500 / 50) * (60/30) = 300$.
-That is an astounding \textbf{3000\%} more powerful.
+That is an astounding \textbf{300} times more powerful.
 \\
 For almost all of this, credit has to be given to the use of a \gls{computeshader}.
 The fact that the \gls{noise} has to be calculated only once instead of every frame allows for much higher fidelity in rendering the clouds.
-\emptyline
-Some of the code of the previous work was used as a template.
-However, a flaw in the \gls{raymarching} algorithm was discovered.
-Fixing that also caused a noticeable increase in performance.
 
 \clearpage
 
 \subsection{Comparison to Other Work}
 As it happens, Microsoft's Flight Simulator game (2020) also uses weather data from \emph{meteoblue} to render its \gls{volumetric} clouds \cite{meteoblue:msfs}.
-The results are extraordinarily realistic, but also certainly based on an extensively more complex solution than simple data packages, like in this project.
+The results are extraordinary and present realistic clouds and weather.
 
 \begin{figure}[H]
     \centering
@@ -149,5 +145,8 @@ The comparison shows that the colors of the environment is just as important as 
 For example, the vibrant colors towards the horizon in \autoref{img:msfs:1} give the scene a much more natural appearance.
 
 \subsection{Conclusion}
+The rendered results bring out the most of the capabilities of the weather rendering system and show many diverse scenarios.
+Especially so when rendering the weather during a sunrise or sunset. The sun light strongly emphasizes the volumetric properties of the clouds.
+\emptyline
 As \sectionref{section:eval:measurability} already states, there is no practical method of measuring the realism of the weather rendering system.
 Hence, for this project, the only suitable method to assess the realism of a rendered image, that still conforms to the scope of the project, is comparing the \gls{inengine} render side-by-side with the \emph{Roundshot} image.

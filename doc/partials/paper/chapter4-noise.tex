@@ -1,6 +1,6 @@
 \section{Noise Generation}
 \label{section:noise}
-Nature's chaotic and fortuitous behavior creates a world full of diversity and unpredictability.
+Nature's chaotic and random behavior creates a world full of diversity and unpredictability.
 This can be observed in a surprisingly high amount of objects, structures and phenomena.
 \\
 For example, the following images show photographs of patterns that seem almost completely random.
@@ -208,12 +208,14 @@ This amounts to $3^n - 1$ neighboring cells, where $n$ is the number of dimensio
 \noindent
 An implementation in \gls{hlsl} of this relatively simple algorithm could look like the following listing.
 \begin{lstlisting}[language=HLSL, caption=Implementation of 2D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi2d]
+// generate random 2d seed for position
 float2 randomSeed(float2 co) {
-    return float2(
+    return float2( // use as diverse numbers as possible
         fract(sin(dot(co, float2(12.9898, 78.233))) * 43758.5453123),
         fract(sin(dot(co, float2(39.3461, 11.135))) * 14375.8545359));
 }
 
+// generate noise value for position
 float voronoi(float2 p) {
     float2 baseCell = floor(p);
     float dMin = 999;
@@ -236,13 +238,15 @@ float voronoi(float2 p) {
 The 3D equivalent of the algorithm looks fairly similar.
 
 \begin{lstlisting}[language=HLSL, caption=Implementation of 3D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi3d]
-float3 randomSeed(float3 co) {
-    return float3(
+    // generate random 2d seed for position
+    float3 randomSeed(float3 co) {
+    return float3( // use as diverse numbers as possible
     fract(sin(dot(co, float3(12.989, 78.233, 37.719))) * 43758.5453123),
     fract(sin(dot(co, float3(39.346, 11.135, 83.155))) * 14375.8545346),
     fract(sin(dot(co, float3(73.156, 52.235, 09.151))) * 31396.2234116));
 }
 
+// generate noise value for position
 float voronoi(float3 p) {
     float3 baseCell = floor(p);
     float dMin = 999;
@@ -656,6 +660,7 @@ In conclusion, the same set of points that is calculated for the first texture t
 Mathematically, this is solved by using the $modulo$ operation. The dividend is the current cell and the divisor is the period, or how often the \gls{noise} texture is repeated.
 
 \begin{lstlisting}[language=HLSL, caption=Implementation of a partially seamless 3D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi:seamless1]
+// generate seamless noise value
 float voronoi(float3 p, float3 period) {
     float3 baseCell = floor(p);
     float dMin = 999;
@@ -717,8 +722,10 @@ $$
 $$
 
 \begin{lstlisting}[language=HLSL, caption=Implementation of seamless 3D Voronoi \gls{noise} algorithm., label=lst:shader:noise:voronoi:seamless2]
+// define macro for modulo operator
 #define mod(x,y) (x-y*floor(x/y))
 
+// generate seamless noise value
 float voronoi(float3 p, float3 period) {
     float3 baseCell = floor(p);
     float dMin = 999;
@@ -730,9 +737,7 @@ float voronoi(float3 p, float3 period) {
                 float3 tiledCell = mod(cell, period);
                 float3 seed = cell + randomSeed(tiledCell);
                 float d = distance(seed, p);
-                if (d < dMin) {
-                    dMin = d;
-                }
+                if (d < dMin) dMin = d;
             }
         }
     }

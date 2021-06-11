@@ -1,0 +1,130 @@
+\section{Testing}
+\label{section:techimpl:testing}
+The bachelor project specification document envisioned the following cases to be tested and validated.
+The tables each show the test case and the related results, and whether or not the test has been passed. 
+
+\subsection{External Data Testing}
+
+\subsubsection{Weather Data}
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{Case}            & T.1 \\ \hline
+    \textbf{Test case}       & Weather data \\ \hline
+    \textbf{Expected result} & The data from \emph{meteoblue} is incorporated into the weather rendering system. The data directly controls all related variables. \\ \hline
+    \hline
+    \textbf{Actual result}   & \vspace{-\topsep}\begin{itemize}[label={\checkmark},noitemsep,topsep=0pt,leftmargin=*]
+                                   \item \emph{meteoblue} data stored periodically
+                                   \item Data read at start of system
+                                   \item Data controls the simulation
+                               \end{itemize} \\ \hline
+    \textbf{Passed?}      & Yes \\ \hline
+\end{tabularx}
+
+\subsubsection{Terrain Data}
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{Case}            & T.2 \\ \hline
+    \textbf{Test case}       & Terrain data \\ \hline
+    \textbf{Expected result} & The data from \emph{swisstopo} is incorporated into the weather rendering system. The elevation model defines the terrain height map. The aerial images are used for texturing. \\ \hline
+    \hline
+    \textbf{Actual result}   & \vspace{-\topsep}\begin{itemize}[label={$\times$},noitemsep,topsep=0pt,leftmargin=*]
+                                   \item \emph{swisstopo} data not used
+                               \end{itemize}
+                               \begin{itemize}[label={\checkmark},noitemsep,topsep=0pt,leftmargin=*]
+                                    \item Substitution found for elevation model data
+                                    \item \emph{ArcGIS} plugin is in use and functional
+                                \end{itemize} \\ \hline
+    \textbf{Passed?}      & No / Substituted \\ \hline
+\end{tabularx}
+
+\subsubsection{Photographic Data}
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{Case}            & T.3 \\ \hline
+    \textbf{Test case}       & Photographic data \\ \hline
+    \textbf{Expected result} & There is a feature that allows to overlay the \emph{Roundshot} photograph of the same time and date as the rendered image was created for. \\ \hline
+    \hline
+    \textbf{Actual result}   & \vspace{-\topsep}\begin{itemize}[label={\checkmark},noitemsep,topsep=0pt,leftmargin=*]
+                                   \item \emph{Roundshot} images are stored locally
+                                   \item The described feature is included in the \gls{ui} 
+                               \end{itemize} \\ \hline
+    \textbf{Passed?}      & Yes \\ \hline
+\end{tabularx}
+
+
+\subsection{Functional Testing}
+
+\subsubsection{Code Functionality}
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{Case}            & T.4 \\ \hline
+    \textbf{Test case}       & Code functionality \\ \hline
+    \textbf{Expected result} & The code for the weather rendering system compiles and runs without error. \\ \hline
+    \hline
+    \textbf{Actual result}   & \vspace{-\topsep}\begin{itemize}[label={\checkmark},noitemsep,topsep=0pt,leftmargin=*]
+                                   \item The code compiles successfully
+                                   \item The code runs error-free
+                               \end{itemize} \\ \hline
+    \textbf{Passed?}      & Yes \\ \hline
+\end{tabularx}
+
+\subsubsection{User Interface}
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{Case}            & T.5 \\ \hline
+    \textbf{Test case}       & User interface \\ \hline
+    \textbf{Expected result} & The user is able to switch between the two modes, "real mode" and "play mode". The user is also able to control the weather system over the \gls{ui} accordingly. \\ \hline
+    \hline
+    \textbf{Actual result}   & \vspace{-\topsep}\begin{itemize}[label={\checkmark},noitemsep,topsep=0pt,leftmargin=*]
+                                   \item The user can switch between the two described modes
+                                   \item The user can control the weather manually in "play mode"
+                                   \item The user can choose the date and time in "real mode"
+                               \end{itemize} \\ \hline
+    \textbf{Passed?}      & Yes \\ \hline
+\end{tabularx}
+
+\subsubsection{Performance}
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{Case}            & T.6 \\ \hline
+    \textbf{Test case}       & Performance \\ \hline
+    \textbf{Expected result} & The shader code should run with reasonably good performance and should not show visual stutters or frame drops. \\ \hline
+    \hline
+    \textbf{Actual result}   & \vspace{-\topsep}\begin{itemize}[label={\checkmark},noitemsep,topsep=0pt,leftmargin=*]
+                                   \item The simulation runs at approximately 60 \gls{fps} in Full HD
+                                   \item There are no noticeable frame drops
+                                   \item There are no visual stutters
+                               \end{itemize} \\ \hline
+    \textbf{Passed?}      & Yes \\ \hline
+\end{tabularx}
+
+\subsection{Visual Testing}
+
+\subsubsection{Real Photographs}
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{Case}            & T.7 \\ \hline
+    \textbf{Test case}       & Real photographs \\ \hline
+    \textbf{Expected result} & The visual output of the weather rendering system is to be compared with live weather photographs from \emph{Roundshot} cameras. The rendered image should resemble the weather of that time, to a reasonable extent. \\ \hline
+    \hline
+    \textbf{Actual result}   & \vspace{-\topsep}\begin{itemize}[label={\checkmark},noitemsep,topsep=0pt,leftmargin=*]
+                                   \item The visual output resembles the weather for the same time to a reasonable extent
+                               \end{itemize}
+                               \begin{itemize}[label={$\times$},noitemsep,topsep=0pt,leftmargin=*]
+                                    \item Clouds of the family "cirrus" are missing
+                                \end{itemize} \\ \hline
+    \textbf{Passed?}      & Partially \\ \hline
+\end{tabularx}
+
+\subsubsection{Similar Products}
+\noindent\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{Case}            & T.8 \\ \hline
+    \textbf{Test case}       & Similar products \\ \hline
+    \textbf{Expected result} & The visual output of the weather rendering system is to be compared with the in-game footage of Microsoft's \emph{Flight Simulator} game. The rendering system should achieve similar results, to a reasonable extent. \\ \hline
+    \hline
+    \textbf{Actual result}   & \vspace{-\topsep}\begin{itemize}[label={\checkmark},noitemsep,topsep=0pt,leftmargin=*]
+                                   \item The visual output resembles that of Microsoft's Flight Simulator for similar weather conditions
+                               \end{itemize} \\ \hline
+    \textbf{Passed?}      & Yes \\ \hline
+\end{tabularx}

@@ -192,7 +192,7 @@ A potential \gls{shader} for that layer could be programmed to render a base var
 The middle layer consists of altostratus and altocumulus clouds, the latter mainly occurring due to dissipation of the former one.
 Since they have many shared characteristics, apart from the puffiness, they are predestined to be processed together.
 \\
-Given a \gls{shader} is flexible enough to render altostratus clouds, then it is most likely also able to render altocumulus, with only few adjustments necessary.
+Given a \gls{shader} is flexible enough to render altostratus clouds, then it is most likely also able to render altocumulus, with only a few adjustments necessary.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{cloudlayers/altolayer.png}
@@ -218,7 +218,7 @@ If a \gls{shader} would be able to render stratocumulus clouds and allow to cont
 
 \subsubsection{Ground Level Fog}
 \label{section:impl:layers:fog}
-The lowest layer consists of fog. It is conceivable that stratus clouds will also be placed in that layer.
+The lowest or ground layer consists of fog. It is conceivable that stratus clouds will also be placed in that layer.
 Both type of clouds are to some extent combinable, as they primarily vary in density.
 \\
 Therefore, a \gls{shader} would need to have control over the outcome's density and lightness for it to be able to render both stratus clouds and ground fog.
@@ -246,7 +246,7 @@ It could easily be mistaken for other clouds that produce \gls{precipitation}.
 
 \noindent
 Under that assumption, it is considered that the cumulonimbus cloud will only ever be seen from a distance.
-This is why these clouds will most likely be rendered in their own layer, farther away from the main camera, but spanning over all other height levels.
+This is why these clouds will be rendered in their own layer, farther away from the main camera, but spanning over all other height levels.
 
 \pagebreak
 
@@ -268,9 +268,8 @@ With additional stratus clouds and increased fog density, a layman could probabl
 All \gls{shader} layers described in \sectionref{section:impl:layers}, except the cumulonimbus layer, come with an issue.
 Given that multiple cloud types are consolidated into one layer, and that layer can only render one cloud type at a time, then no two cloud types of the same layer can ever be rendered together.
 \\
-However, the chance for multiple clouds of the same layer to coexist is considered to be negligible, which is why the issue is disregarded in this project.
-
-
+However, this rendering system will be a visual representation and not a physically accurate simulation.
+This is why the the fact, that multiple clouds of the same layer could coexist at the same time, is considered to be negligible, hence the issue is disregarded in this project.
 
 \pagebreak
 
@@ -281,7 +280,7 @@ This is also true for weather conditions.
 Because of this, whenever rendering cloudscapes from an angle where the horizon is also visible, the weather measurements from places in the far distance also have to be taken into account.
 \\
 As mentioned in the bachelor project specification document, there are two points of view from which the weather will be rendered.
-They are two mountains near the city of Bern: the \emph{Bantiger} and the \emph{Gurten} mountain.
+These are two mountains near the city of Bern: the \emph{Bantiger} and the \emph{Gurten} mountain.
 \\
 From both peaks, Bern lies in the center of the view. However, a city in the background of each perspective has been chosen to account for weather in the distance.
 
@@ -306,7 +305,7 @@ From both peaks, Bern lies in the center of the view. However, a city in the bac
 \label{section:impl:layerinterpolation}
 Following up on the background weather consideration, all \gls{shader} layers also need to know those distances and adjust accordingly.
 Given there are two measurement sets, one for each city, then the weather in-between can be a combination of both sets.
-A very common method to achieve such an evaluation of interim data is called \emph{\gls{lerp}}.
+A very common method to achieve such an evaluation of interim data is called \emph{\gls{lerp}} (lerp).
 \Gls{lerp} can be defined as a function $lerp$, if $0 >= t >= 1$: 
 
 $$lerp(a, b, t) = a + (b - a) * t$$
@@ -366,11 +365,10 @@ Everything in-between is a mixture of both data sets, relative to which ever is 
 Every subsection that describes another feature of the implementation approach increases the complexity of the developing concept,
 which is already depending on many ideas and structures to work.
 In cases like this it is best to prepare an alternative approach to implementation, that can be pursued should the primary one fail.
-\emptyline
+\\
 The core concept of this second implementation approach is based on \gls{particlesystem}s.
 It still relies on having four major layers with an additional cumulonimbus block. The nimbostratus will also be substituted.
 Those layers are almost identical to the layers described in \sectionref{section:impl:layers:high} to \sectionref{section:impl:layers:cumulonimbus}.
-\\
 However, instead of the layers each being a single \gls{shader}, they are replaced with a \gls{particlesystem} that emits cubes of clouds.
 Those cubes are rendered by different \gls{shader}s, depending on which layer they are spawned in.
 The highest layer, \color{darkercyan}$P_1$\color{black}, would emit cloud cubes of the cirrus family.
@@ -421,7 +419,10 @@ Each layer is in absolute control of when it spawns cloud particles, how fast th
 \\
 Nonetheless, contrary to the first approach, a \gls{lerp} of the clouds will prove to be more difficult in this case.
 A \gls{particlesystem} cannot be interpolated along two positions, as it is bound to a fixed location.
-This issue be could be disregarded at the cost of realism, by only using three \gls{particlesystem}s:
-one for Bern, one in-between both cities, using interpolated weather data, and one for the distant city.
-\\
-Additionally, the number of cloud cubes may heavily impact performance. If the system is required to limit the number of cloud cubes, its realism would suffer further.
+This issue be could be disregarded at the cost of realism, by only using two \gls{particlesystem}s:
+one for Bern and one for the distant city.
+Additionally, the number of cloud cubes heavily impacts performance. Should the system be limited regarding the number of cloud cubes, its realism would suffer further.
+
+\subsection{Conclusion}
+The implementation approach described in \sectionref{section:impl} will be pursued.
+The alternative implementation approach as described in the previous subsection only serves as a backup plan, should a critical problem arise in the first approach.

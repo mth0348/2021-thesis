@@ -747,39 +747,39 @@ Remarks on book:
 * ✅ insert raymarching again in tech impl.
     * ✅ note that it comes from project2 (1,2 page)
     * ✅ "we have evaluated many techniques, and raymarching was chosen in project2"
-* auf moodle abgeben: merged pdf
-* in papier abgeben: merged pdf
+* ⬜️ auf moodle abgeben: merged pdf
+* ⬜️ in papier abgeben: merged pdf
 * ✅ latex grafphics: all not externally referenced graphics, copyright by author, implemented in latex.
-* graphics: add " (adapted from [6])" to figure captions
-* introduction chapter is missing
+* ✅ graphics: add " (adapted from [6])" to figure captions
+* ⬜️ introduction chapter is missing
     * base we beschäftigen us with real weather 
     * then impl approaches
     * then noise algorithm
     * structure / chapters / how is it built
     * maybe bullet list
-* from clouds to impl. approach: missing paragraph that says what we do with this cloud information
+* ✅ from clouds to impl. approach: missing paragraph that says what we do with this cloud information
     * summary/fazit/conclusion
-* describe why fog layer was not built -> why unity fog
+* ✅ describe why fog layer was not built -> why unity fog
     * ergänzen in scene anatomy
-* section 3.3: describe why: meterologically possible, but visually not necessary.
-* section 3: Summary/Conclusion
-* chapter 4: intro sentence all graphics are 2d, but impl is 3d
-* 2-3 lines of comment per codeblock
-* fig42: partially seamless: modulo error described in caption is missing.
-* chapter4: add conclusion: 1-2 sentences (we could use it just as described)
-* under 5.2, add: "near real-time" from project specification
-* fig53: easier because performance
-* "does not have to be recalculated" -> never recalc. is constant
-* section5.6: how are color channel values used
-* section5.7: raymarching from project2 -> analysed in previous work -> here again
-* 5.8: negleting the position of the sun
-* rain particle system is missing? in graphics and in text
-* introduction chapter to "evalution" chapter
-* remove "flaw from preject2"
-* 5.14: license-limited
-* sec7: cirrus missing, shadow casting flaw, fog limited etc
-* 8.2: additional features (rain, shadowcasting, fog)
-* bfh logo
+* ✅ section 3.3: describe why: meterologically possible, but visually not necessary.
+* ✅ section 3: Summary/Conclusion
+* ⬜️ chapter 4: intro sentence all graphics are 2d, but impl is 3d
+* ✅ 2-3 lines of comment per codeblock
+* ✅ fig42: partially seamless: modulo error described in caption is missing.
+* ⬜️ chapter4: add conclusion: 1-2 sentences (we could use it just as described)
+* ⬜️ under 5.2, add: "near real-time" from project specification
+* ✅ fig53: easier because performance
+* ✅ "does not have to be recalculated" -> never recalc. is constant
+* ✅ section5.6: how are color channel values used
+* ✅ section5.7: raymarching from project2 -> analysed in previous work -> here again
+* ✅ 5.8: negleting the position of the sun
+* ✅ rain particle system is missing? in graphics and in text
+* ✅ introduction chapter to "evalution" chapter
+* ✅ remove "flaw from preject2"
+* ✅ 5.14: license-limited
+* ⬜️ sec7: cirrus missing, shadow casting flaw, fog limited etc
+* ✅ 8.2: additional features (rain, shadowcasting, fog)
+* ⬜️ bfh logo in presentation at slide 0
 
  **Tasks**
 * Last meeting is scheduled for **June 16, 2021 at 2pm.**

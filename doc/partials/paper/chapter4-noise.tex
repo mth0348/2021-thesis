@@ -15,6 +15,8 @@ For example, the following images show photographs of patterns that seem almost 
 In computer science, the virtual recreation of such randomness has been studied continuously over the last decades.
 The outcome of a randomness generator is called \emph{\gls{noise}}.
 There are many established algorithms to create random patterns, one of which generates the famous \emph{Voronoi} \gls{noise}.
+\emptyline
+All of the following documented procedures and algorithms were implemented in 3D, but for the matter of explanation, it is described and visualized in 2D.
 
 \subsection{Previous Work}
 \label{section:noise:previous}
@@ -698,7 +700,7 @@ The issue is further explained by Ronja \cite{ronja:tilingnoise}.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{noise/voronoi seamless1.png}
-    \caption{Partially seamless, tiled 3D \gls{noise} \gls{textureslice}s.}
+    \caption{Partially seamless, tiled 3D \gls{noise} \gls{textureslice}s, showing artifacts of the modulo error.}
     \label{img:rnd:noise:seamless1}
 \end{figure}
 

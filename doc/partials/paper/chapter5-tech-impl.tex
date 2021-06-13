@@ -45,6 +45,11 @@ The following table displays a list of properties from both data packages and ho
 \emptyline
 Other properties like temperature and UV index provide insufficient or irrelevant information and have therefore not been mapped.
 
+\subsubsection{Near Real-time}
+As mentioned in bachelor project specification document, the data will not be retrieved in real-time, but rather be polled periodically.
+However, when weather data is requested, the data for the current day as well as a seven-day forecast is returned.
+This means that the data, even though not obtained in real-time, can be processed for the real current time with the aid of \gls{interpolation}.
+
 \subsection{ArcGIS Integration}
 \label{section:techimpl:arcgis}
 During the research phase of the project, the \emph{ArcGIS Maps SDK for Unity} \cite{arcgis:unitysdk} was found. This proved to be a suitable replacement for the originally planned \emph{swisstopo} elevation model data.
@@ -623,16 +628,16 @@ As the following graphics show, the \gls{proxyplane}s add a vital visual upgrade
             {\includegraphics[width=0.8\textwidth]{results/rainproxy.png}};
 
         % tile label 1
-        \draw (-0.7,4.4) -- (6.9,4.4);
-        \draw (-0.7,4.35) -- (-0.7,4.45);
-        \draw (6.9,4.35) -- (6.9,4.45);
-        \node at (3.1,4.7) {no proxy};
+        \draw (-0.7,4.3) -- (6.9,4.3);
+        \draw (-0.7,4.25) -- (-0.7,4.45);
+        \draw (6.9,4.25) -- (6.9,4.45);
+        \node at (3.1,4.6) {no proxy};
         
         % tile label 2
-        \draw (7,-4.4) -- (14.7,-4.4);
-        \draw (7,-4.35) -- (7,-4.45);
-        \draw (14.7,-4.35) -- (14.7,-4.45);
-        \node at (10.85,-4.7) {proxy in effect};
+        \draw (7,-4.5) -- (14.7,-4.5);
+        \draw (7,-4.45) -- (7,-4.55);
+        \draw (14.7,-4.45) -- (14.7,-4.55);
+        \node at (10.85,-4.8) {proxy in effect};
         
     \end{tikzpicture}
     \captionof{figure}{Visual comparison of a rendered scene with and without the rain \gls{proxyplane}.}
@@ -653,16 +658,16 @@ As the following graphics show, the \gls{proxyplane}s add a vital visual upgrade
             {\includegraphics[width=0.8\textwidth]{results/skyproxy.png}};
 
         % tile label 1
-        \draw (-0.7,4.4) -- (6.9,4.4);
-        \draw (-0.7,4.35) -- (-0.7,4.45);
-        \draw (6.9,4.35) -- (6.9,4.45);
-        \node at (3.1,4.7) {no proxy};
+        \draw (-0.7,4.3) -- (6.9,4.3);
+        \draw (-0.7,4.25) -- (-0.7,4.45);
+        \draw (6.9,4.25) -- (6.9,4.45);
+        \node at (3.1,4.6) {no proxy};
         
         % tile label 2
-        \draw (7,-4.4) -- (14.7,-4.4);
-        \draw (7,-4.35) -- (7,-4.45);
-        \draw (14.7,-4.35) -- (14.7,-4.45);
-        \node at (10.85,-4.7) {proxy in effect};
+        \draw (7,-4.5) -- (14.7,-4.5);
+        \draw (7,-4.45) -- (7,-4.55);
+        \draw (14.7,-4.45) -- (14.7,-4.55);
+        \node at (10.85,-4.8) {proxy in effect};
         
     \end{tikzpicture}
     \captionof{figure}{Visual comparison of a rendered scene with and without the sky \gls{proxyplane}.}

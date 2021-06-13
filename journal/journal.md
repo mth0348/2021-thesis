@@ -751,7 +751,7 @@ Remarks on book:
 * ⬜️ in papier abgeben: merged pdf
 * ✅ latex grafphics: all not externally referenced graphics, copyright by author, implemented in latex.
 * ✅ graphics: add " (adapted from [6])" to figure captions
-* ⬜️ introduction chapter is missing
+* ✅ introduction chapter is missing
     * base we beschäftigen us with real weather 
     * then impl approaches
     * then noise algorithm
@@ -767,7 +767,7 @@ Remarks on book:
 * ✅ 2-3 lines of comment per codeblock
 * ✅ fig42: partially seamless: modulo error described in caption is missing.
 * ✅ chapter4: add conclusion: 1-2 sentences (we could use it just as described)
-* ⬜️ under 5.2, add: "near real-time" from project specification
+* ✅ under 5.2, add: "near real-time" from project specification
 * ✅ fig53: easier because performance
 * ✅ "does not have to be recalculated" -> never recalc. is constant
 * ✅ section5.6: how are color channel values used
@@ -777,7 +777,7 @@ Remarks on book:
 * ✅ introduction chapter to "evalution" chapter
 * ✅ remove "flaw from preject2"
 * ✅ 5.14: license-limited
-* ⬜️ sec7: cirrus missing, shadow casting flaw, fog limited etc
+* ✅ sec7: cirrus missing, shadow casting flaw, fog limited etc
 * ✅ 8.2: additional features (rain, shadowcasting, fog)
 * ⬜️ bfh logo in presentation at slide 0
 

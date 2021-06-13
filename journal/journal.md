@@ -763,10 +763,10 @@ Remarks on book:
     * ergänzen in scene anatomy
 * ✅ section 3.3: describe why: meterologically possible, but visually not necessary.
 * ✅ section 3: Summary/Conclusion
-* ⬜️ chapter 4: intro sentence all graphics are 2d, but impl is 3d
+* ✅ chapter 4: intro sentence all graphics are 2d, but impl is 3d
 * ✅ 2-3 lines of comment per codeblock
 * ✅ fig42: partially seamless: modulo error described in caption is missing.
-* ⬜️ chapter4: add conclusion: 1-2 sentences (we could use it just as described)
+* ✅ chapter4: add conclusion: 1-2 sentences (we could use it just as described)
 * ⬜️ under 5.2, add: "near real-time" from project specification
 * ✅ fig53: easier because performance
 * ✅ "does not have to be recalculated" -> never recalc. is constant

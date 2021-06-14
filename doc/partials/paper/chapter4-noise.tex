@@ -1269,7 +1269,7 @@ Each thread group will be assigned its own identifier, the \emph{thread group ID
 
 \subsubsection{Thread and Thread Group Identifiers}
 The thread group ID, or simply group ID, is calculated by taking the current index of the thread group in each dimension.
-When dispatching a \gls{kernel} with 64 groups in each dimension, it that means that the group identifiers range from (0,0,0) to (63,63,63).
+When dispatching a \gls{kernel} with 64 groups in each dimension, it means that the group identifiers range from (0,0,0) to (63,63,63).
 \\
 In each thread group, the thread ID is then calculated as follows.
 Given $id_{group}$ is the thread group ID, $n_{threads}$ is the number of threads specified in the \gls{kernel}, and  $t_{coord}$ are the coordinates of the thread inside the thread group, then:
@@ -1629,4 +1629,4 @@ fixed4 frag(v2f i) : SV_Target
 
 \subsection{Conclusion}
 The algorithms described in \sectionref{section:noise} can be used unaltered in the final implementation.
-With the ability to use a total of four different noise values for each \gls{fragment} in the \gls{fragmentshader}, the generated \gls{noise} will provide plenty of randomess.
+With the ability to use a total of four different noise values for each \gls{fragment} in the \gls{fragmentshader}, the generated \gls{noise} will provide plenty of randomness.

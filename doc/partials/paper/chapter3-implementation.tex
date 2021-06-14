@@ -124,7 +124,7 @@ The approach as described above relies on having data from a couple of days ahea
 That would mean, for such an approach to work, the weather of today can not be rendered before $t$ days later.
 \\
 In this case however, the weather measurement data retrieved from \emph{meteoblue} also contains a seven-day weather forecast. 
-Given that $t$ is less than or equal to seven and an implementation still produces accurate cloud imagery, it would no longer be an issue.
+Given that $t$ is less than or equal to seven (days), an implementation cloud still produces accurate cloud imagery.
 
 \subsection{Layers of Cloud Shaders}
 \label{section:impl:layers}
@@ -269,7 +269,7 @@ All \gls{shader} layers described in \sectionref{section:impl:layers}, except th
 Given that multiple cloud types are consolidated into one layer, and that layer can only render one cloud type at a time, then no two cloud types of the same layer can ever be rendered together.
 \\
 However, this rendering system will be a visual representation and not a physically accurate simulation.
-This is why the the fact, that multiple clouds of the same layer could coexist at the same time, is considered to be negligible, hence the issue is disregarded in this project.
+Thus, the fact that multiple clouds of the same layer could coexist at the same time, is considered to be negligible and the issue is disregarded in this project.
 
 \pagebreak
 

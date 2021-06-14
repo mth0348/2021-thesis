@@ -365,7 +365,7 @@ Now if the distance $d = \norm{\overrightarrow{st_1 st_2}} < t$, with $t$ being 
 \\
 It is noteworthy that when calculating the screen-space position, the depth value gets lost. Therefore, theoretically, the clouds would be illuminated when $d < t$ even if the sun is in front of the clouds.
 This is especially an issue when the light source is behind the camera.
-Since the the light source rotates around the camera in this implemtation, this is often the case and needs to be solved.
+Since the the light source rotates around the camera in this implementation, this is often the case and needs to be solved.
 However, the \gls{dotproduct} between the two shown vectors will be negative, which presents an easy way to rule out this special case.
 
 \clearpage

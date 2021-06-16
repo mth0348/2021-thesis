@@ -747,8 +747,8 @@ Remarks on book:
 * ✅ insert raymarching again in tech impl.
     * ✅ note that it comes from project2 (1,2 page)
     * ✅ "we have evaluated many techniques, and raymarching was chosen in project2"
-* ⬜️ auf moodle abgeben: merged pdf
-* ⬜️ in papier abgeben: merged pdf
+* ✅ auf moodle abgeben: merged pdf
+* ✅ in papier abgeben: merged pdf
 * ✅ latex grafphics: all not externally referenced graphics, copyright by author, implemented in latex.
 * ✅ graphics: add " (adapted from [6])" to figure captions
 * ✅ introduction chapter is missing
@@ -779,10 +779,37 @@ Remarks on book:
 * ✅ 5.14: license-limited
 * ✅ sec7: cirrus missing, shadow casting flaw, fog limited etc
 * ✅ 8.2: additional features (rain, shadowcasting, fog)
-* ⬜️ bfh logo in presentation at slide 0
+* ✅ bfh logo in presentation at slide 0
 
  **Tasks**
 * Last meeting is scheduled for **June 16, 2021 at 2pm.**
+* next items: presentation
+* send document again
+* ask dr. dubuis for print
+
+**Time log**
+
+| Task | time spent |
+|----|---|
+|document review|4h|
+|document review|4h|
+|presentation|2h|
+
+&nbsp;
+
+&nbsp;
+#
+## \#15: June 16, 2021
+### Formal and technical questions
+1. presentation ok?
+
+**Answers to questions:**
+1. .
+
+### Meeting discussion
+.
+
+ **Tasks**
 * next items: presentation
 * send document again
 * ask dr. dubuis for print

@@ -52,7 +52,8 @@ This means that the data, even though not obtained in real-time, can be processe
 
 \subsection{ArcGIS Integration}
 \label{section:techimpl:arcgis}
-During the research phase of the project, the \emph{ArcGIS Maps SDK for Unity} \cite{arcgis:unitysdk} was found. This proved to be a suitable replacement for the originally planned \emph{swisstopo} elevation model data.
+As described in \sectionref{section:project:swisstoporeplacement}, the \emph{swisstopo} elevation model data was substituted with the \emph{ArcGIS Maps SDK for Unity} due to integration issues.
+This proved to be a suitable replacement for the 3D elevation model.
 The plugin was easily installed. The setup process required minimal amount of effort and the plugin was ready to run in no time. 
 
 \begin{figure}[H]
@@ -134,7 +135,7 @@ The current scene anatomy is depicted in the following graphic, as viewed from t
 In the scene, there are three cloud layers: \color{red}$C_{low}$\color{black}, \color{red}$C_{mid}$ \color{black} and \color{red}$C_{back}$\color{black}.
 The \gls{shader} for layer \color{red}$C_{low}$ \color{black} handles low-level clouds like the puffy cumulus, while \color{red}$C_{mid}$ \color{black} is responsible for rendering mid-level clouds of the "alto"-type.
 Both front layers use weather data for Bern, Switzerland.
-Behind the two front layers, there is \color{red}$C_{back}$\color{black}, which renders an approximation of cumulonimbus clouds. It uses the weather data of the correspondent location in the distance (either Solothurn or Fribourg) instead of Bern.
+Behind the two front layers, there is \color{red}$C_{back}$\color{black}, which renders an approximation of cumulonimbus clouds. It uses the weather data of the correspondent location in the distance (either Solothurn for camera location on top of Gurten or Fribourg for camera location on top of Bantiger).
 \emptyline
 There are also two \gls{proxyobject}s, which are game objects that substitute a certain visual effect, like rain or the sun's halo.
 They are transparent planes and are placed in-between the cloud layers.
@@ -525,7 +526,7 @@ What \autoref{img:shadow:casting2} shows is not a plane that casts the shadow, b
 Thus, the shader for the ground tile, which is provided by the \emph{ArcGIS} plugin, was modified to read the 3D \gls{noise} texture.
 With that information, the ground shader knows where the clouds will be in the sky and adds a darkened, transparent layer over the existing ground color.
 \emptyline
-This method works well for the current solution, but would there be other objects than clouds, they would not cast shadows for the same reasons.
+This method works well for the current solution, but for the same reasons, other objects than clouds would not cast any shadows.
 
 \clearpage
 
@@ -555,7 +556,7 @@ Combined, the final output shows a diverse scene for the weather conditions extr
 \clearpage
 
 \subsubsection{Times Of Day}
-The current solution is able to render the weather for all times of day. The following figures demonstrate the capabilities of the weather rendering system.
+The current solution is able to render the weather for all times of day. The following figures present the capabilities of the weather rendering system. For demonstration purposes, the same cloud constellation is used in all images.
 
 \begin{figure}[H]
     \centering

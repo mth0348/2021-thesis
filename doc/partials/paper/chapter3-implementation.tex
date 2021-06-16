@@ -282,7 +282,7 @@ Because of this, whenever rendering cloudscapes from an angle where the horizon 
 As mentioned in the bachelor project specification document, there are two points of view from which the weather will be rendered.
 These are two mountains near the city of Bern: the \emph{Bantiger} and the \emph{Gurten} mountain.
 \\
-From both peaks, Bern lies in the center of the view. However, a city in the background of each perspective has been chosen to account for weather in the distance.
+From both peaks, the view can be aligned so that Bern lies in the center of the field of view. However, a city in the background of each perspective has been chosen to account for weather in the distance.
 
 \begin{figure}[H]
     \centering
@@ -358,13 +358,13 @@ With increasing distance along the axis \color{darkercyan}$L$\color{black}, fact
 In summary,  at Bern ($t = 0$), weather for data set $w_1$ is displayed, while at Solothurn ($t = 1$), weather for the data set $w_2$ is rendered.
 Everything in-between is a mixture of both data sets, relative to which ever is closer.
 
+\pagebreak
+
 \subsection{Alternative Approach}
 \label{section:impl:altapproach}
-Every subsection that describes another feature of the implementation approach increases the complexity of the developing concept,
-which is already depending on many ideas and structures to work.
-In cases like this it is best to prepare an alternative approach to implementation, that can be pursued should the primary one fail.
-\pagebreak
-The core concept of this second implementation approach is based on \gls{particlesystem}s.
+In cases the primary implementation approach does not lead to a solution, an alternative approach can be pursued.
+\emptyline
+The core concept of this alternative implementation approach is based on \gls{particlesystem}s.
 It still relies on having four major layers with an additional cumulonimbus block. The nimbostratus will also be substituted.
 Those layers are almost identical to the layers described in \sectionref{section:impl:layers:high} to \sectionref{section:impl:layers:cumulonimbus}.
 \\

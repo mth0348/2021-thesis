@@ -1,5 +1,5 @@
 \section{Natural Clouds}
-Clouds are a substantial part of Earth's weather. They provide shade from the glistening sun on hot days and reflect the heat at night, keeping the ground warmer.
+Clouds are a substantial part of Earth's weather. They provide shade from the glistening sun on hot days and reflect the ground heat at night, keeping the surface warmer.
 Even for a layman, clouds are comprehensible and useful indicators for telling the weather.
 If they are dark and low-hanging, they usually bring rain.
 If they are puffy and scarce, they predict fair weather ahead.
@@ -24,7 +24,7 @@ As the \gls{altitude} increases, the \gls{thermal}'s air cool down. At some poin
 
         % thermal
         \node (t1) at (4, 0.5) {};
-        \node[red,text width=4cm] (t1t) at (5.9, 1.2) {thermal column of air rising upwards};
+        \node[red,text width=4cm] (t1t) at (5.9, 1.2) {column of warm air rising upwards};
         \node (t2) at (4, 1.8) {};
         \draw[red,edge] (t1) -- (t2);
 
@@ -33,7 +33,7 @@ As the \gls{altitude} increases, the \gls{thermal}'s air cool down. At some poin
         \node (l2) at (2, 3.0) {};
         \node (r1) at (5, 4.0) {};
         \node (r2) at (6, 3.0) {};
-        \node[cyan] (r2t) at (6.8, 3.8) {sinking air};
+        \node[cyan,text width=4cm] (r2t) at (7.5, 3.8) {cooled air sinking \phantom{xx} \phantom{xx} downwards};
         \draw[cyan,edge] (l1) to [out=180,in=90] (l2);
         \draw[cyan,edge] (r1) to [out=0,in=90] (r2);
 
@@ -58,7 +58,7 @@ In the following graphics, the \gls{warmfront} is marked with \color{red}$w_1$\c
 When a \gls{warmfront} approaches a \gls{coldfront}, it is likely that the impending clash results in clouds, bringing \gls{precipitation}.
 The \gls{warmfront} carries warmer air and therefore rises over the colder, denser air.
 By advancing towards a \gls{coldfront}, the \gls{warmfront} pushes its warmer air higher,
-which means that \gls{thermal}s are created and clouds start to form \cite{ww2010:warmfront}.
+which means that \gls{thermal}s are created and clouds start to form at the border of the two air masses \cite{ww2010:warmfront}.
 
 \begin{figure}[H]
     \centering
@@ -869,7 +869,7 @@ They bring long-term rain or snow for several hours or days.
     \label{img:clouds:stratus}
 \end{wrapfigure}
 Stratus clouds are low-layer clouds that usually only form in calm, stable conditions.
-They are often described as "high fog" as the have similarities in appearance.
+They are often described as "high fog" as they have similarities in appearance.
 \\
 Stratus cloud are formed by cool, moist air that is raised by mild wind breezes.
 \emptyline

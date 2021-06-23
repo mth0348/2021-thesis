@@ -306,7 +306,7 @@ From both peaks, the view can be aligned so that Bern lies in the center of the 
 Following up on the background weather consideration, all \gls{shader} layers also need to know those distances and adjust accordingly.
 Given there are two measurement sets, one for each city, then the weather in-between can be a combination of both sets.
 A very common method to achieve such an evaluation of interim data is called \emph{\gls{lerp}} (lerp).
-\Gls{lerp} can be defined as a function $lerp$, if $0 >= t >= 1$: 
+\Gls{lerp} can be defined as a function $lerp$, if $0 <= t <= 1$: 
 
 $$lerp(a, b, t) = a + (b - a) * t$$
 

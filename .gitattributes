@@ -1,4 +1,7 @@
 *.pptx filter=lfs diff=lfs merge=lfs -text
+*.unitypackage filter=lfs diff=lfs merge=lfs -text
+impl/Weather[[:space:]]Rendering[[:space:]]System/Assets/_ArcGISMaps/Components/SDK/* filter=lfs diff=lfs merge=lfs -text
+impl/Weather[[:space:]]Rendering[[:space:]]System/Assets/_ArcGISMaps/Components/SDK/RuntimeCore/Libs/** filter=lfs diff=lfs merge=lfs -text
 impl/*.* filter=lfs diff=lfs merge=lfs -text
 presentation/*.* filter=lfs diff=lfs merge=lfs -text
 impl/**/*.* filter=lfs diff=lfs merge=lfs -text

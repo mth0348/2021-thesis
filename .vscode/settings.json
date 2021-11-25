@@ -6,5 +6,8 @@
         "markdown",
         "latex",
         "plaintext"
-    ]
+    ],
+    "files.watcherExclude": {
+        "**/target": true
+    }
 }
